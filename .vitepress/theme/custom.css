@@ -1,0 +1,110 @@
+/* 代码块渐变边框 */
+:root {
+  /* 播放器主题色 */
+  --plyr-color-main: #fb7299;
+  --soda-black: oklch(17.7% 0.105 262.48);
+  --soda-purple: oklch(60% 0.37 294.7);
+  --soda-orange: oklch(60% 0.37 64.65);
+  --soda-yellow: oklch(60% 0.37 109.08);
+  --soda-blue: oklch(60% 0.37 237.06);
+}
+
+
+/* 修改默认滚动条样式 begin */
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #003;
+  border-radius: 10px;
+  transition: all .2s ease-in-out;
+}
+
+.dark *::-webkit-scrollbar-thumb {
+  background-color: #fff3;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #0003;
+  border-radius: 10px;
+  transition: all .2s ease-in-out;
+}
+
+*::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+.vp-doc :not(pre)>code {
+  font-weight: bold;
+}
+
+.vp-code-group input:checked+label {
+  color: var(--vp-c-brand-1);
+}
+
+/* 修改默认滚动条样式 end */
+
+/* 渐变旋转角度属性 begin */
+
+@property --direc {
+  inherits: false;
+  initial-value: 0deg;
+  syntax: '<angle>';
+}
+
+/* 旋转动画 */
+@keyframes spin {
+  to {
+    --direc: 360deg;
+  }
+}
+
+.vp-doc .vp-code-group:hover {
+  --direc: 0deg;
+  position: relative;
+  background: conic-gradient(var(--direc),
+      oklch(60% 0.37 294.7),
+      oklch(60% 0.37 64.65),
+      oklch(60% 0.37 109.08),
+      oklch(60% 0.37 237.06),
+      oklch(60% 0.37 294.7));
+  animation: spin 2s linear infinite;
+  z-index: 10;
+}
+
+
+.vp-doc .vp-code-group:hover::after {
+  position: absolute;
+  content: '';
+  inset: 0;
+  background: conic-gradient(in oklch from var(--direc),
+      var(--soda-purple),
+      var(--soda-orange),
+      var(--soda-yellow),
+      var(--soda-blue),
+      var(--soda-purple));
+  border-radius: 5px;
+  filter: blur(5px);
+  animation: spin 2s linear infinite;
+  z-index: -11;
+}
+
+/* 渐变旋转角度属性 end */
+
+.vp-doc .tabs-hide {
+  & .tabs {
+    display: none;
+  }
+
+  & .blocks div[class*='language-'] {
+    border-top-left-radius: 10px !important;
+    border-top-right-radius: 10px !important;
+  }
+}
+
+
+.VPLocalNavOutlineDropdown .items .outline {
+  display: block;
+}

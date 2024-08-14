@@ -1,0 +1,21 @@
+{
+  "name": "Soda's blog",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
+  },
+  "devDependencies": {
+    "vitepress": "^1.2.3"
+  },
+  "dependencies": {
+    "@ewizardjs/upath": "^3.0.0",
+    "element-plus": "^2.7.8",
+    "pagefind": "^1.1.0",
+    "plyr": "^3.7.8",
+    "uuid": "^10.0.0",
+    "vitepress-plugin-pagefind": "^0.4.9"
+  }
+}

@@ -1,0 +1,2077 @@
+const GIT_LABELS = [
+  {
+    zh: '首次使用 Git',
+    en: 'use-git-for-the-first-time',
+    parentDir: ['Git'],
+    meta: {
+      star: 2,
+      state: '已完成',
+      tags: ['Git'],
+    },
+  },
+  {
+    zh: 'git 如何解决冲突问题?',
+    en: 'how-to-resolve-conflicts-in-git',
+    parentDir: ['Git'],
+    meta: {
+      star: 3,
+      state: '未完成',
+      tags: ['Git']
+    },
+  },
+  {
+    zh: '报错：pre-commit hook failed',
+    en: 'pre-commit-hook-failed-(add---no-verify-to-bypass)',
+    parentDir: ['Git'],
+    meta: {
+      star: 1,
+      state: '已完成',
+      tags: ['Git', '报错处理']
+    },
+  },
+  {
+    zh: '',
+    en: '',
+    parentDir: ['Git'],
+  },
+]
+
+const CSS_LABELS = [
+  {
+    zh: '说一下 CSS 盒模型',
+    en: 'talk-about-the-css-box-model',
+    parentDir: ['2-CSS'],
+    meta: {
+      star: 1,
+      state: '已完成',
+      tags: ['CSS']
+    },
+  },
+  {
+    zh: 'line-height 和 height 区别',
+    en: 'difference-between-line-height-and-height',
+    parentDir: ['2-CSS'],
+    meta: {
+      star: 1,
+      state: '已完成',
+      tags: ['CSS']
+    },
+  },
+  {
+    zh: 'opacity 和 rgba 区别',
+    en: 'the-difference-between-opacity-and-rgba',
+    parentDir: ['2-CSS'],
+    meta: {
+      star: 2,
+      state: '已完成',
+      tags: ['CSS']
+    },
+  },
+  {
+    zh: 'display：none 与 visibility：hidden 的区别？',
+    en: 'the-difference-between-display-none-and-visibility-hidden',
+    parentDir: ['2-CSS'],
+    meta: {
+      star: 1,
+      state: '未完成',
+      tags: ['CSS']
+    },
+  },
+  {
+    zh: '元素的尺寸',
+    en: 'the-size-of-the-element',
+    parentDir: ['2-CSS'],
+    meta: {
+      star: 2,
+      state: '未完成',
+      tags: ['CSS']
+    },
+  },
+  {
+    zh: 'CSS sprite 是什么？有什么优缺点？',
+    en: 'what-are-css-sprites-what-are-their-advantages-and-disadvantages',
+    parentDir: ['2-CSS'],
+    meta: {
+      star: 2,
+      state: '已完成',
+      tags: ['CSS']
+    },
+  },
+  {
+    zh: '什么是 CSS reset？',
+    en: 'what-is-css-reset',
+    parentDir: ['2-CSS'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['CSS']
+    },
+  },
+  {
+    zh: 'position 有哪些值？分别是根据什么定位？',
+    en: 'what-is-position',
+    parentDir: ['2-CSS'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['CSS']
+    },
+  },
+  {
+    zh: '在网页中应该使用奇数还是偶数的字体？为什么？',
+    en: 'should-you-use-odd-or-even-numbered-fonts-on-web-pages-why',
+    parentDir: ['2-CSS'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['CSS']
+    },
+  },
+  {
+    zh: '清除浮动有哪些方式？',
+    en: 'what-are-the-ways-to-clear-floating',
+    parentDir: ['2-CSS'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['CSS']
+    },
+  },
+  {
+    zh: 'display 有哪些值？说明它们的作用',
+    en: 'what-are-the-values-​​of-display-explain-their-functions',
+    parentDir: ['2-CSS'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['CSS']
+    },
+  },
+  {
+    zh: 'CSS 优先级算法如何计算？',
+    en: 'how-the-css-priority-algorithm-is-calculated',
+    parentDir: ['2-CSS'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['CSS']
+    },
+  },
+  {
+    zh: '隐藏元素的方法有哪些？',
+    en: 'what-are-the-ways-to-hide-elements',
+    parentDir: ['2-CSS'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['CSS']
+    },
+  },
+  {
+    zh: 'CSS 属性值 initial、unset、revert 是做什么的',
+    en: 'what-do-the-css-property-values-​​initial-unset-and-revert-do',
+    parentDir: ['2-CSS'],
+    meta: {
+      star: 3,
+      state: '未完成',
+      tags: ['CSS']
+    },
+  },
+  {
+    zh: 'SCSS 如何实现循环？',
+    en: 'how-to-implement-loop-in-scss',
+    parentDir: ['2-CSS'],
+    meta: {
+      star: 4,
+      state: '未完成',
+      tags: ['CSS', 'SCSS']
+    },
+  },
+  {
+    zh: '禁止 IOS 长按时触发系统菜单，禁止 IOS&Android 长按时下载图片，禁止 IOS&Android 用户选中文字',
+    en: 'disable-ios-long-press-to-trigger-some-operations',
+    parentDir: ['2-CSS'],
+    meta: {
+      star: 4,
+      state: '未完成',
+      tags: ['CSS', '移动端', '兼容']
+    },
+  },
+  {
+    zh: 'webkit 表单输入框 placeholder 的颜色值能改变吗？',
+    en: 'can-color-value-of-the-webkit-form-input-placeholder-changed',
+    parentDir: ['2-CSS'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['CSS']
+    },
+  },
+  {
+    zh: 'IOS 系统中元素被触摸时产生的半透明灰色遮罩怎么去掉',
+    en: 'how-to-remove-the-semi-transparent-gray-mask-generated-when-an-element-is-touched-in-the-ios-system',
+    parentDir: ['2-CSS'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['CSS']
+    },
+  },
+  {
+    zh: '双飞翼（圣杯）布局',
+    en: 'double-wing-(holy-grail)-layout',
+    parentDir: ['2-CSS'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['CSS']
+    },
+  },
+  {
+    zh: '一个盒子不给宽度和高度如何水平垂直居中？',
+    en: 'how-to-center-a-box-horizontally-and-vertically-without-giving-width-and-height',
+    parentDir: ['2-CSS'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['CSS']
+    },
+  },
+  {
+    zh: 'CSS 选择符有哪些？哪些属性可以继承？',
+    en: 'what-are-the-css-selectors-which-properties-are-inherited',
+    parentDir: ['2-CSS'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['CSS']
+    },
+  },
+  {
+    zh: '如何实现一个 0.5px 的线条？',
+    en: 'how-to-achieve-a-half-pixel-line',
+    parentDir: ['2-CSS'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['CSS']
+    },
+  },
+  {
+    zh: '让一个 div 垂直水平居中，有哪些方式？',
+    en: 'what-are-the-ways-to-center-a-div-vertically-and-horizontally',
+    parentDir: ['2-CSS'],
+    meta: {
+      star: 5,
+      state: '未完成',
+      tags: ['CSS']
+    },
+  },
+  {
+    zh: '用 CSS 画一个三角形',
+    en: 'draw-a-triangle-with-css',
+    parentDir: ['2-CSS'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['CSS']
+    },
+  },
+  {
+    zh: '对 BFC 规范（块级格式化上下文：block formatting content）的理解',
+    en: 'understanding-of-bfc-specification-(block-formatting-content)',
+    parentDir: ['2-CSS'],
+    meta: {
+      star: 6,
+      state: '待更新',
+      tags: ['CSS']
+    },
+  },
+  {
+    zh: 'LESS 入门一篇就够了',
+    en: 'one-article-is-enough-for-getting-started-with-less',
+    parentDir: ['2-CSS'],
+    meta: {
+      star: 9,
+      state: '未完成',
+      tags: ['CSS']
+    },
+  },
+  {
+    zh: '伪类 与 伪元素的区别',
+    en: 'the-difference-between-pseudo-classes-and-pseudo-elements',
+    parentDir: ['2-CSS'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['CSS', 'H5']
+    },
+  },
+  {
+    zh: '::before 和 :after 中双冒号和单冒号有什么区别？解释下这2个伪元素的作用',
+    en: 'what-is-the-difference-between-double-colons-and-single-colons-in-before-and-after',
+    parentDir: ['2-CSS'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['CSS', 'H5']
+    },
+  },
+  {
+    zh: 'px, em, rem, vw, vh 的区别是什么？',
+    en: 'what-is-the-difference-between-px,-em,-rem,-vw,-vh',
+    parentDir: ['2-CSS'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['CSS', 'H5']
+    },
+  },
+  {
+    zh: '响应式',
+    en: 'responsive',
+    parentDir: ['2-CSS'],
+    meta: {
+      star: 8,
+      state: '已完成',
+      tags: ['CSS', 'H5']
+    },
+  },
+  {
+    zh: '自适应（适配）',
+    en: 'adaptive',
+    parentDir: ['2-CSS'],
+    meta: {
+      star: 7,
+      state: '已完成',
+      tags: ['CSS', 'H5']
+    },
+  },
+  {
+    zh: 'svg 格式了解多少？',
+    en: 'how-much-do-you-know-about-svg-format',
+    parentDir: ['2-CSS'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['CSS', 'H5', 'HTML']
+    },
+  },
+  {
+    zh: '什么是 CSS 包含块？',
+    en: 'what-is-a-css-containing-block',
+    parentDir: ['2-CSS'],
+    meta: {
+      star: 6,
+      state: '已完成',
+      tags: ['CSS', '浏览器']
+    },
+  },
+  {
+    zh: 'CSS 属性计算总流程',
+    en: 'css-property-calculation-process',
+    parentDir: ['2-CSS'],
+    meta: {
+      star: 7,
+      state: '已完成',
+      tags: ['CSS', '浏览器']
+    },
+  },
+  {
+    zh: '解决过哪些移动端的兼容问题？',
+    en: 'which-mobile-compatibility-issues-have-been-resolved',
+    parentDir: ['2-CSS'],
+    meta: {
+      star: 10,
+      state: '待更新',
+      tags: ['CSS', '浏览器']
+    },
+  },
+  {
+    zh: '网页布局方案',
+    en: 'web-page-layout-plan',
+    parentDir: ['2-CSS'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['CSS']
+    },
+  },
+  {
+    zh: '怎么让 Chrome 支持小于 12px 的字体？',
+    en: 'how-to-make-chrome-support-fonts-smaller-than-12px',
+    parentDir: ['2-CSS'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['CSS']
+    },
+  },
+  {
+    zh: '',
+    en: '',
+    parentDir: ['2-CSS'],
+  },
+]
+
+const JAVASCRIPT_LABELS = [
+  {
+    zh: 'var、let 和 const 的区别？',
+    en: 'the-difference-between-var,-let-and-const',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 2,
+      state: '已完成',
+      tags: ['JavaScript', 'ES6']
+    },
+  },
+  {
+    zh: 'ES6 的数据类型',
+    en: 'es6-data-types',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 5,
+      state: '未完成',
+      tags: ['JavaScript', 'ES6']
+    },
+  },
+  {
+    zh: 'ES6 和 ES5 的区别是什么？（ES6 有哪些新增的特性？）',
+    en: 'what-are-the-new-features-of-es6',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['JavaScript', 'ES6']
+    },
+  },
+  {
+    zh: 'some 和 every 的区别',
+    en: 'the-difference-between-some-and-every',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['JavaScript', 'ES6']
+    },
+  },
+  {
+    zh: 'find 和 filter 的区别',
+    en: 'the-difference-between-find-and-filter',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['JavaScript', 'ES6']
+    },
+  },
+  {
+    zh: '箭头函数和普通函数有什么区别？',
+    en: 'what-is-the-difference-between-arrow-functions-and-normal-functions',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['JavaScript', 'ES6']
+    },
+  },
+  {
+    zh: 'Promise 有几种状态',
+    en: 'promise-has-several-states',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 2,
+      state: '未完成',
+      tags: ['JavaScript', 'ES6']
+    },
+  },
+  {
+    zh: 'Promise 内部的原理是什么？它的优缺点是什么？',
+    en: 'what-is-the-internal-principle-of-promise',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 4,
+      state: '未完成',
+      tags: ['JavaScript', 'ES6']
+    },
+  },
+  {
+    zh: 'Promise 和 async await 的区别是什么?',
+    en: 'what-is-the-difference-between-promise-and-async-await',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 4,
+      state: '未完成',
+      tags: ['JavaScript', 'ES6']
+    },
+  },
+  {
+    zh: '合并对象的方式有哪些？',
+    en: 'what-are-the-ways-to-merge-objects',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['JavaScript', 'ES6']
+    },
+  },
+  {
+    zh: 'DOM树递归操作',
+    en: 'dom-tree-recursive-operations',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 5,
+      state: '未完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: '面向对象：认识 “类”',
+    en: 'object-oriented-understanding-class',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 5,
+      state: '待更新',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: '认识 “异常”',
+    en: 'understanding-abnormality',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 6,
+      state: '未完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: '插入排序、快速排序、冒泡排序',
+    en: 'Insertion-sort,-quick-sort,-bubble-sort',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 6,
+      state: '未完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: '斐波那契算法递归操作',
+    en: 'fibonacci-algorithm-recursive-operation',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 6,
+      state: '未完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: '用递归的时候有没有遇到什么问题？',
+    en: 'have-you-encountered-any-problems-when-using-recursion',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 6,
+      state: '未完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: '怎么知道一个未知对象的长度和深度?',
+    en: 'how-to-know-the-length-and-depth-of-an-unknown-object',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 6,
+      state: '未完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: '浅拷贝和深拷贝的区别？如何实现一个深拷贝？',
+    en: 'the-difference-between-shallow-copy-and-deep-copy',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 7,
+      state: '未完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: '前端下载的几种方式',
+    en: 'several-ways-to-download-the-front-end',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 7,
+      state: '已完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: '如何分片下载大文件，巧妙使用 http range 技术',
+    en: 'how-to-download-large-files-in-pieces-and-use-http-range-technology-ingeniously',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 7,
+      state: '已完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: 'JavaScript 源码重写',
+    en: 'javascript-source-code-rewriting',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 8,
+      state: '待更新',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: 'JS 是如何实现继承的？',
+    en: 'how-does-js-implement-inheritance',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 8,
+      state: '未完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: '布尔判定 和 短路规则',
+    en: 'boolean-decisions-and-short-circuiting-rules',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 4,
+      state: '未完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: 'map 和 parseInt',
+    en: 'map-and-parseint',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 4,
+      state: '未完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: 'FLIP 动画',
+    en: 'flip-animation',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 4,
+      state: '未完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: '属性名的类型',
+    en: 'type-of-attribute-name',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 4,
+      state: '未完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: '函数二义性的产生和消除',
+    en: 'the-creation-and-elimination-of-function-ambiguity',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 4,
+      state: '未完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: '函数签名',
+    en: 'function-signature',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 4,
+      state: '未完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: 'Number.isNaN 与 isNaN 的区别',
+    en: 'difference-between-number.isnan-and-isnan',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: '有没有做过无感登录？',
+    en: 'have-you-ever-done-a-non-conscious-login',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: 'slice 是干嘛的？splice 是否会改变原数组？',
+    en: 'what-does-slice-do',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: 'JS 判断变量是不是数组，你能写出哪些方法？',
+    en: 'js-determines-whether-a-variable-is-an-array',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: '== 和 === 有什么不同？',
+    en: 'what-is-the-difference-between-==-and-===',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: 'null 和 undefined 的区别',
+    en: 'difference-between-null-and-undefined',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: '延迟加载 JS 有哪些方式？',
+    en: 'what-are-the-ways-to-delay-loading-js',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: '什么是 JS 的严格模式？',
+    en: 'what-is-strict-mode-in-js',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: 'sort 的原理',
+    en: 'the-principle-of-sort',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 6,
+      state: '已完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: '当数据没有请求过来的时候该怎么做?',
+    en: 'what-to-do-when-data-is-not-requested',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: 'Ajax 是什么？怎么实现的？',
+    en: 'what-is-ajax',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 6,
+      state: '已完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: 'setTimeout 最小执行时间是多少？',
+    en: 'what-is-the-minimum-execution-time-of-settimeout',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: 'JS 中关于 this 指向的问题',
+    en: 'issues-with-this-in-js',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 8,
+      state: '已完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: 'JS 的设计原理是什么？',
+    en: 'what-is-the-design-principle-of-js',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: 'new 操作符具体做了什么？',
+    en: 'what-does-the-new-operator-do',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: '基本数据类型和引用数据类型的区别？',
+    en: 'the-difference-between-primitive-data-types-and-reference-data-types',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: '说一下闭包，闭包有什么特点？',
+    en: 'talk-about-closure',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 6,
+      state: '已完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: 'JS 对数据类的检测方法有哪些？',
+    en: 'what-are-js-detection-methods-for-data-classes',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 6,
+      state: '已完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: 'JS 有哪些内置对象？',
+    en: 'what-are-the-built-in-objects-in-js',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: 'JS 由哪三部分组成？',
+    en: 'what-are-the-three-parts-of-js',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: '变量提升和函数提升的优先级？',
+    en: 'priority-of-variable-and-function-hoisting',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: '前端的加密算法有哪些？',
+    en: 'what-are-the-encryption-algorithms-for-the-front-end',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 6,
+      state: '已完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: 'bind、apply、call 区别',
+    en: 'differences-between-bind-apply-and-call',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 6,
+      state: '已完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: 'JS 中的数据类型有哪些？',
+    en: 'what-are-the-data-types-in-js',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 7,
+      state: '待更新',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: '说一下原型链（全貌图）',
+    en: 'talk-about-the-prototype-chain',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 7,
+      state: '待更新',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: '什么是事件循环(Event Loop)？什么是宏任务和微任务（旧版）？',
+    en: 'what-is-an-event-loop',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 7,
+      state: '已完成',
+      tags: ['JavaScript', 'NodeJS', '浏览器']
+    },
+  },
+  {
+    zh: 'vue 和 jquery 的区别是什么?',
+    en: 'what-is-the-difference-between-vue-and-jquery',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['JavaScript', 'Vue2']
+    },
+  },
+  {
+    zh: 'axios 如何实现拦截？',
+    en: 'how-to-implement-interception-with-axios',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['JavaScript', 'Vue2', 'Vue3', '网络']
+    },
+  },
+  {
+    zh: 'get 和 post 的区别？',
+    en: 'the-difference-between-get-and-post',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['JavaScript', '网络']
+    },
+  },
+  {
+    zh: '防抖和节流是什么?',
+    en: 'what-is-anti-shake-and-throttling',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['JavaScript', '实战']
+    },
+  },
+  {
+    zh: '',
+    en: '',
+    parentDir: ['3-JavaScript'],
+  },
+]
+
+const HTML_LABELS = [
+  {
+    zh: 'H5、C3 有哪些新特性?',
+    en: 'what-are-the-new-features-of-h5-and-c3',
+    parentDir: ['1-HTML'],
+    meta: {
+      star: 4,
+      state: '待更新',
+      tags: ['CSS', 'H5'],
+    },
+  },
+  {
+    zh: '语义化的理解',
+    en: 'semantic-understanding',
+    parentDir: ['1-HTML'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['H5'],
+    },
+  },
+  {
+    zh: 'H5 语义化标签有哪些？',
+    en: 'what-are-the-h5-semantic-tags',
+    parentDir: ['1-HTML'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['H5'],
+    },
+  },
+  {
+    zh: '如何关闭 IOS 键盘首字母自动大写',
+    en: 'how-to-turn-off-automatic-capitalization-of-the-first-letter-on-the-ios-keyboard',
+    parentDir: ['1-HTML'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['H5'],
+    },
+  },
+  {
+    zh: 'png、jpg、gif 这些图片格式解释一下，分别什么时候用?',
+    en: 'explain-the-image-formats-of-png,-jpg,-and-gif,-and-when-to-use-them-respectively',
+    parentDir: ['1-HTML'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['HTML'],
+    },
+  },
+  {
+    zh: 'img 标签 的 title 和 alt 有什么区别',
+    en: 'what-is-the-difference-between-title-and-alt-in-img-tag',
+    parentDir: ['1-HTML'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['HTML'],
+    },
+  },
+  {
+    zh: 'title 与 h1 的区别、b 与 strong 的区别、i 与 em 的区别？',
+    en: 'the-difference-between-several-semantic-tags',
+    parentDir: ['1-HTML'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['HTML'],
+    },
+  },
+  {
+    zh: '行内元素有哪些？块级元素有哪些？空（void）元素有哪些？',
+    en: 'what-are-inline-elements',
+    parentDir: ['1-HTML'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['HTML'],
+    },
+  },
+  {
+    zh: '页面导入样式时，使用 link 和 @import 有什么区别？',
+    en: 'what-is-the-difference-between-using-link-and-import',
+    parentDir: ['1-HTML'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['HTML'],
+    },
+  },
+  {
+    zh: '',
+    en: '',
+    parentDir: ['1-HTML'],
+  },
+]
+
+const QUESTIONS_LABELS = [
+  {
+    zh: 'JS 对象考题',
+    en: 'js-object-exam-questions',
+    parentDir: ['Questions'],
+    meta: {
+      star: 7,
+      state: '未完成',
+      tags: ['面试']
+    },
+  },
+  {
+    zh: 'JS 作用域',
+    en: 'js-scope',
+    parentDir: ['Questions'],
+    meta: {
+      star: 7,
+      state: '未完成',
+      tags: ['面试']
+    },
+  },
+  {
+    zh: '',
+    en: '',
+    parentDir: ['Questions'],
+  },
+]
+
+const LIBRARY_LABELS = [
+  {
+    zh: '前端下载利器——FileSaver',
+    en: 'filesaver-a-powerful-front-end-download-tool',
+    parentDir: ['Library'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Library']
+    },
+  },
+  {
+    zh: '',
+    en: '',
+    parentDir: ['Library'],
+  },
+]
+
+const UNIAPP_LABELS = [
+  {
+    zh: 'uni-app 有没有做过分包?',
+    en: 'has-uni-app-been-sub-packaged',
+    parentDir: ['UniApp'],
+    meta: {
+      star: 4,
+      state: '未完成',
+      tags: ['Uni-App']
+    },
+  },
+  {
+    zh: '',
+    en: '',
+    parentDir: ['UniApp'],
+  },
+]
+
+const VUE2_LABELS = [
+  {
+    zh: '什么是渐进式框架？',
+    en: 'What-is-a-progressive-framework',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['Vue2', 'Vue3']
+    },
+  },
+  {
+    zh: 'Vue2 源码解析',
+    en: 'vue2-source-code-analysis',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 10,
+      state: '未完成',
+      tags: ['Vue2']
+    },
+  },
+  {
+    zh: '到底是 vue 全局混入好，还是 Vue.prototype 添加方法好？',
+    en: 'is-it-better-to-mix-in-vue-globally-or-add-methods-to-vue.prototype',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['Vue2']
+    },
+  },
+  {
+    zh: 'Vue 中如何做样式穿透',
+    en: 'how-to-do-style-penetration-in-vue',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['Vue2']
+    },
+  },
+  {
+    zh: 'Vue 打包路径和路由模式',
+    en: 'vue-packaging-path-and-routing-mode',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['Vue2']
+    },
+  },
+  {
+    zh: 'Vue 设置代理和环境变量',
+    en: 'vue-sets-proxy-and-environment-variables',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['Vue2']
+    },
+  },
+  {
+    zh: 'Axios 怎么封装',
+    en: 'how-to-encapsulate-axios',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['Vue2']
+    },
+  },
+  {
+    zh: '谈谈对 Vue 生命周期的理解',
+    en: 'talk-about-the-understanding-of-vue-life-cycle',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['Vue2']
+    },
+  },
+  {
+    zh: 'v-if 和 v-for 的优先级是什么？',
+    en: 'what-is-the-precedence-of-v-if-and-v-for',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['Vue2']
+    },
+  },
+  {
+    zh: 'v-show 和 v-if 有什么区别？使用场景分别是什么？',
+    en: 'what-is-the-difference-between-v-show-and-v-if',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['Vue2']
+    },
+  },
+  {
+    zh: 'Vue 2 的响应式原理',
+    en: 'the-responsiveness-of-vue-2',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 5,
+      state: '未完成',
+      tags: ['Vue2']
+    },
+  },
+  {
+    zh: '怎样在 vue 中导入 Excel 表格数据？',
+    en: 'how-to-import-excel-table-data-in-vue',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 5,
+      state: '未完成',
+      tags: ['Vue2']
+    },
+  },
+  {
+    zh: 'vue 如何分片导出 Excel 数据呢？',
+    en: 'how-does-vue-export-excel-data-in-pieces',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 5,
+      state: '未完成',
+      tags: ['Vue2']
+    },
+  },
+  {
+    zh: '为什么 vue 的 computed 可以缓存数据？原理是什么？',
+    en: 'why-can-vue-computed-cache-data',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 5,
+      state: '未完成',
+      tags: ['Vue2']
+    },
+  },
+  {
+    zh: '要如何用 vue 实现组织架构图呢？',
+    en: 'how-to-use-vue-to-implement-an-organizational-chart',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 5,
+      state: '未完成',
+      tags: ['Vue2']
+    },
+  },
+  {
+    zh: '封装一个可复用的组件，需要满足什么条件?',
+    en: 'what-conditions-need-to-be-met-to-encapsulate-a-reusable-component',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 5,
+      state: '待更新',
+      tags: ['Vue2']
+    },
+  },
+  {
+    zh: 'vue 数据更新视图不更新的问题',
+    en: 'vue-data-update-view-does-not-update-the-problem',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['Vue2']
+    },
+  },
+  {
+    zh: 'snabbdom',
+    en: 'snabbdom',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['Vue2']
+    },
+  },
+  {
+    zh: 'vue 的过滤器怎么使用?',
+    en: 'how-to-use-vue-filter',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['Vue2']
+    },
+  },
+  {
+    zh: 'vue 中遍历全局的方法有哪些?',
+    en: 'what-are-the-global-methods-in-vue',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['Vue2']
+    },
+  },
+  {
+    zh: '什么是 Render 函数?',
+    en: 'what-is-the-render-function',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['Vue2']
+    },
+  },
+  {
+    zh: '什么是 mixin？',
+    en: 'what-is-a-mixin',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['Vue2']
+    },
+  },
+  {
+    zh: '什么是异步组件？（按需组件懒加载）',
+    en: 'what-are-asynchronous-components(lazy-loading-of-components-on-demand)',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['Vue2']
+    },
+  },
+  {
+    zh: '什么是动态组件?',
+    en: 'what-are-dynamic-components',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['Vue2']
+    },
+  },
+  {
+    zh: 'Vue 动态绑定 类名class 和 样式style',
+    en: 'vue-dynamically-binds-class-name-class-and-style-style',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['Vue2']
+    },
+  },
+  {
+    zh: 'Vue 如何自定义指令？',
+    en: 'how-to-customize-vue-instructions',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['Vue2']
+    },
+  },
+  {
+    zh: 'element-ui 怎么做表单验证？',
+    en: 'how-to-do-form-validation-in-element-ui',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['Vue2']
+    },
+  },
+  {
+    zh: 'Vue2 组件通信',
+    en: 'vue2-component-communication',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 7,
+      state: '已完成',
+      tags: ['Vue2']
+    },
+  },
+  {
+    zh: 'Vue 中 computed、method、watch 区别',
+    en: 'the-difference-between-computed,-method,-and-watch-in-vue',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['Vue2']
+    },
+  },
+  {
+    zh: '谈谈 keep-alive 的理解',
+    en: 'talk-about-the-understanding-of-keep-alive',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['Vue2']
+    },
+  },
+  {
+    zh: '在 created 和 mounted 去请求数据，有什么区别',
+    en: 'what-is-the-difference-between-requesting-data-at-created-and-mounted',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['Vue2']
+    },
+  },
+  {
+    zh: 'Vue 父子组件生命周期执行顺序',
+    en: 'vue-parent-child-component-life-cycle-execution-order',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['Vue2']
+    },
+  },
+  {
+    zh: '如何实现自定义组件？自定义组件的 v-model',
+    en: 'how-to-implement-custom-components-and-v-model-of-custom-components',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['Vue2']
+    },
+  },
+  {
+    zh: 'Vue 数据流向',
+    en: 'vue-data-flow',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['Vue2']
+    },
+  },
+  {
+    zh: 'vue 项目上线打包优化',
+    en: 'vue-project-online-packaging-optimization',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Vue2']
+    },
+  },
+  {
+    zh: 'Vue 中的 slot 的使用？slot 匿名(默认)插槽、作用域插槽、具名插槽都是什么？',
+    en: 'use-of-slots-in-vue',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Vue2']
+    },
+  },
+  {
+    zh: 'Vue 首屏优化该如何去做?',
+    en: 'how-to-optimize-the-first-screen-of-vue',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Vue2']
+    },
+  },
+  {
+    zh: 'Vue 性能优化',
+    en: 'vue-performance-optimization',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Vue2']
+    },
+  },
+  {
+    zh: 'style scoped 原理',
+    en: 'scope-principle',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['Vue2', 'Vue3']
+    },
+  },
+  {
+    zh: 'props 和 data 谁的优先级高？',
+    en: 'which-has-higher-priority-props-or-data',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['Vue2', 'Vue3']
+    },
+  },
+  {
+    zh: '是否使用过 nuxt.js ?',
+    en: 'have-you-used-nuxt.js',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 6,
+      state: '未完成',
+      tags: ['Vue2']
+    },
+  },
+  {
+    zh: '说一下你对组件的理解',
+    en: 'tell-me-about-your-understanding-of-components',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['Vue2', 'Vue3']
+    },
+  },
+  {
+    zh: '什么是 vue 的 $nextTick 原理？nextTick 是什么？有什么用？',
+    en: 'what-is-vue-nexttick',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 6,
+      state: '已完成',
+      tags: ['Vue2', 'Vue3']
+    },
+  },
+  {
+    zh: '介绍一下 SPA 以及 SPA 有什么缺点',
+    en: 'introduce-spa-and-what-are-the-disadvantages-of-spa',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['Vue2', 'Vue3']
+    },
+  },
+  {
+    zh: 'v-for 中 key 值的作用是什么？为什么 Vue 的 key 最好不是数组下标？',
+    en: 'what-is-the-role-of-key-value-in-v-for',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Vue2']
+    },
+  },
+  {
+    zh: 'MVVM 与 MVC 有什么区别？',
+    en: 'what-is-the-difference-between-mvvm-and-mvc',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Vue2', 'Vue3']
+    },
+  },
+  {
+    zh: '如何理解 MVVM',
+    en: 'how-to-understand-mvvm',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['Vue2', 'Vue3']
+    },
+  },
+  {
+    zh: 'v-model 数据双向绑定原理',
+    en: 'v-model-data-two-way-binding-principle',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 5,
+      state: '未完成',
+      tags: ['Vue2', 'Vue3']
+    },
+  },
+  {
+    zh: 'Vue2 的 Object.defineProperty 和 Vue3 的Proxy 区别？',
+    en: 'the-difference-between-vue2-object.defineproperty-and-vue3-proxy',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 6,
+      state: '未完成',
+      tags: ['Vue2', 'Vue3']
+    },
+  },
+  {
+    zh: 'Vue2 和 Vue3 的区别是什么？',
+    en: 'what-is-the-difference-between-vue2-and-vue3',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 6,
+      state: '待更新',
+      tags: ['Vue2', 'Vue3']
+    },
+  },
+  {
+    zh: '解决刷新后二次加载路由的问题',
+    en: 'solve-the-problem-of-loading-routes-twice-after-refreshing',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['Vue2', 'Vue3', 'Vue-Router']
+    },
+  },
+  {
+    zh: 'Vue 动态路由',
+    en: 'vue-dynamic-routing',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Vue2', 'Vue3', 'Vue-Router']
+    },
+  },
+  {
+    zh: 'Vue 路由属性怎么传参的？',
+    en: 'how-to-pass-vue-routing-attributes',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['Vue2', 'Vue3', 'Vue-Router']
+    },
+  },
+  {
+    zh: 'SEO 如何优化?',
+    en: 'how-to-optimize-seo',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Vue2', 'Vue3', '服务端', '浏览器']
+    },
+  },
+  {
+    zh: 'diff 算法',
+    en: 'diff-algorithm',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 10,
+      state: '已完成',
+      tags: ['Vue2', 'Vue3', '算法']
+    },
+  },
+  {
+    zh: '$route 和 $router 的区别',
+    en: 'difference-between-$route-and-$router',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['Vue2', 'Vue-Router']
+    },
+  },
+  {
+    zh: 'vue-router 3.x 的 History 和 Hash 模式有何区别？',
+    en: 'what-is-the-difference-between-history-and-hash-modes-in-vue-router-3.x',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Vue2', 'Vue-Router']
+    },
+  },
+  {
+    zh: '如何监听路由的变化？',
+    en: 'how-to-monitor-route-changes',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['Vue2', 'Vue-Router']
+    },
+  },
+  {
+    zh: 'vue-loader',
+    en: 'vue-loader',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Vue2', 'Webpack']
+    },
+  },
+  {
+    zh: '',
+    en: '',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Vue2', 'Vue-Router']
+    },
+  },
+]
+
+const VUE3_LABELS = [
+  {
+    zh: '理解 Composition API 之优化代码组织',
+    en: 'understanding-the-composition-api-to-optimize-code-organization',
+    parentDir: ['Vue3'],
+    meta: {
+      star: 5,
+      state: '未完成',
+      tags: ['Vue3']
+    },
+  },
+  {
+    zh: 'ref 是什么？',
+    en: 'what-is-ref',
+    parentDir: ['Vue3'],
+    meta: {
+      star: 5,
+      state: '待更新',
+      tags: ['Vue3']
+    },
+  },
+  {
+    zh: 'vue3 组件通信（setup 写法）',
+    en: 'vue3-component-communication-(setup-writing)',
+    parentDir: ['Vue3'],
+    meta: {
+      star: 5,
+      state: '未完成',
+      tags: ['Vue3']
+    },
+  },
+  {
+    zh: 'Vue3 的异步组件',
+    en: 'asynchronous-components-in-vue3',
+    parentDir: ['Vue3'],
+    meta: {
+      star: 5,
+      state: '未完成',
+      tags: ['Vue3']
+    },
+  },
+  {
+    zh: '什么是 hooks？关于 vue3 中的 hooks',
+    en: 'what-are-hooks',
+    parentDir: ['Vue3'],
+    meta: {
+      star: 5,
+      state: '未完成',
+      tags: ['Vue3']
+    },
+  },
+  {
+    zh: '在日常开发中使用过 render 函数 或 h 函数吗？使用场景是什么？',
+    en: 'have-you-used-render-function-or-h-function-in-daily-development',
+    parentDir: ['Vue3'],
+    meta: {
+      star: 5,
+      state: '待更新',
+      tags: ['Vue3']
+    },
+  },
+  {
+    zh: 'h 函数支持多种调用方式，这是怎么做到的？',
+    en: 'the-h-function-supports-multiple-calling-methods.-how-is-this-possible',
+    parentDir: ['Vue3'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Vue3']
+    },
+  },
+  {
+    zh: 'h 函数是什么？与 VNode 的关系是什么？',
+    en: 'what-is-the-h-function-what-is-its-relationship-with-vnode',
+    parentDir: ['Vue3'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Vue3']
+    },
+  },
+  {
+    zh: 'vue3的渲染机制是什么？',
+    en: 'what-is-the-rendering-mechanism-of-vue3',
+    parentDir: ['Vue3'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Vue3']
+    },
+  },
+  {
+    zh: 'Vue3 watch 实现原理',
+    en: 'watch-implementation-principle',
+    parentDir: ['Vue3'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Vue3']
+    },
+  },
+  {
+    zh: 'Vue3 computed 实现原理',
+    en: 'computed-implementation-principle',
+    parentDir: ['Vue3'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Vue3']
+    },
+  },
+  {
+    zh: 'vue3 性能要好于 vue2 的原因？',
+    en: 'the-reason-why-vue3-performs-better-than-vue2',
+    parentDir: ['Vue3'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Vue3']
+    },
+  },
+  {
+    zh: '',
+    en: '',
+    parentDir: ['Vue3'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Vue3']
+    },
+  },
+]
+
+const NODEJS_LABELS = [
+  {
+    zh: '了解过 JWT 吗？',
+    en: 'have-you-heard-of-jwt',
+    parentDir: ['NodeJS'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['NodeJS', '服务端']
+    },
+  },
+  {
+    zh: '如何搭建脚手架?',
+    en: 'how-to-build-scaffolding',
+    parentDir: ['NodeJS'],
+    meta: {
+      star: 8,
+      state: '未完成',
+      tags: ['NodeJS', '工程化']
+    },
+  },
+  {
+    zh: 'npm 的底层环境是什么?',
+    en: 'what-is-npm-underlying-environment',
+    parentDir: ['NodeJS'],
+    meta: {
+      star: 5,
+      state: '未完成',
+      tags: ['NodeJS', 'NPM']
+    },
+  },
+  {
+    zh: '',
+    en: '',
+    parentDir: ['NodeJS'],
+  },
+]
+
+const WEBPACK_LABELS = [
+  {
+    zh: 'Vue 配置 compression-webpack-plugin 实现 Gzip 压缩',
+    en: 'vue-configures-compression-webpack-plugin-to-implement-gzip-compression',
+    parentDir: ['Webpack'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Webpack 技巧与优化', 'Vue2']
+    },
+  },
+  {
+    zh: '',
+    en: '',
+    parentDir: ['Webpack'],
+  },
+]
+
+const CODESNIPPET_LABELS = [
+  {
+    zh: '给字符串新增方法实现功能',
+    en: 'adding-methods-to-strings-to-implement-functions',
+    parentDir: ['CodeSnippet'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['实战', 'JavaScript']
+    },
+  },
+  {
+    zh: '找出多维数组最大值？',
+    en: 'find-the-maximum-value-in-a-multidimensional-array',
+    parentDir: ['CodeSnippet'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['实战', 'JavaScript']
+    },
+  },
+  {
+    zh: 'JS 数组去重',
+    en: 'js-array-deduplication',
+    parentDir: ['CodeSnippet'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['实战', 'JavaScript']
+    },
+  },
+  {
+    zh: '文件（大）上传',
+    en: 'how-to-upload-(large)-files',
+    parentDir: ['CodeSnippet'],
+    meta: {
+      star: 7,
+      state: '已完成',
+      tags: ['实战', 'JavaScript', '网络']
+    },
+  },
+  {
+    zh: '已缓存组件需要强制刷新但又要保持缓存',
+    en: 'dynamic-cache-component',
+    parentDir: ['CodeSnippet'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Vue2']
+    },
+  },
+  {
+    zh: '',
+    en: '',
+    parentDir: ['CodeSnippet'],
+  },
+]
+
+function addSortKey(labels) {
+  return labels.map((e, idx) => {
+    e.sortKey = (idx + 1);
+    return e;
+  })
+}
+const NAME_LABELS = [
+  ...addSortKey(GIT_LABELS),
+  ...addSortKey(CSS_LABELS),
+  ...addSortKey(JAVASCRIPT_LABELS),
+  ...addSortKey(HTML_LABELS),
+  ...addSortKey(QUESTIONS_LABELS),
+  ...addSortKey(LIBRARY_LABELS),
+  ...addSortKey(NODEJS_LABELS),
+  ...addSortKey(CODESNIPPET_LABELS),
+  ...addSortKey(UNIAPP_LABELS),
+  ...addSortKey(VUE2_LABELS),
+  ...addSortKey(VUE3_LABELS),
+  ...addSortKey(WEBPACK_LABELS),
+]
+
+const DIR_LABELS = {
+  '1-FrontEndBaGu': '前端',
+  '1-HTML': 'HTML',
+  '2-CSS': 'CSS',
+  '3-JavaScript': 'JavaScript',
+  '4-Engineering': '前端工程化',
+  '2-Framework': '框架',
+  'Vue2': 'Vue2',
+  'Vue3': 'Vue3',
+  '3-BackEnd': '后端',
+  'GO': 'GO',
+  'NodeJS': 'NodeJS',
+  'Python': 'Python',
+  '4-Database': '数据库',
+  'Drowser': '浏览器',
+  'ActualCombat': '实战',
+  'UniApp': 'Uni-App',
+  'CodeSnippet': '代码片段',
+  'Project': '项目实战',
+  'MongoDB': 'MongoDB',
+  'MySql': 'MySql',
+  'Redis': 'Redis',
+  'SQLite': 'SQLite',
+  'WebStorage-IndexedDB': '浏览器存储',
+  'FrontEndUseSkills': '前端技巧应用',
+  'DataStructureAndAlgorithms': '数据结构与算法',
+  'DesignPatterns': '设计模式',
+  'Library': 'JS第三方库',
+  'Uni-App': 'Uni-App',
+  'Webpack': 'Webpack',
+  'Git': 'Git',
+  'Interview': '面试',
+  'Questions': '面试题',
+  'LeetCode': 'LeetCode',
+  'Network': '网络',
+}
+export {
+  NAME_LABELS,
+  DIR_LABELS
+}
