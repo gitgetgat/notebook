@@ -24,10 +24,25 @@ const GIT_LABELS = [
     en: 'pre-commit-hook-failed-(add---no-verify-to-bypass)',
     parentDir: ['Git'],
     meta: {
-      star: 1,
+      star: 3,
       state: '已完成',
       tags: ['Git', '报错处理']
     },
+  },
+  {
+    zh: '报错：fatal: unable to access ‘https://github.com/.......‘: OpenSSL SSL_read: Connection was reset',
+    en: 'fatal-unable-to-access-openssl-ssl_read-connection-was-reset',
+    parentDir: ['Git'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['Git', '报错处理']
+    },
+  },
+  {
+    zh: '报错：fatal: unable to access ‘https://github.com/.../‘: Failed to connect to github',
+    en: 'fatal-unable-to-access-......-failed-to-connect-to-github',
+    parentDir: ['Git'],
   },
   {
     zh: '',
@@ -1128,9 +1143,72 @@ const QUESTIONS_LABELS = [
   },
 ]
 
+const TALK_LABELS = [
+  {
+    zh: '你是如何学习源码的？',
+    en: 'how-did-you-learn-source-code',
+    parentDir: ['Talk'],
+    meta: {
+      star: 4,
+      state: '未完成',
+      tags: ['话术']
+    },
+  },
+  {
+    zh: '工作到现在，项目中遇到最难的问题是什么? 怎么解决的?',
+    en: 'what-is-the-most-difficult-problem-encountered-in-the-project-package',
+    parentDir: ['Talk'],
+    meta: {
+      star: 7,
+      state: '未完成',
+      tags: ['话术']
+    },
+  },
+  {
+    zh: '你的离职原因是什么 ?',
+    en: 'what-was-the-reason-for-your-resignation',
+    parentDir: ['Talk'],
+    meta: {
+      star: 5,
+      state: '未完成',
+      tags: ['话术']
+    },
+  },
+  {
+    zh: '如何协同工作?',
+    en: 'how-does-it-work-together',
+    parentDir: ['Talk'],
+    meta: {
+      star: 4,
+      state: '未完成',
+      tags: ['话术']
+    },
+  },
+  {
+    zh: '你的优势在哪里?',
+    en: 'what-are-your-strengths',
+    parentDir: ['Talk'],
+    meta: {
+      star: 4,
+      state: '未完成',
+      tags: ['话术']
+    },
+  },
+  {
+    zh: '',
+    en: '',
+    parentDir: ['Talk'],
+    meta: {
+      star: 4,
+      state: '未完成',
+      tags: ['话术']
+    },
+  },
+]
+
 const LIBRARY_LABELS = [
   {
-    zh: '前端下载利器——FileSaver',
+    zh: '前端下载利器 —— FileSaver',
     en: 'filesaver-a-powerful-front-end-download-tool',
     parentDir: ['Library'],
     meta: {
@@ -1140,9 +1218,24 @@ const LIBRARY_LABELS = [
     },
   },
   {
-    zh: '',
-    en: '',
+    zh: '图表利器 —— echarts',
+    en: 'chart-tool---echarts',
     parentDir: ['Library'],
+    meta: {
+      star: 5,
+      state: '未完成',
+      tags: ['Library']
+    },
+  },
+  {
+    zh: '简化Web应用程序的IndexedDB管理 ——i db.js',
+    en: 'simplifying-indexeddb-management-for-web-applications---idb.js',
+    parentDir: ['Library'],
+    meta: {
+      star: 5,
+      state: '未完成',
+      tags: ['Library']
+    },
   },
 ]
 
@@ -1889,6 +1982,66 @@ const VUE3_LABELS = [
     },
   },
   {
+    zh: 'vue3 + vite 项目打包优化',
+    en: 'vue3-+-vite-project-packaging-optimization',
+    parentDir: ['Vue3'],
+    meta: {
+      star: 7,
+      state: '未完成',
+      tags: ['Vue3']
+    },
+  },
+  {
+    zh: 'vue3 中的响应式实现原理',
+    en: 'responsive-implementation-principle-in-vue3',
+    parentDir: ['Vue3'],
+    meta: {
+      star: 7,
+      state: '已完成',
+      tags: ['Vue3']
+    },
+  },
+  {
+    zh: '什么是 AST，它是如何构建的？',
+    en: 'what-is-an-ast-and-how-is-it-constructed',
+    parentDir: ['Vue3'],
+    meta: {
+      star: 8,
+      state: '未完成',
+      tags: ['Vue3']
+    },
+  },
+  {
+    zh: '编译器的设计原则是什么？',
+    en: 'what-are-the-design-principles-of-the-compiler',
+    parentDir: ['Vue3'],
+    meta: {
+      star: 8,
+      state: '未完成',
+      tags: ['Vue3']
+    },
+  },
+  {
+    zh: 'vue3 为什么使用 proxy ?',
+    en: 'why-does-vue3-use-proxy',
+    parentDir: ['Vue3'],
+    meta: {
+      star: 5,
+      state: '未完成',
+      tags: ['Vue3']
+    },
+  },
+  {
+    zh: 'diff 算法的实现逻辑',
+    en: 'implementation-logic-of-diff-algorithm',
+    parentDir: ['Vue3'],
+    meta: {
+      star: 10,
+      state: '已完成',
+      tags: ['Vue3']
+    },
+  },
+  {
     zh: '',
     en: '',
     parentDir: ['Vue3'],
@@ -1900,7 +2053,163 @@ const VUE3_LABELS = [
   },
 ]
 
+const VUEX_LABELS = [
+  {
+    zh: 'pinia 和 vuex 的区别',
+    en: 'the-difference-between-pinia-and-vuex',
+    parentDir: ['5-Vuex'],
+    meta: {
+      star: 4,
+      state: '未完成',
+      tags: ['Vuex']
+    },
+  },
+  {
+    zh: 'vuex 的响应式处理',
+    en: 'responsive-processing-of-vuex',
+    parentDir: ['5-Vuex'],
+    meta: {
+      star: 5,
+      state: '未完成',
+      tags: ['Vuex']
+    },
+  },
+  {
+    zh: 'vuex 在什么场景会去使用? 属性有哪些?',
+    en: 'in-what-scenarios-will-vuex-be-used-what-are-its-properties',
+    parentDir: ['5-Vuex'],
+    meta: {
+      star: 5,
+      state: '未完成',
+      tags: ['Vuex']
+    },
+  },
+  {
+    zh: 'Vuex 中为什么要区分 actions 与 mutations？mutations 和 actions 区别是什么？',
+    en: 'why-do-we-need-to-distinguish-between-actions-and-mutations-in-vuex',
+    parentDir: ['5-Vuex'],
+    meta: {
+      star: 5,
+      state: '未完成',
+      tags: ['Vuex']
+    },
+  },
+  {
+    zh: 'Vuex 是单向数据流还是双向数据流？',
+    en: 'is-vuex-a-one-way-data-flow-or-a-two-way-data-flow',
+    parentDir: ['5-Vuex'],
+    meta: {
+      star: 5,
+      state: '未完成',
+      tags: ['Vuex']
+    },
+  },
+  {
+    zh: 'Vuex 刷新数据会丢失吗？',
+    en: 'will-vuex-refresh-data-be-lost',
+    parentDir: ['5-Vuex'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['Vuex']
+    },
+  },
+  {
+    zh: '',
+    en: '',
+    parentDir: ['5-Vuex'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Vuex']
+    },
+  },
+]
+
+const VUEROUTER_LABELS = [
+  {
+    zh: 'vue-router 4.x 的 History 和 Hash 模式有何区别？',
+    en: 'what-is-the-difference-between-history-and-hash-modes-in-vue-router-4.x',
+    parentDir: ['4-Vue-Router'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Vue-Router', 'Vue3']
+    },
+  },
+  {
+    zh: 'vue-router 如何控制路由访问权限？',
+    en: 'how-does-vue-router-control-route-access-permissions',
+    parentDir: ['4-Vue-Router'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['Vue-Router']
+    },
+  },
+  {
+    zh: '什么是路由懒加载？',
+    en: 'what-is-lazy-loading-of-routes',
+    parentDir: ['4-Vue-Router'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Vue-Router']
+    },
+  },
+  {
+    zh: '如何 vue 路由二次封装？',
+    en: 'how-to-encapsulate-vue-routing-twice',
+    parentDir: ['4-Vue-Router'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Vue-Router']
+    },
+  },
+  {
+    zh: 'vue-router 路由导航守卫有哪些？',
+    en: 'what-are-the-vue-router-routing-navigation-guards',
+    parentDir: ['4-Vue-Router'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Vue-Router']
+    },
+  },
+  {
+    zh: '',
+    en: '',
+    parentDir: ['4-Vue-Router'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Vue-Router']
+    },
+  },
+]
+
 const NODEJS_LABELS = [
+  {
+    zh: '服务端渲染内部做了什么？',
+    en: 'what-does-server-side-rendering-do-internally',
+    parentDir: ['NodeJS'],
+    meta: {
+      star: 5,
+      state: '未完成',
+      tags: ['NodeJS', '服务端']
+    },
+  },
+  {
+    zh: '解释一下什么是 json？',
+    en: 'explain-what-json-is',
+    parentDir: ['NodeJS'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['NodeJS', '服务端', '浏览器']
+    },
+  },
   {
     zh: '了解过 JWT 吗？',
     en: 'have-you-heard-of-jwt',
@@ -1909,6 +2218,16 @@ const NODEJS_LABELS = [
       star: 5,
       state: '已完成',
       tags: ['NodeJS', '服务端']
+    },
+  },
+  {
+    zh: 'token 的登录流程是什么？',
+    en: 'what-is-the-token-login-process',
+    parentDir: ['NodeJS'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['NodeJS', '服务端', '浏览器']
     },
   },
   {
@@ -1940,6 +2259,16 @@ const NODEJS_LABELS = [
 
 const WEBPACK_LABELS = [
   {
+    zh: 'webpack 打包和不打包的区别?',
+    en: 'the-difference-between-webpack-packaging-and-non-packaging',
+    parentDir: ['Webpack'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Webpack']
+    },
+  },
+  {
     zh: 'Vue 配置 compression-webpack-plugin 实现 Gzip 压缩',
     en: 'vue-configures-compression-webpack-plugin-to-implement-gzip-compression',
     parentDir: ['Webpack'],
@@ -1950,9 +2279,117 @@ const WEBPACK_LABELS = [
     },
   },
   {
+    zh: 'webpack 是怎么打包的? babel 是做什么的?',
+    en: 'how-does-webpack-package-what-does-babel-do',
+    parentDir: ['Webpack'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Webpack']
+    },
+  },
+  {
     zh: '',
     en: '',
     parentDir: ['Webpack'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Webpack']
+    },
+  },
+]
+
+const BROWSER_LABELS = [
+  {
+    zh: '同源策略，为什么会有同源策略？怎样解决跨域？',
+    en: 'what-is-the-same-origin-policy',
+    parentDir: ['6-Browser'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['浏览器', '服务端', '网络']
+    },
+  },
+  {
+    zh: '精灵图 和 base64 的区别是什么？',
+    en: 'what-is-the-difference-between-sprite-and-base64',
+    parentDir: ['6-Browser'],
+    meta: {
+      star: 5,
+      state: '未完成',
+      tags: ['浏览器']
+    },
+  },
+  {
+    zh: 'DOM树 和 渲染树 有什么区别?',
+    en: 'what-is-the-difference-between-the-dom-tree-and-the-render-tree',
+    parentDir: ['6-Browser'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['浏览器']
+    },
+  },
+  {
+    zh: '浏览器的存储方式有哪些?',
+    en: 'what-are-the-storage-methods-of-browsers',
+    parentDir: ['6-Browser'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['浏览器']
+    },
+  },
+  {
+    zh: '前端内存泄漏怎么理解？',
+    en: 'how-to-understand-front-end-memory-leak',
+    parentDir: ['6-Browser'],
+    meta: {
+      star: 5,
+      state: '未完成',
+      tags: ['浏览器']
+    },
+  },
+  {
+    zh: 'localStorage、sessionStorage、cookie 的区别',
+    en: 'the-difference-between-localstorage-sessionstorage-and-cookies',
+    parentDir: ['6-Browser'],
+    meta: {
+      star: 5,
+      state: '未完成',
+      tags: ['浏览器']
+    },
+  },
+  {
+    zh: '重排 reflow（回流） 和 重绘 repaint？',
+    en: 'reflow-and-repaint',
+    parentDir: ['6-Browser'],
+    meta: {
+      star: 6,
+      state: '已完成',
+      tags: ['浏览器']
+    },
+  },
+  {
+    zh: '浏览器渲染页面的过程是怎样的？',
+    en: 'how-does-a-browser-render-a-page',
+    parentDir: ['6-Browser'],
+    meta: {
+      star: 7,
+      state: '已完成',
+      tags: ['浏览器']
+    },
+  },
+  {
+    zh: '',
+    en: '',
+    parentDir: ['6-Browser'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['浏览器']
+    },
   },
 ]
 
@@ -2014,6 +2451,72 @@ const CODESNIPPET_LABELS = [
   },
 ]
 
+const DESIGNPATTERNS_LABELS = [
+  {
+    zh: '观察者与发布订阅的区别',
+    en: 'the-difference-between-observer-and-publish-and-subscribe',
+    parentDir: ['5-DesignPatterns'],
+    meta: {
+      star: 5,
+      state: '未完成',
+      tags: ['设计模式']
+    },
+  },
+  {
+    zh: '',
+    en: '',
+    parentDir: ['5-DesignPatterns'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['设计模式']
+    },
+  },
+]
+
+const NETWORK_LABELS = [
+  {
+    zh: '什么是 HTTP？',
+    en: 'what-is-http',
+    parentDir: ['Network'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['网络']
+    },
+  },
+  {
+    zh: '能不能在前端代码里拿到请求消息头里的数据？',
+    en: 'can-i-get-the-data-in-the-request-message-header-in-the-front-end-code',
+    parentDir: ['Network'],
+    meta: {
+      star: 4,
+      state: '未完成',
+      tags: ['网络']
+    },
+  },
+  {
+    zh: '强缓存，协商缓存什么，怎么设置？',
+    en: 'strong-caching-negotiate-what-to-cache-how-to-set-it',
+    parentDir: ['Network'],
+    meta: {
+      star: 6,
+      state: '未完成',
+      tags: ['网络']
+    },
+  },
+  {
+    zh: '',
+    en: '',
+    parentDir: ['Network'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['网络']
+    },
+  },
+]
+
 function addSortKey(labels) {
   return labels.map((e, idx) => {
     e.sortKey = (idx + 1);
@@ -2026,6 +2529,7 @@ const NAME_LABELS = [
   ...addSortKey(JAVASCRIPT_LABELS),
   ...addSortKey(HTML_LABELS),
   ...addSortKey(QUESTIONS_LABELS),
+  ...addSortKey(TALK_LABELS),
   ...addSortKey(LIBRARY_LABELS),
   ...addSortKey(NODEJS_LABELS),
   ...addSortKey(CODESNIPPET_LABELS),
@@ -2033,6 +2537,11 @@ const NAME_LABELS = [
   ...addSortKey(VUE2_LABELS),
   ...addSortKey(VUE3_LABELS),
   ...addSortKey(WEBPACK_LABELS),
+  ...addSortKey(VUEROUTER_LABELS),
+  ...addSortKey(VUEX_LABELS),
+  ...addSortKey(BROWSER_LABELS),
+  ...addSortKey(DESIGNPATTERNS_LABELS),
+  ...addSortKey(NETWORK_LABELS),
 ]
 
 const DIR_LABELS = {
@@ -2040,17 +2549,20 @@ const DIR_LABELS = {
   '1-HTML': 'HTML',
   '2-CSS': 'CSS',
   '3-JavaScript': 'JavaScript',
-  '4-Engineering': '前端工程化',
+  '4-Vue-Router': 'Vue-Router',
+  '5-Vuex': 'Vuex',
+  '6-Browser': '浏览器',
+  '7-Engineering': '前端工程化',
   '2-Framework': '框架',
   'Vue2': 'Vue2',
   'Vue3': 'Vue3',
-  '3-BackEnd': '后端',
+  '3-BackEnd': '服务端',
+  '4-ActualCombat': '实战',
+  '5-DesignPatterns': '设计模式',
   'GO': 'GO',
   'NodeJS': 'NodeJS',
   'Python': 'Python',
   '4-Database': '数据库',
-  'Drowser': '浏览器',
-  'ActualCombat': '实战',
   'UniApp': 'Uni-App',
   'CodeSnippet': '代码片段',
   'Project': '项目实战',
@@ -2061,13 +2573,13 @@ const DIR_LABELS = {
   'WebStorage-IndexedDB': '浏览器存储',
   'FrontEndUseSkills': '前端技巧应用',
   'DataStructureAndAlgorithms': '数据结构与算法',
-  'DesignPatterns': '设计模式',
   'Library': 'JS第三方库',
   'Uni-App': 'Uni-App',
   'Webpack': 'Webpack',
   'Git': 'Git',
   'Interview': '面试',
   'Questions': '面试题',
+  'Talk': '话术',
   'LeetCode': 'LeetCode',
   'Network': '网络',
 }

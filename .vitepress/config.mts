@@ -75,7 +75,7 @@ export default defineConfig({
         },
         filter(searchItem, idx, originArray) {
           // 使用filter方法自定义过滤行为
-          console.log(searchItem)
+          // console.log(searchItem)
           return !searchItem.route.includes('404')
         }
       }
@@ -85,8 +85,8 @@ export default defineConfig({
     lineNumbers: true
   },
   async transformHtml(code, id, context) {
-    console.log('code', code)
-    console.log('id', id)
-    console.log('context', context)
+    // console.log('code', code)
+    // console.log('id', id)
+    // console.log('context', context)
   }
 })

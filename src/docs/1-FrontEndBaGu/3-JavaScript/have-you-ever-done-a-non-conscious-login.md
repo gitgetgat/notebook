@@ -20,7 +20,7 @@
 
 ## 实现步骤
 
-1. **获取 `Access Token` 和 `Refresh Token`**
+1. 获取 `Access Token` 和 `Refresh Token`
 
    在认证成功后，需要将 `Access Token` 和 `Refresh Token` 发送给客户端。`Access Token` 用于访问受保护的 `API`，`Refresh Token` 用于获取新的 `Access Token`。可以使用 `JWT（JSON Web Token）`或 `OAuth2`（开放授权）等方式实现认证。
 
@@ -168,7 +168,7 @@
 
    在服务器端，需要编写 API 处理 Refresh Token 请求，生成新的 Access Token，并返回给客户端。
 
-   在 [**JWT**](../../BackEnd/NodeJS/have-you-heard-of-jwt.md) 中，可以使用如下代码生成新的 Access Token：
+   在 [**JWT**](../../3-BackEnd/NodeJS/have-you-heard-of-jwt.md) 中，可以使用如下代码生成新的 Access Token：
 
    ::: code-group
 
@@ -205,7 +205,7 @@
 
    :::
 
-   在上述代码中，使用 [**JWT**](../../BackEnd/NodeJS/have-you-heard-of-jwt.md) 的 `verify` 方法验证 `Refresh Token` 的合法性，如果验证成功，则生成新的 `Access Token` 和 `Refresh Token`，并返回给客户端。
+   在上述代码中，使用 [**JWT**](../../3-BackEnd/NodeJS/have-you-heard-of-jwt.md) 的 `verify` 方法验证 `Refresh Token` 的合法性，如果验证成功，则生成新的 `Access Token` 和 `Refresh Token`，并返回给客户端。
 
 5. 设置定时刷新 `Token`
 

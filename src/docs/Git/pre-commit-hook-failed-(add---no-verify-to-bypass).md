@@ -1,4 +1,4 @@
-# pre-commit hook failed (add --no-verify to bypass)
+# 报错：pre-commit hook failed (add --no-verify to bypass)
 
 <article-info/>
 
