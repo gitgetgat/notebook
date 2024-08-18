@@ -1,9 +1,13 @@
 <!-- .vitepress/theme/Layout.vue -->
 
 <script setup lang="ts">
-import { useData, onContentUpdated } from 'vitepress'
+import { useData, onContentUpdated, useRoute } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
-import { nextTick, provide } from 'vue'
+import { nextTick, provide, onUpdated } from 'vue'
+// import { api as viewerApi } from "v-viewer"
+import * as Viewer from "v-viewer"
+
+const { api: viewerApi } = Viewer
 
 const { isDark } = useData()
 
@@ -40,12 +44,23 @@ provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
   )
 })
 onContentUpdated(() => {
+  // 添加自定义类名
   document.querySelectorAll('.vp-code-group').forEach(ele => {
     if (ele.querySelectorAll('.tabs label').length <= 1) {
       ele.classList.add('tabs-hide')
     }
   })
-
+  // 添加图片点击查看大图
+  document.querySelectorAll('.vp-doc p img').forEach(ele => {
+    if (ele.classList.contains('isHasViewered')) return
+    ele.addEventListener('click', function () {
+      console.log(this.src);
+      viewerApi({
+        images: [this.src]
+      })
+    })
+    ele.classList.add('isHasViewered')
+  })
 });
 </script>
 

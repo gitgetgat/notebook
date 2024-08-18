@@ -16,6 +16,8 @@
     "pagefind": "^1.1.0",
     "plyr": "^3.7.8",
     "uuid": "^10.0.0",
+    "v-viewer": "^3.0.11",
+    "viewerjs": "^1.11.6",
     "vitepress-plugin-pagefind": "^0.4.9"
   }
 }

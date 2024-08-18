@@ -55,31 +55,38 @@ export default defineConfig({
     // }
   },
   vite: {
-    plugins: [pagefindPlugin(
-      {
-        btnPlaceholder: '搜索',
-        placeholder: '搜索文档',
-        emptyText: '空空如也',
-        heading: '共: {{searchResult}} 条结果',
-        // 搜索结果不展示最后修改日期日期
-        showDate: false,
-        toSelect: '跳转到选项',
-        toNavigate: '切换',
-        toClose: '关闭',
-        searchBy: '',
-        customSearchQuery(input) {
-          // 将搜索的每个中文单字两侧加上空格
-          return input.replace(/[\u4E00-\u9FA5]/g, ' $& ')
-            .replace(/\s+/g, ' ')
-            .trim()
-        },
-        filter(searchItem, idx, originArray) {
-          // 使用filter方法自定义过滤行为
-          // console.log(searchItem)
-          return !searchItem.route.includes('404')
+    plugins: [
+      pagefindPlugin(
+        {
+          btnPlaceholder: '搜索',
+          placeholder: '搜索文档',
+          emptyText: '空空如也',
+          heading: '共: {{searchResult}} 条结果',
+          // 搜索结果不展示最后修改日期日期
+          showDate: false,
+          toSelect: '跳转到选项',
+          toNavigate: '切换',
+          toClose: '关闭',
+          searchBy: '',
+          customSearchQuery(input) {
+            // 将搜索的每个中文单字两侧加上空格
+            return input.replace(/[\u4E00-\u9FA5]/g, ' $& ')
+              .replace(/\s+/g, ' ')
+              .trim()
+          },
+          filter(searchItem, idx, originArray) {
+            // 使用filter方法自定义过滤行为
+            // console.log(searchItem)
+            return !searchItem.route.includes('404')
+          }
         }
+      ),
+    ],
+    build: {
+      commonjsOptions: {
+        include: /node_modules|libs/,
       }
-    )],
+    }
   },
   markdown: {
     lineNumbers: true

@@ -10,6 +10,26 @@ const GIT_LABELS = [
     },
   },
   {
+    zh: 'Git 配置：提交规范',
+    en: 'git-configuration-commit-specifications',
+    parentDir: ['Git'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['Git']
+    },
+  },
+  {
+    zh: 'Git 配置：文件名字母大小写敏感',
+    en: 'git-configuration-file-name-case-sensitivity',
+    parentDir: ['Git'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['Git']
+    },
+  },
+  {
     zh: 'git 如何解决冲突问题?',
     en: 'how-to-resolve-conflicts-in-git',
     parentDir: ['Git'],
@@ -43,11 +63,21 @@ const GIT_LABELS = [
     zh: '报错：fatal: unable to access ‘https://github.com/.../‘: Failed to connect to github',
     en: 'fatal-unable-to-access-......-failed-to-connect-to-github',
     parentDir: ['Git'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['Git', '报错处理']
+    },
   },
   {
     zh: '',
     en: '',
     parentDir: ['Git'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['Git']
+    },
   },
 ]
 
@@ -426,6 +456,11 @@ const CSS_LABELS = [
     zh: '',
     en: '',
     parentDir: ['2-CSS'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['CSS']
+    },
   },
 ]
 
@@ -1011,9 +1046,134 @@ const JAVASCRIPT_LABELS = [
     },
   },
   {
+    zh: '小数运算不精确',
+    en: 'inaccurate-decimal-calculations',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: '神奇的 & 运算符的高端操作',
+    en: 'the-magic-of-the-&-operator',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: 'JS 中的 lable 标签',
+    en: 'label-tag-in-js',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: 'JS 中见过的没见过的数字',
+    en: 'numbers-you-seen-and-never-seen-in-js',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: '为什么建议使用 void 0 替代 undefined',
+    en: 'why-is-it-recommended-to-use-void-0-instead-of-undefined',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: '零宽字符',
+    en: 'zero-width-characters',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: '鼠标事件对象',
+    en: 'mouse-event-object',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 4,
+      state: '未完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: '鼠标和键盘事件的常见问题',
+    en: 'common-issues-with-mouse-and-keyboard-events',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 4,
+      state: '未完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: '多次触发的动画结束事件',
+    en: 'animation-end-event-triggered-multiple-times',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 4,
+      state: '未完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: '验证回文串',
+    en: 'verify-palindrome',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: '对象属性遍历顺序问题 Object.keys',
+    en: 'object-property-traversal-order-problem-object.keys',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: '异或运算符 找 "单身狗"',
+    en: 'xor-operator-to-find-single-dog',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
     zh: '',
     en: '',
     parentDir: ['3-JavaScript'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['JavaScript']
+    },
   },
 ]
 
@@ -1109,9 +1269,24 @@ const HTML_LABELS = [
     },
   },
   {
+    zh: 'HTMLCollection 和 NodeList 的区别',
+    en: 'difference-between-htmlcollection-and-nodelist',
+    parentDir: ['1-HTML'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['HTML'],
+    },
+  },
+  {
     zh: '',
     en: '',
     parentDir: ['1-HTML'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['HTML'],
+    },
   },
 ]
 
@@ -1208,6 +1383,16 @@ const TALK_LABELS = [
 
 const LIBRARY_LABELS = [
   {
+    zh: '前端可用的CDN汇总',
+    en: 'summary-of-cdn-available-on-the-front-end',
+    parentDir: ['Library'],
+    meta: {
+      star: 10,
+      state: '已完成',
+      tags: ['Library']
+    },
+  },
+  {
     zh: '前端下载利器 —— FileSaver',
     en: 'filesaver-a-powerful-front-end-download-tool',
     parentDir: ['Library'],
@@ -1228,12 +1413,32 @@ const LIBRARY_LABELS = [
     },
   },
   {
-    zh: '简化Web应用程序的IndexedDB管理 ——i db.js',
+    zh: '简化Web应用程序的IndexedDB管理 —— idb.js',
     en: 'simplifying-indexeddb-management-for-web-applications---idb.js',
     parentDir: ['Library'],
     meta: {
       star: 5,
       state: '未完成',
+      tags: ['Library']
+    },
+  },
+  {
+    zh: '使用 JavaScript 创建 PDF 文件 —— jsPDF',
+    en: 'creating-pdf-files-using-javascript-—-jspdf',
+    parentDir: ['Library'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Library']
+    },
+  },
+  {
+    zh: 'JavaScript 图片浏览工具 —— viewer.js',
+    en: 'javascript-image-browsing-tool---viewer.js',
+    parentDir: ['Library'],
+    meta: {
+      star: 5,
+      state: '已完成',
       tags: ['Library']
     },
   },
@@ -1849,6 +2054,16 @@ const VUE2_LABELS = [
     },
   },
   {
+    zh: '使用 .sync 修饰符传递对象参数',
+    en: 'passing-object-parameters-using-the-.sync-modifier',
+    parentDir: ['Vue2'],
+    meta: {
+      star: 5,
+      state: '未完成',
+      tags: ['Vue2']
+    },
+  },
+  {
     zh: '',
     en: '',
     parentDir: ['Vue2'],
@@ -2289,6 +2504,16 @@ const WEBPACK_LABELS = [
     },
   },
   {
+    zh: 'babel-plugin-import 实现按需引入',
+    en: 'babel-plugin-import-implements-on-demand-import',
+    parentDir: ['Webpack'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Webpack']
+    },
+  },
+  {
     zh: '',
     en: '',
     parentDir: ['Webpack'],
@@ -2445,9 +2670,374 @@ const CODESNIPPET_LABELS = [
     },
   },
   {
+    zh: '在 css 的属性计算过程中，遇到不继承的问题该如何解决 ?',
+    en: 'how-to-solve-the-problem-of-non-inheritance-in-the-css-calculation-process',
+    parentDir: ['CodeSnippet'],
+    meta: {
+      star: 4,
+      state: '未完成',
+      tags: ['CSS']
+    },
+  },
+  {
+    zh: '行盒排列空隙在上线后消失的问题 —— 图片间隙变小',
+    en: 'The-problem-of-line-box-arrangement-gap-disappearing-after-going-online',
+    parentDir: ['CodeSnippet'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['CSS']
+    },
+  },
+  {
+    zh: '黑白滤镜',
+    en: 'black-and-white-filter',
+    parentDir: ['CodeSnippet'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['CSS']
+    },
+  },
+  {
+    zh: '文本溢出处理',
+    en: 'text-overflow-handling',
+    parentDir: ['CodeSnippet'],
+    meta: {
+      star: 3,
+      state: '待更新',
+      tags: ['CSS']
+    },
+  },
+  {
+    zh: '按钮边框旋转动画',
+    en: 'button-border-rotation-animation',
+    parentDir: ['CodeSnippet'],
+    meta: {
+      star: 3,
+      state: '未完成',
+      tags: ['CSS']
+    },
+  },
+  {
+    zh: '圆形放大的 hover 效果',
+    en: 'circular-enlarged-hover-effect',
+    parentDir: ['CodeSnippet'],
+    meta: {
+      star: 3,
+      state: '未完成',
+      tags: ['CSS']
+    },
+  },
+  {
+    zh: '环形旋转效果',
+    en: 'ring-rotation-effect',
+    parentDir: ['CodeSnippet'],
+    meta: {
+      star: 3,
+      state: '未完成',
+      tags: ['CSS']
+    },
+  },
+  {
+    zh: '文字描边',
+    en: 'text-stroke',
+    parentDir: ['CodeSnippet'],
+    meta: {
+      star: 3,
+      state: '未完成',
+      tags: ['CSS']
+    },
+  },
+  {
+    zh: '卡片翻转效果',
+    en: 'card-flip-effect',
+    parentDir: ['CodeSnippet'],
+    meta: {
+      star: 3,
+      state: '未完成',
+      tags: ['CSS']
+    },
+  },
+  {
+    zh: '倾斜按钮',
+    en: 'tilt-button',
+    parentDir: ['CodeSnippet'],
+    meta: {
+      star: 3,
+      state: '未完成',
+      tags: ['CSS']
+    },
+  },
+  {
+    zh: '保持元素宽高比',
+    en: 'maintaining-element-aspect-ratio',
+    parentDir: ['CodeSnippet'],
+    meta: {
+      star: 3,
+      state: '未完成',
+      tags: ['CSS']
+    },
+  },
+  {
+    zh: '模拟 material 文本框',
+    en: 'simulate-material-text-box',
+    parentDir: ['CodeSnippet'],
+    meta: {
+      star: 3,
+      state: '未完成',
+      tags: ['CSS']
+    },
+  },
+  {
+    zh: '瀑布流布局',
+    en: 'waterfall-layout',
+    parentDir: ['CodeSnippet'],
+    meta: {
+      star: 3,
+      state: '未完成',
+      tags: ['CSS']
+    },
+  },
+  {
+    zh: '平滑滚动',
+    en: 'smooth-scrolling',
+    parentDir: ['CodeSnippet'],
+    meta: {
+      star: 3,
+      state: '未完成',
+      tags: ['CSS']
+    },
+  },
+  {
+    zh: '动画的暂停和恢复',
+    en: 'pausing-and-resuming-animations',
+    parentDir: ['CodeSnippet'],
+    meta: {
+      star: 3,
+      state: '未完成',
+      tags: ['CSS']
+    },
+  },
+  {
+    zh: '调整文字方向',
+    en: 'adjust-text-direction',
+    parentDir: ['CodeSnippet'],
+    meta: {
+      star: 3,
+      state: '未完成',
+      tags: ['CSS']
+    },
+  },
+  {
+    zh: '跨标签页的数据共享',
+    en: 'data-sharing-across-tabs',
+    parentDir: ['CodeSnippet'],
+    meta: {
+      star: 3,
+      state: '未完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: '元素的函数值排列',
+    en: 'function-value-arrangement-of-elements',
+    parentDir: ['CodeSnippet'],
+    meta: {
+      star: 3,
+      state: '未完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: '使用 "正则前瞻" 检查密码强度',
+    en: 'use-regular-lookahead-to-check-password-strength',
+    parentDir: ['CodeSnippet'],
+    meta: {
+      star: 3,
+      state: '未完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: '使用 "正则前瞻" 数字格式化',
+    en: 'use-regular-lookahead-number-formatting',
+    parentDir: ['CodeSnippet'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: '请求的取消',
+    en: 'cancellation-of-request',
+    parentDir: ['CodeSnippet'],
+    meta: {
+      star: 3,
+      state: '未完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: '找出字符串出现最多次数的字符以及次数',
+    en: 'find-the-character-that-appears-most-times-in-a-string-and-the-number-of-times',
+    parentDir: ['CodeSnippet'],
+    meta: {
+      star: 3,
+      state: '未完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: '字符串截取导致的 BUG',
+    en: 'bug-caused-by-string-interception',
+    parentDir: ['CodeSnippet'],
+    meta: {
+      star: 3,
+      state: '未完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: '对象的属性名的类型带来的赋值问题',
+    en: 'assignment-issues-caused-by-the-type-of-the-object-attribute-name',
+    parentDir: ['CodeSnippet'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: 'a==1 && a==2 && a==3',
+    en: 'a==1-&&-a==2-&&-a==3',
+    parentDir: ['CodeSnippet'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: '判断对象中是否存在某属性的几种方式的区别',
+    en: 'the-difference-between-several-ways-to-determine-whether-a-certain-attribute-exists-in-an-object',
+    parentDir: ['CodeSnippet'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: 'Math.random() 生成随机颜色',
+    en: 'math.random()-generates-random-colors',
+    parentDir: ['CodeSnippet'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: 'parseInt 的其余用法',
+    en: 'other-uses-of-parseint',
+    parentDir: ['CodeSnippet'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: '图片九宫格',
+    en: 'picture-nine-palaces',
+    parentDir: ['CodeSnippet'],
+    meta: {
+      star: 4,
+      state: '未完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: '视频文字特效',
+    en: 'video-text-effects',
+    parentDir: ['CodeSnippet'],
+    meta: {
+      star: 3,
+      state: '未完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: '代码雨效果',
+    en: 'code-rain-effect',
+    parentDir: ['CodeSnippet'],
+    meta: {
+      star: 3,
+      state: '未完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: '高亮关键字',
+    en: 'highlight-keywords',
+    parentDir: ['CodeSnippet'],
+    meta: {
+      star: 3,
+      state: '未完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: '变量交换',
+    en: 'variable-swap',
+    parentDir: ['CodeSnippet'],
+    meta: {
+      star: 3,
+      state: '未完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: '如何设置后台管理系统按钮权限？',
+    en: 'how-to-set-the-button-permissions-for-the-backend-management-system',
+    parentDir: ['CodeSnippet'],
+    meta: {
+      star: 3,
+      state: '未完成',
+      tags: ['实战']
+    },
+  },
+  {
+    zh: '如何在后台管理系统中展示左侧菜单？',
+    en: 'how-to-display-the-left-menu-in-the-backend-management-system',
+    parentDir: ['CodeSnippet'],
+    meta: {
+      star: 3,
+      state: '未完成',
+      tags: ['实战']
+    },
+  },
+  {
+    zh: '后台管理系统登录功能',
+    en: 'login-function-of-backend-management-system',
+    parentDir: ['CodeSnippet'],
+    meta: {
+      star: 3,
+      state: '未完成',
+      tags: ['实战']
+    },
+  },
+  {
     zh: '',
     en: '',
     parentDir: ['CodeSnippet'],
+    meta: {
+      star: 3,
+      state: '未完成',
+      tags: ['实战']
+    },
   },
 ]
 
