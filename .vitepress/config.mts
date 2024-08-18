@@ -7,6 +7,7 @@ import util from 'util';
 // console.info('navItems', util.inspect(navItems, { depth: null, maxArrayLength: null }));
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base: "/notebook/",
   title: "Soda's blog",
   description: "A VitePress Site",
   lang: 'zh-cn',
