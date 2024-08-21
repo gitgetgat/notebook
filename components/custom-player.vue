@@ -48,10 +48,14 @@ export default {
     }
   },
   setup(props) {
+    let Plyr = null
     const { eleId, src } = toRefs(props)
 
     onMounted(() => {
-      const player = new Plyr(`#${eleId.value}`);
+      import('plyr').then(module => {
+        Plyr = module.default
+        const player = new Plyr(`#${eleId.value}`);
+      })
     });
   }
 }

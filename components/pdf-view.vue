@@ -13,7 +13,7 @@ import { useSidebar } from "vitepress/theme";
 import { useData } from "vitepress";
 import { ref, onMounted } from "vue";
 import * as pdfjs from "pdfjs-dist"
-pdfjs.GlobalWorkerOptions.workerSrc = '/notebook/pdf.worker.mjs'
+pdfjs.GlobalWorkerOptions.workerSrc = '/notebook/pdf.worker.min.js'
 const pdfUrl = '/notebook/你不知道的JavaScript（上卷）.pdf'
 const loadingTask = pdfjs.getDocument(pdfUrl)
 let pdf = null
