@@ -56,13 +56,18 @@ function getNavItems(ele) {
     const files = fs.readdirSync(ele.link, { withFileTypes: true }).sort((a, b) => { return (nameLabels.find(i => i.en === upath.trimExt(a.name)) || {}).sortKey - (nameLabels.find(i => i.en === upath.trimExt(b.name)) || {}).sortKey });
 
     if (files.length > 0) {
-      node.link = upath.trimExt(upath.join(node.link, files[0].name));
+      if (files.filter(file => upath.trimExt(file.name) === 'index').length > 0) {
+        node.link = upath.trimExt(upath.join(node.link, 'index'));
+      } else {
+        node.link = upath.trimExt(upath.join(node.link, files[0].name));
+      }
+
     }
     // 创建侧边栏配置，以每个只含有文件的文件夹问一个节点
     sidebarItems[(upath.join(ele.link.replace(upath.normalize(srcDir), '')) + '/')] = [{
       text: ele.text,
       items: [
-        ...files.map(file => {
+        ...files.filter(file => upath.trimExt(file.name) !== 'index').map(file => {
           const findItem = nameLabels.find(i => i.en === upath.trimExt(file.name))
           return {
             text: `${siderBarIcon} ${findItem.zh}`,

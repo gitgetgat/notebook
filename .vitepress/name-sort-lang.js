@@ -118,7 +118,7 @@ const CSS_LABELS = [
     parentDir: ['2-CSS'],
     meta: {
       star: 1,
-      state: '未完成',
+      state: '已完成',
       tags: ['CSS']
     },
   },
@@ -238,7 +238,7 @@ const CSS_LABELS = [
     parentDir: ['2-CSS'],
     meta: {
       star: 4,
-      state: '未完成',
+      state: '已完成',
       tags: ['CSS', '移动端', '兼容']
     },
   },
@@ -1435,6 +1435,16 @@ const LIBRARY_LABELS = [
   {
     zh: 'JavaScript 图片浏览工具 —— viewer.js',
     en: 'javascript-image-browsing-tool---viewer.js',
+    parentDir: ['Library'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Library']
+    },
+  },
+  {
+    zh: 'Vue 国际化插件 vue-i18n',
+    en: 'vue-i18n-is-used-for-internationalization-in-vue2',
     parentDir: ['Library'],
     meta: {
       star: 5,

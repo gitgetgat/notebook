@@ -1,4 +1,5 @@
 import { defineConfig, type DefaultTheme } from 'vitepress'
+import dynamicImport from 'vite-plugin-dynamic-import'
 import { pagefindPlugin } from 'vitepress-plugin-pagefind'
 import { sidebarItems, navItems } from "./nav-data";
 import util from 'util';
@@ -7,8 +8,8 @@ import util from 'util';
 // console.info('navItems', util.inspect(navItems, { depth: null, maxArrayLength: null }));
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  base: "/notebook/",
-  title: "Soda's blog",
+  base: "/notebook/",//指定资源基础路径
+  title: "NOTEBOOK",
   description: "A VitePress Site",
   lang: 'zh-cn',
   srcDir: './src',
@@ -56,7 +57,18 @@ export default defineConfig({
     // }
   },
   vite: {
+    optimizeDeps: {
+      include: ['pdf']
+    },
     plugins: [
+      // dynamicImport({
+      //   filter(id) {
+      //     // `node_modules` is exclude by default, so we need to include it explicitly
+      //     // https://github.com/vite-plugin/vite-plugin-dynamic-import/blob/v1.3.0/src/index.ts#L133-L135
+      //     console.log('id', id)
+      //     return true
+      //   }
+      // }),
       pagefindPlugin(
         {
           btnPlaceholder: '搜索',
@@ -81,7 +93,7 @@ export default defineConfig({
             return !searchItem.route.includes('404')
           }
         }
-      ),
+      )
     ],
     build: {
       commonjsOptions: {
