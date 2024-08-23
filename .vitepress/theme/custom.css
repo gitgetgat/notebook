@@ -7,6 +7,85 @@
   --soda-orange: oklch(60% 0.37 64.65);
   --soda-yellow: oklch(60% 0.37 109.08);
   --soda-blue: oklch(60% 0.37 237.06);
+  --soda-bg-rgba-1: rgba(52, 81, 178, .2);
+}
+
+.dark {
+  --soda-bg-rgba-1: rgba(168, 177, 255, .2)
+}
+
+.flex {
+  display: flex;
+}
+
+.flex_one {
+  flex: 1;
+}
+
+.clearfix:after {
+  clear: both;
+  display: block;
+  visibility: hidden;
+  height: 0;
+  line-height: 0;
+  content: "";
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.ml-5 {
+  margin-left: 5px;
+}
+
+.ml-10 {
+  margin-left: 10px;
+}
+
+.ml-20 {
+  margin-left: 20px;
+}
+
+.mr-5 {
+  margin-right: 5px;
+}
+
+.mr-10 {
+  margin-right: 10px;
+}
+
+.mr-20 {
+  margin-right: 20px;
+}
+
+.el-tabs__item {
+  color: var(--vp-c-text-1);
+}
+
+.el-tabs__item.is-active {
+  color: var(--vp-c-brand-1);
+}
+
+.el-tabs__active-bar {
+  background-color: var(--vp-c-brand-1);
+}
+
+.el-tabs__item.is-active,
+.el-tabs__item:hover {
+  color: var(--vp-c-brand-1);
 }
 
 
@@ -107,4 +186,8 @@
 
 .VPLocalNavOutlineDropdown .items .outline {
   display: block;
+}
+
+.el-loading-spinner .circular {
+  animation: none !important;
 }

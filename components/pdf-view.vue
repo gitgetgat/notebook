@@ -1,32 +1,248 @@
 <template>
-  <div class="flex padding-box">
-    <canvas id="canvasContainer"></canvas>
-    <el-button @click="previousPage">previousPage</el-button>
-    <el-button @click="nextPage">nextPage</el-button>
+  <div class="flex pdf-viewer">
+    <div class="flex thumbnail-box">
+      <el-tabs
+        tab-position="left"
+        class="demo-tabs thumbnail-btn-tab"
+      >
+        <el-tab-pane label="Config">
+          <template #label>
+            <span class="custom-tabs-label">
+              <el-icon size="22">
+                <ImList2 />
+              </el-icon>
+            </span>
+          </template>
+          <el-tree
+            class=""
+            style="height: 100%;overflow-x: scroll; flex: 1;padding: 12px 0;"
+            :data="catalogueData"
+            :props="defaultProps"
+            @node-click="handleNodeClick"
+          />
+        </el-tab-pane>
+        <el-tab-pane>
+          <template #label>
+            <span class="custom-tabs-label">
+              <el-icon size="24">
+                <PictureFilled />
+              </el-icon>
+            </span>
+          </template>
+          <keep-alive>
+            <div id="thumbnail-container-box">
+            </div>
+          </keep-alive>
+        </el-tab-pane>
+        <el-tab-pane>
+          <template #label>
+            <span class="custom-tabs-label">
+              <el-icon size="24">
+                <Management />
+              </el-icon>
+            </span>
+          </template>
+          <div class="flex_one">
+          </div>
+        </el-tab-pane>
+      </el-tabs>
+    </div>
+    <div class="flex_one view-contanier flex">
+      <div class="view-contanier-header flex">
+        <div class="start flex_one">
+          <div class="btn-icon">
+            <el-icon size="24">
+              <Fold />
+            </el-icon>
+          </div>
+        </div>
+        <div class="center">
+          <el-input-number
+            @blur="renderPage"
+            v-model="currentPage"
+            :step="1"
+            :controls="false"
+          />
+          <span class="inline-block mr-10 ml-10">/</span> {{ pageNum }} <span class="inline-block mr-20 ml-20">|</span>
+          <div class="btn-icon">
+            <el-icon size="18">
+              <RemoveFilled />
+            </el-icon>
+          </div>
+          <el-input-number
+            class="scale-input mr-10"
+            @blur="renderPage"
+            v-model="scale"
+            :step="1"
+            :min="25"
+            :max="200"
+            :controls="false"
+          />
+          <div class="btn-icon">
+            <el-icon size="18">
+              <CirclePlusFilled />
+            </el-icon>
+          </div>
+          <div class="btn-icon">
+            <el-icon size="20">
+              <LuSeparatorVertical />
+            </el-icon>
+          </div>
+          <div class="btn-icon">
+            <el-icon size="16">
+              <LuRotateCcw />
+            </el-icon>
+          </div>
+        </div>
+        <div class="end flex_one">
+          <el-dropdown trigger="click">
+            <div class="btn-icon mr-5 ml-5">
+              <el-icon size="18">
+                <MoreFilled />
+              </el-icon>
+            </div>
+            <template #dropdown>
+              <el-dropdown-menu>
+                <el-dropdown-item>单页显示</el-dropdown-item>
+                <el-dropdown-item>双页显示</el-dropdown-item>
+                <el-dropdown-item>演示</el-dropdown-item>
+              </el-dropdown-menu>
+            </template>
+          </el-dropdown>
+          <div class="btn-icon mr-5 ml-5">
+            <el-icon size="18">
+              <FullScreen />
+            </el-icon>
+          </div>
+          <div class="btn-icon mr-5 ml-5">
+            <el-icon size="18">
+              <DCaret />
+            </el-icon>
+          </div>
+        </div>
+      </div>
+      <div class="view-contanier-body flex_one">
+        <canvas id="canvasContainer"></canvas>
+        <el-button
+          class="page-btn prev-btn"
+          @click="previousPage"
+          :icon="CaretLeft"
+          circle
+          size="large"
+        ></el-button>
+        <el-button
+          class="page-btn next-btn"
+          @click="nextPage"
+          :icon="CaretRight"
+          circle
+          size="large"
+        ></el-button>
+      </div>
+    </div>
   </div>
 </template>
 
-<!-- <article-info/> -->
-
 <script setup>
-import { useSidebar } from "vitepress/theme";
-import { useData } from "vitepress";
-import { ref, onMounted } from "vue";
+import { useData } from 'vitepress'
+import { ref, onMounted, getCurrentInstance, inject } from "vue";
 import * as pdfjs from "pdfjs-dist"
+const { isDark } = useData()
+import { ElLoading } from 'element-plus'
+import { CaretRight, CaretLeft } from '@element-plus/icons-vue'
+import { ImList2 } from 'vue-icons-plus/im'
+import { LuSeparatorVertical, LuRotateCcw } from 'vue-icons-plus/lu'
+
+
 pdfjs.GlobalWorkerOptions.workerSrc = '/notebook/pdf.worker.min.js'
-const pdfUrl = '/notebook/你不知道的JavaScript（上卷）.pdf'
+const pdfUrl = '/notebook/aaa.pdf'
 const loadingTask = pdfjs.getDocument(pdfUrl)
-let pdf = null
-let currentPage = 1
-console.log('pdf', pdf);
+let svg = `<svg width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg" fill="${isDark ? '#1b1b1f' : '#ffffff'}">
+    <circle cx="9" cy="9" r="5">
+        <animate attributeName="fill-opacity"
+         begin="0s" dur="1s"
+         values="1;.2;1" calcMode="linear"
+         repeatCount="indefinite" />
+    </circle>
+    <circle cx="9" cy="27" r="5" fill-opacity=".5">
+        <animate attributeName="fill-opacity"
+         begin="100ms" dur="1s"
+         values="1;.2;1" calcMode="linear"
+         repeatCount="indefinite" />
+    </circle>
+    <circle cx="9" cy="45" r="5">
+        <animate attributeName="fill-opacity"
+         begin="300ms" dur="1s"
+         values="1;.2;1" calcMode="linear"
+         repeatCount="indefinite" />
+    </circle>
+    <circle cx="27" cy="9" r="5">
+        <animate attributeName="fill-opacity"
+         begin="600ms" dur="1s"
+         values="1;.2;1" calcMode="linear"
+         repeatCount="indefinite" />
+    </circle>
+    <circle cx="27" cy="27" r="5">
+        <animate attributeName="fill-opacity"
+         begin="800ms" dur="1s"
+         values="1;.2;1" calcMode="linear"
+         repeatCount="indefinite" />
+    </circle>
+    <circle cx="27" cy="45" r="5">
+        <animate attributeName="fill-opacity"
+         begin="400ms" dur="1s"
+         values="1;.2;1" calcMode="linear"
+         repeatCount="indefinite" />
+    </circle>
+    <circle cx="45" cy="9" r="5">
+        <animate attributeName="fill-opacity"
+         begin="700ms" dur="1s"
+         values="1;.2;1" calcMode="linear"
+         repeatCount="indefinite" />
+    </circle>
+    <circle cx="45" cy="27" r="5">
+        <animate attributeName="fill-opacity"
+         begin="500ms" dur="1s"
+         values="1;.2;1" calcMode="linear"
+         repeatCount="indefinite" />
+    </circle>
+    <circle cx="45" cy="45" r="5">
+        <animate attributeName="fill-opacity"
+         begin="200ms" dur="1s"
+         values="1;.2;1" calcMode="linear"
+         repeatCount="indefinite" />
+    </circle>
+</svg>
+`
+
+const catalogueLoading = ref(true); // 目录加载loading
+const color = ref(isDark ? 'rgba(255, 255, 245, 0.86)' : 'rgba(60, 60, 67)'); // 动态的颜色
+let catalogueData = ref([]); // 树形结构数据
+let pdf = null; // pdf 实例
+let pdfMateData = null
+const currentPage = ref(5); // 当前页码
+const pageNum = ref(0); // pdf 总页数
+const scale = ref(50); // 缩放比例
+// 目录对应属性名
+const defaultProps = {
+  children: 'items',
+  label: 'title',
+}
+
 onMounted(async () => {
-  // const container = document.getElementById('canvas-container');
+  const loading = ElLoading.service({
+    lock: true,
+    // text: 'Loading...',
+    svg,
+    background: color.value,
+  })
   pdf = await loadingTask.promise
+  pageNum.value = pdf.numPages
+  console.log('pdf', pdf);
   const canvas = document.getElementById('canvasContainer');
   const context = canvas.getContext('2d')
 
-  const page = await pdf.getPage(currentPage)
-  const viewport = page.getViewport({ scale: 1.5 })
+  const page = await pdf.getPage(currentPage.value)
+  const viewport = page.getViewport({ scale: scale.value / 100 })
 
   canvas.height = viewport.height
   canvas.width = viewport.width
@@ -36,33 +252,93 @@ onMounted(async () => {
     viewport: viewport
   }
   await page.render(renderContext);
+  pdfMateData = await pdf.getData()
 
+  console.log('pdfMateData', pdfMateData);
   const outline = await pdf.getOutline()
 
-  console.log('outline', outline);
+
+
+  catalogueData.value = outline
+  catalogueLoading.value = false
+  console.log('catalogueData', catalogueData);
 
   const pageNumber = (await pdf.getPageIndex({
     "num": 524,
     "gen": 0
   })) + 1
   console.log('pageNumber', pageNumber);
+  console.log('pdf.numPages', pageNum.value);
+
+
+  const thumbnailsCOntainer = document.getElementById('thumbnail-container-box');
+  for (let i = 0; i < pageNum.value; i++) {
+    const div = document.createElement('div');
+    div.className = 'thumbnail-box-container'
+
+    div.addEventListener('click', async function (e) {
+      console.log('i', i);
+      currentPage.value = i + 1
+      if (currentPage.value > 0 && currentPage.value <= pageNum.value) {
+        const thumbnailBoxContainers = document.getElementsByClassName('thumbnail-box-container');
+        for (let idx = 0; idx < thumbnailBoxContainers.length; idx++) {
+          const ele = thumbnailBoxContainers[idx];
+          ele.className = ele.className.split(' ').filter(e => e !== 'is-active').join(' ')
+          if (idx === i) ele.className += ' is-active'
+        }
+        await renderPage(null, currentPage)
+      }
+    })
+
+    const canvas = document.createElement('canvas');
+    canvas.className = 'thumbnail'
+    canvas.width = 200
+    div.appendChild(canvas);
+    thumbnailsCOntainer.appendChild(div);
+  }
+
+  const thumbnails = document.getElementsByClassName('thumbnail');
+
+  for (let i = 0; i < thumbnails.length; i++) {
+    const canvas = thumbnails[i]
+    const context = canvas.getContext('2d')
+
+    pdf.getPage(i + 1).then((page) => {
+      let viewport = page.getViewport({ scale: 1 })
+      let newScale = 200 / viewport.width
+      viewport = page.getViewport({ scale: newScale })
+      canvas.height = viewport.height
+      canvas.width = viewport.width
+
+      const renderContext = {
+        canvasContext: context,
+        viewport: viewport
+      }
+      page.render(renderContext);
+    })
+  }
+
+
+
   // container.appendChild(canvas);
+  loading.close()
 })
 async function previousPage() {
-  if (currentPage > 1) {
-    currentPage--;
-    await renderPage(currentPage);
+  if (currentPage.value > 1) {
+    currentPage.value--;
+    await renderPage(null, currentPage);
   }
 }
 async function nextPage() {
-  if (currentPage < pdf.numPages) {
-    currentPage++;
-    await renderPage(currentPage);
+  if (currentPage.value < pageNum.value) {
+    currentPage.value++;
+    await renderPage(null, currentPage);
   }
 }
-async function renderPage(pageNumber) {
-  const page = await pdf.getPage(pageNumber);
-  const viewport = page.getViewport({ scale: 1.5 });
+async function renderPage(event, pageNumber) {
+  const pageNum = pageNumber ? pageNumber.value : currentPage.value;
+  const page = await pdf.getPage(pageNum);
+  const viewport = page.getViewport({ scale: scale.value / 100 });
 
   const canvas = document.getElementById('canvasContainer');
   const context = canvas.getContext('2d');
@@ -77,7 +353,139 @@ async function renderPage(pageNumber) {
 
   await page.render(renderContext);
 }
+
+async function handleNodeClick(val) {
+  console.log('val', val);
+}
 </script>
 
-<style scoped>
+<style lang="less">
+.pdf-viewer {
+  height: calc(100vh - var(--vp-nav-height, 0px));
+  overflow-y: auto;
+
+  .thumbnail-box {
+    width: 360px;
+    display: flex;
+    height: 100%;
+    border-right: 1.5px solid var(--vp-c-gutter);
+
+    .thumbnail-btn-tab {
+      width: 100%;
+      height: 100%;
+      display: flex;
+    }
+
+    .el-tabs__content {
+      flex: 1;
+      overflow-y: auto;
+    }
+
+    .el-tabs__header {
+      width: 50px;
+    }
+
+    #thumbnail-container-box {
+      height: 100%;
+      overflow-y: auto;
+      flex: 1;
+
+      .thumbnail {
+        padding: 16px 50px;
+        display: block;
+        cursor: pointer;
+        position: relative;
+      }
+      .thumbnail-box-container.is-active {
+        background-color: var(--soda-bg-rgba-1);
+      }
+
+      .thumbnail-box-container {
+        flex: 1;
+        border-radius: 8px;
+        background-color: transparent;
+        transition: background-color 0.3s linear;
+      }
+
+      .thumbnail-box-container:hover {
+        background-color: var(--soda-bg-rgba-1);
+      }
+    }
+  }
+  .view-contanier {
+    flex-direction: column;
+    .view-contanier-header {
+      height: 40px;
+      padding: 0 20px;
+      border-bottom: 1.5px solid var(--vp-c-gutter);
+      .btn-icon {
+        display: flex; /* 使用flex布局 */
+        align-items: center; /* 垂直居中 */
+        height: 100%;
+        i {
+          cursor: pointer;
+          vertical-align: middle;
+        }
+      }
+      .btn-icon:hover i {
+        color: var(--vp-c-brand-1);
+      }
+      .center {
+        display: flex; /* 使用flex布局 */
+        align-items: center; /* 垂直居中 */
+        height: 100%;
+        .btn-icon {
+          margin-right: 10px;
+        }
+        i {
+          cursor: pointer;
+          vertical-align: middle;
+        }
+        .el-input-number {
+          width: 46px;
+        }
+        .scale-input {
+          width: 50px;
+          .el-input__inner {
+            text-align: center;
+          }
+        }
+      }
+      .end {
+        flex-direction: row-reverse;
+        display: flex; /* 使用flex布局 */
+        align-items: center; /* 垂直居中 */
+        height: 100%;
+        i {
+          cursor: pointer;
+          vertical-align: middle;
+        }
+      }
+    }
+    .view-contanier-body {
+      padding: 20px 30px;
+      position: relative;
+
+      .page-btn {
+        position: absolute;
+        font-size: 28px;
+        top: 50%;
+        margin-top: -20px;
+      }
+
+      .page-btn:hover {
+        color: var(--vp-c-brand-1);
+        background-color: transparent;
+        border-color: var(--vp-c-brand-1);
+      }
+
+      .prev-btn {
+        left: 20px;
+      }
+      .next-btn {
+        right: 20px;
+      }
+    }
+  }
+}
 </style>

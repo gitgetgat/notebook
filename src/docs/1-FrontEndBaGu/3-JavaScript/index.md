@@ -1,5 +1,7 @@
 ---
-layout: home
+layout: PdfViewer
+sidebar: false
+footer: false
 title: Docs with VitePress
 ---
 

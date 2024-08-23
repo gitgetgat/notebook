@@ -1279,6 +1279,16 @@ const HTML_LABELS = [
     },
   },
   {
+    zh: '如何动态获取一个 HTML 元素的 CSS 属性值',
+    en: 'how to get the css property value of an html element dynamically',
+    parentDir: ['1-HTML'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['HTML'],
+    },
+  },
+  {
     zh: '',
     en: '',
     parentDir: ['1-HTML'],
@@ -1445,6 +1455,16 @@ const LIBRARY_LABELS = [
   {
     zh: 'Vue 国际化插件 vue-i18n',
     en: 'vue-i18n-is-used-for-internationalization-in-vue2',
+    parentDir: ['Library'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Library']
+    },
+  },
+  {
+    zh: 'Vue 拓展图标库 vue-icons-plus',
+    en: 'vue-extends-the-icon-library',
     parentDir: ['Library'],
     meta: {
       star: 5,
@@ -2113,6 +2133,16 @@ const VUE3_LABELS = [
     meta: {
       star: 5,
       state: '未完成',
+      tags: ['Vue3']
+    },
+  },
+  {
+    zh: 'Vue3 中定义全局方法并在组件中使用',
+    en: 'global-methods-are-defined-in-vue3-and-used-in-components',
+    parentDir: ['Vue3'],
+    meta: {
+      star: 3,
+      state: '已完成',
       tags: ['Vue3']
     },
   },

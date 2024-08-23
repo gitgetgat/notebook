@@ -31,7 +31,7 @@
 
 <script>
 import { toRefs, onMounted } from "vue";
-import Plyr from 'plyr';
+// import Plyr from 'plyr';
 export default {
   props: {
     type: {
