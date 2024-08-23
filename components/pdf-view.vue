@@ -149,8 +149,9 @@ import * as pdfjs from "pdfjs-dist"
 const { isDark } = useData()
 import { ElLoading } from 'element-plus'
 import { CaretRight, CaretLeft } from '@element-plus/icons-vue'
-import { ImList2 } from 'vue-icons-plus/im'
-import { LuSeparatorVertical, LuRotateCcw } from 'vue-icons-plus/lu'
+import * as iconAll from 'vue-icons-plus'
+// import * as iconLu from 'vue-icons-plus/lu'
+
 
 
 pdfjs.GlobalWorkerOptions.workerSrc = '/notebook/pdf.worker.min.js'

@@ -16,6 +16,8 @@ import 'viewerjs/dist/viewer.css'
 
 // 如果您正在使用CDN引入，请删除下面一行。
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
+import * as iconIm from '../../node_modules/vue-icons-plus/icons/im/index.mjs'
+import * as iconLu from '../../node_modules/vue-icons-plus/icons/lu/index.mjs'
 
 
 export default {
@@ -28,6 +30,12 @@ export default {
     app.component('ArticleInfo', ArticleInfo)
     app.component('PdfViewer', PdfViewer)
     for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
+      app.component(key, component)
+    }
+    for (const [key, component] of Object.entries(iconIm)) {
+      app.component(key, component)
+    }
+    for (const [key, component] of Object.entries(iconLu)) {
       app.component(key, component)
     }
     // 挂载全局方法
