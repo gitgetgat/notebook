@@ -1,5 +1,5 @@
 <template>
-  <div class="flex padding-box">
+  <div class="flex padding-box tag-contanier ">
     <div>
       Tags:
       <span
@@ -106,19 +106,19 @@ function aUrlSkip(url) {
 .padding-box {
   padding: 24px 0;
 }
-.flex {
+.tag-contanier {
   /* height: 28px; */
   line-height: 28px;
 }
 
-.flex > div {
+.tag-contanier > div {
+  flex: 1;
   padding: 5px 0;
 }
-@media (min-width: 768px) {
-  .flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+@media (max-width: 768px) {
+  .tag-contanier {
+    line-height: 28px;
+    flex-direction: column;
   }
 }
 .tag {

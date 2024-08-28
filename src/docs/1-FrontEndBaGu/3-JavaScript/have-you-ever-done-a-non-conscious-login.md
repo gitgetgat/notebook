@@ -244,7 +244,7 @@
 
 为了增加 `Refresh Token` 的安全性，可以考虑以下几种措施：
 
-- 将 `Refresh Token` 保存在 [**HttpOnly Cookie**](https://link.zhihu.com/?target=https%3A//developer.mozilla.org/en-US/docs/Web/HTTP/Cookies%23restrict_access_to_cookies_using_httponly) 中，可以避免在客户端被 `JavaScript` 获取；
+- 将 `Refresh Token` 保存在 <link-tag :linkList="[{ linkType: 'zhihu', linkText:'传送门：HttpOnly Cookie',linkUrl:'https://link.zhihu.com/?target=https%3A//developer.mozilla.org/en-US/docs/Web/HTTP/Cookies%23restrict_access_to_cookies_using_httponly'}]" /> 中，可以避免在客户端被 `JavaScript` 获取；
 - 对 `Refresh Token` 进行加密或签名，可以增加其安全性。
 
 ## 案例

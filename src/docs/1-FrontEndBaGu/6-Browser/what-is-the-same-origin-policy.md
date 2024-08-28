@@ -206,7 +206,7 @@ app.listen(9527，() => {
 
 前端小王希望通过 AJAX 访问豆瓣电影的 API 接口，将它的电影数据展现到自己的网站上。
 
-[https://movie.douban.com/j/search_subjects?type=movie&tag=热门&page_start=0](https://movie.douban.com/j/search_subjects?type=movie&tag=%E7%83%AD%E9%97%A8&page_start=0)
+<link-tag :linkList="[{ linkText:'豆瓣电影的 API 接口',linkUrl:'https://movie.douban.com/j/search_subjects?type=movie&tag=%E7%83%AD%E9%97%A8&page_start=0'}]" />
 
 小王遇到了跨域问题
 

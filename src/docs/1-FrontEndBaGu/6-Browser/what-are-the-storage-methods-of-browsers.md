@@ -338,7 +338,7 @@
 
    Domain 属性告诉浏览器允许哪些主机访问 cookie。如果未指定，则默认为设置 cookie 的同一主机。因此，当使用客户端 JavaScript 访问 cookie 时，只能访问与 URL 域相同的 cookie。 同样，只有与 HTTP 请求的域共享相同域的 cookie 可以与请求头一起发送到服务端。
 
-   注意，拥有此属性并不意味着可以为任何域设置 cookie，因为这显然会带来巨大的安全风险。 此属性存在的唯一原因就是 <el-text size="large" type="success">减少域的限制并使 cookie 在子域上可访问</el-text>。例如，如果当前的域是  [http://abc.xyz.com](https://link.zhihu.com/?target=http%3A//abc.xyz.com)，并且在设置 cookie 时如果不指定 Domain 属性，则默认为  [http://abc.xyz.com](https://link.zhihu.com/?target=http%3A//abc.xyz.com)，并且 cookie 将仅限于该域。 但是，可能希望相同的 cookie 也可用于其他子域，因此可以设置 Domain=[http://xyz.com](https://link.zhihu.com/?target=http%3A//xyz.com)  以使其可用于其他子域，如  [http://def.xyz.com](https://link.zhihu.com/?target=http%3A//def.xyz.com)  和主域  [http://xyz.com](https://link.zhihu.com/?target=http%3A//xyz.com)。
+   注意，拥有此属性并不意味着可以为任何域设置 cookie，因为这显然会带来巨大的安全风险。 此属性存在的唯一原因就是 <el-text size="large" type="success">减少域的限制并使 cookie 在子域上可访问</el-text>。例如，如果当前的域是 `http://abc.xyz.com`，并且在设置 cookie 时如果不指定 Domain 属性，则默认为  `http://abc.xyz.com`，并且 cookie 将仅限于该域。 但是，可能希望相同的 cookie 也可用于其他子域，因此可以设置 Domain=`http://xyz.com` 以使其可用于其他子域，如  `http://def.xyz.com`  和主域 `http://xyz.com`。
 
    ![/1e32c896-9265-0475-e7f6-ba0524629565.png](/1e32c896-9265-0475-e7f6-ba0524629565.png)
 
@@ -391,7 +391,7 @@
 
    ### ② React Cookie（React）
 
-   [React Cookie](https://link.zhihu.com/?target=https%3A//www.npmjs.com/package/react-cookie)  是一个专门用于 React 的 cookie 库，它继承了 Universal Cookie 库的功能。它提供了一组组件和 Hooks，使 React 中的 cookie 处理非常简单。如果使用的是 React 16.8+ 版本，就可以使用 hooks 来处理 cookie。否则，必须使用其提供的组件。
+   <link-tag :linkList="[{ linkType: 'npm', linkText:'React Cookie',linkUrl:'https://link.zhihu.com/?target=https%3A//www.npmjs.com/package/react-cookie'}]" />  是一个专门用于 React 的 cookie 库，它继承了 Universal Cookie 库的功能。它提供了一组组件和 Hooks，使 React 中的 cookie 处理非常简单。如果使用的是 React 16.8+ 版本，就可以使用 hooks 来处理 cookie。否则，必须使用其提供的组件。
 
    ::: code-group
 
@@ -689,7 +689,7 @@
 
 ## 存储空间分析
 
-可以使用基于 Promise 的  [Storage API](https://link.zhihu.com/?target=https%3A//developer.mozilla.org/zh-CN/docs/Web/API/Storage_API)  检查 Web Storage、IndexedDB 和 Cache API 的剩余空间。 异步  `.estimate()`  方法返回：
+可以使用基于 Promise 的 <link-tag :linkList="[{ linkType: 'mdn', linkText:'Storage API',linkUrl:'https://developer.mozilla.org/zh-CN/docs/Web/API/Storage_API'}]" />  检查 Web Storage、IndexedDB 和 Cache API 的剩余空间。 异步  `.estimate()`  方法返回：
 
 - `quota`  属性：可用的空间；
 - `usage`  属性：已用的空间。

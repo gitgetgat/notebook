@@ -54,7 +54,7 @@
 
 - 箭头函数不能 `new` (不能当作构造函数)
   由于箭头函数时没有自己的 `this`，且 `this` 指向外层的执行环境，且不能改变指向，所以不能当做构造函数使用。
-  不能 `new`，所以箭头函数没有 [new.target](http://new.target)；箭头函数的 `this` 指向全局对象时，使用 `new.target` 会报错；箭头函数的 `this` 指向普通函数时，使用 `new.target` 返回普通函数的引用
+  不能 `new`，所以箭头函数没有 <link-tag :linkList="[{ linkType: 'mdn', linkText:'new.target',linkUrl:'https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/new.target'}]" />；箭头函数的 `this` 指向全局对象时，使用 `new.target` 会报错；箭头函数的 `this` 指向普通函数时，使用 `new.target` 返回普通函数的引用
 - 箭头函数没有 `prototype`
   箭头函数不能使用 `new` 生成实例，因为箭头函数没有 `prototype`，而 `construct` 在 `prototype` 里面
 - 箭头函数没有 `arguments`

@@ -28,4 +28,4 @@
 
 - 等 html 全部解析完成，才会执行 js 代码，顺次执行 js 脚本
 
-他们的区别可视化分析：[https://www.growingwiththeweb.com/2014/02/async-vs-defer-attributes.html](https://www.growingwiththeweb.com/2014/02/async-vs-defer-attributes.html)
+他们的区别可视化分析：<link-tag :linkList="[{ linkText:'growing with the web',linkUrl:'https://www.growingwiththeweb.com/2014/02/async-vs-defer-attributes.html'}]" />

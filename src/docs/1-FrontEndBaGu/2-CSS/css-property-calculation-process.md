@@ -101,7 +101,7 @@ p {
 
 对应的重要性顺序依次为：页面作者样式 > 用户样式 > 用户代理样式
 
-更详细的来源重要性比较，可以参阅  <el-text type="primary" size="large">_MDN_</el-text>：[**_https://developer.mozilla.org/zh-CN/docs/Web/CSS/Cascade_**](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Cascade)
+更详细的来源重要性比较，可以参阅  <el-text type="primary" size="large">_MDN_</el-text>：<link-tag :linkList="[{  linkText:'MDN CSS 层叠',linkUrl:'https://developer.mozilla.org/zh-CN/docs/Web/CSS/Cascade'}]" />
 
 我们来看一个示例。
 
@@ -162,9 +162,7 @@ h1 {
 
 [CSS 优先级算法如何计算？](how-the-css-priority-algorithm-is-calculated.md)
 
-或者进入此传送门：
-
-[https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity)
+或者进入此传送门：<link-tag :linkList="[{  linkText:'MDN Specificity',linkUrl:'https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity'}]" />
 
 这里简单说下上面链接中优先级计算的方式：
 

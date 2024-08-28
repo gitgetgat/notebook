@@ -1,19 +1,10 @@
 ---
-layout: PdfViewer
+layout: doc
 sidebar: false
 footer: false
 title: Docs with VitePress
 ---
 
-<!-- <script setup>
-import { useData } from 'vitepress'
-import { useSidebar } from 'vitepress/theme'
+<link-tag :linkList="[{ linkType: 'npm', linkText:'npm',linkUrl:'https://www.npmjs.com/package/vitepress-plugin-pagefind'},{ linkType: 'git', linkText:'git',linkUrl:'https://www.npmjs.com/package/vitepress-plugin-pagefind'}]" flexDirectionColumn />
 
-const { page,theme, lang } = useData()
-const {sidebar} = useSidebar()
-</script> -->
-
-<!-- <pre>{{ theme }}</pre> -->
-<!-- <pre>{{ sidebar }}</pre> -->
-
-<pdf-viewer></pdf-viewer>
+<link-tag :linkList="[{ linkType: 'zhihu', linkText:'npm',linkUrl:'https://www.npmjs.com/package/vitepress-plugin-pagefind'}]" />

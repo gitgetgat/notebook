@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <canvas id="myCanvas" width="1680" height="830"></canvas>
+</body>
+
+</html>
+<!-- <script src="mapJson.js"></script> -->
+<script>
+  // 当前 canvas 的 0 0 坐标，我们设置 canvas 左上角顶点为 0 0，向右👉和向下👇是 X Y 轴正方向，0，0 为 pageSlicePos 初始值
+  const pageSlicePos = {  // 坐标系的原点
+    x: 0,
+    y: 0,
+  };
+  var scale = 10; // 缩放比例
+  var mapScale = 10; // 调整地图的默认的缩放大小
+  // ----------- pageSlicePos, scale 这两个值是重点------------------
+
+  const solidColor = '#ccc'; // 实线颜色
+  const dashedColor = '#f0f0f0'; // 虚线颜色
+  const zeroColor = '#358bf3'; // 0 点坐标系颜色
+  const GRIDSIZE = 5;  // 一个正方形网格的宽高大小, 一个GRIDSIZE视为一个单位
+
+  const myCanvas = document.querySelector('#myCanvas');
+  const ctx = myCanvas.getContext('2d'); // 获取canvas上下文
+  myCanvas.addEventListener("mousedown", mouseDown);
+  myCanvas.addEventListener("mousewheel", mouseWheel);
+  myCanvas.addEventListener("mousemove", mouseMove);
+
+  const curMousePos = {
+    x: 0,
+    y: 0
+  }
+
+  const arrX = []
+  const arrY = []
+  // map.features.forEach(item => {
+  //   let coordinates = item.geometry.coordinates;
+  //   coordinates.forEach(data => {
+  //     data.forEach(data1 => {
+  //       if (data1.length > 2) {
+  //         data1.forEach((data2, i) => {
+  //           arrX.push(data2[0]);
+  //           arrY.push(data2[1]);
+  //         });
+  //       }
+  //     });
+  //   });
+  // });
+  const left = Math.min(...arrX);
+  const right = Math.max(...arrX);
+  const topp = Math.min(...arrY);
+  const bottom = Math.max(...arrY);
+  let mapH = topp + bottom;
+  let mapW = left + right;
+  let mapCenterPos = [mapW / 2, mapH / 2];
+
+  /**
+   * 绘制网格
+   * @param scaleVal 缩放倍数
+   */
+  var drawLineGrid = (scaleVal = scale) => {
+    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+    /*获取绘图工具*/
+    // 设置网格大小
+    var girdSize = getPixelSize(GRIDSIZE);
+    // 获取Canvas的width、height
+    var CanvasWidth = ctx.canvas.width;
+    var CanvasHeight = ctx.canvas.height;
+
+    // 在 pageSlicePos 的 x，y 点位画一个 10 * 10 的红色标记用来表示当前页面的 0 0 坐标
+    ctx.fillStyle = 'red';
+    ctx.fillRect(pageSlicePos.x - 5, pageSlicePos.y - 5, 10, 10); // 效果图红色小方块
+
+    const canvasXHeight = CanvasHeight - pageSlicePos.y;
+    const canvasYWidth = CanvasWidth - pageSlicePos.x;
+    // 从 pageSlicePos.y 处开始往 Y 轴正方向画 X 轴网格
+    const xPageSliceTotal = Math.ceil(canvasXHeight / girdSize);   // 每隔一个单位画一条线
+    for (let i = 0; i < xPageSliceTotal; i++) {
+      ctx.beginPath(); // 开启路径，设置不同的样式
+      ctx.moveTo(0, pageSlicePos.y + girdSize * i);
+      ctx.lineTo(CanvasWidth, pageSlicePos.y + girdSize * i);
+      ctx.strokeStyle = i === 0 ? zeroColor : (i % 5 === 0 ? solidColor : dashedColor); // 如果为 0 则用蓝色标记，取余 5 为实线，其余为比较淡的线
+      ctx.stroke();
+    }
+
+    // 从 pageSlicePos.y 处开始往 Y 轴负方向画 X 轴网格
+    const xRemaining = pageSlicePos.y;
+    const xRemainingTotal = Math.ceil(xRemaining / girdSize);
+    for (let i = 0; i < xRemainingTotal; i++) {
+      if (i === 0) continue;
+      ctx.beginPath(); // 开启路径，设置不同的样式
+      ctx.moveTo(0, pageSlicePos.y - girdSize * i); // -0.5是为了解决像素模糊问题
+      ctx.lineTo(CanvasWidth, pageSlicePos.y - girdSize * i);
+      ctx.strokeStyle = i === 0 ? zeroColor : (i % 5 === 0 ? solidColor : dashedColor);// 如果为 0 则用蓝色标记，取余 5 为实线，其余为比较淡的线
+      ctx.stroke();
+    }
+
+    // 从 pageSlicePos.x 处开始往 X 轴正方向画 Y 轴网格
+    const yPageSliceTotal = Math.ceil(canvasYWidth / girdSize); // 计算需要绘画y轴的条数
+    for (let j = 0; j < yPageSliceTotal; j++) {
+      ctx.beginPath(); // 开启路径，设置不同的样式
+      ctx.moveTo(pageSlicePos.x + girdSize * j, 0);
+      ctx.lineTo(pageSlicePos.x + girdSize * j, CanvasHeight);
+      ctx.strokeStyle = j === 0 ? zeroColor : (j % 5 === 0 ? solidColor : dashedColor);// 如果为 0 则用蓝色标记，取余 5 为实线，其余为比较淡的线
+      ctx.stroke();
+    }
+
+    // 从 pageSlicePos.x 处开始往 X 轴负方向画 Y 轴网格
+    const yRemaining = pageSlicePos.x;
+    const yRemainingTotal = Math.ceil(yRemaining / girdSize);
+    for (let j = 0; j < yRemainingTotal; j++) {
+      if (j === 0) continue;
+      ctx.beginPath(); // 开启路径，设置不同的样式
+      ctx.moveTo(pageSlicePos.x - girdSize * j, 0);
+      ctx.lineTo(pageSlicePos.x - girdSize * j, CanvasHeight);
+      ctx.strokeStyle = j === 0 ? zeroColor : (j % 5 === 0 ? solidColor : dashedColor);// 如果为 0 则用蓝色标记，取余 5 为实线，其余为比较淡的线
+      ctx.stroke();
+    }
+
+    ctx.strokeStyle = "black";
+    // map.features.forEach(item => {
+    //   console.log(item.properties, "item");
+    //   let coordinates = item.geometry.coordinates;
+    //   if (item.properties.center && item.properties.center.length == 2) {
+    //     let cp = item.properties.center;
+    //     let mapX = (cp[0] - mapCenterPos[0]);
+    //     let mapY = mapH - (cp[1] + mapCenterPos[1]);
+    //     let center = getPixelPos({ x: mapX * mapScale, y: mapY * mapScale });
+    //     ctx.fillStyle = "#000"
+    //     ctx.fillText(item.properties.name, center.x, center.y);
+    //   }
+    //   coordinates.forEach(data => {
+    //     data.forEach(data1 => {
+    //       if (data1.length > 2) {
+    //         ctx.beginPath();
+    //         data1.forEach((data2, i) => {
+    //           let mapX = (data2[0] - mapCenterPos[0]);
+    //           let mapY = mapH - (data2[1] + mapCenterPos[1]);
+    //           let point = getPixelPos({ x: mapX * mapScale, y: mapY * mapScale });
+    //           if (i === 0) {
+    //             ctx.moveTo(point.x, point.y);
+    //           }
+    //           ctx.lineTo(point.x, point.y);
+    //         });
+    //         ctx.stroke();
+    //         let isPointIn = ctx.isPointInPath(curMousePos.x, curMousePos.y);
+    //         if (isPointIn) {
+    //           ctx.fillStyle = "red";
+    //           ctx.fill();
+    //         }
+    //       }
+    //     });
+    //   });
+    // });
+  };
+
+  function mouseMove(e) {
+    curMousePos.x = e.clientX;
+    curMousePos.y = e.clientY;
+  }
+
+  function getPixelPos(point) {
+    return {
+      x: pageSlicePos.x + (point.x / GRIDSIZE) * scale,
+      y: pageSlicePos.y + (point.y / GRIDSIZE) * scale,
+    };
+  }
+
+  function getRelativePos(point) {
+    return {
+      x: ((point.x - pageSlicePos.x) / scale) * GRIDSIZE,
+      y: ((point.y - pageSlicePos.y) / scale) * GRIDSIZE,
+    };
+  }
+
+  function getPixelSize(size) {
+    return size * scale;
+  }
+
+  function getRelativeSize(size) {
+    return size / scale;
+  }
+
+  /**
+   * 滚轮缩放倍数
+   */
+  function mouseWheel(e) {
+    if (e.wheelDelta > 0) {
+      if (scale < 20) {
+        scale++;
+      }
+    } else {
+      if (scale > 1) {
+        scale--;
+      }
+    }
+  }
+
+  /**
+   * 拖动 canvas 动态渲染，拖动时，动态设置 pageSlicePos 的值
+   * @param e Event
+   */
+  function mouseDown(e) {
+    const downX = e.clientX;
+    const downY = e.clientY;
+    const { x, y } = pageSlicePos;
+    myCanvas.onmousemove = (ev) => {
+      const moveX = ev.clientX;
+      const moveY = ev.clientY;
+      pageSlicePos.x = x + (moveX - downX);
+      pageSlicePos.y = y + (moveY - downY);
+      myCanvas.onmouseup = (en) => {
+        myCanvas.onmousemove = null;
+        myCanvas.onmouseup = null;
+      };
+    }
+    myCanvas.onmouseup = (en) => {
+      myCanvas.onmousemove = null;
+      myCanvas.onmouseup = null;
+    };
+  }
+
+  (function main() {
+    drawLineGrid();
+    requestAnimationFrame(main);
+  })()
+
+</script>
+<style>
+  body {
+    margin: 0;
+  }
+</style>

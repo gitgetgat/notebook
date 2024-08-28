@@ -16,7 +16,7 @@
   - `from`: 当前导航正要离开的路由
     可以返回的值如下:
   - `false`: 取消当前的导航。如果浏览器的 URL 改变了(可能是用户手动或者浏览器后退按钮)，那么 URL 地址会重置到  `from`  路由对应的地址。
-  - 一个[路由地址](https://router.vuejs.org/zh/api/#routelocationraw): 通过一个路由地址跳转到一个不同的地址，就像你调用  [`router.push()`](https://router.vuejs.org/zh/api/#push)  一样，你可以设置诸如  `replace: true`  或  `name: 'home'`  之类的配置。当前的导航被中断，然后进行一个新的导航，就和  `from`  一样。
+  - 一个 <link-tag :linkList="[{ linkType: 'vue', linkText:'路由地址',linkUrl:'https://router.vuejs.org/zh/api/#routelocationraw'}]" />: 通过一个路由地址跳转到一个不同的地址，就像你调用  <link-tag :linkList="[{ linkType: 'vue', linkText:'router.push()',linkUrl:'https://router.vuejs.org/zh/api/#push'}]" />  一样，你可以设置诸如  `replace: true`  或  `name: 'home'`  之类的配置。当前的导航被中断，然后进行一个新的导航，就和  `from`  一样。
 
   ::: code-group
 
@@ -49,7 +49,7 @@
   :::
 
 - `router.beforeResolve（**全局解析守卫**）`
-  解析守卫刚好会在导航被确认之前、<el-text size="large" type="success">所有组件内守卫和异步路由组件被解析之后</el-text> 调用。这里有一个例子，确保用户可以访问[自定义](https://router.vuejs.org/zh/guide/advanced/meta) `meta`  属性  `requiresCamera`  的路由：
+  解析守卫刚好会在导航被确认之前、<el-text size="large" type="success">所有组件内守卫和异步路由组件被解析之后</el-text> 调用。这里有一个例子，确保用户可以访问 <link-tag :linkList="[{ linkType: 'vue', linkText:'自定义',linkUrl:'https://router.vuejs.org/zh/guide/advanced/meta'}]" /> `meta`  属性  `requiresCamera`  的路由：
 
   ::: code-group
 
@@ -143,7 +143,7 @@ const routes = [
 
 :::
 
-请注意，你也可以通过使用 [路径](https://router.vuejs.org/zh/guide/advanced/meta) <el-text size="large" type="success">meta 字段</el-text> 和 <el-text size="large" type="success">全局导航守卫</el-text> 来实现类似的行为。
+请注意，你也可以通过使用 <link-tag :linkList="[{ linkType: 'vue', linkText:'路径',linkUrl:'https://router.vuejs.org/zh/guide/advanced/meta'}]" /> <el-text size="large" type="success">meta 字段</el-text> 和 <el-text size="large" type="success">全局导航守卫</el-text> 来实现类似的行为。
 
 ## 组件内的守卫
 
@@ -220,7 +220,7 @@ beforeRouteLeave (to, from) {
 
 ## 使用组合 API
 
-如果你正在使用[组合 API 和  `setup`  函数](https://v3.vuejs.org/guide/composition-api-setup.html#setup)来编写组件，你可以通过  `onBeforeRouteUpdate`  和  `onBeforeRouteLeave` 分别添加 `update` 和 `leave` 守卫。
+如果你正在使用 <link-tag :linkList="[{ linkType: 'vue', linkText:'组合 API 和  setup  函数',linkUrl:'https://v3.vuejs.org/guide/composition-api-setup.html#setup'}]" /> 来编写组件，你可以通过  `onBeforeRouteUpdate`  和  `onBeforeRouteLeave` 分别添加 `update` 和 `leave` 守卫。
 
 ## 完整的导航解析流程
 

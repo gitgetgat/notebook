@@ -2,11 +2,11 @@
 
 <article-info/>
 
-### ES5 和 ES6 的区别：
+## ES5 和 ES6 的区别
 
 - `ECMAScripts5`，即 `ES5`，是 `ECMAScripts` 的第五次修订，于 2009 年完成标准化 `ECMAScripts6`，即 `ES6`，是 `ECMAScripts` 的第六次修订，于 2015 年完成，也称 `ES2015`，`ES6` 是继 `ES5` 之后的一次改进，相对于 `ES5` 更加简洁，提高了开发效率，`ES6` 新增的一些特性。
 
-### ES5 的特性：
+## ES5 的特性
 
 - [`strict 模式`](./what-is-strict-mode-in-js.md)：严格模式，限制一些用法；
 - Array 增加方法：
@@ -36,7 +36,7 @@
 
 PS：还有其他方法  `Function.prototype.bind`、`String.prototype.trim`、`Date.now`
 
-### ES6 的新特性：
+## ES6 的新特性
 
 - 块级作用域：`let`、`const`
 - 解构赋值：
@@ -192,9 +192,9 @@ PS：还有其他方法  `Function.prototype.bind`、`String.prototype.trim`、
   :::
 
 - Proxy
-  - [MDN 上 Proxy 的介绍=>点击跳转](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy)
+  - <link-tag :linkList="[{ linkText:'传送门：MDN 上 Proxy 的介绍',linkUrl:'https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy'}]" />
 - Reflect
-  - [MDN 上 Reflect 的介绍=>点击跳转](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Reflect)
+  - <link-tag :linkList="[{ linkText:'传送门：MDN 上 Reflect 的介绍',linkUrl:'https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Reflect'}]" />
   - 以后尽量使用这套统一操作对象的 API，前面一些操作对象的方式可能会慢慢废弃掉，例如：**`in 关键字，Object 的一些方法，delete...`**
 - class 类
 
@@ -237,7 +237,7 @@ PS：还有其他方法  `Function.prototype.bind`、`String.prototype.trim`、
 
 - Set 数据结构
 
-  - [MDN 上 Set 的介绍=>点击跳转](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Set)
+  - <link-tag :linkList="[{ linkText:'传送门：MDN 上 Set 的介绍',linkUrl:'https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Set'}]" />
   - 不重复，唯一的数据结构
   - 添加重复值会忽略掉
   - 数组去重小技巧
@@ -257,9 +257,9 @@ PS：还有其他方法  `Function.prototype.bind`、`String.prototype.trim`、
 
 - Map 数据结构
   - Object 对象的键都是 toString() 后的结果
-  - [MDN 上 Map 的介绍=>点击跳转](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Map)
+  - <link-tag :linkList="[{ linkText:'传送门：MDN 上 Map 的介绍',linkUrl:'https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Map'}]" />
 - Symbol 数据类型
-  - [MDN 上 Symbol 的介绍=>点击跳转](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Symbol)
+  - <link-tag :linkList="[{ linkText:'传送门：MDN 上 Symbol 的介绍',linkUrl:'https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Symbol'}]" />
   - 每个从 Symbol() 返回的 symbol 值都是唯一的。一个 symbol 值能作为对象属性的标识符；这是该数据类型仅有的目的。`Symbol('foo') === Symbol('foo') // false`
   - For…In，Object.keys()，JSON.stringify() 都无法访问到 symbol 值作为的属性名，所以该类型特别适合作为对象的私有属性，但是还是有方式可以获取到  `Object.getOwnPropertySymbols(obj)`
   - Symbol.for(key)，使用给定的 key 搜索现有的 symbol，如果找到则返回该 symbol。否则将使用给定的 key 在全局 symbol 注册表中创建一个新的 symbol。所以  `Symbol.for('foo') === Symbol.for('foo') // true`

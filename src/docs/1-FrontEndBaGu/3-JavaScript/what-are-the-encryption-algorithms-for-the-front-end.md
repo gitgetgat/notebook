@@ -4,7 +4,7 @@
 
 ## Base64 加密
 
-- `Base64`，顾名思义，就是包括小写字母 a-z、大写字母 A-Z、数字 0-9、符号"+"、"/"一共 64 个字符的字符集，（另加一个“=”，实际是 65 个字符，至于为什么还会有一个“="，这个后面再说）。任何符号都可以转换成这个字符集中的字符，这个转换过程就叫做 [base64 编码](https://so.csdn.net/so/search?q=base64%E7%BC%96%E7%A0%81&spm=1001.2101.3001.7020) 。
+- `Base64`，顾名思义，就是包括小写字母 a-z、大写字母 A-Z、数字 0-9、符号"+"、"/"一共 64 个字符的字符集，（另加一个“=”，实际是 65 个字符，至于为什么还会有一个“="，这个后面再说）。任何符号都可以转换成这个字符集中的字符，这个转换过程就叫做 <link-tag :linkList="[{ linkText:'base64 编码',linkUrl:'https://blog.csdn.net/qq_55752792/article/details/139681358?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522172467897416800182733886%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=172467897416800182733886&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-2-139681358-null-null.142^v100^pc_search_result_base3&utm_term=base64%E7%BC%96%E7%A0%81'}]" /> 。
 
 ::: code-group
 

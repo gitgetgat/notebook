@@ -127,7 +127,7 @@ export default {
   setup(props) {
     let Plyr = null;
     const { eleId, src } = toRefs(props);
-    // [!code focus:6]
+    // [!code focus:7]
     onMounted(() => {
       import("plyr").then((module) => {
         Plyr = module.default;

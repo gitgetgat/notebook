@@ -8,6 +8,8 @@
   --soda-yellow: oklch(60% 0.37 109.08);
   --soda-blue: oklch(60% 0.37 237.06);
   --soda-bg-rgba-1: rgba(52, 81, 178, .2);
+  --soda-pdf-thumbnail-box-width: 360px;
+  --view-contanier-header: 60px;
 }
 
 .dark {
@@ -20,6 +22,10 @@
 
 .flex_one {
   flex: 1;
+}
+
+.user-select-none {
+  user-select: none;
 }
 
 .clearfix:after {
@@ -86,6 +92,22 @@
 .el-tabs__item.is-active,
 .el-tabs__item:hover {
   color: var(--vp-c-brand-1);
+}
+
+.el-dropdown-menu__item:not(.is-disabled):focus,
+.el-dropdown-menu__item:not(.is-disabled):hover {
+  background-color: var(--vp-c-default-soft);
+  color: var(--vp-c-brand-1);
+}
+
+.VPSidebarItem .items .VPSidebarItem .el-tag {
+  margin-left: 4px;
+  padding: 0 2px;
+  font-size: 10px;
+}
+
+.pager-link .title .el-tag {
+  display: none;
 }
 
 

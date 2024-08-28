@@ -6,7 +6,7 @@
 
 但是一说到 CSS 包含块，有的小伙伴就懵圈了，什么是包含块？好像从来没有听说过这玩意儿。
 
-包含块英语全称为 **`containing block`**，实际上平时你在书写 CSS 时，大多数情况下你是感受不到它的存在，因此你不知道这个知识点也是一件很正常的事情。但是这玩意儿是确确实实存在的，在 CSS 规范中也是明确书写了的：[**_https://drafts.csswg.org/css2/#containing-block-details_**](https://drafts.csswg.org/css2/#containing-block-details)
+包含块英语全称为 **`containing block`**，实际上平时你在书写 CSS 时，大多数情况下你是感受不到它的存在，因此你不知道这个知识点也是一件很正常的事情。但是这玩意儿是确确实实存在的，在 CSS 规范中也是明确书写了的：<link-tag :linkList="[{ linkText:'包含块定义',linkUrl:'https://drafts.csswg.org/css2/#containing-block-details'}]" />
 
 ![https://xiejie-typora.oss-cn-chengdu.aliyuncs.com/2022-08-14-142459.png](https://xiejie-typora.oss-cn-chengdu.aliyuncs.com/2022-08-14-142459.png)
 
@@ -304,4 +304,4 @@
 
 另外，关于包含块的知识，在 MDN 上除了解说了什么是包含块以外，也举出了很多简单易懂的示例。
 
-具体你可以移步到：[<el-text type="success" size="large">https://developer.mozilla.org/zh-CN/docs/Web/CSS/Containing_block</el-text>](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Containing_block)
+具体你可以移步到：<link-tag :linkList="[{  linkText:'布局和包含块',linkUrl:'https://developer.mozilla.org/zh-CN/docs/Web/CSS/Containing_block'}]" />

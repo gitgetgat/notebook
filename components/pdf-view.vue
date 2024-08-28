@@ -5,11 +5,14 @@
         tab-position="left"
         class="demo-tabs thumbnail-btn-tab"
       >
-        <el-tab-pane label="Config">
+        <el-tab-pane
+          label="Config"
+          v-if="catalogueData.length"
+        >
           <template #label>
             <span class="custom-tabs-label">
-              <el-icon size="22">
-                <ImList2 />
+              <el-icon size="24">
+                <Menu />
               </el-icon>
             </span>
           </template>
@@ -21,7 +24,7 @@
             @node-click="handleNodeClick"
           />
         </el-tab-pane>
-        <el-tab-pane>
+        <el-tab-pane v-if="pageNum>0">
           <template #label>
             <span class="custom-tabs-label">
               <el-icon size="24">
@@ -34,7 +37,7 @@
             </div>
           </keep-alive>
         </el-tab-pane>
-        <el-tab-pane>
+        <el-tab-pane v-if="false">
           <template #label>
             <span class="custom-tabs-label">
               <el-icon size="24">
@@ -63,9 +66,12 @@
             :step="1"
             :controls="false"
           />
-          <span class="inline-block mr-10 ml-10">/</span> {{ pageNum }} <span class="inline-block mr-20 ml-20">|</span>
+          <span class="inline-block mr-10 ml-10">/</span> {{ pageNum }} <span class="inline-block user-select-none mr-20 ml-20">|</span>
           <div class="btn-icon">
-            <el-icon size="18">
+            <el-icon
+              size="18"
+              @click="zooomOut"
+            >
               <RemoveFilled />
             </el-icon>
           </div>
@@ -74,13 +80,33 @@
             @blur="renderPage"
             v-model="scale"
             :step="1"
-            :min="25"
-            :max="200"
+            :min="scaleMin"
+            :max="scaleMax"
             :controls="false"
           />
           <div class="btn-icon">
-            <el-icon size="18">
+            <el-icon
+              size="18"
+              @click="zooomIn"
+            >
               <CirclePlusFilled />
+            </el-icon>
+          </div>
+          <span class="inline-block user-select-none mr-20 ml-10">|</span>
+          <div class="btn-icon">
+            <el-icon
+              size="20"
+              @click="previousPage"
+            >
+              <CaretLeft />
+            </el-icon>
+          </div>
+          <div class="btn-icon">
+            <el-icon
+              size="20"
+              @click="nextPage"
+            >
+              <CaretRight />
             </el-icon>
           </div>
           <div class="btn-icon">
@@ -122,21 +148,9 @@
         </div>
       </div>
       <div class="view-contanier-body flex_one">
-        <canvas id="canvasContainer"></canvas>
-        <el-button
-          class="page-btn prev-btn"
-          @click="previousPage"
-          :icon="CaretLeft"
-          circle
-          size="large"
-        ></el-button>
-        <el-button
-          class="page-btn next-btn"
-          @click="nextPage"
-          :icon="CaretRight"
-          circle
-          size="large"
-        ></el-button>
+        <el-scrollbar class="view-contanier-body-scrollbar">
+          <canvas id="canvasContainer"></canvas>
+        </el-scrollbar>
       </div>
     </div>
   </div>
@@ -147,7 +161,7 @@ import { useData } from 'vitepress'
 import { ref, onMounted, getCurrentInstance, inject } from "vue";
 import * as pdfjs from "pdfjs-dist"
 const { isDark } = useData()
-import { ElLoading } from 'element-plus'
+import { ElLoading, ElMessage } from 'element-plus'
 import { CaretRight, CaretLeft } from '@element-plus/icons-vue'
 import * as iconAll from 'vue-icons-plus'
 // import * as iconLu from 'vue-icons-plus/lu'
@@ -156,7 +170,6 @@ import * as iconAll from 'vue-icons-plus'
 
 pdfjs.GlobalWorkerOptions.workerSrc = '/notebook/pdf.worker.min.js'
 const pdfUrl = '/notebook/aaa.pdf'
-const loadingTask = pdfjs.getDocument(pdfUrl)
 let svg = `<svg width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg" fill="${isDark ? '#1b1b1f' : '#ffffff'}">
     <circle cx="9" cy="9" r="5">
         <animate attributeName="fill-opacity"
@@ -222,63 +235,54 @@ let pdf = null; // pdf 实例
 let pdfMateData = null
 const currentPage = ref(5); // 当前页码
 const pageNum = ref(0); // pdf 总页数
-const scale = ref(50); // 缩放比例
+const scale = ref(100); // 缩放比例
+const scaleMin = ref(25); // 缩放比例
+const scaleMax = ref(300); // 缩放比例
 // 目录对应属性名
 const defaultProps = {
   children: 'items',
   label: 'title',
 }
 
-onMounted(async () => {
+onMounted(() => {
+  init()
+})
+async function init() {
   const loading = ElLoading.service({
     lock: true,
     // text: 'Loading...',
     svg,
     background: color.value,
   })
+  // 读取pdf文档
+  const loadingTask = pdfjs.getDocument(pdfUrl)
   pdf = await loadingTask.promise
-  pageNum.value = pdf.numPages
+  pageNum.value = pdf.numPages // 获取文档总页数
   console.log('pdf', pdf);
-  const canvas = document.getElementById('canvasContainer');
-  const context = canvas.getContext('2d')
+  await renderPage(null, currentPage);
 
-  const page = await pdf.getPage(currentPage.value)
-  const viewport = page.getViewport({ scale: scale.value / 100 })
-
-  canvas.height = viewport.height
-  canvas.width = viewport.width
-
-  const renderContext = {
-    canvasContext: context,
-    viewport: viewport
-  }
-  await page.render(renderContext);
-  pdfMateData = await pdf.getData()
-
+  pdfMateData = await pdf.getData() // 获取文档源数据
   console.log('pdfMateData', pdfMateData);
-  const outline = await pdf.getOutline()
 
-
-
+  const outline = await pdf.getOutline() // 获取目录
   catalogueData.value = outline
   catalogueLoading.value = false
   console.log('catalogueData', catalogueData);
 
-  const pageNumber = (await pdf.getPageIndex({
-    "num": 524,
-    "gen": 0
-  })) + 1
-  console.log('pageNumber', pageNumber);
-  console.log('pdf.numPages', pageNum.value);
 
+  initThumbnails()
 
+  loading.close()
+}
+async function initThumbnails() {
+  // 生成缩略图
   const thumbnailsCOntainer = document.getElementById('thumbnail-container-box');
+  // 根据总页数创建缩略图元素
   for (let i = 0; i < pageNum.value; i++) {
     const div = document.createElement('div');
     div.className = 'thumbnail-box-container'
-
+    // 添加点击事件，点击舔砖相对应页面，并且高亮当前缩略图
     div.addEventListener('click', async function (e) {
-      console.log('i', i);
       currentPage.value = i + 1
       if (currentPage.value > 0 && currentPage.value <= pageNum.value) {
         const thumbnailBoxContainers = document.getElementsByClassName('thumbnail-box-container');
@@ -290,7 +294,7 @@ onMounted(async () => {
         await renderPage(null, currentPage)
       }
     })
-
+    // 创建缩略图渲染 canvas
     const canvas = document.createElement('canvas');
     canvas.className = 'thumbnail'
     canvas.width = 200
@@ -305,6 +309,8 @@ onMounted(async () => {
     const context = canvas.getContext('2d')
 
     pdf.getPage(i + 1).then((page) => {
+      // 循环渲染
+      // 宽度固定，计算每页缩放比例
       let viewport = page.getViewport({ scale: 1 })
       let newScale = 200 / viewport.width
       viewport = page.getViewport({ scale: newScale })
@@ -318,24 +324,40 @@ onMounted(async () => {
       page.render(renderContext);
     })
   }
-
-
-
-  // container.appendChild(canvas);
-  loading.close()
-})
+}
+// 缩小
+async function zooomOut() {
+  if ((scale.value - 5) < scaleMin.value) {
+    scale.value = scaleMin.value;
+  } else {
+    scale.value -= 5
+  }
+  await renderPage(null, currentPage);
+}
+// 放大
+async function zooomIn() {
+  if ((scale.value + 5) > scaleMax.value) {
+    scale.value = scaleMax.value;
+  } else {
+    scale.value += 5
+  }
+  await renderPage(null, currentPage);
+}
+// 上一页
 async function previousPage() {
   if (currentPage.value > 1) {
     currentPage.value--;
     await renderPage(null, currentPage);
   }
 }
+// 下一页
 async function nextPage() {
   if (currentPage.value < pageNum.value) {
     currentPage.value++;
     await renderPage(null, currentPage);
   }
 }
+// 渲染页面
 async function renderPage(event, pageNumber) {
   const pageNum = pageNumber ? pageNumber.value : currentPage.value;
   const page = await pdf.getPage(pageNum);
@@ -354,9 +376,15 @@ async function renderPage(event, pageNumber) {
 
   await page.render(renderContext);
 }
-
+// 点击目录跳转
 async function handleNodeClick(val) {
-  console.log('val', val);
+  if (!Array.isArray(val.dest)) {
+    ElMessage.error('目录读取页码失败！')
+    return
+  }
+  const pageNumber = (await pdf.getPageIndex(val.dest[0])) + 1
+  currentPage.value = pageNumber;
+  await renderPage(null, currentPage);
 }
 </script>
 
@@ -366,7 +394,7 @@ async function handleNodeClick(val) {
   overflow-y: auto;
 
   .thumbnail-box {
-    width: 360px;
+    width: var(--soda-pdf-thumbnail-box-width);
     display: flex;
     height: 100%;
     border-right: 1.5px solid var(--vp-c-gutter);
@@ -384,6 +412,9 @@ async function handleNodeClick(val) {
 
     .el-tabs__header {
       width: 50px;
+      .el-tabs__nav {
+        padding-top: 10px;
+      }
     }
 
     #thumbnail-container-box {
@@ -416,7 +447,7 @@ async function handleNodeClick(val) {
   .view-contanier {
     flex-direction: column;
     .view-contanier-header {
-      height: 40px;
+      height: 60px;
       padding: 0 20px;
       border-bottom: 1.5px solid var(--vp-c-gutter);
       .btn-icon {
@@ -446,7 +477,7 @@ async function handleNodeClick(val) {
           width: 46px;
         }
         .scale-input {
-          width: 50px;
+          width: 60px;
           .el-input__inner {
             text-align: center;
           }
@@ -464,27 +495,12 @@ async function handleNodeClick(val) {
       }
     }
     .view-contanier-body {
-      padding: 20px 30px;
-      position: relative;
-
-      .page-btn {
-        position: absolute;
-        font-size: 28px;
-        top: 50%;
-        margin-top: -20px;
-      }
-
-      .page-btn:hover {
-        color: var(--vp-c-brand-1);
-        background-color: transparent;
-        border-color: var(--vp-c-brand-1);
-      }
-
-      .prev-btn {
-        left: 20px;
-      }
-      .next-btn {
-        right: 20px;
+      .view-contanier-body-scrollbar {
+        height: 400px;
+        width: calc(100vw - var(--soda-pdf-thumbnail-box-width, 0px));
+        height: calc(
+          100vh - var(--vp-nav-height, px) - var(--view-contanier-header, 0px)
+        );
       }
     }
   }

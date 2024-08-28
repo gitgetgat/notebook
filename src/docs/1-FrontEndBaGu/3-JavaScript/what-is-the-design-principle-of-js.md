@@ -9,7 +9,7 @@
 
 既然 js 是一门高级语言，它被计算机 CPU 执行前需要通过某种程序将 JS 转换成低级的计算机语言并执行。这种程序就被称为 js 引擎。和其他语言相比 js 有许多执行引擎。比如谷歌 Chrome 使用的 V8 引擎，webkit 使用的 javaScriptCore，Mozilla 的 SpiderMonkey，比较火的 QuickJS 和 Facebook 在 React Native 中使用到的 Hermes。虽然引擎众多，但这些引擎在编译 JS 大致的流程都是差不多的。
 
-首先将 JS 源码通过解析器，解析成 [抽象语法树 AST（点击查看详情）](https://zhuanlan.zhihu.com/p/266697614) ，接着再通过解释器将 <el-text size="large" type="success">AST 编译成字节码 bytecode</el-text> 。字节码是跨平台的一种中间表示不同于最终的机器代码，字节码与平台无关，能够再不同操作系统上运行，字节码最后通过编译器生成 <el-text size="large" type="success">机器代码</el-text> 。由于不同的处理平台使用的机器代码有差异，所以编译器会根据当前平台来编译出相应的机器代码。这里的机器码其实就是汇编代码。这是一个简化流程。在不同 js 引擎中表现会有一定的差异，比如在 V8 引擎 5.9 版本之前是直接把 AST 生成的机器代码，它不会额外生成 `bytecode` 字节码。但是在之后的版本，V8 使用了新的架构则会生产 `bytecode`。
+首先将 JS 源码通过解析器，解析成 <link-tag :linkList="[{ linkType: 'zhihu', linkText:'传送门：抽象语法树 AST',linkUrl:'https://zhuanlan.zhihu.com/p/266697614'}]" /> ，接着再通过解释器将 <el-text size="large" type="success">AST 编译成字节码 bytecode</el-text> 。字节码是跨平台的一种中间表示不同于最终的机器代码，字节码与平台无关，能够再不同操作系统上运行，字节码最后通过编译器生成 <el-text size="large" type="success">机器代码</el-text> 。由于不同的处理平台使用的机器代码有差异，所以编译器会根据当前平台来编译出相应的机器代码。这里的机器码其实就是汇编代码。这是一个简化流程。在不同 js 引擎中表现会有一定的差异，比如在 V8 引擎 5.9 版本之前是直接把 AST 生成的机器代码，它不会额外生成 `bytecode` 字节码。但是在之后的版本，V8 使用了新的架构则会生产 `bytecode`。
 
 ## V8 引擎
 
@@ -29,7 +29,7 @@ V8 是一个接收 JavaScript 代码，编译 JS 代码然后执行的 C++程序
 
 JSX：巧妙的将 UI 逻辑和渲染逻辑很好的组合在了一起
 
-## 调用栈栈和队列
+## 调用栈 和 队列
 
 - 栈： 先进后出
 - 堆： 先进先出
@@ -46,7 +46,9 @@ javaScript 的执行环境是一个单线程，这就意味着 JS 环境只有�
 
 ![/02066f0e-e065-1b15-f2bd-e7dd144c277d.png](/02066f0e-e065-1b15-f2bd-e7dd144c277d.png)
 
-[点击观看 JaveScript Event Loop 讲解](https://link.zhihu.com/?target=https%3A//www.bilibili.com/video/BV1kf4y1U7Ln) \*\*\*\*调用栈 消息队列 微任务队列
+<link-tag :linkList="[{ linkType: 'bilibili', linkText:'JaveScript Event Loop 讲解',linkUrl:'https://link.zhihu.com/?target=https%3A//www.bilibili.com/video/BV1kf4y1U7Ln'}]" />
+
+## 调用栈 消息队列 微任务队列
 
 `event loop`：异步和多线程的实现是通过事件循环机制实现的。
 
@@ -58,7 +60,7 @@ Event Loop 开始前会从全局代码开始一行一行执行，遇到 `函数�
 
 javeScript 中的异步操作比如：`fetch 事件回调`，`setTimeout setInterval` 中的回调函数会入队到 `消息队列` 中，称为消息。消息会在调用栈清空的时候执行。这也是为什么 setTimeout 中的延迟参数只是 `最小延迟时间（0）`。调用栈为空后 `消息队列里的消息压入到调用栈中并执行`。只有 promise async await 执行的异步操作会加入到 `微任务队列` 中，它会在调用栈被清空后 `立即执行`，并且处理期间新加入的微任务一起执行。
 
-Event Loop [视频讲解链接](https://link.zhihu.com/?target=https%3A//www.youtube.com/watch%3Fv%3DcCOL7MC4Pl0) (任务队列 动画回调队列 微任务队列)
+Event Loop <link-tag :linkList="[{ linkType: 'youtube', linkText:'传送门：视频讲解链接',linkUrl:'https://www.youtube.com/watch?v=cCOL7MC4Pl0'}]" /> (任务队列 动画回调队列 微任务队列)
 
 比如任务队列一次只处理一个， 如果有另外一个事件进来，就放到队尾。
 

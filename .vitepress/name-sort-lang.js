@@ -30,12 +30,32 @@ const GIT_LABELS = [
     },
   },
   {
-    zh: 'git 如何解决冲突问题?',
-    en: 'how-to-resolve-conflicts-in-git',
+    zh: 'gitignore 的匹配规则',
+    en: 'matching-rules-for-gitignore',
     parentDir: ['Git'],
     meta: {
       star: 3,
-      state: '未完成',
+      state: '已完成',
+      tags: ['Git']
+    },
+  },
+  {
+    zh: 'Git 分支操作全解析：创建、切换、合并、删除及冲突解决',
+    en: 'complete-analysis-of-git-branch-operations-create-switch-merge-delete-and-conflict-resolution',
+    parentDir: ['Git'],
+    meta: {
+      star: 6,
+      state: '已完成',
+      tags: ['Git']
+    },
+  },
+  {
+    zh: 'Git 版本回退操作详解',
+    en: 'git-version-rollback-operation-details',
+    parentDir: ['Git'],
+    meta: {
+      star: 6,
+      state: '已完成',
       tags: ['Git']
     },
   },
@@ -1423,8 +1443,8 @@ const LIBRARY_LABELS = [
     },
   },
   {
-    zh: '简化Web应用程序的IndexedDB管理 —— idb.js',
-    en: 'simplifying-indexeddb-management-for-web-applications---idb.js',
+    zh: '简化 Web 应用程序的 IndexedDB 管理 —— idb.js',
+    en: 'simplifying-indexeddb-management-for-web-applications-idb',
     parentDir: ['Library'],
     meta: {
       star: 5,
@@ -1465,6 +1485,26 @@ const LIBRARY_LABELS = [
   {
     zh: 'Vue 拓展图标库 vue-icons-plus',
     en: 'vue-extends-the-icon-library',
+    parentDir: ['Library'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Library']
+    },
+  },
+  {
+    zh: 'JavaScript 随机颜色生成器 —— RandomColor.js、chroma.js',
+    en: 'random-color-generator',
+    parentDir: ['Library'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Library']
+    },
+  },
+  {
+    zh: '开源瀑布流插件 Masonry.js',
+    en: 'open-source-waterfall-stream-plug-in',
     parentDir: ['Library'],
     meta: {
       star: 5,
@@ -2107,7 +2147,7 @@ const VUE2_LABELS = [
 
 const VUE3_LABELS = [
   {
-    zh: '理解 Composition API 之优化代码组织',
+    zh: 'Vue3 的组合式API：你真的需要它吗 ?',
     en: 'understanding-the-composition-api-to-optimize-code-organization',
     parentDir: ['Vue3'],
     meta: {
@@ -2197,7 +2237,7 @@ const VUE3_LABELS = [
     },
   },
   {
-    zh: 'vue3的渲染机制是什么？',
+    zh: 'vue3 的渲染机制是什么？',
     en: 'what-is-the-rendering-mechanism-of-vue3',
     parentDir: ['Vue3'],
     meta: {
@@ -2292,6 +2332,16 @@ const VUE3_LABELS = [
     parentDir: ['Vue3'],
     meta: {
       star: 10,
+      state: '已完成',
+      tags: ['Vue3']
+    },
+  },
+  {
+    zh: '深度选择器探秘：/deep/、>>>、::v-deep 与 v-deep() 的区别与用法',
+    en: 'depth-selector-probe',
+    parentDir: ['Vue3'],
+    meta: {
+      star: 5,
       state: '已完成',
       tags: ['Vue3']
     },
@@ -3153,6 +3203,7 @@ function addSortKey(labels) {
     return e;
   })
 }
+
 const NAME_LABELS = [
   ...addSortKey(GIT_LABELS),
   ...addSortKey(CSS_LABELS),
@@ -3203,7 +3254,7 @@ const DIR_LABELS = {
   'WebStorage-IndexedDB': '浏览器存储',
   'FrontEndUseSkills': '前端技巧应用',
   'DataStructureAndAlgorithms': '数据结构与算法',
-  'Library': 'JS第三方库',
+  'Library': '第三方库',
   'Uni-App': 'Uni-App',
   'Webpack': 'Webpack',
   'Git': 'Git',

@@ -2,7 +2,7 @@
 
 <article-info/>
 
-[https://zhuanlan.zhihu.com/p/498604865](https://zhuanlan.zhihu.com/p/498604865)
+<link-tag :linkList="[{ linkType: 'zhihu', linkText:'传送门：自适应方案和高清方案',linkUrl:'https://zhuanlan.zhihu.com/p/498604865'}]" />
 
 ## 自适应方案
 
@@ -19,7 +19,7 @@
 - 缺点
   - 需要加载 js 脚本，而且根据设备的视窗宽度进行计算，影响性能
 - 影响力：从 2015 年出世至今，在 H5 适配领域占据一定比例
-- 相关技术库：[**`flexible`**](https://link.zhihu.com/?target=https%3A//github.com/amfe/lib-flexible)、[**`px2rem`**](https://link.zhihu.com/?target=https%3A//github.com/songsiqi/px2rem)
+- 相关技术库：<link-tag :linkList="[{ linkType: 'git', linkText:'flexible',linkUrl:'https://link.zhihu.com/?target=https%3A//github.com/amfe/lib-flexible'},{ linkType: 'git', linkText:'px2rem',linkUrl:'https://link.zhihu.com/?target=https%3A//github.com/songsiqi/px2rem'}]" />
 
 ### vw
 
@@ -29,7 +29,7 @@
 - 缺点
   - 因为是根据视图的宽度计算，所以不适用 平板 和 PC
 - 影响力：2018 年出的方案，目前 H5 适配主流
-- 相关技术库：[**`postcss-px-to-viewport`**](https://link.zhihu.com/?target=https%3A//github.com/evrone/postcss-px-to-viewport)
+- 相关技术库：<link-tag :linkList="[{ linkType: 'git', linkText:'postcss-px-to-viewport',linkUrl:'https://link.zhihu.com/?target=https%3A//github.com/evrone/postcss-px-to-viewport'}]" />
 
 ### px + calc + clamp
 
@@ -37,7 +37,7 @@
   - 根据 CSS 的新特性：css 变量、calc()函数、clamp()、@container 函数实现
 - 特点
   - 解决了 rem、vw 布局的致命缺点：<el-text type="success" size="large">失去像素的完美性，而且一旦屏幕低于或高于某个阈值，通常就会出现布局的移动或文字内容的溢出</el-text>
-  - 大漠在 2021 年提出，最先进，但没看到大厂使用（clamp 函数浏览器支持率暂且不高），具体可以看看大漠的这篇：[**`如何构建一个完美缩放的UI界面`**](https://link.zhihu.com/?target=https%3A//www.w3cplus.com/css/how-to-get-a-pixel-perfect-and-linearly-scaled-ui.html)
+  - 大漠在 2021 年提出，最先进，但没看到大厂使用（clamp 函数浏览器支持率暂且不高），具体可以看看大漠的这篇：<link-tag :linkList="[{ linkType: 'zhihu', linkText:'传送门：如何构建一个完美缩放的UI界面',linkUrl:'https://link.zhihu.com/?target=https%3A//www.w3cplus.com/css/how-to-get-a-pixel-perfect-and-linearly-scaled-ui.html'}]" />
 - 缺点
   - 因为方案先进，暂没看到大厂使用
 
@@ -193,7 +193,7 @@ document.documentElement.style.fontSize =
 
 :::
 
-> [**`flexible 源码`**](https://link.zhihu.com/?target=https%3A//github.com/amfe/lib-flexible/blob/2.0/index.js%23L18)就如以上思路写的
+> <link-tag :linkList="[{ linkType: 'zhihu', linkText:'flexible 源码',linkUrl:'https://link.zhihu.com/?target=https%3A//github.com/amfe/lib-flexible/blob/2.0/index.js%23L18'}]" /> 就如以上思路写的
 
 我们设置了百分之一的宽度后，在写 css 时，就需要利用 scss/less 等 css 处理器来对 css 编译处理。假设给出的设计图为 750 \* 1334，其中一个元素宽度为 200 px，根据公式：
 
@@ -246,7 +246,7 @@ div {
 
 ![https://pic2.zhimg.com/v2-6b8f21729d04aa5a5933e4dea6bb6fc9_b.webp](https://pic2.zhimg.com/v2-6b8f21729d04aa5a5933e4dea6bb6fc9_b.webp)
 
-[**REM 布局(flexible)demo**](https://link.zhihu.com/?target=https%3A//demo.azhubaby.com/%25E8%2587%25AA%25E9%2580%2582%25E5%25BA%2594%25E6%2596%25B9%25E6%25A1%2588/flexible/index.html)
+<link-tag :linkList="[{ linkType: 'zhihu', linkText:'传送门：REM 布局(flexible) DEMO',linkUrl:'https://link.zhihu.com/?target=https%3A//demo.azhubaby.com/%25E8%2587%25AA%25E9%2580%2582%25E5%25BA%2594%25E6%2596%25B9%25E6%25A1%2588/flexible/index.html'}]" />
 
 优点：rem 的兼容性能低到 ios 4.1，android 2.1
 
@@ -332,17 +332,17 @@ div {
 
 相关技术方案：`postcss-px-to-viewport`
 
-[**VW 布局 demo**](https://link.zhihu.com/?target=https%3A//demo.azhubaby.com/%25E8%2587%25AA%25E9%2580%2582%25E5%25BA%2594%25E6%2596%25B9%25E6%25A1%2588/vw/index.html)
+<link-tag :linkList="[{ linkType: 'zhihu', linkText:'传送门：VW 布局 demo',linkUrl:'https://link.zhihu.com/?target=https%3A//demo.azhubaby.com/%25E8%2587%25AA%25E9%2580%2582%25E5%25BA%2594%25E6%2596%25B9%25E6%25A1%2588/vw/index.html'}]" />
 
 ### px 适配——一力降十会
 
 不用 `rem/vw`，用传统的响应式布局也能在移动端布局中使用，需要设计规范
 
-使用 <el-text class="mx-1" type="success" size="large">css 变量</el-text> 适配（篇幅原因暂不详细介绍，可直接看[**代码**](https://link.zhihu.com/?target=https%3A//github.com/johanazhu/demo/blob/master/%25E8%2587%25AA%25E9%2580%2582%25E5%25BA%2594%25E6%2596%25B9%25E6%25A1%2588/px/index.scss%23L3)）
+使用 <el-text class="mx-1" type="success" size="large">css 变量</el-text> 适配（篇幅原因暂不详细介绍，可直接看<link-tag :linkList="[{ linkType: 'git', linkText:'代码',linkUrl:'https://link.zhihu.com/?target=https%3A//github.com/johanazhu/demo/blob/master/%25E8%2587%25AA%25E9%2580%2582%25E5%25BA%2594%25E6%2596%25B9%25E6%25A1%2588/px/index.scss%23L3'}]" />）
 
 使用场景：新闻、内容型的网站，不太适用 `rem`，因为大屏用户想要看到更多的内容，如网易新闻、知乎、taptap
 
-[**PX + CSS 变量 demo**](https://link.zhihu.com/?target=https%3A//demo.azhubaby.com/%25E8%2587%25AA%25E9%2580%2582%25E5%25BA%2594%25E6%2596%25B9%25E6%25A1%2588/px/index.html)
+<link-tag :linkList="[{ linkType: 'zhihu', linkText:'传送门：PX + CSS 变量 demo',linkUrl:'https://link.zhihu.com/?target=https%3A//demo.azhubaby.com/%25E8%2587%25AA%25E9%2580%2582%25E5%25BA%2594%25E6%2596%25B9%25E6%25A1%2588/px/index.html'}]" />
 
 ### 媒体查询——可有我一席？
 
@@ -356,7 +356,7 @@ div {
 
 所以说仅用媒体查询还是差强人意
 
-[**媒体查询布局 demo**](https://link.zhihu.com/?target=https%3A//demo.azhubaby.com/%25E8%2587%25AA%25E9%2580%2582%25E5%25BA%2594%25E6%2596%25B9%25E6%25A1%2588/media/index.html)
+<link-tag :linkList="[{ linkType: 'zhihu', linkText:'传送门：媒体查询布局 demo',linkUrl:'https://link.zhihu.com/?target=https%3A//demo.azhubaby.com/%25E8%2587%25AA%25E9%2580%2582%25E5%25BA%2594%25E6%2596%25B9%25E6%25A1%2588/media/index.html'}]" />
 
 ### 各种适配的对比
 
@@ -463,7 +463,7 @@ body {
 
 ### 各大厂商的适配分析
 
-看了不少文章，类似如：[**大厂是怎么做移动端适配的**](https://link.zhihu.com/?target=https%3A//www.jianshu.com/p/2d2d1dfd196f)
+看了不少文章，类似如：<link-tag :linkList="[{ linkType: 'zhihu', linkText:'传送门：大厂是怎么做移动端适配的',linkUrl:'https://link.zhihu.com/?target=https%3A//www.jianshu.com/p/2d2d1dfd196f'}]" />
 
 各大厂，有用 `rem` 适配的、也有用 `vm` 适配的、也有 `vm+rem` 结合适配的，纯用 px 方案的也有
 
@@ -499,13 +499,13 @@ rem 方案，引入  `amfe-flexible`  库
 
 ### 其他
 
-[**caniuse**](https://link.zhihu.com/?target=https%3A//caniuse.com/) 网站测试 CSS 属性与浏览器的兼容性问题
+<link-tag :linkList="[{  linkText:'caniuse',linkUrl:'https://caniuse.com/'}]" /> 网站测试 CSS 属性与浏览器的兼容性问题
 
 ### 疑问
 
-Q：[**为什么 H5 移动端 UI 库单位大都是用 px？这样不会有适配问题吗？**](https://www.zhihu.com/question/275803537/answer/383675406)
+Q：<link-tag :linkList="[{ linkType: 'zhihu', linkText:'传送门：为什么 H5 移动端 UI 库单位大都是用 px？这样不会有适配问题吗？',linkUrl:'https://www.zhihu.com/question/275803537/answer/383675406'}]" />
 
-其实我们写好 px 后，如果项目采用 rem 写业务，引入  [**px2rem**](https://link.zhihu.com/?target=https%3A//github.com/songsiqi/px2rem)（已经六年没有维护了） 即可转换。
+其实我们写好 px 后，如果项目采用 rem 写业务，引入  <link-tag :linkList="[{ linkType: 'git', linkText:'px2rem',linkUrl:'https://link.zhihu.com/?target=https%3A//github.com/songsiqi/px2rem'}]" />（已经六年没有维护了） 即可转换。
 
 在有赞 vant 库中，它对浏览器适配的介绍是：
 
@@ -523,13 +523,12 @@ postcss-px-to-viewport 是一款 PostCSS 插件，用于将 px 单位转化为 v
 
 :::
 
-demo 合集：[**线上 demo**](https://link.zhihu.com/?target=https%3A//demo.azhubaby.com)
+demo 合集：<link-tag :linkList="[{ linkType: 'zhihu', linkText:'传送门：线上 demo',linkUrl:'https://link.zhihu.com/?target=https%3A//demo.azhubaby.com'}]" />
 
 ## **参考资料**
 
-- [**前端基础知识概述 -- 移动端开发的屏幕、图像、字体与布局的兼容适配**](https://link.zhihu.com/?target=https%3A//github.com/chokcoco/cnblogsArticle/issues/25)
-- [**Rem 布局的原理解析**](https://link.zhihu.com/?target=https%3A//yanhaijing.com/css/2017/09/29/principle-of-rem-layout/)
-- [**再谈 Retina 下 1px 的解决方案**](https://link.zhihu.com/?target=https%3A//juejin.cn/post/6844903571129892878)
-- [**再聊移动端页面的适配**](https://link.zhihu.com/?target=https%3A//juejin.cn/post/6844903569884184589)
-- [**如何在 Vue 项目中使用 vw 实现移动端适配**](https://link.zhihu.com/?target=https%3A//juejin.cn/post/6844903571096338439)
-- [**细说移动端 经典的 REM 布局 与 新秀 VW 布局**](https://link.zhihu.com/?target=https%3A//www.cnblogs.com/imwtr/p/9648233.html)
+- <link-tag :linkList="[{ linkType: 'git', linkText:'前端基础知识概述 -- 移动端开发的屏幕、图像、字体与布局的兼容适配',linkUrl:'https://link.zhihu.com/?target=https%3A//github.com/chokcoco/cnblogsArticle/issues/25'}]" />
+- <link-tag :linkList="[{ linkType: 'zhihu', linkText:'传送门：Rem 布局的原理解析',linkUrl:'https://link.zhihu.com/?target=https%3A//yanhaijing.com/css/2017/09/29/principle-of-rem-layout/'}]" />
+- <link-tag :linkList="[{ linkType: 'juejin', linkText:'传送门：再谈 Retina 下 1px 的解决方案',linkUrl:'https://juejin.cn/post/6844903571129892878'}]" />
+- <link-tag :linkList="[{ linkType: 'juejin', linkText:'传送门：如何在 Vue 项目中使用 vw 实现移动端适配',linkUrl:'https://juejin.cn/post/6844903571096338439'}]" />
+- <link-tag :linkList="[{ linkType: 'zhihu', linkText:'传送门：细说移动端 经典的 REM 布局 与 新秀 VW 布局',linkUrl:'https://link.zhihu.com/?target=https%3A//www.cnblogs.com/imwtr/p/9648233.html'}]" />

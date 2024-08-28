@@ -12,6 +12,12 @@ const rootDir = './src/docs'; // 文档根目录
 const sidebarItems = {}; // 侧边栏配置
 const siderBarIcon = `📝`
 
+const stateTags = {
+  '已完成': `<span class="el-tag el-tag--primary  el-tag--small el-tag--plain"><span class="el-tag__content">已完成</span></span>`,
+  '未完成': `<span class="el-tag el-tag--warning  el-tag--small el-tag--plain"><span class="el-tag__content">未完成</span></span>`,
+  '待更新': `<span class="el-tag el-tag--info  el-tag--small el-tag--plain"><span class="el-tag__content">待更新</span></span>`,
+}
+
 /**
  * 同步递归获取指定目录下所有级别的文件夹路径，并以树形结构返回。
  * @param dir - 目录路径。
@@ -70,7 +76,7 @@ function getNavItems(ele) {
         ...files.filter(file => upath.trimExt(file.name) !== 'index').map(file => {
           const findItem = nameLabels.find(i => i.en === upath.trimExt(file.name))
           return {
-            text: `${siderBarIcon} ${findItem.zh}`,
+            text: `${siderBarIcon} ${findItem.zh}${'' + stateTags[(findItem.meta || {}).state] || ''}`,
             link: upath.trimExt(upath.join(ele.link.replace(upath.normalize(srcDir), ''), file.name)),
             meta: {
               ...(findItem.meta || {}),

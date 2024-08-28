@@ -89,8 +89,7 @@ JS 是⼀⻔单线程的语⾔，这是因为它运⾏在浏览器的渲染主�
 
    ::: tip
 
-   将来该默认模式可能会有所改变，有兴趣的同学可参⻅ [**chrome 官⽅说
-   明⽂档**](https://chromium.googlesource.com/chromium/src/+/main/docs/process_model_and_site_isolation.md#Modes-and-Availability)
+   将来该默认模式可能会有所改变，有兴趣的同学可参⻅ <link-tag :linkList="[{ linkText:'chrome 官⽅说明⽂档',linkUrl:'https://chromium.googlesource.com/chromium/src/+/main/docs/process_model_and_site_isolation.md#Modes-and-Availability'}]" />
 
    :::
 

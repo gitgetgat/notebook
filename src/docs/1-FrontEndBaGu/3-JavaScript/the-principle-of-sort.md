@@ -18,11 +18,11 @@ arr.sort(comparefn(a, b)); //自定义排序比较方法
 
 js 提供了 sort 方法，方便对数组进行排序，然而不同引擎对 js 的 sort 方法解析可能存在差异，本文基于 v8 引擎进行分析。
 
-[**V8 引擎排序源码**](https://link.zhihu.com/?target=https%3A//github.com/v8/v8/blob/ad82a40509c5b5b4680d4299c8f08d6c6d31af3c/src/js/array.js)
+<link-tag :linkList="[{ linkType: 'git', linkText:'V8 引擎排序源码',linkUrl:'https://link.zhihu.com/?target=https%3A//github.com/v8/v8/blob/ad82a40509c5b5b4680d4299c8f08d6c6d31af3c/src/js/array.js'}]" />
 
-之前的版本是：[**插入排序和快速排序**](https://www.cnblogs.com/Renyi-Fan/p/12515283.html#_label1)（**V8 引擎 sort 函数只给出了两种排序 InsertionSort 和 QuickSort，数量小于 10 的数组使用 InsertionSort，长度超过 10 使用 QuickSort**），现在是冒泡排序
+之前的版本是：<link-tag :linkList="[{ linkText:'插入排序和快速排序',linkUrl:'https://www.cnblogs.com/Renyi-Fan/p/12515283.html#_label1'}]" />（**V8 引擎 sort 函数只给出了两种排序 InsertionSort 和 QuickSort，数量小于 10 的数组使用 InsertionSort，长度超过 10 使用 QuickSort**），现在是冒泡排序
 
-原理实现链接：[**https://github.com/v8/v8/blob/ad82a40509c5b5b4680d4299c8f08d6c6d31af3c/src/js/array.js**](https://github.com/v8/v8/blob/ad82a40509c5b5b4680d4299c8f08d6c6d31af3c/src/js/array.js)
+原理实现链接：<link-tag :linkList="[{ linkType: 'git', linkText:'原理实现',linkUrl:'https://github.com/v8/v8/blob/ad82a40509c5b5b4680d4299c8f08d6c6d31af3c/src/js/array.js'}]" />
 
 ### 插入排序：
 
