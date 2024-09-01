@@ -34,6 +34,12 @@ features:
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
 
+<script setup>
+import { useData } from 'vitepress'
+const { theme } = useData()
+console.log('theme',theme)
+</script>
+
 ## Getting Started
 
 You can get started using VitePress right away using `npx`!

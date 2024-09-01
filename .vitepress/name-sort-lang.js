@@ -1186,6 +1186,16 @@ const JAVASCRIPT_LABELS = [
     },
   },
   {
+    zh: 'js 中的副作用指什么',
+    en: 'what-is-side-effect-in-js',
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
     zh: '',
     en: '',
     parentDir: ['3-JavaScript'],
@@ -1505,6 +1515,26 @@ const LIBRARY_LABELS = [
   {
     zh: '开源瀑布流插件 Masonry.js',
     en: 'open-source-waterfall-stream-plug-in',
+    parentDir: ['Library'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Library']
+    },
+  },
+  {
+    zh: '一款神奇的 JavaScript 开源多点触摸手势库 Hammer.js',
+    en: 'hammer.js-is-a-magical-javascript-open-source-multi-touch-gesture-library',
+    parentDir: ['Library'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Library']
+    },
+  },
+  {
+    zh: '一款神奇的 JavaScript 开源文件上传库 Uppy.js',
+    en: 'uppy.js-is-a-magical-javascript-open-source-file-upload-library',
     parentDir: ['Library'],
     meta: {
       star: 5,
@@ -2147,6 +2177,46 @@ const VUE2_LABELS = [
 
 const VUE3_LABELS = [
   {
+    zh: 'Tmeplate 和 JSX 的性能孰优孰劣？',
+    en: 'the-performance-of-tmeplate-versus-jsx',
+    parentDir: ['Vue3'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Vue3']
+    },
+  },
+  {
+    zh: '什么是 AST，它是如何构建的？',
+    en: 'what-is-an-ast-and-how-is-it-constructed',
+    parentDir: ['Vue3'],
+    meta: {
+      star: 8,
+      state: '未完成',
+      tags: ['Vue3']
+    },
+  },
+  {
+    zh: '编译器的设计原则是什么？',
+    en: 'what-are-the-design-principles-of-the-compiler',
+    parentDir: ['Vue3'],
+    meta: {
+      star: 8,
+      state: '未完成',
+      tags: ['Vue3']
+    },
+  },
+  {
+    zh: 'vue3 为什么使用 proxy ?',
+    en: 'why-does-vue3-use-proxy',
+    parentDir: ['Vue3'],
+    meta: {
+      star: 5,
+      state: '未完成',
+      tags: ['Vue3']
+    },
+  },
+  {
     zh: 'Vue3 的组合式API：你真的需要它吗 ?',
     en: 'understanding-the-composition-api-to-optimize-code-organization',
     parentDir: ['Vue3'],
@@ -2297,36 +2367,6 @@ const VUE3_LABELS = [
     },
   },
   {
-    zh: '什么是 AST，它是如何构建的？',
-    en: 'what-is-an-ast-and-how-is-it-constructed',
-    parentDir: ['Vue3'],
-    meta: {
-      star: 8,
-      state: '未完成',
-      tags: ['Vue3']
-    },
-  },
-  {
-    zh: '编译器的设计原则是什么？',
-    en: 'what-are-the-design-principles-of-the-compiler',
-    parentDir: ['Vue3'],
-    meta: {
-      star: 8,
-      state: '未完成',
-      tags: ['Vue3']
-    },
-  },
-  {
-    zh: 'vue3 为什么使用 proxy ?',
-    en: 'why-does-vue3-use-proxy',
-    parentDir: ['Vue3'],
-    meta: {
-      star: 5,
-      state: '未完成',
-      tags: ['Vue3']
-    },
-  },
-  {
     zh: 'diff 算法的实现逻辑',
     en: 'implementation-logic-of-diff-algorithm',
     parentDir: ['Vue3'],
@@ -2343,6 +2383,46 @@ const VUE3_LABELS = [
     meta: {
       star: 5,
       state: '已完成',
+      tags: ['Vue3']
+    },
+  },
+  {
+    zh: 'v-for 和 v-if 的优先级',
+    en: 'priorities-of-v-for-and-v-if',
+    parentDir: ['Vue3'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Vue3']
+    },
+  },
+  {
+    zh: 'watch 与 watchEffect',
+    en: 'the-difference-between-watch-and-watcheffect',
+    parentDir: ['Vue3'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Vue3']
+    },
+  },
+  {
+    zh: 'Vue3 中 setup 语法糖',
+    en: 'setup-syntax-sugar-in-vue3',
+    parentDir: ['Vue3'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['Vue3']
+    },
+  },
+  {
+    zh: 'Vue3 是如何实现在 style 中使用响应式变量',
+    en: 'how-does-vue3-use-responsive-variables-in-style',
+    parentDir: ['Vue3'],
+    meta: {
+      star: 5,
+      state: '未完成',
       tags: ['Vue3']
     },
   },

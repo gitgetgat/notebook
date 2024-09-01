@@ -213,3 +213,10 @@
 .el-loading-spinner .circular {
   animation: none !important;
 }
+
+@media (min-width: 960px) {
+  .VPLocalNavOutlineDropdown .items {
+    width: auto;
+    min-width: 260px;
+  }
+}
