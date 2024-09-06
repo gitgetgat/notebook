@@ -140,6 +140,7 @@ function aUrlSkip(url) {
     border: 2px solid var(--vp-c-text-1);
     display: flex;
     align-items: center; /* 垂直居中 */
+    transition: all 0.2s linear;
   }
   .npm-color {
     background-color: #cb3837;
@@ -171,6 +172,11 @@ function aUrlSkip(url) {
   .link-text {
     color: #fff;
     background-color: var(--soda-bg-rgba-1);
+    border: 2px solid var(--vp-c-brand-1);
+    border-left: none;
+  }
+  .link-icon {
+    border: 2px solid var(--vp-c-brand-1);
   }
 }
 .link-tag-items {

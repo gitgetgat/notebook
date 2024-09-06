@@ -60,38 +60,8 @@ const GIT_LABELS = [
     },
   },
   {
-    zh: '报错：pre-commit hook failed',
-    en: 'pre-commit-hook-failed-(add---no-verify-to-bypass)',
-    parentDir: ['Git'],
-    meta: {
-      star: 3,
-      state: '已完成',
-      tags: ['Git', '报错处理']
-    },
-  },
-  {
-    zh: '报错：fatal: unable to access ‘https://github.com/.......‘: OpenSSL SSL_read: Connection was reset',
-    en: 'fatal-unable-to-access-openssl-ssl_read-connection-was-reset',
-    parentDir: ['Git'],
-    meta: {
-      star: 3,
-      state: '已完成',
-      tags: ['Git', '报错处理']
-    },
-  },
-  {
-    zh: '报错：fatal: unable to access ‘https://github.com/.../‘: Failed to connect to github',
-    en: 'fatal-unable-to-access-......-failed-to-connect-to-github',
-    parentDir: ['Git'],
-    meta: {
-      star: 3,
-      state: '已完成',
-      tags: ['Git', '报错处理']
-    },
-  },
-  {
-    zh: '',
-    en: '',
+    zh: 'Git 报错合集',
+    en: 'git-error-collection',
     parentDir: ['Git'],
     meta: {
       star: 3,
@@ -1542,6 +1512,36 @@ const LIBRARY_LABELS = [
       tags: ['Library']
     },
   },
+  {
+    zh: `一款神奇的 JavaScript 开源文件上传库 Filepond.js`,
+    en: `a-magical-javascript-open-source-file-upload-library-filepond`,
+    parentDir: ['Library'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Library']
+    },
+  },
+  {
+    zh: `一款高效的 JavaScript 开源字符串处理库 Magic-String`,
+    en: `magic-string-an-efficient-javascript-open-source-string-processing-library`,
+    parentDir: ['Library'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Library']
+    },
+  },
+  {
+    zh: ``,
+    en: ``,
+    parentDir: ['Library'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Library']
+    },
+  },
 ]
 
 const UNIAPP_LABELS = [
@@ -2175,11 +2175,11 @@ const VUE2_LABELS = [
   },
 ]
 
-const VUE3_LABELS = [
+const VUE3_BASE_LABELS = [
   {
     zh: 'Tmeplate 和 JSX 的性能孰优孰劣？',
     en: 'the-performance-of-tmeplate-versus-jsx',
-    parentDir: ['Vue3'],
+    parentDir: ['Vue3-Base-Knowledge-Points'],
     meta: {
       star: 5,
       state: '已完成',
@@ -2189,7 +2189,7 @@ const VUE3_LABELS = [
   {
     zh: '什么是 AST，它是如何构建的？',
     en: 'what-is-an-ast-and-how-is-it-constructed',
-    parentDir: ['Vue3'],
+    parentDir: ['Vue3-Base-Knowledge-Points'],
     meta: {
       star: 8,
       state: '未完成',
@@ -2199,7 +2199,7 @@ const VUE3_LABELS = [
   {
     zh: '编译器的设计原则是什么？',
     en: 'what-are-the-design-principles-of-the-compiler',
-    parentDir: ['Vue3'],
+    parentDir: ['Vue3-Base-Knowledge-Points'],
     meta: {
       star: 8,
       state: '未完成',
@@ -2209,7 +2209,7 @@ const VUE3_LABELS = [
   {
     zh: 'vue3 为什么使用 proxy ?',
     en: 'why-does-vue3-use-proxy',
-    parentDir: ['Vue3'],
+    parentDir: ['Vue3-Base-Knowledge-Points'],
     meta: {
       star: 5,
       state: '未完成',
@@ -2219,7 +2219,7 @@ const VUE3_LABELS = [
   {
     zh: 'Vue3 的组合式API：你真的需要它吗 ?',
     en: 'understanding-the-composition-api-to-optimize-code-organization',
-    parentDir: ['Vue3'],
+    parentDir: ['Vue3-Base-Knowledge-Points'],
     meta: {
       star: 5,
       state: '未完成',
@@ -2229,7 +2229,7 @@ const VUE3_LABELS = [
   {
     zh: 'ref 是什么？',
     en: 'what-is-ref',
-    parentDir: ['Vue3'],
+    parentDir: ['Vue3-Base-Knowledge-Points'],
     meta: {
       star: 5,
       state: '待更新',
@@ -2239,7 +2239,7 @@ const VUE3_LABELS = [
   {
     zh: 'vue3 组件通信（setup 写法）',
     en: 'vue3-component-communication-(setup-writing)',
-    parentDir: ['Vue3'],
+    parentDir: ['Vue3-Base-Knowledge-Points'],
     meta: {
       star: 5,
       state: '未完成',
@@ -2249,7 +2249,7 @@ const VUE3_LABELS = [
   {
     zh: 'Vue3 中定义全局方法并在组件中使用',
     en: 'global-methods-are-defined-in-vue3-and-used-in-components',
-    parentDir: ['Vue3'],
+    parentDir: ['Vue3-Base-Knowledge-Points'],
     meta: {
       star: 3,
       state: '已完成',
@@ -2259,7 +2259,7 @@ const VUE3_LABELS = [
   {
     zh: 'Vue3 的异步组件',
     en: 'asynchronous-components-in-vue3',
-    parentDir: ['Vue3'],
+    parentDir: ['Vue3-Base-Knowledge-Points'],
     meta: {
       star: 5,
       state: '未完成',
@@ -2269,7 +2269,7 @@ const VUE3_LABELS = [
   {
     zh: '什么是 hooks？关于 vue3 中的 hooks',
     en: 'what-are-hooks',
-    parentDir: ['Vue3'],
+    parentDir: ['Vue3-Base-Knowledge-Points'],
     meta: {
       star: 5,
       state: '未完成',
@@ -2279,7 +2279,7 @@ const VUE3_LABELS = [
   {
     zh: '在日常开发中使用过 render 函数 或 h 函数吗？使用场景是什么？',
     en: 'have-you-used-render-function-or-h-function-in-daily-development',
-    parentDir: ['Vue3'],
+    parentDir: ['Vue3-Base-Knowledge-Points'],
     meta: {
       star: 5,
       state: '待更新',
@@ -2289,7 +2289,7 @@ const VUE3_LABELS = [
   {
     zh: 'h 函数支持多种调用方式，这是怎么做到的？',
     en: 'the-h-function-supports-multiple-calling-methods.-how-is-this-possible',
-    parentDir: ['Vue3'],
+    parentDir: ['Vue3-Base-Knowledge-Points'],
     meta: {
       star: 5,
       state: '已完成',
@@ -2299,7 +2299,7 @@ const VUE3_LABELS = [
   {
     zh: 'h 函数是什么？与 VNode 的关系是什么？',
     en: 'what-is-the-h-function-what-is-its-relationship-with-vnode',
-    parentDir: ['Vue3'],
+    parentDir: ['Vue3-Base-Knowledge-Points'],
     meta: {
       star: 5,
       state: '已完成',
@@ -2309,7 +2309,7 @@ const VUE3_LABELS = [
   {
     zh: 'vue3 的渲染机制是什么？',
     en: 'what-is-the-rendering-mechanism-of-vue3',
-    parentDir: ['Vue3'],
+    parentDir: ['Vue3-Base-Knowledge-Points'],
     meta: {
       star: 5,
       state: '已完成',
@@ -2319,7 +2319,7 @@ const VUE3_LABELS = [
   {
     zh: 'Vue3 watch 实现原理',
     en: 'watch-implementation-principle',
-    parentDir: ['Vue3'],
+    parentDir: ['Vue3-Base-Knowledge-Points'],
     meta: {
       star: 5,
       state: '已完成',
@@ -2329,7 +2329,7 @@ const VUE3_LABELS = [
   {
     zh: 'Vue3 computed 实现原理',
     en: 'computed-implementation-principle',
-    parentDir: ['Vue3'],
+    parentDir: ['Vue3-Base-Knowledge-Points'],
     meta: {
       star: 5,
       state: '已完成',
@@ -2339,7 +2339,7 @@ const VUE3_LABELS = [
   {
     zh: 'vue3 性能要好于 vue2 的原因？',
     en: 'the-reason-why-vue3-performs-better-than-vue2',
-    parentDir: ['Vue3'],
+    parentDir: ['Vue3-Base-Knowledge-Points'],
     meta: {
       star: 5,
       state: '已完成',
@@ -2349,7 +2349,7 @@ const VUE3_LABELS = [
   {
     zh: 'vue3 + vite 项目打包优化',
     en: 'vue3-+-vite-project-packaging-optimization',
-    parentDir: ['Vue3'],
+    parentDir: ['Vue3-Base-Knowledge-Points'],
     meta: {
       star: 7,
       state: '未完成',
@@ -2359,7 +2359,7 @@ const VUE3_LABELS = [
   {
     zh: 'vue3 中的响应式实现原理',
     en: 'responsive-implementation-principle-in-vue3',
-    parentDir: ['Vue3'],
+    parentDir: ['Vue3-Base-Knowledge-Points'],
     meta: {
       star: 7,
       state: '已完成',
@@ -2369,7 +2369,7 @@ const VUE3_LABELS = [
   {
     zh: 'diff 算法的实现逻辑',
     en: 'implementation-logic-of-diff-algorithm',
-    parentDir: ['Vue3'],
+    parentDir: ['Vue3-Base-Knowledge-Points'],
     meta: {
       star: 10,
       state: '已完成',
@@ -2379,7 +2379,7 @@ const VUE3_LABELS = [
   {
     zh: '深度选择器探秘：/deep/、>>>、::v-deep 与 v-deep() 的区别与用法',
     en: 'depth-selector-probe',
-    parentDir: ['Vue3'],
+    parentDir: ['Vue3-Base-Knowledge-Points'],
     meta: {
       star: 5,
       state: '已完成',
@@ -2389,7 +2389,7 @@ const VUE3_LABELS = [
   {
     zh: 'v-for 和 v-if 的优先级',
     en: 'priorities-of-v-for-and-v-if',
-    parentDir: ['Vue3'],
+    parentDir: ['Vue3-Base-Knowledge-Points'],
     meta: {
       star: 5,
       state: '已完成',
@@ -2399,7 +2399,7 @@ const VUE3_LABELS = [
   {
     zh: 'watch 与 watchEffect',
     en: 'the-difference-between-watch-and-watcheffect',
-    parentDir: ['Vue3'],
+    parentDir: ['Vue3-Base-Knowledge-Points'],
     meta: {
       star: 5,
       state: '已完成',
@@ -2409,7 +2409,7 @@ const VUE3_LABELS = [
   {
     zh: 'Vue3 中 setup 语法糖',
     en: 'setup-syntax-sugar-in-vue3',
-    parentDir: ['Vue3'],
+    parentDir: ['Vue3-Base-Knowledge-Points'],
     meta: {
       star: 4,
       state: '已完成',
@@ -2417,9 +2417,92 @@ const VUE3_LABELS = [
     },
   },
   {
+    zh: '',
+    en: '',
+    parentDir: ['Vue3-Base-Knowledge-Points'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Vue3']
+    },
+  },
+]
+
+const VUE3_SOURCE_CODE_DEBUG_LABELS = [
+  {
+    zh: '通过 debug 搞清楚 .vue 文件怎么变成 .js 文件',
+    en: `use-debug-to-figure-out-how-a.vue-file-becomes-a.js-file`,
+    parentDir: ['Vue3-Source-Code-Debug'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Vue3']
+    },
+  },
+  {
+    zh: 'vue3 的宏到底是什么东西？',
+    en: `what-exactly-is-vue3-macro`,
+    parentDir: ['Vue3-Source-Code-Debug'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['Vue3']
+    },
+  },
+  {
+    zh: 'Vue 3 的 setup 语法糖到底是什么东西？',
+    en: `what-is-vue3-setup-syntax-sugar`,
+    parentDir: ['Vue3-Source-Code-Debug'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['Vue3']
+    },
+  },
+  {
+    zh: '为什么 defineProps 宏函数不需要从 vue 中 import 导入？',
+    en: `why-defineprops-macro-function-does-not-need-to-be-imported-from-vue`,
+    parentDir: ['Vue3-Source-Code-Debug'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['Vue3']
+    },
+  },
+  {
+    zh: 'defineEmits 宏函数编译后是 vue2 的选项式 API',
+    en: `defineemits-macro-function-is-compiled-into-vue2-optional-api`,
+    parentDir: ['Vue3-Source-Code-Debug'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['Vue3']
+    },
+  },
+  {
+    zh: 'vue3 的 scoped 如何将 style 处理为 data-v-x 格式',
+    en: `how-does-vue3's-scoped-handle-style-in-data-v-x-format`,
+    parentDir: ['Vue3-Source-Code-Debug'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Vue3']
+    },
+  },
+  {
+    zh: 'vue3 的 scoped 如何给 html 元素增加自定义属性 data-v-x',
+    en: `how-does-vue3's-scoped-add-a-custom-data-v-x-attribute-to-html-elements`,
+    parentDir: ['Vue3-Source-Code-Debug'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Vue3']
+    },
+  },
+  {
     zh: 'Vue3 是如何实现在 style 中使用响应式变量',
     en: 'how-does-vue3-use-responsive-variables-in-style',
-    parentDir: ['Vue3'],
+    parentDir: ['Vue3-Source-Code-Debug'],
     meta: {
       star: 5,
       state: '未完成',
@@ -2427,9 +2510,9 @@ const VUE3_LABELS = [
     },
   },
   {
-    zh: '',
-    en: '',
-    parentDir: ['Vue3'],
+    zh: ``,
+    en: ``,
+    parentDir: ['Vue3-Source-Code-Debug'],
     meta: {
       star: 5,
       state: '已完成',
@@ -3296,15 +3379,16 @@ const NAME_LABELS = [
   ...addSortKey(CODESNIPPET_LABELS),
   ...addSortKey(UNIAPP_LABELS),
   ...addSortKey(VUE2_LABELS),
-  ...addSortKey(VUE3_LABELS),
+  ...addSortKey(VUE3_BASE_LABELS),
   ...addSortKey(WEBPACK_LABELS),
   ...addSortKey(VUEROUTER_LABELS),
   ...addSortKey(VUEX_LABELS),
   ...addSortKey(BROWSER_LABELS),
   ...addSortKey(DESIGNPATTERNS_LABELS),
   ...addSortKey(NETWORK_LABELS),
+  ...addSortKey(VUE3_SOURCE_CODE_DEBUG_LABELS),
 ]
-
+const spaceStr = '　'
 const DIR_LABELS = {
   '1-FrontEndBaGu': '前端',
   '1-HTML': 'HTML',
@@ -3317,6 +3401,8 @@ const DIR_LABELS = {
   '2-Framework': '框架',
   'Vue2': 'Vue2',
   'Vue3': 'Vue3',
+  'Vue3-Source-Code-Debug': `${spaceStr}Vue3 编译原理揭秘`,
+  'Vue3-Base-Knowledge-Points': `${spaceStr}Vue3 基础知识点`,
   '3-BackEnd': '服务端',
   '4-ActualCombat': '实战',
   '5-DesignPatterns': '设计模式',
@@ -3336,7 +3422,7 @@ const DIR_LABELS = {
   'DataStructureAndAlgorithms': '数据结构与算法',
   'Library': '第三方库',
   'Uni-App': 'Uni-App',
-  'Webpack': 'Webpack',
+  'Webpack': `${spaceStr}Webpack`,
   'Git': 'Git',
   'Interview': '面试',
   'Questions': '面试题',
