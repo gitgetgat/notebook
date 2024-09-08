@@ -555,7 +555,7 @@ if (el.composing) return;
 
 - 组件上面的 `v-model` 编译后会生成 `modelValue` 属性和 `@update:modelValue` 事件。
 
-  而在原生 `input` 上面使用 `v-model` 编译后不会生成 `modelValue` 属性，只会生成 `onUpdate:modelValue` 回调函数和 `vModelText` 自定义指令。（在 面试官：只知道 `v-model` 是 `modelValue` 语法糖，那你可以走了 文章中我们已经讲过了 `@update:modelValue` 事件其实等价于 `onUpdate:modelValue` 回调函数）
+  而在原生 `input` 上面使用 `v-model` 编译后不会生成 `modelValue` 属性，只会生成 `onUpdate:modelValue` 回调函数和 `vModelText` 自定义指令。（在 [v-model 作为 modelValue 语法糖是如何编译运行的 ?](./how-v-model-is-compiled-and-run-as-modelvalue-syntax-sugar.md) 文章中我们已经讲过了 `@update:modelValue` 事件其实等价于 `onUpdate:modelValue` 回调函数）
 
 - 在组件上面使用 `v-model`，是由子组件中定义一个名为 `modelValue` 的 `props` 来接收父组件使用 `v-model` 绑定的变量，然后使用这个 `modelValue` 绑定到子组件的表单中。
 
