@@ -536,7 +536,7 @@ const JAVASCRIPT_LABELS = [
     },
   },
   {
-    zh: 'Promise 和 async await 的区别是什么?',
+    zh: 'Promise 和 async await 的区别是什么？',
     en: 'what-is-the-difference-between-promise-and-async-await',
     parentDir: ['3-JavaScript'],
     meta: {
@@ -616,7 +616,7 @@ const JAVASCRIPT_LABELS = [
     },
   },
   {
-    zh: '怎么知道一个未知对象的长度和深度?',
+    zh: '怎么知道一个未知对象的长度和深度？',
     en: 'how-to-know-the-length-and-depth-of-an-unknown-object',
     parentDir: ['3-JavaScript'],
     meta: {
@@ -826,7 +826,7 @@ const JAVASCRIPT_LABELS = [
     },
   },
   {
-    zh: '当数据没有请求过来的时候该怎么做?',
+    zh: '当数据没有请求过来的时候该怎么做？',
     en: 'what-to-do-when-data-is-not-requested',
     parentDir: ['3-JavaScript'],
     meta: {
@@ -996,7 +996,7 @@ const JAVASCRIPT_LABELS = [
     },
   },
   {
-    zh: 'vue 和 jquery 的区别是什么?',
+    zh: 'vue 和 jquery 的区别是什么？',
     en: 'what-is-the-difference-between-vue-and-jquery',
     parentDir: ['3-JavaScript'],
     meta: {
@@ -1026,7 +1026,7 @@ const JAVASCRIPT_LABELS = [
     },
   },
   {
-    zh: '防抖和节流是什么?',
+    zh: '防抖和节流是什么？',
     en: 'what-is-anti-shake-and-throttling',
     parentDir: ['3-JavaScript'],
     meta: {
@@ -1179,7 +1179,7 @@ const JAVASCRIPT_LABELS = [
 
 const HTML_LABELS = [
   {
-    zh: 'H5、C3 有哪些新特性?',
+    zh: 'H5、C3 有哪些新特性？',
     en: 'what-are-the-new-features-of-h5-and-c3',
     parentDir: ['1-HTML'],
     meta: {
@@ -1219,7 +1219,7 @@ const HTML_LABELS = [
     },
   },
   {
-    zh: 'png、jpg、gif 这些图片格式解释一下，分别什么时候用?',
+    zh: 'png、jpg、gif 这些图片格式解释一下，分别什么时候用？',
     en: 'explain-the-image-formats-of-png,-jpg,-and-gif,-and-when-to-use-them-respectively',
     parentDir: ['1-HTML'],
     meta: {
@@ -1340,7 +1340,7 @@ const TALK_LABELS = [
     },
   },
   {
-    zh: '工作到现在，项目中遇到最难的问题是什么? 怎么解决的?',
+    zh: '工作到现在，项目中遇到最难的问题是什么？ 怎么解决的？',
     en: 'what-is-the-most-difficult-problem-encountered-in-the-project-package',
     parentDir: ['Talk'],
     meta: {
@@ -1350,7 +1350,7 @@ const TALK_LABELS = [
     },
   },
   {
-    zh: '你的离职原因是什么 ?',
+    zh: '你的离职原因是什么？',
     en: 'what-was-the-reason-for-your-resignation',
     parentDir: ['Talk'],
     meta: {
@@ -1360,7 +1360,7 @@ const TALK_LABELS = [
     },
   },
   {
-    zh: '如何协同工作?',
+    zh: '如何协同工作？',
     en: 'how-does-it-work-together',
     parentDir: ['Talk'],
     meta: {
@@ -1370,7 +1370,7 @@ const TALK_LABELS = [
     },
   },
   {
-    zh: '你的优势在哪里?',
+    zh: '你的优势在哪里？',
     en: 'what-are-your-strengths',
     parentDir: ['Talk'],
     meta: {
@@ -1428,7 +1428,7 @@ const LIBRARY_LABELS = [
     parentDir: ['Library'],
     meta: {
       star: 5,
-      state: '未完成',
+      state: '已完成',
       tags: ['Library']
     },
   },
@@ -1546,7 +1546,7 @@ const LIBRARY_LABELS = [
 
 const UNIAPP_LABELS = [
   {
-    zh: 'uni-app 有没有做过分包?',
+    zh: 'uni-app 有没有做过分包？',
     en: 'has-uni-app-been-sub-packaged',
     parentDir: ['UniApp'],
     meta: {
@@ -1714,7 +1714,7 @@ const VUE2_LABELS = [
     },
   },
   {
-    zh: '封装一个可复用的组件，需要满足什么条件?',
+    zh: '封装一个可复用的组件，需要满足什么条件？',
     en: 'what-conditions-need-to-be-met-to-encapsulate-a-reusable-component',
     parentDir: ['Vue2'],
     meta: {
@@ -1744,7 +1744,7 @@ const VUE2_LABELS = [
     },
   },
   {
-    zh: 'vue 的过滤器怎么使用?',
+    zh: 'vue 的过滤器怎么使用？',
     en: 'how-to-use-vue-filter',
     parentDir: ['Vue2'],
     meta: {
@@ -1754,7 +1754,7 @@ const VUE2_LABELS = [
     },
   },
   {
-    zh: 'vue 中遍历全局的方法有哪些?',
+    zh: 'vue 中遍历全局的方法有哪些？',
     en: 'what-are-the-global-methods-in-vue',
     parentDir: ['Vue2'],
     meta: {
@@ -1764,7 +1764,7 @@ const VUE2_LABELS = [
     },
   },
   {
-    zh: '什么是 Render 函数?',
+    zh: '什么是 Render 函数？',
     en: 'what-is-the-render-function',
     parentDir: ['Vue2'],
     meta: {
@@ -1794,7 +1794,7 @@ const VUE2_LABELS = [
     },
   },
   {
-    zh: '什么是动态组件?',
+    zh: '什么是动态组件？',
     en: 'what-are-dynamic-components',
     parentDir: ['Vue2'],
     meta: {
@@ -1924,7 +1924,7 @@ const VUE2_LABELS = [
     },
   },
   {
-    zh: 'Vue 首屏优化该如何去做?',
+    zh: 'Vue 首屏优化该如何去做？',
     en: 'how-to-optimize-the-first-screen-of-vue',
     parentDir: ['Vue2'],
     meta: {
@@ -1964,7 +1964,7 @@ const VUE2_LABELS = [
     },
   },
   {
-    zh: '是否使用过 nuxt.js ?',
+    zh: '是否使用过 nuxt.js？',
     en: 'have-you-used-nuxt.js',
     parentDir: ['Vue2'],
     meta: {
@@ -2094,7 +2094,7 @@ const VUE2_LABELS = [
     },
   },
   {
-    zh: 'SEO 如何优化?',
+    zh: 'SEO 如何优化？',
     en: 'how-to-optimize-seo',
     parentDir: ['Vue2'],
     meta: {
@@ -2207,7 +2207,7 @@ const VUE3_BASE_LABELS = [
     },
   },
   {
-    zh: 'vue3 为什么使用 proxy ?',
+    zh: 'vue3 为什么使用 proxy？',
     en: 'why-does-vue3-use-proxy',
     parentDir: ['Vue3-Base-Knowledge-Points'],
     meta: {
@@ -2217,7 +2217,7 @@ const VUE3_BASE_LABELS = [
     },
   },
   {
-    zh: 'Vue3 的组合式API：你真的需要它吗 ?',
+    zh: 'Vue3 的组合式API：你真的需要它吗？',
     en: 'understanding-the-composition-api-to-optimize-code-organization',
     parentDir: ['Vue3-Base-Knowledge-Points'],
     meta: {
@@ -2417,6 +2417,16 @@ const VUE3_BASE_LABELS = [
     },
   },
   {
+    zh: 'Vue3.4 defineModel 实现双向绑定',
+    en: 'vue3.4-definemodel-implements-two-way-binding',
+    parentDir: ['Vue3-Base-Knowledge-Points'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Vue3']
+    },
+  },
+  {
     zh: '',
     en: '',
     parentDir: ['Vue3-Base-Knowledge-Points'],
@@ -2436,7 +2446,7 @@ const VUE3_SOURCE_CODE_DEBUG_LABELS = [
     meta: {
       star: 5,
       state: '已完成',
-      tags: ['Vue3']
+      tags: ['Vue3', "源码"]
     },
   },
   {
@@ -2446,7 +2456,7 @@ const VUE3_SOURCE_CODE_DEBUG_LABELS = [
     meta: {
       star: 4,
       state: '已完成',
-      tags: ['Vue3']
+      tags: ['Vue3', "源码"]
     },
   },
   {
@@ -2456,7 +2466,7 @@ const VUE3_SOURCE_CODE_DEBUG_LABELS = [
     meta: {
       star: 4,
       state: '已完成',
-      tags: ['Vue3']
+      tags: ['Vue3', "源码"]
     },
   },
   {
@@ -2466,7 +2476,7 @@ const VUE3_SOURCE_CODE_DEBUG_LABELS = [
     meta: {
       star: 4,
       state: '已完成',
-      tags: ['Vue3']
+      tags: ['Vue3', "源码"]
     },
   },
   {
@@ -2476,7 +2486,57 @@ const VUE3_SOURCE_CODE_DEBUG_LABELS = [
     meta: {
       star: 4,
       state: '已完成',
-      tags: ['Vue3']
+      tags: ['Vue3', "源码"]
+    },
+  },
+  {
+    zh: 'v-model 作为 modelValue 语法糖是如何编译运行的？',
+    en: `how-v-model-is-compiled-and-run-as-modelvalue-syntax-sugar`,
+    parentDir: ['Vue3-Source-Code-Debug'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['Vue3', "源码"]
+    },
+  },
+  {
+    zh: 'defineModel 如何简化 props 和 emit 自定义事件的？',
+    en: `how-definemodel-simplifies-props-and-emits-custom-events`,
+    parentDir: ['Vue3-Source-Code-Debug'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['Vue3', "源码"]
+    },
+  },
+  {
+    zh: 'vue3 如何将 template 编译成 render 函数的？',
+    en: `how-does-vue3-compile-template-into-render-function`,
+    parentDir: ['Vue3-Source-Code-Debug'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['Vue3', "源码"]
+    },
+  },
+  {
+    zh: 'vue3 是怎么处理内置的 v-for、v-model 等指令？',
+    en: `how-does-vue3-handle-built-in-v-for-v-model-and-other-instructions`,
+    parentDir: ['Vue3-Source-Code-Debug'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['Vue3', "源码"]
+    },
+  },
+  {
+    zh: '在原生 input 上面使用 v-model 和组件上面使用有什么区别？',
+    en: `what-is-the-difference-between-using-v-model-on-native-input-and-using-it-on-components`,
+    parentDir: ['Vue3-Source-Code-Debug'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['Vue3', "源码"]
     },
   },
   {
@@ -2486,7 +2546,7 @@ const VUE3_SOURCE_CODE_DEBUG_LABELS = [
     meta: {
       star: 5,
       state: '已完成',
-      tags: ['Vue3']
+      tags: ['Vue3', "源码"]
     },
   },
   {
@@ -2496,7 +2556,7 @@ const VUE3_SOURCE_CODE_DEBUG_LABELS = [
     meta: {
       star: 5,
       state: '已完成',
-      tags: ['Vue3']
+      tags: ['Vue3', "源码"]
     },
   },
   {
@@ -2506,7 +2566,7 @@ const VUE3_SOURCE_CODE_DEBUG_LABELS = [
     meta: {
       star: 5,
       state: '未完成',
-      tags: ['Vue3']
+      tags: ['Vue3', "源码"]
     },
   },
   {
@@ -2516,7 +2576,7 @@ const VUE3_SOURCE_CODE_DEBUG_LABELS = [
     meta: {
       star: 5,
       state: '已完成',
-      tags: ['Vue3']
+      tags: ['Vue3', "源码"]
     },
   },
 ]
@@ -2543,7 +2603,7 @@ const VUEX_LABELS = [
     },
   },
   {
-    zh: 'vuex 在什么场景会去使用? 属性有哪些?',
+    zh: 'vuex 在什么场景会去使用？ 属性有哪些？',
     en: 'in-what-scenarios-will-vuex-be-used-what-are-its-properties',
     parentDir: ['5-Vuex'],
     meta: {
@@ -2699,7 +2759,7 @@ const NODEJS_LABELS = [
     },
   },
   {
-    zh: '如何搭建脚手架?',
+    zh: '如何搭建脚手架？',
     en: 'how-to-build-scaffolding',
     parentDir: ['NodeJS'],
     meta: {
@@ -2709,7 +2769,7 @@ const NODEJS_LABELS = [
     },
   },
   {
-    zh: 'npm 的底层环境是什么?',
+    zh: 'npm 的底层环境是什么？',
     en: 'what-is-npm-underlying-environment',
     parentDir: ['NodeJS'],
     meta: {
@@ -2727,7 +2787,7 @@ const NODEJS_LABELS = [
 
 const WEBPACK_LABELS = [
   {
-    zh: 'webpack 打包和不打包的区别?',
+    zh: 'webpack 打包和不打包的区别？',
     en: 'the-difference-between-webpack-packaging-and-non-packaging',
     parentDir: ['Webpack'],
     meta: {
@@ -2747,7 +2807,7 @@ const WEBPACK_LABELS = [
     },
   },
   {
-    zh: 'webpack 是怎么打包的? babel 是做什么的?',
+    zh: 'webpack 是怎么打包的？ babel 是做什么的？',
     en: 'how-does-webpack-package-what-does-babel-do',
     parentDir: ['Webpack'],
     meta: {
@@ -2800,7 +2860,7 @@ const BROWSER_LABELS = [
     },
   },
   {
-    zh: 'DOM树 和 渲染树 有什么区别?',
+    zh: 'DOM树 和 渲染树 有什么区别？',
     en: 'what-is-the-difference-between-the-dom-tree-and-the-render-tree',
     parentDir: ['6-Browser'],
     meta: {
@@ -2810,7 +2870,7 @@ const BROWSER_LABELS = [
     },
   },
   {
-    zh: '浏览器的存储方式有哪些?',
+    zh: '浏览器的存储方式有哪些？',
     en: 'what-are-the-storage-methods-of-browsers',
     parentDir: ['6-Browser'],
     meta: {
@@ -2923,7 +2983,7 @@ const CODESNIPPET_LABELS = [
     },
   },
   {
-    zh: '在 css 的属性计算过程中，遇到不继承的问题该如何解决 ?',
+    zh: '在 css 的属性计算过程中，遇到不继承的问题该如何解决？',
     en: 'how-to-solve-the-problem-of-non-inheritance-in-the-css-calculation-process',
     parentDir: ['CodeSnippet'],
     meta: {

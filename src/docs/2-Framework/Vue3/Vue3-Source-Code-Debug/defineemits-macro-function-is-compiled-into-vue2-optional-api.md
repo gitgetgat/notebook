@@ -1,5 +1,7 @@
 # defineEmits 宏函数编译后是 vue2 的选项式 API
 
+<article-info/>
+
 ## 前言
 
 我们每天都在使用 `defineEmits` 宏函数，但是你知道 `defineEmits` 宏函数经过编译后其实就是 `vue2` 的 `选项式 API` 吗？通过回答下面两个问题，我将逐步为你揭秘 `defineEmits` 宏函数的神秘面纱。为什么 `Vue` 的 `defineEmits` 宏函数不需要 `import` 导入就可用？为什么 `defineEmits` 的返回值等同于 `$emit` 方法用于在组件中抛出事件？

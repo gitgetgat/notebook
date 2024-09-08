@@ -13,7 +13,7 @@ const sidebarItems = {}; // 侧边栏配置
 const siderBarIcon = `📝`
 
 const stateTags = {
-  '已完成': `<span class="el-tag el-tag--primary  el-tag--small el-tag--plain"><span class="el-tag__content">已完成</span></span>`,
+  // '已完成': `<span class="el-tag el-tag--primary  el-tag--small el-tag--plain"><span class="el-tag__content">已完成</span></span>`,
   '未完成': `<span class="el-tag el-tag--warning  el-tag--small el-tag--plain"><span class="el-tag__content">未完成</span></span>`,
   '待更新': `<span class="el-tag el-tag--info  el-tag--small el-tag--plain"><span class="el-tag__content">待更新</span></span>`,
 }
