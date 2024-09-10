@@ -1533,6 +1533,46 @@ const LIBRARY_LABELS = [
     },
   },
   {
+    zh: `动态输出文本打字效果 Typed.js`,
+    en: `dynamically-output-text-typing-effect-typed-js`,
+    parentDir: ['Library'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Library']
+    },
+  },
+  {
+    zh: `一款神奇的 JavaScript 开源拖放库 Dragula.js`,
+    en: `dragula-is-a-magical-javascript-open-source-drag-and-drop-library`,
+    parentDir: ['Library'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Library']
+    },
+  },
+  {
+    zh: `Dropzone，一款神奇的 JavaScript 开源文件拖拽上传库`,
+    en: `dropzone-is-a-magical-javascript-open-source-file-drag-and-drop-upload-library`,
+    parentDir: ['Library'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Library']
+    },
+  },
+  {
+    zh: `KaTeX，一款神奇的 JavaScript 开源数学公式渲染库`,
+    en: `katex-is-a-magical-javascript-open-source-mathematical-formula-rendering-library`,
+    parentDir: ['Library'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Library']
+    },
+  },
+  {
     zh: ``,
     en: ``,
     parentDir: ['Library'],
@@ -2532,6 +2572,36 @@ const VUE3_SOURCE_CODE_DEBUG_LABELS = [
   {
     zh: '在原生 input 上面使用 v-model 和组件上面使用有什么区别？',
     en: `what-is-the-difference-between-using-v-model-on-native-input-and-using-it-on-components`,
+    parentDir: ['Vue3-Source-Code-Debug'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['Vue3', "源码"]
+    },
+  },
+  {
+    zh: 'vue3 针对动态节点的 "靶向更新"',
+    en: `vue3-targeted-update-for-dynamic-nodes`,
+    parentDir: ['Vue3-Source-Code-Debug'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['Vue3', "源码"]
+    },
+  },
+  {
+    zh: 'Vue 3 编译优化之 "静态提升" 的秘密',
+    en: `the-secret-of-static-promotion-in-vue-3-compilation-optimization`,
+    parentDir: ['Vue3-Source-Code-Debug'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['Vue3', "源码"]
+    },
+  },
+  {
+    zh: 'Vue 3 的 generate 是这样生成 render 函数的',
+    en: `vue-3-generate-generates-the-render-function-like-this`,
     parentDir: ['Vue3-Source-Code-Debug'],
     meta: {
       star: 4,

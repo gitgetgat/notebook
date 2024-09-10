@@ -21,6 +21,7 @@
     "pagefind": "^1.1.0",
     "pdfjs-dist": "3.11.174",
     "plyr": "^3.7.8",
+    "typed.js": "^2.1.0",
     "uuid": "^10.0.0",
     "v-viewer": "^3.0.11",
     "viewerjs": "^1.11.6",

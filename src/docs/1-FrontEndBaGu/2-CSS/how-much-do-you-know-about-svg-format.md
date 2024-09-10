@@ -3,7 +3,7 @@
 <article-info/>
 
 <script setup>
-import ExpSvg from '../../../../components/example/svg.vue'
+import ExpSvg from '../../../../components/example/exp-svg.vue'
 </script>
 
 ## SVG 是什么

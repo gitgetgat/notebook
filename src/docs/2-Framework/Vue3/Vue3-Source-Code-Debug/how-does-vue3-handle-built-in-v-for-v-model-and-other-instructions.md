@@ -1,5 +1,7 @@
 # vue3 是怎么处理内置的 v-for、v-model 等指令？
 
+<article-info/>
+
 ## 举个例子
 
 还是同样的套路，我们通过 debug 一个简单的 demo 来带你搞清楚 `transform` 函数内具体是如何处理 vue 内置的 `v-for`、`v-model` 等指令。demo 代码如下：

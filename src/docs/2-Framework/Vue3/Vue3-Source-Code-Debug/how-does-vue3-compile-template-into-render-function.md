@@ -1,5 +1,7 @@
 # vue3 如何将 template 编译成 render 函数的？
 
+<article-info/>
+
 ## 前言
 
 在之前的 [通过 debug 搞清楚.vue 文件怎么变成.js 文件](./use-debug-to-figure-out-how-a.vue-file-becomes-a.js-file.md) 文章中我们讲过了 `vue` 文件是如何编译成 `js` 文件，通过那篇文章我们知道了，`template` 编译为 `render` 函数底层就是调用了 `@vue/compiler-sfc` 包暴露出来的 `compileTemplate` 函数。由于文章篇幅有限，我们没有去深入探索 `compileTemplate` 函数是如何将 `template` 模块编译为 `render` 函数，在这篇文章中我们来了解一下。
