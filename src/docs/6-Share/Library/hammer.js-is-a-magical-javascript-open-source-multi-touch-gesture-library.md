@@ -2,11 +2,11 @@
 
 <article-info/>
 
+<link-tag :linkList="[{linkType:'git', linkText:'Hammer.js',linkUrl:'https://github.com/hammerjs/hammer.js'},{ linkText:'官方文档',linkUrl:'https://hammerjs.github.io/'}]"></link-tag>
+
 ![/b82ad21f-4e9f-c328-93cd-bd2e6cae16a9.png](/b82ad21f-4e9f-c328-93cd-bd2e6cae16a9.png)
 
 ## Hammer.js 是什么？
-
-<link-tag :linkList="[{linkType:'git', linkText:'Hammer.js',linkUrl:'https://github.com/hammerjs/hammer.js'},{ linkText:'官方文档',linkUrl:'https://hammerjs.github.io/'}]"></link-tag>
 
 `Hammer.js` 是一个开源的轻量级 JavaScript 库，专门用于识别和处理移动设备上的触摸手势。它能够识别包括点击、双击、拖动、缩放、旋转等多种手势，可以在不依赖其他框架的情况下独立使用，而且很轻量压缩后仅 7.34KB。`Hammer.js` 的设计目的是简化移动端开发中的手势识别过程，提供高性能的交互体验.
 

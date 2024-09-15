@@ -71,6 +71,8 @@ const colorMap = ref({
   设计模式: "soda-tag-color8",
   话术: "soda-tag-color9",
   面试: "soda-tag-color2",
+  "VSCode 插件": "soda-tag-color6",
+  工具: "soda-tag-color7",
   工程化: "soda-tag-color11",
   未完成: "soda-tag-color1",
   待更新: "soda-tag-color4",

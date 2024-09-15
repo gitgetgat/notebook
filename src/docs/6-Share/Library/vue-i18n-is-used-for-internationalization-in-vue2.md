@@ -1,8 +1,8 @@
 # Vue 国际化插件 vue-i18n
 
-[官方文档](https://vue-i18n.intlify.dev/)
+<article-info />
 
-[Git](https://github.com/intlify/vue-i18n)
+<link-tag :linkList="[{linkType:'git', linkText:'vue-i18n',linkUrl:'https://github.com/intlify/vue-i18n'},{ linkText:'vue-i18n 官方文档',linkUrl:'https://vue-i18n.intlify.dev/'}]"></link-tag>
 
 ## 安装
 

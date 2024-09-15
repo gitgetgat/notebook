@@ -590,7 +590,7 @@ function downloadFileByBlob(path, name) {
 :::
 
 - `fileSaver`  网上介绍很多，可以自己百度下，也可以看下面这篇
-  [**前端下载利器——FileSaver**](../Library/filesaver-a-powerful-front-end-download-tool.md)
+  [**前端下载利器——FileSaver**](../../6-Share/Library/filesaver-a-powerful-front-end-download-tool.md)
 - 大文件流式下载可以百度这个：**`StreamSaver.js`**
 
 **优点**

@@ -1166,8 +1166,28 @@ const JAVASCRIPT_LABELS = [
     },
   },
   {
-    zh: '',
-    en: '',
+    zh: `如何理解 JavaScript 中的 Object.freeze() 和 Object.seal()`,
+    en: `Object.freeze()-and-Object.seal()`,
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: `JavaScript 中的 flat() 和 flatMap() 有啥不同？`,
+    en: `what-is-the-difference-between-flat()-and-flatmap()-in-javascript`,
+    parentDir: ['3-JavaScript'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['JavaScript']
+    },
+  },
+  {
+    zh: ``,
+    en: ``,
     parentDir: ['3-JavaScript'],
     meta: {
       star: 4,
@@ -1433,6 +1453,16 @@ const LIBRARY_LABELS = [
     },
   },
   {
+    zh: '简化 Web 应用程序的离线存储管理 —— localForage.js',
+    en: 'simplifying-offline-storage-management-for-web-applications-localforage',
+    parentDir: ['Library'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Library']
+    },
+  },
+  {
     zh: '使用 JavaScript 创建 PDF 文件 —— jsPDF',
     en: 'creating-pdf-files-using-javascript-—-jspdf',
     parentDir: ['Library'],
@@ -1444,7 +1474,7 @@ const LIBRARY_LABELS = [
   },
   {
     zh: 'JavaScript 图片浏览工具 —— viewer.js',
-    en: 'javascript-image-browsing-tool---viewer.js',
+    en: `javascript-image-browsing-tool-viewer`,
     parentDir: ['Library'],
     meta: {
       star: 5,
@@ -1553,6 +1583,16 @@ const LIBRARY_LABELS = [
     },
   },
   {
+    zh: `一款神奇的 JavaScript 开源拖放库 Sortable.js`,
+    en: `sortable-is-a-magical-javascript-open-source-drag-and-drop-library`,
+    parentDir: ['Library'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Library']
+    },
+  },
+  {
     zh: `Dropzone，一款神奇的 JavaScript 开源文件拖拽上传库`,
     en: `dropzone-is-a-magical-javascript-open-source-file-drag-and-drop-upload-library`,
     parentDir: ['Library'],
@@ -1573,6 +1613,116 @@ const LIBRARY_LABELS = [
     },
   },
   {
+    zh: `Intro.js，一款神奇的 JavaScript 开源新用户引导库`,
+    en: `intro.js-is-a-magical-javascript-open-source-new-user-guide-library`,
+    parentDir: ['Library'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Library']
+    },
+  },
+  {
+    zh: `Highlightjs，一款神奇的 JavaScript 开源代码高亮库`,
+    en: `highlight.js-is-a-magical-javascript-open-source-code-highlighting-library`,
+    parentDir: ['Library'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Library']
+    },
+  },
+  {
+    zh: `Paper.js 一款神奇的 JavaScript 开源矢量图库`,
+    en: `paper.js-is-a-magical-javascript-open-source-vector-library`,
+    parentDir: ['Library'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Library']
+    },
+  },
+  {
+    zh: `Shuffle.js 一款神奇的对响应式项目网格进行分类、排序和过滤的 JavaScript 库`,
+    en: `shuffle.js-is-a-javascript-library-for-sorting,-sorting-and-filtering-responsive-project-grids`,
+    parentDir: ['Library'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Library']
+    },
+  },
+  {
+    zh: `SpinKit，一款神奇的 CSS 开源加载动画旋转器`,
+    en: `spinkit-is-a-magical-css-open-source-loading-animation-spinner`,
+    parentDir: ['Library'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Library']
+    },
+  },
+  {
+    zh: `Driver.js，一款神奇的 JavaScript 开源新手交互引导库`,
+    en: `driver.js-is-a-magical-javascript-open-source-novice-interactive-guidance-library`,
+    parentDir: ['Library'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Library']
+    },
+  },
+  {
+    zh: `Timesheet.js，一款神奇的 JavaScript 开源时间轴库`,
+    en: `timesheet.js-is-a-magical-javascript-open-source-timeline-library`,
+    parentDir: ['Library'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Library']
+    },
+  },
+  {
+    zh: `NProgress.js，一款神奇的 JavaScript 开源页面进度条库`,
+    en: `nprogress.js-is-a-magical-javascript-open-source-page-progress-bar-library`,
+    parentDir: ['Library'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Library']
+    },
+  },
+  {
+    zh: `Signature_Pad，一款神奇的 JavaScript 开源手写签名库`,
+    en: `signature_pad-is-a-magical-javascript-open-source-handwritten-signature-library`,
+    parentDir: ['Library'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Library']
+    },
+  },
+  {
+    zh: `vxe-table，一款神奇的 JavaScript 开源高级表格库`,
+    en: `vxe-table-is-a-magical-javascript-open-source-advanced-table-library`,
+    parentDir: ['Library'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Library']
+    },
+  },
+  {
+    zh: `Mock.js 一款神奇的 JavaScript 开源前端模拟数据生成器`,
+    en: `mock.js-is-a-magical-javascript-open-source-front-end-simulation-data-generator`,
+    parentDir: ['Library'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Library']
+    },
+  },
+  {
     zh: ``,
     en: ``,
     parentDir: ['Library'],
@@ -1580,6 +1730,29 @@ const LIBRARY_LABELS = [
       star: 5,
       state: '已完成',
       tags: ['Library']
+    },
+  },
+]
+
+const VSCODE_PLUGINS_LABELS = [
+  {
+    zh: `工具 | 插件 | Draw.io，一款神奇的 JavaScript 图表客户端编辑器`,
+    en: `drawio-is-a-magical-javascript-chart-client-editor`,
+    parentDir: ['VsCode-Plugins'],
+    meta: {
+      star: 4,
+      state: '已完成',
+      tags: ['工具', 'VSCode 插件']
+    },
+  },
+  {
+    zh: ``,
+    en: ``,
+    parentDir: ['VsCode-Plugins'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['VSCode 插件']
     },
   },
 ]
@@ -1602,11 +1775,11 @@ const UNIAPP_LABELS = [
   },
 ]
 
-const VUE2_LABELS = [
+const VUE2_BASE_LABELS = [
   {
     zh: '什么是渐进式框架？',
     en: 'What-is-a-progressive-framework',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 4,
       state: '已完成',
@@ -1614,19 +1787,9 @@ const VUE2_LABELS = [
     },
   },
   {
-    zh: 'Vue2 源码解析',
-    en: 'vue2-source-code-analysis',
-    parentDir: ['Vue2'],
-    meta: {
-      star: 10,
-      state: '未完成',
-      tags: ['Vue2']
-    },
-  },
-  {
     zh: '到底是 vue 全局混入好，还是 Vue.prototype 添加方法好？',
     en: 'is-it-better-to-mix-in-vue-globally-or-add-methods-to-vue.prototype',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 3,
       state: '已完成',
@@ -1636,7 +1799,7 @@ const VUE2_LABELS = [
   {
     zh: 'Vue 中如何做样式穿透',
     en: 'how-to-do-style-penetration-in-vue',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 3,
       state: '已完成',
@@ -1646,7 +1809,7 @@ const VUE2_LABELS = [
   {
     zh: 'Vue 打包路径和路由模式',
     en: 'vue-packaging-path-and-routing-mode',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 3,
       state: '已完成',
@@ -1656,7 +1819,7 @@ const VUE2_LABELS = [
   {
     zh: 'Vue 设置代理和环境变量',
     en: 'vue-sets-proxy-and-environment-variables',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 3,
       state: '已完成',
@@ -1666,7 +1829,7 @@ const VUE2_LABELS = [
   {
     zh: 'Axios 怎么封装',
     en: 'how-to-encapsulate-axios',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 3,
       state: '已完成',
@@ -1676,7 +1839,7 @@ const VUE2_LABELS = [
   {
     zh: '谈谈对 Vue 生命周期的理解',
     en: 'talk-about-the-understanding-of-vue-life-cycle',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 3,
       state: '已完成',
@@ -1686,7 +1849,7 @@ const VUE2_LABELS = [
   {
     zh: 'v-if 和 v-for 的优先级是什么？',
     en: 'what-is-the-precedence-of-v-if-and-v-for',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 3,
       state: '已完成',
@@ -1696,7 +1859,7 @@ const VUE2_LABELS = [
   {
     zh: 'v-show 和 v-if 有什么区别？使用场景分别是什么？',
     en: 'what-is-the-difference-between-v-show-and-v-if',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 3,
       state: '已完成',
@@ -1706,7 +1869,7 @@ const VUE2_LABELS = [
   {
     zh: 'Vue 2 的响应式原理',
     en: 'the-responsiveness-of-vue-2',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 5,
       state: '未完成',
@@ -1716,7 +1879,7 @@ const VUE2_LABELS = [
   {
     zh: '怎样在 vue 中导入 Excel 表格数据？',
     en: 'how-to-import-excel-table-data-in-vue',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 5,
       state: '未完成',
@@ -1726,7 +1889,7 @@ const VUE2_LABELS = [
   {
     zh: 'vue 如何分片导出 Excel 数据呢？',
     en: 'how-does-vue-export-excel-data-in-pieces',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 5,
       state: '未完成',
@@ -1736,7 +1899,7 @@ const VUE2_LABELS = [
   {
     zh: '为什么 vue 的 computed 可以缓存数据？原理是什么？',
     en: 'why-can-vue-computed-cache-data',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 5,
       state: '未完成',
@@ -1746,7 +1909,7 @@ const VUE2_LABELS = [
   {
     zh: '要如何用 vue 实现组织架构图呢？',
     en: 'how-to-use-vue-to-implement-an-organizational-chart',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 5,
       state: '未完成',
@@ -1756,7 +1919,7 @@ const VUE2_LABELS = [
   {
     zh: '封装一个可复用的组件，需要满足什么条件？',
     en: 'what-conditions-need-to-be-met-to-encapsulate-a-reusable-component',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 5,
       state: '待更新',
@@ -1766,7 +1929,7 @@ const VUE2_LABELS = [
   {
     zh: 'vue 数据更新视图不更新的问题',
     en: 'vue-data-update-view-does-not-update-the-problem',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 4,
       state: '已完成',
@@ -1776,7 +1939,7 @@ const VUE2_LABELS = [
   {
     zh: 'snabbdom',
     en: 'snabbdom',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 4,
       state: '已完成',
@@ -1786,7 +1949,7 @@ const VUE2_LABELS = [
   {
     zh: 'vue 的过滤器怎么使用？',
     en: 'how-to-use-vue-filter',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 4,
       state: '已完成',
@@ -1796,7 +1959,7 @@ const VUE2_LABELS = [
   {
     zh: 'vue 中遍历全局的方法有哪些？',
     en: 'what-are-the-global-methods-in-vue',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 4,
       state: '已完成',
@@ -1806,7 +1969,7 @@ const VUE2_LABELS = [
   {
     zh: '什么是 Render 函数？',
     en: 'what-is-the-render-function',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 4,
       state: '已完成',
@@ -1816,7 +1979,7 @@ const VUE2_LABELS = [
   {
     zh: '什么是 mixin？',
     en: 'what-is-a-mixin',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 4,
       state: '已完成',
@@ -1826,7 +1989,7 @@ const VUE2_LABELS = [
   {
     zh: '什么是异步组件？（按需组件懒加载）',
     en: 'what-are-asynchronous-components(lazy-loading-of-components-on-demand)',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 4,
       state: '已完成',
@@ -1836,7 +1999,7 @@ const VUE2_LABELS = [
   {
     zh: '什么是动态组件？',
     en: 'what-are-dynamic-components',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 4,
       state: '已完成',
@@ -1846,7 +2009,7 @@ const VUE2_LABELS = [
   {
     zh: 'Vue 动态绑定 类名class 和 样式style',
     en: 'vue-dynamically-binds-class-name-class-and-style-style',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 4,
       state: '已完成',
@@ -1856,7 +2019,7 @@ const VUE2_LABELS = [
   {
     zh: 'Vue 如何自定义指令？',
     en: 'how-to-customize-vue-instructions',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 4,
       state: '已完成',
@@ -1866,7 +2029,7 @@ const VUE2_LABELS = [
   {
     zh: 'element-ui 怎么做表单验证？',
     en: 'how-to-do-form-validation-in-element-ui',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 4,
       state: '已完成',
@@ -1876,7 +2039,7 @@ const VUE2_LABELS = [
   {
     zh: 'Vue2 组件通信',
     en: 'vue2-component-communication',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 7,
       state: '已完成',
@@ -1886,7 +2049,7 @@ const VUE2_LABELS = [
   {
     zh: 'Vue 中 computed、method、watch 区别',
     en: 'the-difference-between-computed,-method,-and-watch-in-vue',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 4,
       state: '已完成',
@@ -1896,7 +2059,7 @@ const VUE2_LABELS = [
   {
     zh: '谈谈 keep-alive 的理解',
     en: 'talk-about-the-understanding-of-keep-alive',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 4,
       state: '已完成',
@@ -1906,7 +2069,7 @@ const VUE2_LABELS = [
   {
     zh: '在 created 和 mounted 去请求数据，有什么区别',
     en: 'what-is-the-difference-between-requesting-data-at-created-and-mounted',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 4,
       state: '已完成',
@@ -1916,7 +2079,7 @@ const VUE2_LABELS = [
   {
     zh: 'Vue 父子组件生命周期执行顺序',
     en: 'vue-parent-child-component-life-cycle-execution-order',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 4,
       state: '已完成',
@@ -1926,7 +2089,7 @@ const VUE2_LABELS = [
   {
     zh: '如何实现自定义组件？自定义组件的 v-model',
     en: 'how-to-implement-custom-components-and-v-model-of-custom-components',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 4,
       state: '已完成',
@@ -1936,7 +2099,7 @@ const VUE2_LABELS = [
   {
     zh: 'Vue 数据流向',
     en: 'vue-data-flow',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 4,
       state: '已完成',
@@ -1946,7 +2109,7 @@ const VUE2_LABELS = [
   {
     zh: 'vue 项目上线打包优化',
     en: 'vue-project-online-packaging-optimization',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 5,
       state: '已完成',
@@ -1956,7 +2119,7 @@ const VUE2_LABELS = [
   {
     zh: 'Vue 中的 slot 的使用？slot 匿名(默认)插槽、作用域插槽、具名插槽都是什么？',
     en: 'use-of-slots-in-vue',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 5,
       state: '已完成',
@@ -1966,7 +2129,7 @@ const VUE2_LABELS = [
   {
     zh: 'Vue 首屏优化该如何去做？',
     en: 'how-to-optimize-the-first-screen-of-vue',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 5,
       state: '已完成',
@@ -1976,7 +2139,7 @@ const VUE2_LABELS = [
   {
     zh: 'Vue 性能优化',
     en: 'vue-performance-optimization',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 5,
       state: '已完成',
@@ -1986,7 +2149,7 @@ const VUE2_LABELS = [
   {
     zh: 'style scoped 原理',
     en: 'scope-principle',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 4,
       state: '已完成',
@@ -1996,7 +2159,7 @@ const VUE2_LABELS = [
   {
     zh: 'props 和 data 谁的优先级高？',
     en: 'which-has-higher-priority-props-or-data',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 3,
       state: '已完成',
@@ -2006,7 +2169,7 @@ const VUE2_LABELS = [
   {
     zh: '是否使用过 nuxt.js？',
     en: 'have-you-used-nuxt.js',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 6,
       state: '未完成',
@@ -2016,7 +2179,7 @@ const VUE2_LABELS = [
   {
     zh: '说一下你对组件的理解',
     en: 'tell-me-about-your-understanding-of-components',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 4,
       state: '已完成',
@@ -2026,7 +2189,7 @@ const VUE2_LABELS = [
   {
     zh: '什么是 vue 的 $nextTick 原理？nextTick 是什么？有什么用？',
     en: 'what-is-vue-nexttick',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 6,
       state: '已完成',
@@ -2036,7 +2199,7 @@ const VUE2_LABELS = [
   {
     zh: '介绍一下 SPA 以及 SPA 有什么缺点',
     en: 'introduce-spa-and-what-are-the-disadvantages-of-spa',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 3,
       state: '已完成',
@@ -2046,7 +2209,7 @@ const VUE2_LABELS = [
   {
     zh: 'v-for 中 key 值的作用是什么？为什么 Vue 的 key 最好不是数组下标？',
     en: 'what-is-the-role-of-key-value-in-v-for',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 5,
       state: '已完成',
@@ -2056,7 +2219,7 @@ const VUE2_LABELS = [
   {
     zh: 'MVVM 与 MVC 有什么区别？',
     en: 'what-is-the-difference-between-mvvm-and-mvc',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 5,
       state: '已完成',
@@ -2066,7 +2229,7 @@ const VUE2_LABELS = [
   {
     zh: '如何理解 MVVM',
     en: 'how-to-understand-mvvm',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 3,
       state: '已完成',
@@ -2076,7 +2239,7 @@ const VUE2_LABELS = [
   {
     zh: 'v-model 数据双向绑定原理',
     en: 'v-model-data-two-way-binding-principle',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 5,
       state: '未完成',
@@ -2084,19 +2247,9 @@ const VUE2_LABELS = [
     },
   },
   {
-    zh: 'Vue2 的 Object.defineProperty 和 Vue3 的Proxy 区别？',
-    en: 'the-difference-between-vue2-object.defineproperty-and-vue3-proxy',
-    parentDir: ['Vue2'],
-    meta: {
-      star: 6,
-      state: '未完成',
-      tags: ['Vue2', 'Vue3']
-    },
-  },
-  {
     zh: 'Vue2 和 Vue3 的区别是什么？',
     en: 'what-is-the-difference-between-vue2-and-vue3',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 6,
       state: '待更新',
@@ -2106,7 +2259,7 @@ const VUE2_LABELS = [
   {
     zh: '解决刷新后二次加载路由的问题',
     en: 'solve-the-problem-of-loading-routes-twice-after-refreshing',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 4,
       state: '已完成',
@@ -2116,7 +2269,7 @@ const VUE2_LABELS = [
   {
     zh: 'Vue 动态路由',
     en: 'vue-dynamic-routing',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 5,
       state: '已完成',
@@ -2126,7 +2279,7 @@ const VUE2_LABELS = [
   {
     zh: 'Vue 路由属性怎么传参的？',
     en: 'how-to-pass-vue-routing-attributes',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 4,
       state: '已完成',
@@ -2136,7 +2289,7 @@ const VUE2_LABELS = [
   {
     zh: 'SEO 如何优化？',
     en: 'how-to-optimize-seo',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 5,
       state: '已完成',
@@ -2146,7 +2299,7 @@ const VUE2_LABELS = [
   {
     zh: 'diff 算法',
     en: 'diff-algorithm',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 10,
       state: '已完成',
@@ -2156,7 +2309,7 @@ const VUE2_LABELS = [
   {
     zh: '$route 和 $router 的区别',
     en: 'difference-between-$route-and-$router',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 3,
       state: '已完成',
@@ -2166,7 +2319,7 @@ const VUE2_LABELS = [
   {
     zh: 'vue-router 3.x 的 History 和 Hash 模式有何区别？',
     en: 'what-is-the-difference-between-history-and-hash-modes-in-vue-router-3.x',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 5,
       state: '已完成',
@@ -2176,7 +2329,7 @@ const VUE2_LABELS = [
   {
     zh: '如何监听路由的变化？',
     en: 'how-to-monitor-route-changes',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 4,
       state: '已完成',
@@ -2186,7 +2339,7 @@ const VUE2_LABELS = [
   {
     zh: 'vue-loader',
     en: 'vue-loader',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 5,
       state: '已完成',
@@ -2196,7 +2349,7 @@ const VUE2_LABELS = [
   {
     zh: '使用 .sync 修饰符传递对象参数',
     en: 'passing-object-parameters-using-the-.sync-modifier',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 5,
       state: '未完成',
@@ -2206,7 +2359,7 @@ const VUE2_LABELS = [
   {
     zh: '',
     en: '',
-    parentDir: ['Vue2'],
+    parentDir: ['Vue2-Base-Knowledge-Points'],
     meta: {
       star: 5,
       state: '已完成',
@@ -2215,7 +2368,40 @@ const VUE2_LABELS = [
   },
 ]
 
+const VUE2_SOURCE_CODE_DEBUG_LABELS = [
+  {
+    zh: 'Vue2 源码解析',
+    en: 'vue2-source-code-analysis',
+    parentDir: ['Vue2-Source-Code-Debug'],
+    meta: {
+      star: 10,
+      state: '未完成',
+      tags: ['Vue2']
+    },
+  },
+]
+
 const VUE3_BASE_LABELS = [
+  {
+    zh: '为什么 Vue3 使用 Proxy 和 Reflect 代替 Vue2 的 Object.defineProperty 来实现响应式数据？',
+    en: `why-does-vue3-use-proxy-and-reflect-instead-of-vue2-object.defineproperty-to-implement-responsive-data`,
+    parentDir: ['Vue3-Base-Knowledge-Points'],
+    meta: {
+      star: 6,
+      state: '未完成',
+      tags: ['Vue2', 'Vue3']
+    },
+  },
+  {
+    zh: 'WeakMap 和 Map 的区别',
+    en: `difference-between-weakmap-and-map`,
+    parentDir: ['Vue3-Base-Knowledge-Points'],
+    meta: {
+      star: 6,
+      state: '未完成',
+      tags: ['Vue3']
+    },
+  },
   {
     zh: 'Tmeplate 和 JSX 的性能孰优孰劣？',
     en: 'the-performance-of-tmeplate-versus-jsx',
@@ -2242,16 +2428,6 @@ const VUE3_BASE_LABELS = [
     parentDir: ['Vue3-Base-Knowledge-Points'],
     meta: {
       star: 8,
-      state: '未完成',
-      tags: ['Vue3']
-    },
-  },
-  {
-    zh: 'vue3 为什么使用 proxy？',
-    en: 'why-does-vue3-use-proxy',
-    parentDir: ['Vue3-Base-Knowledge-Points'],
-    meta: {
-      star: 5,
       state: '未完成',
       tags: ['Vue3']
     },
@@ -2479,6 +2655,16 @@ const VUE3_BASE_LABELS = [
 ]
 
 const VUE3_SOURCE_CODE_DEBUG_LABELS = [
+  {
+    zh: '想看源码但是无从下口怎么办？',
+    en: `what-should-i-do-if-i-want-to-read-the-source-code-but-don’t-know-where-to-start`,
+    parentDir: ['Vue3-Source-Code-Debug'],
+    meta: {
+      star: 3,
+      state: '已完成',
+      tags: ['Vue3', "源码"]
+    },
+  },
   {
     zh: '通过 debug 搞清楚 .vue 文件怎么变成 .js 文件',
     en: `use-debug-to-figure-out-how-a.vue-file-becomes-a.js-file`,
@@ -3504,11 +3690,13 @@ const NAME_LABELS = [
   ...addSortKey(HTML_LABELS),
   ...addSortKey(QUESTIONS_LABELS),
   ...addSortKey(TALK_LABELS),
+  ...addSortKey(VSCODE_PLUGINS_LABELS),
   ...addSortKey(LIBRARY_LABELS),
   ...addSortKey(NODEJS_LABELS),
   ...addSortKey(CODESNIPPET_LABELS),
   ...addSortKey(UNIAPP_LABELS),
-  ...addSortKey(VUE2_LABELS),
+  ...addSortKey(VUE2_BASE_LABELS),
+  ...addSortKey(VUE2_SOURCE_CODE_DEBUG_LABELS),
   ...addSortKey(VUE3_BASE_LABELS),
   ...addSortKey(WEBPACK_LABELS),
   ...addSortKey(VUEROUTER_LABELS),
@@ -3531,11 +3719,14 @@ const DIR_LABELS = {
   '2-Framework': '框架',
   'Vue2': 'Vue2',
   'Vue3': 'Vue3',
+  'Vue2-Source-Code-Debug': `${spaceStr}Vue2 编译原理揭秘`,
   'Vue3-Source-Code-Debug': `${spaceStr}Vue3 编译原理揭秘`,
+  'Vue2-Base-Knowledge-Points': `${spaceStr}Vue2 基础知识点`,
   'Vue3-Base-Knowledge-Points': `${spaceStr}Vue3 基础知识点`,
   '3-BackEnd': '服务端',
   '4-ActualCombat': '实战',
   '5-DesignPatterns': '设计模式',
+  '6-Share': '分享',
   'GO': 'GO',
   'NodeJS': 'NodeJS',
   'Python': 'Python',
@@ -3550,7 +3741,8 @@ const DIR_LABELS = {
   'WebStorage-IndexedDB': '浏览器存储',
   'FrontEndUseSkills': '前端技巧应用',
   'DataStructureAndAlgorithms': '数据结构与算法',
-  'Library': '第三方库',
+  'Library': 'Js-第3方库',
+  'VsCode-Plugins': 'VSCode 插件',
   'Uni-App': 'Uni-App',
   'Webpack': `${spaceStr}Webpack`,
   'Git': 'Git',

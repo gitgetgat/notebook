@@ -6,7 +6,7 @@
 
 首先先放 git 地址：
 
-[https://github.com/parallax/jsPDF](https://github.com/parallax/jsPDF)
+<link-tag :linkList="[{ linkType: 'git', linkText:'viewer.js',linkUrl:'https://github.com/parallax/jsPDF'}]" />
 
 ::: tip
 看官方文档就好，基础的使用非常简单
@@ -15,27 +15,21 @@
 ## 使用 jsPDF-AutoTable 插件生成表格
 
 ::: tip git 及 官方文档
-[https://github.com/simonbengtsson/jsPDF-AutoTable](https://github.com/simonbengtsson/jsPDF-AutoTable)
 
-[https://github.com/faker-js/faker](https://github.com/faker-js/faker)
-
-[JSPDF 官方文档](https://raw.githack.com/MrRio/jsPDF/master/docs/index.html)[jsPDF-AutoTable 样例在线演示](https://simonbengtsson.github.io/jsPDF-AutoTable/)（示例代码在项目/examples/examples.js 里，数据来自 faker.js 生成的随机数据）
+<link-tag flexDirectionColumn :linkList="[{ linkType: 'git', linkText:'jsPDF-AutoTable',linkUrl:'https://github.com/simonbengtsson/jsPDF-AutoTable'},{ linkText:'faker-js',linkUrl:'https://github.com/faker-js/faker'},{ linkText:'JSPDF 官方文档',linkUrl:'https://raw.githack.com/MrRio/jsPDF/master/docs/index.html'},{ linkText:'jsPDF-AutoTable 样例在线演示',linkUrl:'https://simonbengtsson.github.io/jsPDF-AutoTable/'}]" />
+（示例代码在项目/examples/examples.js 里，数据来自 faker.js 生成的随机数据）
 :::
 
 ::: tip 其他人编写的技术文档
 
-[JS - 使用 jsPDF-AutoTable 库生成带表格的 PDF 文件 1（安装配置、基本属性设置）](https://www.hangge.com/blog/cache/detail_2208.html)
-
-[JS - 使用 jsPDF-AutoTable 库生成带表格的 PDF 文件 2（全局、局部样式修改）](https://www.hangge.com/blog/cache/detail_2212.html)
-
-[JS - 使用 jsPDF-AutoTable 库生成带表格的 PDF 文件 3（进阶用法、中文乱码解决）](https://www.hangge.com/blog/cache/detail_2213.html)
+<link-tag flexDirectionColumn :linkList="[{ linkText:'JS - 使用 jsPDF-AutoTable 库生成带表格的 PDF 文件 1（安装配置、基本属性设置）',linkUrl:'https://www.hangge.com/blog/cache/detail_2208.html'},{ linkText:'JS - 使用 jsPDF-AutoTable 库生成带表格的 PDF 文件 2（全局、局部样式修改）',linkUrl:'https://www.hangge.com/blog/cache/detail_2212.html'},{ linkText:'JS - 使用 jsPDF-AutoTable 库生成带表格的 PDF 文件 3（进阶用法、中文乱码解决）',linkUrl:'https://www.hangge.com/blog/cache/detail_2213.html'}]" />
 :::
 
 最后说下难点：
 
 ### 中文乱码的问题
 
-使用官方提供的 [网址](https://rawgit.com/MrRio/jsPDF/master/fontconverter/fontconverter.html) 进行字体转换
+使用官方提供的 <link-tag :linkList="[{ linkText:'网址',linkUrl:'https://rawgit.com/MrRio/jsPDF/master/fontconverter/fontconverter.html'}]" /> 进行字体转换
 
 ![/18061475-91c9-044e-6de4-52c796a6076a.png](/18061475-91c9-044e-6de4-52c796a6076a.png)
 

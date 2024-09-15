@@ -2,11 +2,11 @@
 
 <article-info/>
 
+<link-tag :linkList="[{linkType:'git', linkText:'Uppy.js',linkUrl:'https://github.com/transloadit/uppy'},{ linkText:'官方文档',linkUrl:'https://uppy.io/'}]"></link-tag>
+
 ## Uppy.js 是什么？
 
 `Uppy.js` 是一个现代化的、模块化的 `JavaScript` 文件上传器，它可以无缝地集成到任何应用程序中。它具备轻量级、易于使用的特点，并支持从本地磁盘、远程 URL、云存储服务等多种途径获取文件，并通过相机捕获和记录自拍等方式上传文件。`Uppy.js` 提供了丰富的功能，如漂亮的界面预览和编辑元数据，以及可选择的文件处理和编码后端，如 `Transloadit`。它还支持断点续传，避免了因网络不稳定而导致的大文件上传失败问题。
-
-<link-tag :linkList="[{linkType:'git', linkText:'Uppy.js',linkUrl:'https://github.com/transloadit/uppy'},{ linkText:'官方文档',linkUrl:'https://uppy.io/'}]"></link-tag>
 
 ### 特性:
 

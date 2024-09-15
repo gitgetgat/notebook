@@ -2,9 +2,7 @@
 
 <article-info/>
 
-git：[https://github.com/verybigorange/idb-js](https://github.com/verybigorange/idb-js)
-
-文档地址：[https://verybigorange.github.io/idb-js/](https://verybigorange.github.io/idb-js/)
+<link-tag :linkList="[{ linkType: 'git', linkText:'idb.js',linkUrl:'https://github.com/verybigorange/idb-js'},{ linkText:'idb.js 文档地址',linkUrl:'https://verybigorange.github.io/idb-js/'}]" />
 
 ## IDB.js: 简化 Web 应用程序的 IndexedDB 管理
 

@@ -1,12 +1,8 @@
-# 前端下载利器——FileSaver
+# 前端下载利器 —— FileSaver
 
 <article-info/>
 
-## 地址
-
-npm: [**https://www.npmjs.com/package/file-saver**](https://www.npmjs.com/package/file-saver)
-
-Homepage: [**https://github.com/eligrey/FileSaver.js#readme**](https://github.com/eligrey/FileSaver.js#readme)
+<link-tag :linkList="[{ linkType: 'npm', linkText:'FileSaver.js',linkUrl:'https://www.npmjs.com/package/file-saver'},{ linkText:'FileSaver.js 官方文档',linkUrl:'https://github.com/eligrey/FileSaver.js#readme'}]" />
 
 ## 安装
 

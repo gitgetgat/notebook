@@ -94,7 +94,7 @@ const typed = newTyped("#typed-output", options);
 ### 基本打字效果
 
 <script setup>
-import ExpTypedJs from '../../../../components/example/use-typed-js.vue'
+import ExpTypedJs from '../../../../components/example/exp-use-typed-js.vue'
 </script>
 
 ::: code-group

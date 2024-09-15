@@ -2,7 +2,7 @@
 
 <article-info />
 
-[官网地址](https://vue-icons.com/icons/)
+<link-tag :linkList="[{linkType:'git', linkText:'vue-icons-plus',linkUrl:'https://github.com/vue-icons-plus/vue-icons-plus'},{ linkText:'vue-icons-plus 官方文档',linkUrl:'https://vue-icons.com/icons/'}]"></link-tag>
 
 ## 使用
 

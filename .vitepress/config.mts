@@ -12,30 +12,24 @@ export default defineConfig({
   title: "NOTEBOOK",
   description: "A VitePress Site",
   lang: 'zh-cn',
-  srcDir: './src',
+  srcDir: './src',// 源目录
   cleanUrls: true,//生成简洁的 URL
   lastUpdated: true,
   themeConfig: {
     logo: { src: '/zzz-logo-mini.png', width: 24, height: 24 },
-
     nav: navItems,
-
     sidebar: sidebarItems,
-
     footer: {
       message: 'Released under the <a href="https://github.com/vuejs/vitepress/blob/main/LICENSE">MIT License</a>.',
       copyright: 'Copyright © 2019-present <a href="https://github.com/yyx990803">Evan You</a>'
     },
-
     docFooter: {
       prev: '上一页',
       next: '下一页'
     },
-
     outline: {
       label: '页面导航'
     },
-
     lastUpdated: {
       text: '最后更新于',
       formatOptions: {
@@ -43,32 +37,17 @@ export default defineConfig({
         timeStyle: 'medium'
       }
     },
-
     returnToTopLabel: '回到顶部',
     sidebarMenuLabel: '菜单',
     darkModeSwitchLabel: '主题',
     lightModeSwitchTitle: '切换到浅色模式',
     darkModeSwitchTitle: '切换到深色模式',
-
-    // // 搜索
-    // search: {
-    //   // local 自带的搜索只能搜索每篇文章的标题或者章节标题，并且可以定位到搜素结果的某一个章节标题位置
-    //   provider: 'local'
-    // }
   },
   vite: {
     optimizeDeps: {
       include: ['pdf']
     },
     plugins: [
-      // dynamicImport({
-      //   filter(id) {
-      //     // `node_modules` is exclude by default, so we need to include it explicitly
-      //     // https://github.com/vite-plugin/vite-plugin-dynamic-import/blob/v1.3.0/src/index.ts#L133-L135
-      //     console.log('id', id)
-      //     return true
-      //   }
-      // }),
       pagefindPlugin(
         {
           btnPlaceholder: '搜索',

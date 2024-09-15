@@ -174,7 +174,7 @@ class ScriptCompileContext {
 
 在前面我们已经讲过了 descriptor.scriptSetup 对象就是由 `vue` 文件中的 `<script setup>模块` 编译而来， `startOffset` 和 `endOffset` 分别就是 `descriptor.scriptSetup?.loc.start.offset和descriptor.scriptSetup?.loc.end.offset` ，对应的是 `<script setup>模块` 在 `vue` 文件中的开始位置和结束位置。
 
-`descriptor.source` 的值就是 `vue` 文件中的源代码 `code` 字符串，这里以 `descriptor.source` 为参数 `new` 了一个 `MagicString` 对象。 `magic-string` 是由 `svelte` 的作者写的一个库，用于处理字符串的 JavaScript 库。感兴趣可以去这里了解：[一款高效的 JavaScript 开源字符串处理库 Magic-String](../../../1-FrontEndBaGu//Library/magic-string-an-efficient-javascript-open-source-string-processing-library.md)
+`descriptor.source` 的值就是 `vue` 文件中的源代码 `code` 字符串，这里以 `descriptor.source` 为参数 `new` 了一个 `MagicString` 对象。 `magic-string` 是由 `svelte` 的作者写的一个库，用于处理字符串的 JavaScript 库。感兴趣可以去这里了解：[一款高效的 JavaScript 开源字符串处理库 Magic-String](../../../6-Share/Library/magic-string-an-efficient-javascript-open-source-string-processing-library.md)
 
 我们接着看 `constructor` 中的 `scriptSetupAst` 属性是由一个 `parse` 函数的返回值赋值，`parse(descriptor.scriptSetup.content, this.startOffset)`， `parse` 函数的代码如下：
 

@@ -2,8 +2,7 @@
 
 <article-info />
 
-[官方文档](https://masonry.desandro.com/)
-[git](https://github.com/desandro/masonry?tab=readme-ov-file)
+<link-tag :linkList="[{linkType:'git', linkText:'Masonry.js',linkUrl:'https://github.com/desandro/masonry?tab=readme-ov-file'},{ linkText:'Masonry.js 官方文档',linkUrl:'https://masonry.desandro.com/'}]"></link-tag>
 
 ## 什么是 Maronry
 

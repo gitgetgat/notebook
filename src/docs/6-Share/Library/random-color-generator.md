@@ -4,9 +4,7 @@
 
 ## RandomColor.js
 
-[官方文档](https://randomcolor.lllllllllllllllll.com/)
-
-[git](https://github.com/davidmerfield/randomColor)
+<link-tag :linkList="[{linkType:'git', linkText:'RandomColor.js',linkUrl:'https://github.com/davidmerfield/randomColor'},{ linkText:'RandomColor.js 官方文档',linkUrl:'https://randomcolor.lllllllllllllllll.com/'}]"></link-tag>
 
 `RandomColor.js` 是一款功能丰富的 `JavaScript` 库，用于生成随机的颜色。它支持在浏览器和 `Node.js` 环境运行，提供优雅的方式来生成美观的随机颜色。`RandomColor.js` 不仅可以生成随机颜色，还允许通过传递参数来定制颜色的亮度、色调等属性。
 
@@ -91,9 +89,7 @@ console.log(colors); //  ['#ce831a', '#f9e5b1']
 
 ## chroma.js
 
-[官方文档](https://gka.github.io/chroma.js/)
-
-[git](https://github.com/gka/chroma.js)
+<link-tag :linkList="[{linkType:'git', linkText:'chroma.js',linkUrl:'https://github.com/gka/chroma.js'},{ linkText:'chroma.js 官方文档',linkUrl:'https://gka.github.io/chroma.js/'}]"></link-tag>
 
 ![/1a81f8ca-4727-ff01-18ef-730df56043a1.png](/1a81f8ca-4727-ff01-18ef-730df56043a1.png)
 

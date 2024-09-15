@@ -2,19 +2,15 @@
 
 <article-info/>
 
+<link-tag :linkList="[{ linkType: 'git', linkText:'viewer.js',linkUrl:'https://github.com/fengyuanchen/viewerjs'},{ linkText:'viewer.js Demo',linkUrl:'https://fengyuanchen.github.io/viewerjs/'}]" />
+
 ## 简介
 
-viewer.js 是一个轻量级的 JavaScript 图片浏览工具，它可以在网页上实现图片的放大、缩小、旋转、翻转等功能。viewer.js 的特点包括：
+`viewer.js` 是一个轻量级的 JavaScript 图片浏览工具，它可以在网页上实现图片的放大、缩小、旋转、翻转等功能。`viewer.js` 的特点包括：
 
-- 轻量级：viewer.js 的体积非常小，只有几 KB，不会对网页的性能造成影响。
-- 简单易用：viewer.js 的 API 非常简单，只需要几行代码就可以实现图片浏览功能。
-- 支持多种图片格式：viewer.js 支持常见的图片格式，包括 JPEG、PNG、GIF 等。
-
-::: tip
-git：[https://github.com/fengyuanchen/viewerjs](https://github.com/fengyuanchen/viewerjs)
-
-demo：[https://fengyuanchen.github.io/viewerjs/](https://fengyuanchen.github.io/viewerjs/)
-:::
+- 轻量级：`viewer.js` 的体积非常小，只有几 KB，不会对网页的性能造成影响。
+- 简单易用：`viewer.js` 的 API 非常简单，只需要几行代码就可以实现图片浏览功能。
+- 支持多种图片格式：`viewer.js` 支持常见的图片格式，包括 `JPEG`、`PNG`、`GIF` 等。
 
 ## 安装
 
