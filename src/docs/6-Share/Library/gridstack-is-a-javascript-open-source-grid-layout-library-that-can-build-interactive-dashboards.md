@@ -80,11 +80,11 @@ onMounted(() => {
 
 :::
 
-<script setup>
+<!-- <script setup>
 import ExpUseGridstack from '../../../../components/example/exp-use-gridstack-js.vue'
 </script>
 
-<exp-use-gridstack/>
+<exp-use-gridstack/> -->
 
 ## 进阶使用
 

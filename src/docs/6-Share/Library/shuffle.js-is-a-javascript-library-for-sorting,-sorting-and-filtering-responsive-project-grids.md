@@ -143,10 +143,11 @@ addSorting();
 
 定义排序规则，其中 `by` 以元素作为参数的函数。`randomize` 随机顺序排序；`reverse` 对排序结果进行反转。
 
+<!--
 ## 示例
 
 <script setup>
 import ExpUseShuffle from '../../../../components/example/exp-use-shuffle-js.vue'
 </script>
 
-<exp-use-shuffle/>
+<exp-use-shuffle/> -->

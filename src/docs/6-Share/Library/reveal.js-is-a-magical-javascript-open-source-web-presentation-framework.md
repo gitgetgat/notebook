@@ -48,11 +48,11 @@ yarn add reveal.js
 
 如果将多个 `section` 元素放置在另一个 `section` 内，它们将显示为垂直幻灯片。第一张垂直幻灯片是其他幻灯片的“根”（位于顶部），并将包含在水平序列中。
 
-<script setup>
+<!-- <script setup>
 import ExpUseReveal from '../../../../components/example/exp-use-reveal-js.vue'
 </script>
 
-<exp-use-reveal/>
+<exp-use-reveal/> -->
 
 ::: warning
 根据官方文档，使用 `Reveal.js` 时需要 引入相应的 `CSS` 文件，但是在组件中引入会出现污染全局变量的问题。

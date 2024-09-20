@@ -6,7 +6,8 @@
 </template>
 
 <script setup>
-import { GridStack } from 'gridstack'
+import * as pkg from 'gridstack/dist/gridstack.js';
+const { GridStack } = pkg;
 import 'gridstack/dist/gridstack.min.css'
 import { onMounted, ref } from 'vue'
 onMounted(() => {
