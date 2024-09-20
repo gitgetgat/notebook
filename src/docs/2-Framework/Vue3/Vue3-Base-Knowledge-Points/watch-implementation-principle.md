@@ -2,7 +2,7 @@
 
 <article-info/>
 
-`watch` 是一个典型的懒执行 `API`，它的逻辑更加纯粹： <el-text size="large" type="success">在监听的响应式数据变化时，重新执行回调函数就可以了</el-text>
+`watch` 是一个典型的懒执行 `API`，它的逻辑更加纯粹： <imp-text-success>在监听的响应式数据变化时，重新执行回调函数就可以了</imp-text-success>
 
 核心的点有两个:
 
@@ -15,7 +15,7 @@
 
 这里的 `setter` 行为触发是比较明确的，本质上就是监听的响应式数据触发 `setter` 行为。
 
-而 `getter` 行为的触发是依赖于内部的 `traverse` 方法进行的。`traverse` 方法就是 <el-text size="large" type="success">依次遍历数据，分别触发 `getter` 行为。</el-text>
+而 `getter` 行为的触发是依赖于内部的 `traverse` 方法进行的。`traverse` 方法就是 <imp-text-success>依次遍历数据，分别触发 `getter` 行为。</imp-text-success>
 
 至于懒执行本质上就是通过 `options` 中的 `immediate` 参数，逻辑比较简单
 

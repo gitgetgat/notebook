@@ -602,7 +602,7 @@ function downloadFileByBlob(path, name) {
 
 **缺点**
 
-- 兼容性问题，<el-text size="large" type="warning">IE10 以下</el-text> 不可用
+- 兼容性问题，<imp-text-warning>IE10 以下</imp-text-warning> 不可用
 - 将后端返回的文件流全部获取后才会下载
 
 ### 八、**大文件下载注意点**
@@ -611,7 +611,7 @@ function downloadFileByBlob(path, name) {
 
 ![/e1b9ccf2-6922-7215-c536-6e600a2b1a7d.png](/e1b9ccf2-6922-7215-c536-6e600a2b1a7d.png)
 
-- `ajax` 下载 如果后端需要对下载接口做 token 鉴权，此时需要使用 ajax 获取文件流（第六、七点），可以了解下 <link-tag :linkList="[{ linkText:'ajax 文件下载原理',linkUrl:'https://blog.csdn.net/wiki_Wei/article/details/85325926'}]" />。 简单来说，文件下载依赖浏览器特性。前端获取到服务器端生成的字节流，此时数据是存在于 **js 的内存中** 的，是不可以直接保存在本地的，利用`Blob`对象和`window.URL.createObjectURL`对象生成一个虚拟的 URL 地址，然后在利用浏览器的特性进行下载。 因此对于 ajax 下载 **大文件** 时，会出现 <el-text size="large" type="danger">浏览器崩溃</el-text> 情况，此时可以考虑使用 **链接直接下载** 或使用 **分片下载**
+- `ajax` 下载 如果后端需要对下载接口做 token 鉴权，此时需要使用 ajax 获取文件流（第六、七点），可以了解下 <link-tag :linkList="[{ linkText:'ajax 文件下载原理',linkUrl:'https://blog.csdn.net/wiki_Wei/article/details/85325926'}]" />。 简单来说，文件下载依赖浏览器特性。前端获取到服务器端生成的字节流，此时数据是存在于 **js 的内存中** 的，是不可以直接保存在本地的，利用`Blob`对象和`window.URL.createObjectURL`对象生成一个虚拟的 URL 地址，然后在利用浏览器的特性进行下载。 因此对于 ajax 下载 **大文件** 时，会出现 <imp-text-danger>浏览器崩溃</imp-text-danger> 情况，此时可以考虑使用 **链接直接下载** 或使用 **分片下载**
   ![/4058576f-8a22-b54b-d2f8-ece1ca5f79f7.png](/4058576f-8a22-b54b-d2f8-ece1ca5f79f7.png)
 - 链接下载 链接下载需要后端一边去下载要打包的文件，一边把打包好的东西写入这个链接。存在的问题是，如果文件很大，那么这个链接需要一直保持，相当于这个接口一直开着没有结束；而且一旦中间出了什么问题，已经下载的东西也全部废了，因此推荐使用 **分片下载**。
 - 大文件分片技巧可以参考下：

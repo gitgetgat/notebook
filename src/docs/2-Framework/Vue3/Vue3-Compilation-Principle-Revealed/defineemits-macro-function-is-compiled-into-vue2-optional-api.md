@@ -676,12 +676,12 @@ function createSetupContext(instance) {
 
 现在我们能够回答前面提的两个问题了：
 
-### <el-text size="large" type="success">为什么 Vue 的 defineEmits 宏函数不需要 import 导入就可用？</el-text>
+### <imp-text-success>为什么 Vue 的 defineEmits 宏函数不需要 import 导入就可用？</imp-text-success>
 
 在遍历 `script` 模块转换成的` AST 抽象语法树` 时，如果当前的 `node` 节点是在调用 `defineEmits` 函数，就继续去找这个 `node` 节点下面的参数节点，也就是调用 `defineEmits` 函数传入的参数对应的 `node` 节点。然后将参数节点对象赋值给当前的 `ctx` 上下文的 `emitsRuntimeDecl` 属性中，接着根据 `defineEmits` 函数对应的 `node` 节点中记录的 `start` 和 `end` 位置对 `vue` 文件的 `code` 代码字符串进行替换。将 `defineEmits(["enlarge-text"])` 替换为 `__emit` ，此时在代码中已经就没有了 `defineEmits` 宏函数了，自然也不需要从 `vue` 中 `import` 导入。当遍历完 ` AST 抽象语法树` 后调用 `genRuntimeEmits` 函数，从前面存的 `ctx` 上下文中的 `emitsRuntimeDecl` 属性中取出来调用 `defineEmits` 函数时传入的参数节点信息。根据参数节点中记录的 `start` 和 `end` 位置，对 script 模块中的 `code` 代码字符串执行 `slice` 方法，截取出调用 `defineEmits` 函数时传入的参数。然后通过字符串拼接的方式将调用 `defineEmits` 函数时传入的参数拼接到 `vue` 组件对象的 `emits` 属性上。
 
-### <el-text size="large" type="success">为什么 defineEmits 的返回值等同于$emit 方法用于在组件中抛出事件？</el-text>
+### <imp-text-success>为什么 defineEmits 的返回值等同于$emit 方法用于在组件中抛出事件？</imp-text-success>
 
 `defineEmits` 宏函数在上个问题中我们已经讲过了会被替换为 `__emit` ，而这个 `__emit` 是调用 `setup` 函数时传入的第二个参数对象上的 `emit` 属性。而第二个参数对象是在 `setupStatefulComponent` 函数中调用 `createSetupContext` 函数生成的 `setupContext` 对象。在 `createSetupContext` 函数中我们看到返回的 `emit` 属性其实就是一个箭头函数，当调用 `defineEmits` 函数返回的 `emit` 函数时就会调用这个箭头函数，在箭头函数中其实是调用 `vue` 实例上的 `emit` 方法。
 
-搞明白了上面两个问题我想你现在应该明白了为什么说 <el-text size="large" type="success">vue3 的 defineEmits 宏函数编译后其实就是 vue2 的选项式 API</el-text>，`defineEmits` 宏函数声明的事件经过编译后就变成了 `vue` 组件对象上的 `emits` 属性。`defineEmits` 函数的返回值 `emit` 函数，其实就是在调用 `vue` 实例上的 `emit` 方法，这不就是我们在 `vue2` 的 `选项式 API` 中声明事件和触发事件的样子吗。大部分看着高大上的黑魔法其实都是编译时做的事情，<el-text size="large" type="success">vue3 中的像 defineEmits 这样的宏函数经过编译后其实还是我们熟悉的 vue2 的选项式 API</el-text>。
+搞明白了上面两个问题我想你现在应该明白了为什么说 <imp-text-success>vue3 的 defineEmits 宏函数编译后其实就是 vue2 的选项式 API</imp-text-success>，`defineEmits` 宏函数声明的事件经过编译后就变成了 `vue` 组件对象上的 `emits` 属性。`defineEmits` 函数的返回值 `emit` 函数，其实就是在调用 `vue` 实例上的 `emit` 方法，这不就是我们在 `vue2` 的 `选项式 API` 中声明事件和触发事件的样子吗。大部分看着高大上的黑魔法其实都是编译时做的事情，<imp-text-success>vue3 中的像 defineEmits 这样的宏函数经过编译后其实还是我们熟悉的 vue2 的选项式 API</imp-text-success>。

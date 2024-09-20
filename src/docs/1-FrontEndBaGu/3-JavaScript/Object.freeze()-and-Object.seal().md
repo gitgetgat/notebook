@@ -28,9 +28,9 @@ console.log(person); // 输出: { name: 'Alice', age: 30 }
 
 ### 应用场景
 
-- <el-text size="large" type="danger">不可变数据结构</el-text>：在处理不应更改的数据（如配置对象或常量）时，冻结这些对象可以确保它们在应用程序的整个生命周期内保持一致。
+- <imp-text-danger>不可变数据结构</imp-text-danger>：在处理不应更改的数据（如配置对象或常量）时，冻结这些对象可以确保它们在应用程序的整个生命周期内保持一致。
 
-- <el-text size="large" type="danger">状态管理</el-text>：在状态管理场景中，尤其是在使用 Redux 等库时，确保状态不可变性至关重要。冻结状态对象可以防止意外的变化，从而带来更可预测的状态过渡。
+- <imp-text-danger>状态管理</imp-text-danger>：在状态管理场景中，尤其是在使用 Redux 等库时，确保状态不可变性至关重要。冻结状态对象可以防止意外的变化，从而带来更可预测的状态过渡。
 
 ## 什么是 `Object.seal()`？
 

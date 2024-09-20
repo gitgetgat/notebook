@@ -36,7 +36,7 @@
 ## 销毁钩子
 
 - `beforeDestroy`
-  实例销毁之前调用。在这一步，实例仍然完全可用，实例上所有的 `data` 和 `methods`，以及过滤器、指令等等 都还处于 <el-text size="large" type="success">可用状态</el-text>。可以消除定时器等等。
+  实例销毁之前调用。在这一步，实例仍然完全可用，实例上所有的 `data` 和 `methods`，以及过滤器、指令等等 都还处于 <imp-text-success>可用状态</imp-text-success>。可以消除定时器等等。
 - `destroyed`
   `Vue 实例`销毁后调用。调用后，`Vue 实例`指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁。 该钩子在服务器端渲染期间不被调用。
   当执行到 `destroyed` 钩子函数的时候，组件已经被完全销毁了，此时 `Vue实例` 所有的`data`、`methods`、`过滤器`、`指令`... 都用不了

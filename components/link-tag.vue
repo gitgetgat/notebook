@@ -99,7 +99,6 @@ const props = defineProps({
     default: false
   }
 })
-console.log('props', props.linkList);
 
 async function goToUrl(link) {
   if (!link.linkUrl) return

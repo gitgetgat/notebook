@@ -9,7 +9,7 @@
 ## 全局守卫
 
 - `router.beforeEach（**全局前置守卫**）`
-  定义：当一个导航触发时，全局前置守卫按照创建顺序调用。守卫是异步解析执行，此时导航在所有守卫 resolve 完之前一直处于 <el-text size="large" type="success">等待中</el-text>。
+  定义：当一个导航触发时，全局前置守卫按照创建顺序调用。守卫是异步解析执行，此时导航在所有守卫 resolve 完之前一直处于 <imp-text-success>等待中</imp-text-success>。
   每个守卫方法接收两个参数：
 
   - `to`: 即将要进入的目标
@@ -35,7 +35,7 @@
   ```
 
   :::
-  <el-text size="large" type="success">可选的第三个参数  `next`</el-text>
+  <imp-text-success>可选的第三个参数  `next`</imp-text-success>
   ::: code-group
 
   ```jsx
@@ -49,7 +49,7 @@
   :::
 
 - `router.beforeResolve（**全局解析守卫**）`
-  解析守卫刚好会在导航被确认之前、<el-text size="large" type="success">所有组件内守卫和异步路由组件被解析之后</el-text> 调用。这里有一个例子，确保用户可以访问 <link-tag :linkList="[{ linkType: 'vue', linkText:'自定义',linkUrl:'https://router.vuejs.org/zh/guide/advanced/meta'}]" /> `meta`  属性  `requiresCamera`  的路由：
+  解析守卫刚好会在导航被确认之前、<imp-text-success>所有组件内守卫和异步路由组件被解析之后</imp-text-success> 调用。这里有一个例子，确保用户可以访问 <link-tag :linkList="[{ linkType: 'vue', linkText:'自定义',linkUrl:'https://router.vuejs.org/zh/guide/advanced/meta'}]" /> `meta`  属性  `requiresCamera`  的路由：
 
   ::: code-group
 
@@ -111,7 +111,7 @@ const routes = [
 
 :::
 
-`beforeEnter`  守卫  <el-text size="large" type="success">只在进入路由时触发</el-text>，不会在  `params`、`query`  或  `hash`  改变时触发。例如，从  `/users/2`  进入到  `/users/3`  或者从  `/users/2#info`  进入到  `/users/2#projects`。它们只有在  <el-text size="large" type="success">从一个不同的</el-text>  路由导航时，才会被触发。
+`beforeEnter`  守卫  <imp-text-success>只在进入路由时触发</imp-text-success>，不会在  `params`、`query`  或  `hash`  改变时触发。例如，从  `/users/2`  进入到  `/users/3`  或者从  `/users/2#info`  进入到  `/users/2#projects`。它们只有在  <imp-text-success>从一个不同的</imp-text-success>  路由导航时，才会被触发。
 
 你也可以将一个函数数组传递给  `beforeEnter`，这在为不同的路由重用守卫时很有用：
 
@@ -143,7 +143,7 @@ const routes = [
 
 :::
 
-请注意，你也可以通过使用 <link-tag :linkList="[{ linkType: 'vue', linkText:'路径',linkUrl:'https://router.vuejs.org/zh/guide/advanced/meta'}]" /> <el-text size="large" type="success">meta 字段</el-text> 和 <el-text size="large" type="success">全局导航守卫</el-text> 来实现类似的行为。
+请注意，你也可以通过使用 <link-tag :linkList="[{ linkType: 'vue', linkText:'路径',linkUrl:'https://router.vuejs.org/zh/guide/advanced/meta'}]" /> <imp-text-success>meta 字段</imp-text-success> 和 <imp-text-success>全局导航守卫</imp-text-success> 来实现类似的行为。
 
 ## 组件内的守卫
 
@@ -176,7 +176,7 @@ const UserDetails = {
 
 :::
 
-`beforeRouteEnter`  守卫  <el-text size="large" type="success">不能</el-text>  访问  `this`，因为守卫在导航确认前被调用，因此即将登场的新组件还没被创建。
+`beforeRouteEnter`  守卫  <imp-text-success>不能</imp-text-success>  访问  `this`，因为守卫在导航确认前被调用，因此即将登场的新组件还没被创建。
 
 不过，你可以通过传一个回调给  `next`  来访问组件实例。在导航被确认的时候执行回调，并且把组件实例作为回调方法的参数
 
@@ -192,7 +192,7 @@ beforeRouteEnter (to, from, next) {
 
 :::
 
-注意  `beforeRouteEnter`  是支持给  `next`  传递回调的唯一守卫。对于  `beforeRouteUpdate`  和  `beforeRouteLeave`  来说，`this`  已经可用了，所以 <el-text size="large" type="success">_不支持_</el-text>  传递回调，因为没有必要了：
+注意  `beforeRouteEnter`  是支持给  `next`  传递回调的唯一守卫。对于  `beforeRouteUpdate`  和  `beforeRouteLeave`  来说，`this`  已经可用了，所以 <imp-text-success>_不支持_</imp-text-success>  传递回调，因为没有必要了：
 
 ::: code-group
 
@@ -205,7 +205,7 @@ beforeRouteUpdate (to, from) {
 
 :::
 
-这个  <el-text size="large" type="success">离开守卫</el-text>  通常用来预防用户在还未保存修改前突然离开。该导航可以通过返回  `false`  来取消。
+这个  <imp-text-success>离开守卫</imp-text-success>  通常用来预防用户在还未保存修改前突然离开。该导航可以通过返回  `false`  来取消。
 
 ::: code-group
 

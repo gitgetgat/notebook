@@ -26,7 +26,7 @@
 
 ## 使用
 
-先安装 `prerender-spa-plugin` 模块，然后修改路由为  <el-text size="large" type="success">history</el-text>  模式，紧接着在打包配置中（`webpack.prod.config.js` 或 `vue.config.js`)添加 `PrerenderSPAPlugin` 插件,最后在入口文件中 <el-text size="large" type="success">触发相关事件</el-text>即可。
+先安装 `prerender-spa-plugin` 模块，然后修改路由为  <imp-text-success>history</imp-text-success>  模式，紧接着在打包配置中（`webpack.prod.config.js` 或 `vue.config.js`)添加 `PrerenderSPAPlugin` 插件,最后在入口文件中 <imp-text-success>触发相关事件</imp-text-success>即可。
 
 ::: code-group
 
@@ -86,7 +86,7 @@ document.dispatchEvent(new Event("render-event")); // 预渲染*
 
 :::
 
-最后因为我们修改了路由模式为 history，普通情况下对于浏览器而言 <el-text size="large" type="success">‘/list/detail’</el-text> 实际上是要去请求 <el-text size="large" type="success">‘/list/detail/index.html’</el-text> 页面，这显然不存在，会报 404 异常。所以我们需要对 nginx 服务器进行代理转发，设置如下：
+最后因为我们修改了路由模式为 history，普通情况下对于浏览器而言 <imp-text-success>‘/list/detail’</imp-text-success> 实际上是要去请求 <imp-text-success>‘/list/detail/index.html’</imp-text-success> 页面，这显然不存在，会报 404 异常。所以我们需要对 nginx 服务器进行代理转发，设置如下：
 
 ::: code-group
 

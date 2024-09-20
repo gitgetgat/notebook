@@ -6,10 +6,10 @@
 
 但光找到服务还是不够，双方需要用 `同一种语言` 来对话，否则都听不懂对方在说什么
 
-这个 `[语言]` 就是 `协议` ，而互联网中最常见的协议就是 <el-text size="large" type="success">http</el-text> 协议
+这个 `[语言]` 就是 `协议` ，而互联网中最常见的协议就是 <imp-text-success>http</imp-text-success> 协议
 
 ::: tip
-<el-text size="large" type="success">http</el-text> 是在 <el-text size="large" type="success">http</el-text> 协议基础上发展起来的，它增加了安全性，其他和 <el-text size="large" type="success">http</el-text> 协议完全一致
+<imp-text-success>http</imp-text-success> 是在 <imp-text-success>http</imp-text-success> 协议基础上发展起来的，它增加了安全性，其他和 <imp-text-success>http</imp-text-success> 协议完全一致
 :::
 
 http 是基于 `请求-响应` 的方式完成通信的，每一次通信都是由客户端向服务器发出请求，传递一些消息过去，然后经过服务器程序处理后，响应给客户端一些消息。
@@ -49,7 +49,7 @@ http 协议规定:
 1. 动作通常有：`GET (获取资源)`、`POST (提交消息)`、`PUT (修改数据)` 、`DELETE (制除数据)`。其中，GET 和 POST 最为常见。
 2. GET 和 DELETE 请求不能有请求体，而 POST 和 PUT 请求可以有请求体
 
-<el-text size="large" type="success">浏览器遵循了上面的规范，这带来了 GET 和 POST 的诸多区别。</el-text>比如，由于 GET 请求没有请求体，所以要传递数据只能把数据放到 url 的参数中
+<imp-text-success>浏览器遵循了上面的规范，这带来了 GET 和 POST 的诸多区别。</imp-text-success>比如，由于 GET 请求没有请求体，所以要传递数据只能把数据放到 url 的参数中
 
 在浏览器中，获取数据一般使用的都是 GET 请求，比如：
 
@@ -58,7 +58,7 @@ http 协议规定:
 - 获取图片、音频、视频
 - 获取 css、js、字体等文件
 
-<el-text size="large" type="success">事实上，浏览器自动发出的请求基本都是 GET 请求，而 POST 请求需要开发者手动处理，比如在 form 表单中设置 method 为 POST</el-text>
+<imp-text-success>事实上，浏览器自动发出的请求基本都是 GET 请求，而 POST 请求需要开发者手动处理，比如在 form 表单中设置 method 为 POST</imp-text-success>
 
 ### 请求头 header
 
@@ -164,7 +164,7 @@ Content-Type: multipart/form-data
    你的请求我收到了，但是呢，你要的东西不在这个地址了，我已经永远的把它移动到了一个新的地址，麻烦你获取请求新的地址，地址我放到了请求头的 Location 中了
    :::
 
-   <el-text size="large" type="success">浏览器会缓存 Location 里的信息，下次请求会直接请求新地址</el-text>
+   <imp-text-success>浏览器会缓存 Location 里的信息，下次请求会直接请求新地址</imp-text-success>
 
 3. `302 Found`：资源已被临时重定向
 
@@ -174,7 +174,7 @@ Content-Type: multipart/form-data
 
    :::
 
-   <el-text size="large" type="success">浏览器不会缓存 Location 里的信息</el-text>
+   <imp-text-success>浏览器不会缓存 Location 里的信息</imp-text-success>
 
 4. `304 Not Modified`：文档内容未被修改
 

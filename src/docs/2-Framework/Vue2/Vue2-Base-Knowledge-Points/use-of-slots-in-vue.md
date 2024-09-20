@@ -55,7 +55,7 @@ export default {
 在父组件调用 子组件 Category 时，额外附加了一段代码 `<img src="img1.jpg">`。添加这段代码后，vue 会在 Category 中自动寻找可以插入的地方。
 
 若 Category 中定义了插槽 `<slot></slot>`，则这段代码会被替换为`<img src="img1.jpg">`；若没有，则父组件传入的代码会被自动抛弃
-如果在 `<slot></slot>` 之间写入代码，则该段代码将会作为 <el-text size="large" type="primary">后备内容</el-text>。即，若父组件没有传入附加代码，该段代码会作为默认值自动渲染
+如果在 `<slot></slot>` 之间写入代码，则该段代码将会作为 <imp-text-primary>后备内容</imp-text-primary>。即，若父组件没有传入附加代码，该段代码会作为默认值自动渲染
 
 ::: warning ⚠️ 注意
 
@@ -208,7 +208,7 @@ export default {};
 - 原理
 
   实际上在这里，父组件对子组件进行了一次传参，只不过传参与参数的接受仅仅局限于插槽之间
-  绑定在  `<slot>` 元素上的 attribute 被称为 <el-text size="large" type="primary">插槽 prop</el-text>，而在这个例子中，我们选择将包含所有插槽 prop 的对象命名为  `slotProps`
+  绑定在  `<slot>` 元素上的 attribute 被称为 <imp-text-primary>插槽 prop</imp-text-primary>，而在这个例子中，我们选择将包含所有插槽 prop 的对象命名为  `slotProps`
   也就是说，子组件用 `:user="user"` 将 `user` 对象绑定在了 `slotProps` 上，然后传递了过去，父组件则用 `slotProps.user.firstName`的方式接收到了。
 
   ::: warning ⚠️ 注意

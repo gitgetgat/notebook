@@ -60,10 +60,10 @@ console.log(res);
 ## Array.prototype.isPrototypeOf()
 
 - `isPrototypeOf()` 是 `Object` 函数（类）的下的一个方法，用于判断当前对象是否为另外一个对象的原型，如果是就返回 `true`，否则就返回 `false`。
-- 这个函数理解的关键是在 <el-text size="large" type="success">原型链</el-text> 上，这个据说是 JavaScript 的三座大山之一。
-  1.  函数对象，都会天生自带一个 <el-text size="large" type="success">prototype</el-text> 原型属性。
-  2.  每一个对象也天生自带一个属性 <el-text size="large" type="success">proto</el-text> 指向生成它的函数对象的 <el-text size="large" type="success">prototype</el-text>。
-  3.  函数对象的 <el-text size="large" type="success">prototype</el-text> 也有 <el-text size="large" type="success">proto</el-text> 指向生成它的函数对象的 <el-text size="large" type="success">prototype</el-text>。
+- 这个函数理解的关键是在 <imp-text-success>原型链</imp-text-success> 上，这个据说是 JavaScript 的三座大山之一。
+  1.  函数对象，都会天生自带一个 <imp-text-success>prototype</imp-text-success> 原型属性。
+  2.  每一个对象也天生自带一个属性 <imp-text-success>proto</imp-text-success> 指向生成它的函数对象的 <imp-text-success>prototype</imp-text-success>。
+  3.  函数对象的 <imp-text-success>prototype</imp-text-success> 也有 <imp-text-success>proto</imp-text-success> 指向生成它的函数对象的 <imp-text-success>prototype</imp-text-success>。
 
 ::: code-group
 

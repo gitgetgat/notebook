@@ -52,4 +52,4 @@ console.log(hasProperty(obj, "toString")); // false
 
 ## `key in obj`
 
-如果指定的属性在指定的对象或其原型链中，则  `in` <el-text size="large" type="success">运算符</el-text> 返回  `true`。
+如果指定的属性在指定的对象或其原型链中，则  `in` <imp-text-success>运算符</imp-text-success> 返回  `true`。

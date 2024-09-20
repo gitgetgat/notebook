@@ -12,9 +12,9 @@
 
 ![/141ee18f-6fdd-b592-e499-4e323b5d17b6.png](/141ee18f-6fdd-b592-e499-4e323b5d17b6.png)
 
-首先会调用 `parse` 函数将 `template` 模块中的代码转换为 `AST 抽象语法树`，此时使用 `v-model` 的 `node` 节点的 `props` 属性中还是 `v-model`。接着会调用 `transform` 函数，经过 `transform` 函数处理后在 `node` 节点中多了一个 `codegenNode` 属性。在 `codegenNode` 属性中我们看到没有 `v-model` 指令，取而代之的是 `modelValue` 和 `onUpdate:modelValue` 属性。经过 `transform` 函数处理后已经将 `v-model` 指令编译为 `modelValue` 和 `onUpdate:modelValue` 属性，此时还是 `AST 抽象语法树`。所以接下来就是调用 `generate` 函数将 `AST 抽象语法树` 转换为 `render` 函数，到此为止编译时做的事情已经做完了， <el-text size="large" type="success">经过编译时的处理 `v-model` 指令已经变成了 `modelValue` 和 `onUpdate:modelValue` 属性</el-text>。
+首先会调用 `parse` 函数将 `template` 模块中的代码转换为 `AST 抽象语法树`，此时使用 `v-model` 的 `node` 节点的 `props` 属性中还是 `v-model`。接着会调用 `transform` 函数，经过 `transform` 函数处理后在 `node` 节点中多了一个 `codegenNode` 属性。在 `codegenNode` 属性中我们看到没有 `v-model` 指令，取而代之的是 `modelValue` 和 `onUpdate:modelValue` 属性。经过 `transform` 函数处理后已经将 `v-model` 指令编译为 `modelValue` 和 `onUpdate:modelValue` 属性，此时还是 `AST 抽象语法树`。所以接下来就是调用 `generate` 函数将 `AST 抽象语法树` 转换为 `render` 函数，到此为止编译时做的事情已经做完了， <imp-text-success>经过编译时的处理 `v-model` 指令已经变成了 `modelValue` 和 `onUpdate:modelValue` 属性</imp-text-success>。
 
-接着就是运行时阶段，在浏览器中执行 `render` 函数生成 `虚拟 DOM`。在生成 `虚拟 DOM` 的过程中由于 `props` 属性中有 `modelValue` 和 `onUpdate:modelValue` 属性，所以就会给组件对象加上 `modelValue` 属性和 `@update:modelValue` 事件。最后就是调用 `mount` 方法将 `虚拟 DOM` 转换为 `真实 DOM`。<el-text size="large" type="success">所以 `v-model` 指令转换为 `modelValue` 属性和 `@update:modelValue` 事件这一过程是在编译时进行的</el-text>
+接着就是运行时阶段，在浏览器中执行 `render` 函数生成 `虚拟 DOM`。在生成 `虚拟 DOM` 的过程中由于 `props` 属性中有 `modelValue` 和 `onUpdate:modelValue` 属性，所以就会给组件对象加上 `modelValue` 属性和 `@update:modelValue` 事件。最后就是调用 `mount` 方法将 `虚拟 DOM` 转换为 `真实 DOM`。<imp-text-success>所以 `v-model` 指令转换为 `modelValue` 属性和 `@update:modelValue` 事件这一过程是在编译时进行的</imp-text-success>
 
 ## 什么是编译时？什么是运行时？
 
@@ -204,7 +204,7 @@ _createVNode(
 
 我们在 [Vue 3 的 setup 语法糖到底是什么东西？](./what-is-vue3-setup-syntax-sugar.md) 文章中已经讲过了 `render` 函数中的 `$setup` 变量就是 `setup` 函数的返回值经过 `Proxy` 处理后的对象，由于 `Proxy` 的拦截处理让我们在 `template` 中使用 `ref` 变量时无需再写 `.value`。在上面的 `setup` 函数中我们看到 `CommonChild` 组件对象也在返回值对象中，所以这里传入给 `createVNode` 函数的第一个参数为 `CommonChild` 组件对象。
 
-我们再来看第二个参数对象，对象中有两个 `key`，分别是 `modelValue` 和 `onUpdate:modelValue`。这两个 `key` 就是传递给 `CommonChild` 组件的两个 `props`，等等这里有两个问题。第一个问题是这里怎么是 `onUpdate:modelValue`，我们知道的 `v-model` 是 `:modelValue` 和 `@update:modelValue` 的语法糖，不是说好的@update 怎么变成了 `onUpdate` 了呢？第二个问题是 `onUpdate:modelValue` 明显是事件监听而不是 `props` 属性，<el-text size="large" type="danger">怎么是“通过 props 属性”而不是“通过事件”传递给了 `CommonChild` 子组件呢？</el-text>
+我们再来看第二个参数对象，对象中有两个 `key`，分别是 `modelValue` 和 `onUpdate:modelValue`。这两个 `key` 就是传递给 `CommonChild` 组件的两个 `props`，等等这里有两个问题。第一个问题是这里怎么是 `onUpdate:modelValue`，我们知道的 `v-model` 是 `:modelValue` 和 `@update:modelValue` 的语法糖，不是说好的@update 怎么变成了 `onUpdate` 了呢？第二个问题是 `onUpdate:modelValue` 明显是事件监听而不是 `props` 属性，<imp-text-danger>怎么是“通过 props 属性”而不是“通过事件”传递给了 `CommonChild` 子组件呢？</imp-text-danger>
 
 因为在编译时处理 `v-on` 事件监听会将监听的事件首字母变成大写然后在前面加一个 `on`，塞到 `props` 属性对象中，所以这里才是 `onUpdate:modelValue`。所以在组件上不管是 `v-bind` 的 `attribute` 和 `prop`，还是 `v-on` 事件监听，经过编译后都会被塞到一个大的 `props` 对象中。以 `on` 开头的属性我们都视作事件监听，用于和普通的 `attribute` 和 `prop` 区分。所以你在组件上绑定一个 `onConfirm` 属性，属性值为一个 `handleClick` 的函数。在子组件中使用 `emit('confirm')` 是可以触发 `handleClick` 函数的执行的，但是一般情况下还是不要这样写，维护代码的人会看着一脸蒙蔽的。
 
@@ -279,11 +279,11 @@ _createVNode(
 
 现在我们可以回答前面提的两个问题了：
 
-- <el-text size="large" type="success">v-model 指令是如何变成组件上的 modelValue 属性和 @update:modelValue 事件呢？</el-text>
+- <imp-text-success>v-model 指令是如何变成组件上的 modelValue 属性和 @update:modelValue 事件呢？</imp-text-success>
 
   首先会调用 `parse` 函数将 `template` 模块中的代码转换为 `AST 抽象语法树`，此时使用 `v-model` 的 `node` 节点的 `props` 属性中还是 `v-model`。接着会调用 `transform` 函数，经过 `transform` 函数处理后在 `node` 节点中多了一个 `codegenNode` 属性。在 `codegenNode` 属性中我们看到没有 `v-model` 指令，取而代之的是 `modelValue` 和 `onUpdate:modelValue` 属性。经过 `transform` 函数处理后已经将 `v-model` 指令编译为 `modelValue` 和 `onUpdate:modelValue` 属性。其实在运行时 `onUpdate:modelValue` 属性就是等同于`@update:modelValue` 事件。接着就是调用 `generate` 函数，将 `AST 抽象语法树` 生成 `render` 函数。然后在浏览器中执行 `render` 函数时，将拿到的 `modelValue` 和 `onUpdate:modelValue` 属性塞到组件对象上，所以在组件上就多了两个 `modelValue` 属性和 `@update:modelValue` 事件。
 
-- <el-text size="large" type="success">将 v-model 指令转换为 modelValue 属性和 @update:modelValue 事件这一过程是在编译时还是运行时进行的呢？</el-text>
+- <imp-text-success>将 v-model 指令转换为 modelValue 属性和 @update:modelValue 事件这一过程是在编译时还是运行时进行的呢？</imp-text-success>
 
   从上面的问题答案中我们可以知道将 `v-model` 指令转换为 `modelValue` 属性和 `@update:modelValue` 事件这一过程是在编译时进行的。
 

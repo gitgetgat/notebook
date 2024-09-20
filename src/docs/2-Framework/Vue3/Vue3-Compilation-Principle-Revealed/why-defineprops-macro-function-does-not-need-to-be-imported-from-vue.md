@@ -342,7 +342,7 @@ for (const node of scriptSetupAst.body) {
 
 现在我们能够回答第一个问题了：
 
-### <el-text size="large" type="success">为什么 defineProps 不需要 import 导入？</el-text>
+### <imp-text-success>为什么 defineProps 不需要 import 导入？</imp-text-success>
 
 因为在编译过程中如果当前 `AST抽象语法树` 的节点类型是 `ExpressionStatement` 表达式语句，并且调用的函数是 `defineProps` ，那么就调用 `remove` 方法将调用 `defineProps` 函数的代码给移除掉。既然 `defineProps` 语句已经被移除了，自然也就不需要 `import` 导入了 `defineProps` 了。
 
@@ -440,7 +440,7 @@ if (propsDecl) runtimeOptions += `\n  props: ${propsDecl},`;
 
 现在我们能够回答前面提的第三个问题了。
 
-### <el-text size="large" type="success">defineProps 是如何将声明的 props 自动暴露给模板？</el-text>
+### <imp-text-success>defineProps 是如何将声明的 props 自动暴露给模板？</imp-text-success>
 
 编译时在移除掉 `defineProps` 相关代码时会将调用 `defineProps` 函数时传入的参数 `node` 节点信息存到 `ctx` 上下文中。遍历完 `AST抽象语法树` 后，然后从上下文中存的参数 `node` 节点信息中拿到调用 `defineProps` 宏函数时传入 `props` 的开始位置和结束位置。再使用 `slice` 方法并且传入开始位置和结束位置，从 `<script setup>模块` 的代码字符串中截取到 `props` 定义的字符串。然后将截取到的 `props` 定义的字符串拼接到 `vue` 组件对象的字符串中，这样 `vue` 组件对象中就有了一个 `props` 属性，这个 `props` 属性在 `template` 模版中可以直接使用。
 
@@ -553,14 +553,14 @@ function compileScript(sfc, options) {
 
 现在我们能够回答前面提的三个问题了。
 
-### <el-text size="large" type="success">为什么 defineProps 不需要 import 导入？？</el-text>
+### <imp-text-success>为什么 defineProps 不需要 import 导入？？</imp-text-success>
 
 因为在编译过程中如果当前 `AST 抽象语法树` 的节点类型是 `ExpressionStatement` 表达式语句，并且调用的函数是 `defineProps` ，那么就调用 `remove` 方法将调用 `defineProps` 函数的代码给移除掉。既然 `defineProps` 语句已经被移除了，自然也就不需要 `import` 导入了 `defineProps` 了。
 
-### <el-text size="large" type="success">为什么不能在非 setup 顶层使用 defineProps？</el-text>
+### <imp-text-success>为什么不能在非 setup 顶层使用 defineProps？</imp-text-success>
 
 因为在非 `setup` 顶层使用 `defineProps` 的代码生成 `AST 抽象语法树` 后节点类型就不是 `ExpressionStatement` 表达式语句类型，只有 `ExpressionStatement` 表达式语句类型才会走到 `processDefineProps` 函数中，并且调用 `remove` 方法将调用 `defineProps` 函数的代码给移除掉。当代码运行在浏览器时由于我们没有从任何地方 `import` 导入 `defineProps`，当然就会报错 `defineProps is not defined`。
 
-### <el-text size="large" type="success">defineProps 是如何将声明的 props 自动暴露给模板？</el-text>
+### <imp-text-success>defineProps 是如何将声明的 props 自动暴露给模板？</imp-text-success>
 
 编译时在移除掉 `defineProps` 相关代码时会将调用 `defineProps` 函数时传入的参数 `node` 节点信息存到 `ctx` 上下文中。遍历完 `AST 抽象语法树` 后，然后从上下文中存的参数 `node` 节点信息中拿到调用 `defineProps` 宏函数时传入 `props` 的开始位置和结束位置。再使用 `slice` 方法并且传入开始位置和结束位置，从 `<script setup>模块` 的代码字符串中截取到 `props` 定义的字符串。然后将截取到的 `props` 定义的字符串拼接到 `vue` 组件对象的字符串中，这样 `vue` 组件对象中就有了一个 `props` 属性，这个 `props` 属性在 `template` 模版中可以直接使用。

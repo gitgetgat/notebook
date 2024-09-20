@@ -251,11 +251,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 ![/07fff2e6-5031-0e5a-6ceb-0228722b86f5.png](/07fff2e6-5031-0e5a-6ceb-0228722b86f5.png)
 
-找到编译后的 `js` 文件，我们想 `debug` 看看是如何调用 `render` 函数的，所以我们给 `render` 函数加一个断点。然后刷新页面，发现代码已经走到了断点的地方。我们再来看看右边的 <el-text size="large" type="danger">Call Stack</el-text> 调用栈，发现 `render` 函数是由一个 `vue` 源码中的 `renderComponentRoot` 函数调用的。
+找到编译后的 `js` 文件，我们想 `debug` 看看是如何调用 `render` 函数的，所以我们给 `render` 函数加一个断点。然后刷新页面，发现代码已经走到了断点的地方。我们再来看看右边的 <imp-text-danger>Call Stack</imp-text-danger> 调用栈，发现 `render` 函数是由一个 `vue` 源码中的 `renderComponentRoot` 函数调用的。
 
 ![/b1964893-8f2f-210a-65c1-df9089d6f887.png](/b1964893-8f2f-210a-65c1-df9089d6f887.png)
 
-点击 <el-text size="large" type="danger">Call Stack</el-text> 中的 `renderComponentRoot` 函数就可以跳转到 `renderComponentRoot` 函数的源码，我们发现 `renderComponentRoot` 函数中调用 `render` 函数的代码主要是下面这样的：
+点击 <imp-text-danger>Call Stack</imp-text-danger> 中的 `renderComponentRoot` 函数就可以跳转到 `renderComponentRoot` 函数的源码，我们发现 `renderComponentRoot` 函数中调用 `render` 函数的代码主要是下面这样的：
 
 ::: code-group
 
@@ -284,11 +284,11 @@ function renderComponentRoot(instance) {
 
 这里我们可以看到前面的 `$setup` 实际就是由 `setupState` 赋值的，而 `setupState` 是当前 `vue` 实例上面的一个属性。那么 `setupState` 属性是如何被赋值到 `vue` 实例上面的呢？
 
-我们需要给 `setup` 函数加一个断点，然后刷新页面进入断点。通过分析 <el-text size="large" type="danger">Call Stack</el-text> 调用栈，我们发现 `setup` 函数是由 `vue` 中的一个 `setupStatefulComponent` 函数调用执行的。
+我们需要给 `setup` 函数加一个断点，然后刷新页面进入断点。通过分析 <imp-text-danger>Call Stack</imp-text-danger> 调用栈，我们发现 `setup` 函数是由 `vue` 中的一个 `setupStatefulComponent` 函数调用执行的。
 
 ![/981fbe14-e72a-70d0-f8ab-ddbd92ccbeb5.png](/981fbe14-e72a-70d0-f8ab-ddbd92ccbeb5.png)
 
-点击 <el-text size="large" type="danger">Call Stack</el-text> 调用栈中的 `setupStatefulComponent` ，进入到 `setupStatefulComponent` 的源码。我们看到 `setupStatefulComponent` 中的代码主要是这样的：
+点击 <imp-text-danger>Call Stack</imp-text-danger> 调用栈中的 `setupStatefulComponent` ，进入到 `setupStatefulComponent` 的源码。我们看到 `setupStatefulComponent` 中的代码主要是这样的：
 
 ::: code-group
 
@@ -356,11 +356,11 @@ function handleSetupResult(instance, setupResult) {
 
 现在我们可以回答前面提的另外两个问题了：
 
-### <el-text type="success" size="large">为什么在 setup 顶层定义的变量可以在 template 中可以直接使用？</el-text>
+### <imp-text-success>为什么在 setup 顶层定义的变量可以在 template 中可以直接使用？</imp-text-success>
 
 因为在 `setup` 语法糖顶层定义的变量经过编译后会被加入到 `setup` 函数返回值对象 `__returned__` 中，而非 `setup` 顶层定义的变量不会加入到 `__returned__` 对象中。 `setup` 函数返回值会被塞到 `vue` 实例的 `setupState` 属性上，执行 `render` 函数的时候会将 `vue` 实例上的 `setupState` 属性传递给 `render` 函数，所以在 `render` 函数中就可以访问到 `setup` 顶层定义的变量和 `import` 导入。而 `render` 函数实际就是由 `template` 编译得来的，所以说在 `template` 中可以访问到 `setup` 顶层定义的变量和 `import` 导入。。
 
-### <el-text type="success" size="large">为什么 import 一个组件后就可以直接使用，无需使用 components 选项来显式注册组件？</el-text>
+### <imp-text-success>为什么 import 一个组件后就可以直接使用，无需使用 components 选项来显式注册组件？</imp-text-success>
 
 因为在 `setup` 语法糖中 `import` 导入的组件对象经过编译后同样也会被加入到 `setup` 函数返回值对象 `__returned__` 中，同理在 `template` 中也可以访问到 `setup` 的返回值对象，也就可以直接使用这个导入的组件了。
 

@@ -8,15 +8,15 @@
 
 `Intro.js` 是一款用于创建新用户引导和产品介绍的 JavaScript 开源库。允许通过简单的代码快速添加交互式引导步骤，可以高亮页面上特定元素，添加描述性的文本，帮助用户了解如何使用网站的功能。
 
-<el-text size="large" type="danger">特点</el-text>
+<imp-text-danger>特点</imp-text-danger>
 
-• <el-text size="large" type="danger">易于使用</el-text>：通过简单的 API 和配置选项，可以快速集成到任何项目中。
+• <imp-text-danger>易于使用</imp-text-danger>：通过简单的 API 和配置选项，可以快速集成到任何项目中。
 
-• <el-text size="large" type="danger">高度可定制</el-text>：可以自定义样式、步骤、动画等，以适应不同的设计需求。
+• <imp-text-danger>高度可定制</imp-text-danger>：可以自定义样式、步骤、动画等，以适应不同的设计需求。
 
-• <el-text size="large" type="danger">响应式设计</el-text>：支持响应式布局，确保在不同设备上都能良好显示。
+• <imp-text-danger>响应式设计</imp-text-danger>：支持响应式布局，确保在不同设备上都能良好显示。
 
-• <el-text size="large" type="danger">多语言支持</el-text>：可以为不同的用户群体提供不同语言的引导。
+• <imp-text-danger>多语言支持</imp-text-danger>：可以为不同的用户群体提供不同语言的引导。
 
 ## 核心 API
 

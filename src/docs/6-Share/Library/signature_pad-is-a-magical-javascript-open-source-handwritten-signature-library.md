@@ -16,15 +16,15 @@
 
 `Signature Pad` 的核心特点：
 
-1. <el-text size="large" type="danger">基于 Canvas</el-text>：使用 `HTML5` 的 `canvas` 元素进行绘图，确保了良好的兼容性和性能。优化的算法和渲染技术，确保了即使在高分辨率设备上也能提供流畅的签名体验。
+1. <imp-text-danger>基于 Canvas</imp-text-danger>：使用 `HTML5` 的 `canvas` 元素进行绘图，确保了良好的兼容性和性能。优化的算法和渲染技术，确保了即使在高分辨率设备上也能提供流畅的签名体验。
 
-2. <el-text size="large" type="danger">平滑的签名体验</el-text>：采用可变宽度的 `Bézier` 曲线插值算法，提供类似于真实签名的流畅体验。
+2. <imp-text-danger>平滑的签名体验</imp-text-danger>：采用可变宽度的 `Bézier` 曲线插值算法，提供类似于真实签名的流畅体验。
 
-3. <el-text size="large" type="danger">跨平台兼容性</el-text>：支持所有现代的桌面和移动浏览器，包括触摸屏和非触摸屏设备。基于 MT 许可证，允许商用。
+3. <imp-text-danger>跨平台兼容性</imp-text-danger>：支持所有现代的桌面和移动浏览器，包括触摸屏和非触摸屏设备。基于 MT 许可证，允许商用。
 
-4. <el-text size="large" type="danger">数据序列化</el-text>：签名可以被序列化为 `JSON` 格式，便于在客户端和服务器之间传输。
+4. <imp-text-danger>数据序列化</imp-text-danger>：签名可以被序列化为 `JSON` 格式，便于在客户端和服务器之间传输。
 
-5. <el-text size="large" type="danger">多种输出格式</el-text>：支持将签名保存为多种格式，包括 `PNG`、`JPEG` 和 `SVG`。
+5. <imp-text-danger>多种输出格式</imp-text-danger>：支持将签名保存为多种格式，包括 `PNG`、`JPEG` 和 `SVG`。
 
 ## 快速开始
 
@@ -88,19 +88,19 @@ const signaturePad = new SignaturePad(canvas, {
 
 属性说明：
 
-1. <el-text size="large" type="danger">penColor</el-text>：设置签名笔触的颜色。默认是白色 (#fff)。
+1. <imp-text-danger>penColor</imp-text-danger>：设置签名笔触的颜色。默认是白色 (#fff)。
 
-2. <el-text size="large" type="danger">backgroundColor</el-text>：设置画布的背景颜色。默认是黑色 (#000)。
+2. <imp-text-danger>backgroundColor</imp-text-danger>：设置画布的背景颜色。默认是黑色 (#000)。
 
-3. <el-text size="large" type="danger">minWidth</el-text>：设置签名笔触的最小宽度（以像素为单位）。默认是 0.5px。
+3. <imp-text-danger>minWidth</imp-text-danger>：设置签名笔触的最小宽度（以像素为单位）。默认是 0.5px。
 
-4. <el-text size="large" type="danger">maxWidth</el-text>：设置签名笔触的最大宽度（以像素为单位）。默认是 2.5px。
+4. <imp-text-danger>maxWidth</imp-text-danger>：设置签名笔触的最大宽度（以像素为单位）。默认是 2.5px。
 
-5. <el-text size="large" type="danger">minDistance</el-text>：设置绘制时的最小距离（以像素为单位），即连续两个点之间的最小距离。默认是 5px。
+5. <imp-text-danger>minDistance</imp-text-danger>：设置绘制时的最小距离（以像素为单位），即连续两个点之间的最小距离。默认是 5px。
 
-6. <el-text size="large" type="danger">dotSize</el-text>：设置点的大小，影响在屏幕上点击时留下的点的大小。
+6. <imp-text-danger>dotSize</imp-text-danger>：设置点的大小，影响在屏幕上点击时留下的点的大小。
 
-7. <el-text size="large" type="danger">velocityFilterWeight</el-text>：根据速度控制线的宽度，这个参数决定了速度对笔触宽度的影响程度。默认是 0.7。
+7. <imp-text-danger>velocityFilterWeight</imp-text-danger>：根据速度控制线的宽度，这个参数决定了速度对笔触宽度的影响程度。默认是 0.7。
 
 ### 操作事件
 

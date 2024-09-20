@@ -8,13 +8,13 @@
 
 `Shuffle.js` 是一个 JavaScript 库，专门用于简化响应式设计的网格布局，通过它可以轻松实现网格布局，元素排序、过滤、动画等功能。核心功能主要包括：
 
-1. <el-text size="large" type="danger">网格布局</el-text>: 可以将一组项目排列成一个响应式的网格布局，并根据窗口大小自动调整布局。
+1. <imp-text-danger>网格布局</imp-text-danger>: 可以将一组项目排列成一个响应式的网格布局，并根据窗口大小自动调整布局。
 
-2. <el-text size="large" type="danger">排序</el-text>: 允许你根据不同的条件对网格中的项目进行排序，例如字母顺序、数字顺序或自定义的排序规则。
+2. <imp-text-danger>排序</imp-text-danger>: 允许你根据不同的条件对网格中的项目进行排序，例如字母顺序、数字顺序或自定义的排序规则。
 
-3. <el-text size="large" type="danger">过滤</el-text>: 支持根据不同的条件对网格中的项目进行过滤，例如类别、标签或自定义的过滤规则。
+3. <imp-text-danger>过滤</imp-text-danger>: 支持根据不同的条件对网格中的项目进行过滤，例如类别、标签或自定义的过滤规则。
 
-4. <el-text size="large" type="danger">动画</el-text>: 提供流畅的动画效果，可以使网格布局的更新更加自然和美观。
+4. <imp-text-danger>动画</imp-text-danger>: 提供流畅的动画效果，可以使网格布局的更新更加自然和美观。
 
 ## 效果预览
 

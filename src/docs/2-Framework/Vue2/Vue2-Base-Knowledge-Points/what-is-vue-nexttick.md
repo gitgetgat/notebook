@@ -13,7 +13,7 @@ JS 执行是单线程的，它是基于事件循环的。
 - 当执行栈中的所有同步任务执行完后，就会读取任务队列。那些对应的异步任务，会结束等待状态，进入执行栈。
 - 主线程不断重复第三步。
 
-这里主线程的执行过程就是一个 `tick`，而所有的异步结果都是通过任务队列来调度。`Event Loop` 分为宏任务和微任务，无论是执行宏任务还是微任务，完成后都会进入到一下 `tick`，<el-text size="large" type="success">并在两个</el-text> `tick` <el-text size="large" type="success">之间进行 UI 渲染</el-text>。
+这里主线程的执行过程就是一个 `tick`，而所有的异步结果都是通过任务队列来调度。`Event Loop` 分为宏任务和微任务，无论是执行宏任务还是微任务，完成后都会进入到一下 `tick`，<imp-text-success>并在两个</imp-text-success> `tick` <imp-text-success>之间进行 UI 渲染</imp-text-success>。
 
 由于 Vue DOM 更新是异步执行的，即修改数据时，视图不会立即更新，而是会监听数据变化，并缓存在同一事件循环中，等同一数据循环中的所有数据变化完成之后，再统一进行视图更新。为了确保得到更新后的 DOM，所以设置了 `Vue.nextTick()` 方法。
 

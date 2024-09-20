@@ -1723,8 +1723,48 @@ const LIBRARY_LABELS = [
     },
   },
   {
-    zh: ``,
-    en: ``,
+    zh: `Tone.js 一款为交互式音乐而设计的 JavaScript 开源网络音频库`,
+    en: `tone.js-is-an-open-source-javascript-web-audio-library-designed-for-interactive-music`,
+    parentDir: ['Library'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Library']
+    },
+  },
+  {
+    zh: `Tesseract.js 一款浏览器也可以独立完成文字识别的 JavaScript 开源 OCR 库`,
+    en: `tesseract.js-is-a-javascript-open-source-ocr-library-that-allows-browsers-to-perform-text-recognition-independently`,
+    parentDir: ['Library'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Library']
+    },
+  },
+  {
+    zh: `Reveal.js 一款神奇的 JavaScript 开源 WEB 演示框架`,
+    en: `reveal.js-is-a-magical-javascript-open-source-web-presentation-framework`,
+    parentDir: ['Library'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Library']
+    },
+  },
+  {
+    zh: `FullCalendar.js 一款神奇的 JavaScript 开源全尺寸拖放事件日历`,
+    en: `fullcalendar-is-a-magical-javascript-full-size-drag-and-drop-event-calendar`,
+    parentDir: ['Library'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Library']
+    },
+  },
+  {
+    zh: `Gridstack.js 一款能够构建交互式的仪表板神奇的 JavaScript 开源网格布局库`,
+    en: `gridstack-is-a-javascript-open-source-grid-layout-library-that-can-build-interactive-dashboards`,
     parentDir: ['Library'],
     meta: {
       star: 5,
@@ -2388,7 +2428,7 @@ const VUE3_BASE_LABELS = [
     parentDir: ['Vue3-Base-Knowledge-Points'],
     meta: {
       star: 6,
-      state: '未完成',
+      state: '已完成',
       tags: ['Vue2', 'Vue3']
     },
   },
@@ -2656,9 +2696,32 @@ const VUE3_BASE_LABELS = [
 
 const VUE3_SOURCE_CODE_DEBUG_LABELS = [
   {
+    zh: '从零开始准备 Vue3 源码调试',
+    en: 'prepare-source-code-debugging-from-scratch',
+    parentDir: ['Vue3-Source-Code-Debug'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Vue3', "源码"]
+    },
+  },
+  {
+    zh: ``,
+    en: ``,
+    parentDir: ['Vue3-Source-Code-Debug'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Vue3', "源码"]
+    },
+  },
+]
+
+const VUE3_COMPILATION_PRINCIPLE_REVEALED_LABELS = [
+  {
     zh: '想看源码但是无从下口怎么办？',
     en: `what-should-i-do-if-i-want-to-read-the-source-code-but-don’t-know-where-to-start`,
-    parentDir: ['Vue3-Source-Code-Debug'],
+    parentDir: ['Vue3-Compilation-Principle-Revealed'],
     meta: {
       star: 3,
       state: '已完成',
@@ -2668,7 +2731,7 @@ const VUE3_SOURCE_CODE_DEBUG_LABELS = [
   {
     zh: '通过 debug 搞清楚 .vue 文件怎么变成 .js 文件',
     en: `use-debug-to-figure-out-how-a.vue-file-becomes-a.js-file`,
-    parentDir: ['Vue3-Source-Code-Debug'],
+    parentDir: ['Vue3-Compilation-Principle-Revealed'],
     meta: {
       star: 5,
       state: '已完成',
@@ -2678,7 +2741,7 @@ const VUE3_SOURCE_CODE_DEBUG_LABELS = [
   {
     zh: 'vue3 的宏到底是什么东西？',
     en: `what-exactly-is-vue3-macro`,
-    parentDir: ['Vue3-Source-Code-Debug'],
+    parentDir: ['Vue3-Compilation-Principle-Revealed'],
     meta: {
       star: 4,
       state: '已完成',
@@ -2688,7 +2751,7 @@ const VUE3_SOURCE_CODE_DEBUG_LABELS = [
   {
     zh: 'Vue 3 的 setup 语法糖到底是什么东西？',
     en: `what-is-vue3-setup-syntax-sugar`,
-    parentDir: ['Vue3-Source-Code-Debug'],
+    parentDir: ['Vue3-Compilation-Principle-Revealed'],
     meta: {
       star: 4,
       state: '已完成',
@@ -2698,7 +2761,7 @@ const VUE3_SOURCE_CODE_DEBUG_LABELS = [
   {
     zh: '为什么 defineProps 宏函数不需要从 vue 中 import 导入？',
     en: `why-defineprops-macro-function-does-not-need-to-be-imported-from-vue`,
-    parentDir: ['Vue3-Source-Code-Debug'],
+    parentDir: ['Vue3-Compilation-Principle-Revealed'],
     meta: {
       star: 4,
       state: '已完成',
@@ -2708,7 +2771,7 @@ const VUE3_SOURCE_CODE_DEBUG_LABELS = [
   {
     zh: 'defineEmits 宏函数编译后是 vue2 的选项式 API',
     en: `defineemits-macro-function-is-compiled-into-vue2-optional-api`,
-    parentDir: ['Vue3-Source-Code-Debug'],
+    parentDir: ['Vue3-Compilation-Principle-Revealed'],
     meta: {
       star: 4,
       state: '已完成',
@@ -2718,7 +2781,7 @@ const VUE3_SOURCE_CODE_DEBUG_LABELS = [
   {
     zh: 'v-model 作为 modelValue 语法糖是如何编译运行的？',
     en: `how-v-model-is-compiled-and-run-as-modelvalue-syntax-sugar`,
-    parentDir: ['Vue3-Source-Code-Debug'],
+    parentDir: ['Vue3-Compilation-Principle-Revealed'],
     meta: {
       star: 4,
       state: '已完成',
@@ -2728,7 +2791,7 @@ const VUE3_SOURCE_CODE_DEBUG_LABELS = [
   {
     zh: 'defineModel 如何简化 props 和 emit 自定义事件的？',
     en: `how-definemodel-simplifies-props-and-emits-custom-events`,
-    parentDir: ['Vue3-Source-Code-Debug'],
+    parentDir: ['Vue3-Compilation-Principle-Revealed'],
     meta: {
       star: 4,
       state: '已完成',
@@ -2738,7 +2801,7 @@ const VUE3_SOURCE_CODE_DEBUG_LABELS = [
   {
     zh: 'vue3 如何将 template 编译成 render 函数的？',
     en: `how-does-vue3-compile-template-into-render-function`,
-    parentDir: ['Vue3-Source-Code-Debug'],
+    parentDir: ['Vue3-Compilation-Principle-Revealed'],
     meta: {
       star: 4,
       state: '已完成',
@@ -2748,7 +2811,7 @@ const VUE3_SOURCE_CODE_DEBUG_LABELS = [
   {
     zh: 'vue3 是怎么处理内置的 v-for、v-model 等指令？',
     en: `how-does-vue3-handle-built-in-v-for-v-model-and-other-instructions`,
-    parentDir: ['Vue3-Source-Code-Debug'],
+    parentDir: ['Vue3-Compilation-Principle-Revealed'],
     meta: {
       star: 4,
       state: '已完成',
@@ -2758,7 +2821,7 @@ const VUE3_SOURCE_CODE_DEBUG_LABELS = [
   {
     zh: '在原生 input 上面使用 v-model 和组件上面使用有什么区别？',
     en: `what-is-the-difference-between-using-v-model-on-native-input-and-using-it-on-components`,
-    parentDir: ['Vue3-Source-Code-Debug'],
+    parentDir: ['Vue3-Compilation-Principle-Revealed'],
     meta: {
       star: 4,
       state: '已完成',
@@ -2768,7 +2831,7 @@ const VUE3_SOURCE_CODE_DEBUG_LABELS = [
   {
     zh: 'vue3 针对动态节点的 "靶向更新"',
     en: `vue3-targeted-update-for-dynamic-nodes`,
-    parentDir: ['Vue3-Source-Code-Debug'],
+    parentDir: ['Vue3-Compilation-Principle-Revealed'],
     meta: {
       star: 4,
       state: '已完成',
@@ -2778,7 +2841,7 @@ const VUE3_SOURCE_CODE_DEBUG_LABELS = [
   {
     zh: 'Vue 3 编译优化之 "静态提升" 的秘密',
     en: `the-secret-of-static-promotion-in-vue-3-compilation-optimization`,
-    parentDir: ['Vue3-Source-Code-Debug'],
+    parentDir: ['Vue3-Compilation-Principle-Revealed'],
     meta: {
       star: 4,
       state: '已完成',
@@ -2788,7 +2851,7 @@ const VUE3_SOURCE_CODE_DEBUG_LABELS = [
   {
     zh: 'Vue 3 的 generate 是这样生成 render 函数的',
     en: `vue-3-generate-generates-the-render-function-like-this`,
-    parentDir: ['Vue3-Source-Code-Debug'],
+    parentDir: ['Vue3-Compilation-Principle-Revealed'],
     meta: {
       star: 4,
       state: '已完成',
@@ -2798,7 +2861,7 @@ const VUE3_SOURCE_CODE_DEBUG_LABELS = [
   {
     zh: 'vue3 的 scoped 如何将 style 处理为 data-v-x 格式',
     en: `how-does-vue3's-scoped-handle-style-in-data-v-x-format`,
-    parentDir: ['Vue3-Source-Code-Debug'],
+    parentDir: ['Vue3-Compilation-Principle-Revealed'],
     meta: {
       star: 5,
       state: '已完成',
@@ -2808,7 +2871,7 @@ const VUE3_SOURCE_CODE_DEBUG_LABELS = [
   {
     zh: 'vue3 的 scoped 如何给 html 元素增加自定义属性 data-v-x',
     en: `how-does-vue3's-scoped-add-a-custom-data-v-x-attribute-to-html-elements`,
-    parentDir: ['Vue3-Source-Code-Debug'],
+    parentDir: ['Vue3-Compilation-Principle-Revealed'],
     meta: {
       star: 5,
       state: '已完成',
@@ -2818,7 +2881,7 @@ const VUE3_SOURCE_CODE_DEBUG_LABELS = [
   {
     zh: 'Vue3 是如何实现在 style 中使用响应式变量',
     en: 'how-does-vue3-use-responsive-variables-in-style',
-    parentDir: ['Vue3-Source-Code-Debug'],
+    parentDir: ['Vue3-Compilation-Principle-Revealed'],
     meta: {
       star: 5,
       state: '未完成',
@@ -2828,7 +2891,7 @@ const VUE3_SOURCE_CODE_DEBUG_LABELS = [
   {
     zh: ``,
     en: ``,
-    parentDir: ['Vue3-Source-Code-Debug'],
+    parentDir: ['Vue3-Compilation-Principle-Revealed'],
     meta: {
       star: 5,
       state: '已完成',
@@ -3705,6 +3768,7 @@ const NAME_LABELS = [
   ...addSortKey(DESIGNPATTERNS_LABELS),
   ...addSortKey(NETWORK_LABELS),
   ...addSortKey(VUE3_SOURCE_CODE_DEBUG_LABELS),
+  ...addSortKey(VUE3_COMPILATION_PRINCIPLE_REVEALED_LABELS),
 ]
 const spaceStr = '　'
 const DIR_LABELS = {
@@ -3719,8 +3783,9 @@ const DIR_LABELS = {
   '2-Framework': '框架',
   'Vue2': 'Vue2',
   'Vue3': 'Vue3',
-  'Vue2-Source-Code-Debug': `${spaceStr}Vue2 编译原理揭秘`,
-  'Vue3-Source-Code-Debug': `${spaceStr}Vue3 编译原理揭秘`,
+  'Vue2-Source-Code-Debug': `${spaceStr}Vue2 源码解析`,
+  'Vue3-Source-Code-Debug': `${spaceStr}Vue3 源码解析`,
+  'Vue3-Compilation-Principle-Revealed': `${spaceStr}Vue3 编译原理揭秘`,
   'Vue2-Base-Knowledge-Points': `${spaceStr}Vue2 基础知识点`,
   'Vue3-Base-Knowledge-Points': `${spaceStr}Vue3 基础知识点`,
   '3-BackEnd': '服务端',

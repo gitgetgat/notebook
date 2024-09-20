@@ -24,7 +24,7 @@
     2. 否则调用 `obj.valueOf()`，如果执行结果是原始值，返回之；
     3. 否则调用 `obj.toString()`，如果执行结果是原始值，返回之；
     4. 否则抛异常。
-  - 如果 `preferredType` 为 `String`，将上面的第 <el-text size="large" type="warning">2</el-text> 步和第 <el-text size="large" type="warning">3</el-text> 步调换，即：
+  - 如果 `preferredType` 为 `String`，将上面的第 <imp-text-warning>2</imp-text-warning> 步和第 <imp-text-warning>3</imp-text-warning> 步调换，即：
     1. 如果 `obj` 为原始值，直接返回；
     2. 否则调用 `obj.toString()`，如果执行结果是原始值，返回之；
     3. 否则调用 `obj.valueOf()`，如果执行结果是原始值，返回之；

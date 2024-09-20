@@ -17,7 +17,7 @@
 - 缓存静态应用资源，如 HTML、CSS、JS 和图像等；
 - 保存上一个浏览会话中的数据，例如存储上一个会话中的购物车内容，待办事项列表中的项目，记住用户是否以前登录过等。
 
-无论哪种方式，将这些信息保存在客户端可以减少额外且不必要的服务器调用，并帮助提供离线支持。不过，需要注意，由于实现差异，浏览器存储机制在不同浏览器中的行为可能会有所不同。<el-text size="large" type="success">除此之外，许多浏览器已删除对 Web SQL 的支持，建议将现有用法迁移到 IndexedDB。</el-text>
+无论哪种方式，将这些信息保存在客户端可以减少额外且不必要的服务器调用，并帮助提供离线支持。不过，需要注意，由于实现差异，浏览器存储机制在不同浏览器中的行为可能会有所不同。<imp-text-success>除此之外，许多浏览器已删除对 Web SQL 的支持，建议将现有用法迁移到 IndexedDB。</imp-text-success>
 
 所以下面我们将介绍 `Local Storage、Session Storage、IndexedDB、Cookies` 的使用方式、使用场景以及它们之间的区别。
 
@@ -74,7 +74,7 @@
 
    :::
 
-   localStorage 和 sessionStorage 都非常适合缓存非敏感应用数据。可以在需要存储少量简单值并不经常访问它们是使用它们。它们本质上都是 <el-text size="large" type="success">同步</el-text> 的，并且会阻塞主 UI 线程，所以应该谨慎使用。
+   localStorage 和 sessionStorage 都非常适合缓存非敏感应用数据。可以在需要存储少量简单值并不经常访问它们是使用它们。它们本质上都是 <imp-text-success>同步</imp-text-success> 的，并且会阻塞主 UI 线程，所以应该谨慎使用。
 
 3. 存储事件
 
@@ -226,9 +226,9 @@
 
    Cookie 分为两种类型：
 
-   - <el-text size="large" type="success">会话 Cookie</el-text>：没有指定 Expires 或 Max-Age 等属性，因此在关闭浏览器时会被删除；
+   - <imp-text-success>会话 Cookie</imp-text-success>：没有指定 Expires 或 Max-Age 等属性，因此在关闭浏览器时会被删除；
 
-   - <el-text size="large" type="success">持久性 Cookie</el-text>：指定 Expires 或 Max-Age 属性。这些 cookie 在关闭浏览器时不会过期，但会在特定日期 (Expires) 或时间长度 (Max-Age) 后过期。
+   - <imp-text-success>持久性 Cookie</imp-text-success>：指定 Expires 或 Max-Age 属性。这些 cookie 在关闭浏览器时不会过期，但会在特定日期 (Expires) 或时间长度 (Max-Age) 后过期。
 
 2. Cookie 操作
 
@@ -338,7 +338,7 @@
 
    Domain 属性告诉浏览器允许哪些主机访问 cookie。如果未指定，则默认为设置 cookie 的同一主机。因此，当使用客户端 JavaScript 访问 cookie 时，只能访问与 URL 域相同的 cookie。 同样，只有与 HTTP 请求的域共享相同域的 cookie 可以与请求头一起发送到服务端。
 
-   注意，拥有此属性并不意味着可以为任何域设置 cookie，因为这显然会带来巨大的安全风险。 此属性存在的唯一原因就是 <el-text size="large" type="success">减少域的限制并使 cookie 在子域上可访问</el-text>。例如，如果当前的域是 `http://abc.xyz.com`，并且在设置 cookie 时如果不指定 Domain 属性，则默认为  `http://abc.xyz.com`，并且 cookie 将仅限于该域。 但是，可能希望相同的 cookie 也可用于其他子域，因此可以设置 Domain=`http://xyz.com` 以使其可用于其他子域，如  `http://def.xyz.com`  和主域 `http://xyz.com`。
+   注意，拥有此属性并不意味着可以为任何域设置 cookie，因为这显然会带来巨大的安全风险。 此属性存在的唯一原因就是 <imp-text-success>减少域的限制并使 cookie 在子域上可访问</imp-text-success>。例如，如果当前的域是 `http://abc.xyz.com`，并且在设置 cookie 时如果不指定 Domain 属性，则默认为  `http://abc.xyz.com`，并且 cookie 将仅限于该域。 但是，可能希望相同的 cookie 也可用于其他子域，因此可以设置 Domain=`http://xyz.com` 以使其可用于其他子域，如  `http://def.xyz.com`  和主域 `http://xyz.com`。
 
    ![/1e32c896-9265-0475-e7f6-ba0524629565.png](/1e32c896-9265-0475-e7f6-ba0524629565.png)
 
@@ -450,19 +450,19 @@
 
    在说 IndexedDB 之前，先来看一些相关术语：
 
-   - <el-text size="large" type="success">减少域的限制并使 cookie 在子域上可访问</el-text>**数据库：**  一个域可以创建任意数量的 IndexedDB 数据库，只有同一域内的页面才能访问数据库。
-   - <el-text size="large" type="success">object store</el-text>：相关数据项的 key/value 存储。它类似于 MongoDB 中的集合或关系数据库中的表。
-   - <el-text size="large" type="success">key</el-text>：用于引用 object store 中每条记录（值）的唯一名称。它可以使用自动增量数字生成，也可以设置为记录中的任何唯一值。
-   - <el-text size="large" type="success">index</el-text>：在 object store 中组织数据的另一种方式。搜索查询只能检查 key 或 index。
-   - <el-text size="large" type="success">schema</el-text>：object store、key 和 index 的定义。
-   - <el-text size="large" type="success">version</el-text>：分配给 schema 的版本号（整数）。 IndexedDB 提供自动版本控制，因此可以将数据库更新到最新 schema。
-   - <el-text size="large" type="success">操作</el-text>：数据库活动，例如创建、读取、更新或删除记录。
+   - <imp-text-success>减少域的限制并使 cookie 在子域上可访问</imp-text-success>**数据库：**  一个域可以创建任意数量的 IndexedDB 数据库，只有同一域内的页面才能访问数据库。
+   - <imp-text-success>object store</imp-text-success>：相关数据项的 key/value 存储。它类似于 MongoDB 中的集合或关系数据库中的表。
+   - <imp-text-success>key</imp-text-success>：用于引用 object store 中每条记录（值）的唯一名称。它可以使用自动增量数字生成，也可以设置为记录中的任何唯一值。
+   - <imp-text-success>index</imp-text-success>：在 object store 中组织数据的另一种方式。搜索查询只能检查 key 或 index。
+   - <imp-text-success>schema</imp-text-success>：object store、key 和 index 的定义。
+   - <imp-text-success>version</imp-text-success>：分配给 schema 的版本号（整数）。 IndexedDB 提供自动版本控制，因此可以将数据库更新到最新 schema。
+   - <imp-text-success>操作</imp-text-success>：数据库活动，例如创建、读取、更新或删除记录。
 
    ![/14a472b7-ff1f-8c50-4936-c1bc9c64b5b9.png](/14a472b7-ff1f-8c50-4936-c1bc9c64b5b9.png)
 
 2. 特点及使用场景
 
-   <el-text size="large" type="success">indexedDB 特点如下</el-text>：
+   <imp-text-success>indexedDB 特点如下</imp-text-success>：
 
    - 可以将任何 JavaScript 类型的数据存储为键值对，例如对象（blob、文件）或数组等。
    - IndexedDB API 是异步的，不会在数据加载时停止页面的渲染。
@@ -472,11 +472,11 @@
    - 可以在大量数据中快速定位/搜索数据。
    - 数据库是域专用的，因此任何其他站点都无法访问其他网站的 IndexedDB 存储，这也称为同源策略。
 
-   <el-text size="large" type="success">IndexedDB 使用场景：</el-text>
+   <imp-text-success>IndexedDB 使用场景：</imp-text-success>
 
-   - <el-text size="large" type="success">存储用户生成的内容：</el-text>  例如表单，在填写表单的过程中，用户可以离开并稍后再回来完成表单，存储之后就不会丢失初始输入的数据。
-   - <el-text size="large" type="success">存储应用状态：</el-text>  当用户首次加载网站或应用时，可以使用 IndexedDB 存储这些初始状态。可以是登录身份验证、API 请求或呈现 UI 之前所需的任何其他状态。因此，当用户下次访问该站点时，加载速度会增加，因为应用已经存储了状态，这意味着它可以更快地呈现 UI。
-   - <el-text size="large" type="success">对于离线工作的应用：</el-text>  用户可以在应用离线时编辑和添加数据。当应用程序来连接时，IndexedDB 将处理并清空同步队列中的这些操作。
+   - <imp-text-success>存储用户生成的内容：</imp-text-success>  例如表单，在填写表单的过程中，用户可以离开并稍后再回来完成表单，存储之后就不会丢失初始输入的数据。
+   - <imp-text-success>存储应用状态：</imp-text-success>  当用户首次加载网站或应用时，可以使用 IndexedDB 存储这些初始状态。可以是登录身份验证、API 请求或呈现 UI 之前所需的任何其他状态。因此，当用户下次访问该站点时，加载速度会增加，因为应用已经存储了状态，这意味着它可以更快地呈现 UI。
+   - <imp-text-success>对于离线工作的应用：</imp-text-success>  用户可以在应用离线时编辑和添加数据。当应用程序来连接时，IndexedDB 将处理并清空同步队列中的这些操作。
 
 3. IndexedDB 操作
 
@@ -631,7 +631,7 @@
 
    下面来看看如何更新和删除数据。
 
-   - <el-text size="large" type="success">更新：</el-text>  首先使用个 get 来获取需要更新的数据，然后使用 store 上的 put 方法更新现有数据。 put 是一种“插入或更新”方法，它要么覆盖现有数据，要么在新数据不存在时插入新数据。
+   - <imp-text-success>更新：</imp-text-success>  首先使用个 get 来获取需要更新的数据，然后使用 store 上的 put 方法更新现有数据。 put 是一种“插入或更新”方法，它要么覆盖现有数据，要么在新数据不存在时插入新数据。
 
      ::: code-group
 
@@ -648,7 +648,7 @@
 
      这会将数据库中 Silver 色的 Subaru 的颜色更新为绿色。
 
-   - <el-text size="large" type="success">删除</el-text>：可以使用 delete API 来删除数据，最简单的方法是通过其 key 来删除：
+   - <imp-text-success>删除</imp-text-success>：可以使用 delete API 来删除数据，最简单的方法是通过其 key 来删除：
 
      ::: code-group
 

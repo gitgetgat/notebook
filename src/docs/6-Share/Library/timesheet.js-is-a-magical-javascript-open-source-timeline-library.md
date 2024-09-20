@@ -8,13 +8,13 @@
 
 `Timesheet.js` 是一个轻量级的 `JavaScript` 库用于创建时间表。它基于 `HTML5` 和 `CSS3` 能够创建吸引视觉呈现数据和时间轴。该库的优势在于其简洁性和用户友好性。仅需几行少量 `JavaScript` 代码即可以快速生成一个时间标布局，并且可以不依赖任何框架。
 
-<el-text size="large" type="danger">功能特点</el-text>
+<imp-text-danger>功能特点</imp-text-danger>
 
-- <el-text size="large" type="danger">简洁的 API</el-text>：`Timesheet.js` 提供一个简洁的 `API`，通过几行简单的代码即可创建时间表。
+- <imp-text-danger>简洁的 API</imp-text-danger>：`Timesheet.js` 提供一个简洁的 `API`，通过几行简单的代码即可创建时间表。
 
-- <el-text size="large" type="danger">高度可定制化</el-text>：通过 `CSS` 样式调整，可以创建不同主题和布局进行个性化定制。
+- <imp-text-danger>高度可定制化</imp-text-danger>：通过 `CSS` 样式调整，可以创建不同主题和布局进行个性化定制。
 
-- <el-text size="large" type="danger">轻量化</el-text>：体积小，性能高，不会对页面加载速度产生过大影响。
+- <imp-text-danger>轻量化</imp-text-danger>：体积小，性能高，不会对页面加载速度产生过大影响。
 
 ## 快速开始
 
@@ -46,10 +46,10 @@
 
 ## 应用场景
 
-- <el-text size="large" type="danger">个人简历网站</el-text>：展示个人的工作经历和项目周期，使简历更加直观和具有吸引力。
+- <imp-text-danger>个人简历网站</imp-text-danger>：展示个人的工作经历和项目周期，使简历更加直观和具有吸引力。
 
-- <el-text size="large" type="danger">历史事件展示</el-text>：制作互动式的历史时间线，通过 `Timesheet.js` 展示不同历史事件的发生时间，增加用户互动体验。
+- <imp-text-danger>历史事件展示</imp-text-danger>：制作互动式的历史时间线，通过 `Timesheet.js` 展示不同历史事件的发生时间，增加用户互动体验。
 
-- <el-text size="large" type="danger">教育应用</el-text>：在教育相关的网站或应用中，使用 `Timesheet.js` 展示课程安排或学术研究的时间序列，帮助学生更好地规划学习进度。
+- <imp-text-danger>教育应用</imp-text-danger>：在教育相关的网站或应用中，使用 `Timesheet.js` 展示课程安排或学术研究的时间序列，帮助学生更好地规划学习进度。
 
-- <el-text size="large" type="danger">数据分析</el-text>：将时间相关的数据通过 `Timesheet.js` 进行可视化展示，便于分析和理解数据随时间的变化趋势。
+- <imp-text-danger>数据分析</imp-text-danger>：将时间相关的数据通过 `Timesheet.js` 进行可视化展示，便于分析和理解数据随时间的变化趋势。

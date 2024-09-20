@@ -4,7 +4,7 @@
 
 ## 前言
 
-在之前的 [vue3 是怎么处理内置的 v-for、v-model 等指令？](./how-does-vue3-handle-built-in-v-for-v-model-and-other-instructions.md) 文章中讲了 `transform` 阶段处理完 `v-for`、`v-model` 等指令后，会生成一棵 `javascript AST 抽象语法树` 。这篇文章我们来接着讲 `generate` 阶段是如何根据这棵 `javascript AST 抽象语法树` 生成 `render` 函数字符串的，本文中使用的 vue 版本为 <el-text size="large" type="success">3.4.19</el-text>。
+在之前的 [vue3 是怎么处理内置的 v-for、v-model 等指令？](./how-does-vue3-handle-built-in-v-for-v-model-and-other-instructions.md) 文章中讲了 `transform` 阶段处理完 `v-for`、`v-model` 等指令后，会生成一棵 `javascript AST 抽象语法树` 。这篇文章我们来接着讲 `generate` 阶段是如何根据这棵 `javascript AST 抽象语法树` 生成 `render` 函数字符串的，本文中使用的 vue 版本为 <imp-text-success>3.4.19</imp-text-success>。
 
 ## demo
 
@@ -62,7 +62,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
 
 ## generate 函数
 
-首先给 `generate` 函数打个断点，`generate` 函数在 <el-text size="large" type="success">node_modules/@vue/compiler-core/dist/compiler-core.cjs.js</el-text> 文件中。
+首先给 `generate` 函数打个断点，`generate` 函数在 <imp-text-success>node_modules/@vue/compiler-core/dist/compiler-core.cjs.js</imp-text-success> 文件中。
 
 然后启动一个 debug 终端，在终端中执行 `yarn dev`（这里是以 `vite` 举例）。在浏览器中访问 `http://localhost:5173/` ，此时断点就会走到 `generate` 函数中了。在我们这个场景中简化后的 `generate` 函数是下面这样的：
 

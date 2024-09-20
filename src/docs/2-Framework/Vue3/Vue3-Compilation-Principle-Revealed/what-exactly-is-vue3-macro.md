@@ -172,15 +172,15 @@ const __sfc__ = _defineComponent({
 
 现在我们能够回答前面提的三个问题了。
 
-### <el-text type="success" size="large">vue 中的宏到底是什么？</el-text>
+### <imp-text-success>vue 中的宏到底是什么？</imp-text-success>
 
 `vue3` 的宏是一种特殊的代码，在编译时会将这些特殊的代码转换为浏览器能够直接运行的指定代码，根据宏的功能不同，转换后的代码也不同。
 
-### <el-text type="success" size="large">为什么这些宏不需要手动从 vue 中 import？</el-text>
+### <imp-text-success>为什么这些宏不需要手动从 vue 中 import？</imp-text-success>
 
 因为在编译时已经将这些宏替换为指定的浏览器能够直接运行的代码，在运行时已经不存在这些宏相关的代码，自然不需要从 `vue` 中 `import`。
 
-### <el-text type="success" size="large">为什么只能在 setup 顶层中使用这些宏？</el-text>
+### <imp-text-success>为什么只能在 setup 顶层中使用这些宏？</imp-text-success>
 
 因为在编译时只会去处理 `setup` 顶层的宏，其他地方的宏会原封不动的输出回来。在运行时由于我们没有在任何地方定义这些宏，当代码执行到宏的时候当然就会报错。
 

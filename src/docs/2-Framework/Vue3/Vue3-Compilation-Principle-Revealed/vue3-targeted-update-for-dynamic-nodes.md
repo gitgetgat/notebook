@@ -6,7 +6,7 @@
 
 `jquery` 时代更新视图是直接对 `DOM` 进行操作，缺点是频繁操作 `真实 DOM`，性能差。`react` 和 `vue` 时代引入了 `虚拟 DOM`，更新视图是对新旧 `虚拟 DOM` 树进行一层层的遍历比较，然后找出需要更新的 `DOM` 节点进行更新。这样做的缺点就是如果 `DOM` 树很复杂，在进行 `新旧 DOM 树` 比较的时候性能就比较差了。那么有没有一种方法是不需要去遍历 `新旧 DOM 树` 就可以知道哪些 `DOM` 需要更新呢？
 
-答案是：在 <el-text size="large" type="success">编译时</el-text> 我们就能够知道哪些节点是静态的，哪些是动态的。在更新视图时只需要对这些动态的节点进行靶向更新，就可以省去对比新旧 `虚拟 DOM` 带来的开销。vue3 也是这样做的，甚至都可以抛弃 `虚拟 DOM`。但是考虑到渲染函数的灵活性和需要兼容 vue2，vue3 最终还是保留了 `虚拟 DOM`。 这篇文章我们来讲讲 vue3 是如何找出动态节点，以及响应式变量修改后如何靶向更新。 注：本文使用的 vue 版本为 <el-text size="large" type="success">3.4.19</el-text>
+答案是：在 <imp-text-success>编译时</imp-text-success> 我们就能够知道哪些节点是静态的，哪些是动态的。在更新视图时只需要对这些动态的节点进行靶向更新，就可以省去对比新旧 `虚拟 DOM` 带来的开销。vue3 也是这样做的，甚至都可以抛弃 `虚拟 DOM`。但是考虑到渲染函数的灵活性和需要兼容 vue2，vue3 最终还是保留了 `虚拟 DOM`。 这篇文章我们来讲讲 vue3 是如何找出动态节点，以及响应式变量修改后如何靶向更新。 注：本文使用的 vue 版本为 <imp-text-success>3.4.19</imp-text-success>
 
 ## 靶向更新的流程
 
@@ -14,11 +14,11 @@
 
 ![/2aada803-2f06-07d8-3c39-116779925cbc.png](/2aada803-2f06-07d8-3c39-116779925cbc.png)
 
-整个流程主要分为两个大阶段：<el-text size="large" type="success">编译时</el-text> 和 <el-text size="large" type="success">运行时</el-text>。
+整个流程主要分为两个大阶段：<imp-text-success>编译时</imp-text-success> 和 <imp-text-success>运行时</imp-text-success>。
 
-- <el-text size="large" type="success">编译时</el-text> 阶段找出动态节点，使用 `patchFlag` 属性将其标记为动态节点。
+- <imp-text-success>编译时</imp-text-success> 阶段找出动态节点，使用 `patchFlag` 属性将其标记为动态节点。
 
-- <el-text size="large" type="success">运行时</el-text> 阶段分为两块：执行 `render` 函数阶段和更新视图阶段。
+- <imp-text-success>运行时</imp-text-success> 阶段分为两块：执行 `render` 函数阶段和更新视图阶段。
 
   - 执行 `render` 函数阶段会找出所有被标记的动态节点，将其塞到 `block` 节点的 `dynamicChildren` 属性数组中。
 
@@ -54,10 +54,10 @@ function handleChange() {
 
 p 标签绑定了响应式变量 `msg`，点击 button 按钮时会将 `msg` 变量的值从 hello 更新为 world。
 
-在之前的文章中我们知道了 vue 分为 <el-text size="large" type="success">编译时</el-text> 和 <el-text size="large" type="success">运行时</el-text> 阶段分为两块：执行 `render` 函数阶段和更新视图阶段。
-，由于 p 标签使用了 `msg` 响应式变量，所以在 <el-text size="large" type="success">编译时</el-text> 就会找出 p 标签。并且将其标记为动态节点，而这里的 h1 标签由于没有使用响应式变量，所以不会被标记为动态节点。
+在之前的文章中我们知道了 vue 分为 <imp-text-success>编译时</imp-text-success> 和 <imp-text-success>运行时</imp-text-success> 阶段分为两块：执行 `render` 函数阶段和更新视图阶段。
+，由于 p 标签使用了 `msg` 响应式变量，所以在 <imp-text-success>编译时</imp-text-success> 就会找出 p 标签。并且将其标记为动态节点，而这里的 h1 标签由于没有使用响应式变量，所以不会被标记为动态节点。
 
-在 <el-text size="large" type="success">运行时</el-text> 阶段分为两块：执行 `render` 函数阶段和更新视图阶段。
+在 <imp-text-success>运行时</imp-text-success> 阶段分为两块：执行 `render` 函数阶段和更新视图阶段。
 阶段点击 button 按钮修改 `msg` 变量的值，由于我们在编译阶段已经将 p 标签标记为了动态节点，所以此时只需要将标记的 p 标签动态节点中的文本更新为最新的值即可，省去了传统 `patch` 函数中的比较 `新旧虚拟 DOM` 的步骤。
 
 ## 编译阶段
@@ -68,7 +68,7 @@ p 标签绑定了响应式变量 `msg`，点击 button 按钮时会将 `msg` 变
 
 ![/9aa857b8-ae5f-76be-2e03-da1e54a78cac.png](/9aa857b8-ae5f-76be-2e03-da1e54a78cac.png)
 
-然后给 `transformElement` 函数打个断点，`transformElement` 函数在 <el-text size="large" type="success">node_modules/@vue/compiler-core/dist/compiler-core.cjs.js</el-text> 文件中。
+然后给 `transformElement` 函数打个断点，`transformElement` 函数在 <imp-text-success>node_modules/@vue/compiler-core/dist/compiler-core.cjs.js</imp-text-success> 文件中。
 
 ### `transformElement` 转换函数
 
@@ -171,7 +171,7 @@ const count = 10;
 
 :::
 
-我们接着来看 `if` 语句里面的内容 `patchFlag |= PatchFlags.TEXT`，如果 `if` 的判断结果为 `true`，那么就使用 <el-text size="large" type="success">“按位或”</el-text> 的运算符。由于此时的 `patchFlag` 变量的值为 `0`，所以经过 <el-text size="large" type="success">“按位或”</el-text> 的运算符计算下来 `patchFlag` 变量的值变成了 `PatchFlags.TEXT` 变量的值。我们先来看看 `PatchFlags` 中有哪些值：
+我们接着来看 `if` 语句里面的内容 `patchFlag |= PatchFlags.TEXT`，如果 `if` 的判断结果为 `true`，那么就使用 <imp-text-success>“按位或”</imp-text-success> 的运算符。由于此时的 `patchFlag` 变量的值为 `0`，所以经过 <imp-text-success>“按位或”</imp-text-success> 的运算符计算下来 `patchFlag` 变量的值变成了 `PatchFlags.TEXT` 变量的值。我们先来看看 `PatchFlags` 中有哪些值：
 
 ::: code-group
 
@@ -188,11 +188,11 @@ enum PatchFlags {
 
 这里涉及到了位运算 `<<`，他的意思是向左移多少位。比如 `TEXT` 表示向左移 `0` 位，二进制表示为 `1`。`CLASS` 表示为左移 `1` 位，二进制表示为 `10`。`STYLE` 表示为左移两位，二进制表示为 `100`。
 
-现在你明白了为什么给 `patchFlag` 赋值要使用 <el-text size="large" type="success">“按位或”</el-text> 的运算符了吧，假如当前 p 标签除了有动态的文本节点，还有动态的 `class`。那么 `patchFlag` 就会进行两次赋值，分别是：`patchFlag |= PatchFlags.TEXT` 和 `patchFlag |= PatchFlags.CLASS`。经过两次 <el-text size="large" type="success">“按位或”</el-text> 的运算符进行计算后，`patchFlag` 的二进制值就是 `11`，二进制值信息中包含动态文本节点和动态 `class`，从右边数的第一位 `1` 表示动态文本节点，从右边数的第二位 `1` 表示动态 `class`。如下图：
+现在你明白了为什么给 `patchFlag` 赋值要使用 <imp-text-success>“按位或”</imp-text-success> 的运算符了吧，假如当前 p 标签除了有动态的文本节点，还有动态的 `class`。那么 `patchFlag` 就会进行两次赋值，分别是：`patchFlag |= PatchFlags.TEXT` 和 `patchFlag |= PatchFlags.CLASS`。经过两次 <imp-text-success>“按位或”</imp-text-success> 的运算符进行计算后，`patchFlag` 的二进制值就是 `11`，二进制值信息中包含动态文本节点和动态 `class`，从右边数的第一位 `1` 表示动态文本节点，从右边数的第二位 `1` 表示动态 `class`。如下图：
 
 ![/34856683-67f8-f877-5b43-a7f613f92943.png](/34856683-67f8-f877-5b43-a7f613f92943.png)
 
-这样设计其实很精妙，后面拿到动态节点进行更新时，只需要将动态节点的 `patchFlag` 和 `PatchFlags` 中的枚举进行 `&` <el-text size="large" type="success">"按位与"</el-text> 运算就可以知道当前节点是否是动态文本节点、动态 `class` 的节点。上面之所以没有涉及到 `PatchFlags.CLASS` 相关的代码，是因为当前例子中不存在动态 `class`，所以我省略了。
+这样设计其实很精妙，后面拿到动态节点进行更新时，只需要将动态节点的 `patchFlag` 和 `PatchFlags` 中的枚举进行 `&` <imp-text-success>"按位与"</imp-text-success> 运算就可以知道当前节点是否是动态文本节点、动态 `class` 的节点。上面之所以没有涉及到 `PatchFlags.CLASS` 相关的代码，是因为当前例子中不存在动态 `class`，所以我省略了。
 
 我们接着来看第二部分的第二个 `if` 语句，如下：
 
@@ -557,25 +557,25 @@ enum PatchFlags {
 
 :::
 
-由于一个节点可能同时是：<el-text size="large" type="warning">动态文本节点</el-text>、<el-text size="large" type="warning">动态 class 节点</el-text>、<el-text size="large" type="warning">动态 style 节点</el-text>。所以 `patchFlag` 中需要包含这些信息。
+由于一个节点可能同时是：<imp-text-warning>动态文本节点</imp-text-warning>、<imp-text-warning>动态 class 节点</imp-text-warning>、<imp-text-warning>动态 style 节点</imp-text-warning>。所以 `patchFlag` 中需要包含这些信息。
 
-如果是动态文本节点，那就执行 <el-text size="large" type="success">“按位或”</el-text> 运算符：`patchFlag |= PatchFlags.TEXT`。执行后 `patchFlag` 的二进制值为 `1`
+如果是动态文本节点，那就执行 <imp-text-success>“按位或”</imp-text-success> 运算符：`patchFlag |= PatchFlags.TEXT`。执行后 `patchFlag` 的二进制值为 `1`
 
-如果也是动态 class 节点，在前一步的执行结果基础上再次执行 <el-text size="large" type="success">“按位或”</el-text> 运算符：`patchFlag |= PatchFlags.CLASS`。执行后 `patchFlag` 的二进制值为 `11`
+如果也是动态 class 节点，在前一步的执行结果基础上再次执行 <imp-text-success>“按位或”</imp-text-success> 运算符：`patchFlag |= PatchFlags.CLASS`。执行后 `patchFlag` 的二进制值为 `11`
 
-如果也是动态 style 节点，同样在前一步的执行结果基础上再次执行 <el-text size="large" type="success">“按位或”</el-text> 运算符：`patchFlag |= PatchFlags.STYLE`。执行后 `patchFlag` 的二进制值为 `111`
+如果也是动态 style 节点，同样在前一步的执行结果基础上再次执行 <imp-text-success>“按位或”</imp-text-success> 运算符：`patchFlag |= PatchFlags.STYLE`。执行后 `patchFlag` 的二进制值为 `111`
 
-我们前面给 `p` 标签标记为动态节点时给 `patchFlag` 赋值为 `1`。在 `patchElement` 函数中使用 `patchFlag` 属性进行 <el-text size="large" type="success">"按位与"</el-text> 运算，判断当前节点是否是动态文本节点、动态 class 节点、动态 style 节点。
+我们前面给 `p` 标签标记为动态节点时给 `patchFlag` 赋值为 `1`。在 `patchElement` 函数中使用 `patchFlag` 属性进行 <imp-text-success>"按位与"</imp-text-success> 运算，判断当前节点是否是动态文本节点、动态 class 节点、动态 style 节点。
 
-`patchFlag` 的值是 `1`，转换为两位的二进制后是 `01`。`PatchFlags.CLASS` 为 `1 << 1`，转换为二进制值为 `10`。`01` 和 `10` 进行 `&`( <el-text size="large" type="success">"按位与"</el-text> ) 操作，计算下来的值为 `00`。所以 `patchFlag & PatchFlags.CLASS` 转换为布尔值后为 `false`，说明当前 `p` 标签不是动态 class 标签。如下图：
+`patchFlag` 的值是 `1`，转换为两位的二进制后是 `01`。`PatchFlags.CLASS` 为 `1 << 1`，转换为二进制值为 `10`。`01` 和 `10` 进行 `&`( <imp-text-success>"按位与"</imp-text-success> ) 操作，计算下来的值为 `00`。所以 `patchFlag & PatchFlags.CLASS` 转换为布尔值后为 `false`，说明当前 `p` 标签不是动态 class 标签。如下图：
 
 ![/08f2673a-a537-5c2c-37c7-b918e0f053d6.png](/08f2673a-a537-5c2c-37c7-b918e0f053d6.png)
 
-同理将 `patchFlag` 转换为三位的二进制后是 `001`。`PatchFlags.STYLE` 为 `1 << 2`，转换为二进制值为 `100`。`001` 和 `100` 进行 `&`( <el-text size="large" type="success">"按位与"</el-text> ) 操作，计算下来的值为 `000`。所以 `patchFlag & PatchFlags.CLASS` 转换为布尔值后为 `false`，说明当前 `p` 标签不是动态 style 标签。如下图：
+同理将 `patchFlag` 转换为三位的二进制后是 `001`。`PatchFlags.STYLE` 为 `1 << 2`，转换为二进制值为 `100`。`001` 和 `100` 进行 `&`( <imp-text-success>"按位与"</imp-text-success> ) 操作，计算下来的值为 `000`。所以 `patchFlag & PatchFlags.CLASS` 转换为布尔值后为 `false`，说明当前 `p` 标签不是动态 style 标签。如下图：
 
 ![/b4ebb524-d57d-6ae7-a1e9-0c1c4ca2b730.png](/b4ebb524-d57d-6ae7-a1e9-0c1c4ca2b730.png)
 
-同理将 `patchFlag` 转换为一位的二进制后还是 `1`。`PatchFlags.TEXT` 为 `1`，转换为二进制值还是 `1`。`1` 和 `1` 进行 `&`( <el-text size="large" type="success">"按位与"</el-text> ) 操作，计算下来的值为 `1`。所以 `patchFlag & PatchFlags.TEXT` 转换为布尔值后为 `true`，说明当前 `p` 标签是动态文本标签。如下图：
+同理将 `patchFlag` 转换为一位的二进制后还是 `1`。`PatchFlags.TEXT` 为 `1`，转换为二进制值还是 `1`。`1` 和 `1` 进行 `&`( <imp-text-success>"按位与"</imp-text-success> ) 操作，计算下来的值为 `1`。所以 `patchFlag & PatchFlags.TEXT` 转换为布尔值后为 `true`，说明当前 `p` 标签是动态文本标签。如下图：
 
 ![/2ad0efcd-fbe1-9c3e-213d-27cc10e5bab9.png](/2ad0efcd-fbe1-9c3e-213d-27cc10e5bab9.png)
 
@@ -601,11 +601,11 @@ function setElementText(el, text) {
 
 ![/2aada803-2f06-07d8-3c39-116779925cbc.png](/2aada803-2f06-07d8-3c39-116779925cbc.png)
 
-整个流程主要分为两个大阶段：<el-text size="large" type="success">编译时</el-text> 和 <el-text size="large" type="success">运行时</el-text>。
+整个流程主要分为两个大阶段：<imp-text-success>编译时</imp-text-success> 和 <imp-text-success>运行时</imp-text-success>。
 
-- <el-text size="large" type="success">编译时</el-text> 阶段找出动态节点，使用 `patchFlag` 属性将其标记为动态节点。
+- <imp-text-success>编译时</imp-text-success> 阶段找出动态节点，使用 `patchFlag` 属性将其标记为动态节点。
 
-- <el-text size="large" type="success">运行时</el-text> 阶段分为两块：执行 `render` 函数阶段和更新视图阶段。
+- <imp-text-success>运行时</imp-text-success> 阶段分为两块：执行 `render` 函数阶段和更新视图阶段。
 
   - 执行 `render` 函数阶段会找出所有被标记的动态节点，将其塞到 `block` 节点的 `dynamicChildren` 属性数组中。
 

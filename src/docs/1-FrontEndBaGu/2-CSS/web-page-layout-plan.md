@@ -47,7 +47,7 @@ css 提供了 3 种机制来设置盒子的摆放位置， 分别是普通流、
 常见的标准流排版规则：
 
 - 块级元素：从上往下，
-  <el-text size="large" type="success">垂直布局</el-text>，独占一行
+  <imp-text-success>垂直布局</imp-text-success>，独占一行
 - 行内元素 或行内块元素 ： 从左往右，水平布局 空间不够自动折行
 
 #### 📌 浮动
@@ -97,7 +97,7 @@ div {
   在父元素内的最后添加一个块级元素，给添加的块级元素设置 `clear:both`
   缺点:会在页面中添加额外的标签，会让页面 html 结构变得复杂
 
-- 伪元素清除法<el-text size="large" type="success">【推荐使用】</el-text>
+- 伪元素清除法<imp-text-success>【推荐使用】</imp-text-success>
 
   用伪元素替代了额外标签
 
@@ -161,7 +161,7 @@ div {
 
     - 相对定位 `position:relative`
 
-      - <el-text size="large" type="success">相对于自己之前的位置进行移动</el-text>
+      - <imp-text-success>相对于自己之前的位置进行移动</imp-text-success>
       - 改变位置参照自己原来的位置
       - 仍然具有标签原有的显示模式特点
       - 占有原来的位置

@@ -180,7 +180,7 @@ function tryResolveCompiler(root) {
 
 :::
 
-在 `resolveCompiler` 函数中调用了 `tryResolveCompiler` 函数，在 `tryResolveCompiler` 函数中判断当前项目是否是 `vue3.x` 版本，然后将 `vue/compiler-sfc` 包返回。<el-text size="large" type="success">所以经过初始化后 `options.value.compiler` 的值就是 vue 的底层库 `vue/compiler-sfc` ，记住这个后面会用</el-text>。
+在 `resolveCompiler` 函数中调用了 `tryResolveCompiler` 函数，在 `tryResolveCompiler` 函数中判断当前项目是否是 `vue3.x` 版本，然后将 `vue/compiler-sfc` 包返回。<imp-text-success>所以经过初始化后 `options.value.compiler` 的值就是 vue 的底层库 `vue/compiler-sfc` ，记住这个后面会用</imp-text-success>。
 
 然后点击 `Continue(F5)` 放掉断点，在浏览器中打开对应的页面，比如：`http://localhost:5173/` 。此时 `vite` 将会编译这个页面要用到的所有文件，就会走到 `transform` 钩子函数断点中了。由于解析每个文件都会走到 `transform` 钩子函数中，但是我们只关注 `App.vue` 文件是如何解析的，所以为了方便我们直接在 `transform` 函数中添加了下面这段代码，并且删掉了原来在 `transform` 钩子函数中打的断点，这样就只有解析到 `App.vue` 文件的时候才会走到断点中去。
 

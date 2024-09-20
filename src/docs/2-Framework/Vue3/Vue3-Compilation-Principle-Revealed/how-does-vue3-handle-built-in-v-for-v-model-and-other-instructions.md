@@ -47,7 +47,7 @@ const title = ref("hello word");
 
 ## `transform` 函数
 
-本文中使用的 vue 版本为 <el-text size="large" type="success">3.4.19</el-text>，transform 函数在 `node_modules/@vue/compiler-core/dist/compiler-core.cjs.js` 文件中。找到 `transform` 函数的代码，打上断点。
+本文中使用的 vue 版本为 <imp-text-success>3.4.19</imp-text-success>，transform 函数在 `node_modules/@vue/compiler-core/dist/compiler-core.cjs.js` 文件中。找到 `transform` 函数的代码，打上断点。
 
 从上一篇文章我们知道了 `transform` 函数是在 node 端执行的，所以我们需要启动一个 `debug` 终端，才可以在 node 端打断点。这里以 vscode 举例，首先我们需要打开终端，然后点击终端中的 `+` 号旁边的下拉箭头，在下拉中点击 `Javascript Debug Terminal` 就可以启动一个 `debug` 终端。
 
@@ -57,9 +57,9 @@ const title = ref("hello word");
 
 ![/ecfc0ec3-09fb-9b7f-e94f-a57efa466b5a.png](/ecfc0ec3-09fb-9b7f-e94f-a57efa466b5a.png)
 
-从上图中我们可以看到 `transform` 函数接收的第一个参数 `root` 变量是一个模版 <el-text size="large" type="success">AST 抽象语法树</el-text>，为什么说他是模版 <el-text size="large" type="success">AST 抽象语法树</el-text> 呢？因为这棵树的结构和 template 模块中的结构一模一样，`root` 变量也就是模版 <el-text size="large" type="success">AST 抽象语法树</el-text> 是对 `template` 模块进行描述。
+从上图中我们可以看到 `transform` 函数接收的第一个参数 `root` 变量是一个模版 <imp-text-success>AST 抽象语法树</imp-text-success>，为什么说他是模版 <imp-text-success>AST 抽象语法树</imp-text-success> 呢？因为这棵树的结构和 template 模块中的结构一模一样，`root` 变量也就是模版 <imp-text-success>AST 抽象语法树</imp-text-success> 是对 `template` 模块进行描述。
 
-根节点的 `children` 下面只有一个 `div` 子节点，对应的就是最外层的 `div` 标签。`div` 节点 `children` 下面有两个子节点，分别对应的是 `input` 标签和 `p` 标签。`input` 标签中有三个 `props`，分别对应 `input` 标签上面的 `v-for 指令`、`key 属性`、`v-model 指令`。从这里我们可以看出来此时 vue 内置的指令还没被处理，在执行 `parse` 函数生成模版 <el-text size="large" type="success">AST 抽象语法树</el-text> 阶段只是将其当做普通的属性处理后，再塞到 `props` 属性中。
+根节点的 `children` 下面只有一个 `div` 子节点，对应的就是最外层的 `div` 标签。`div` 节点 `children` 下面有两个子节点，分别对应的是 `input` 标签和 `p` 标签。`input` 标签中有三个 `props`，分别对应 `input` 标签上面的 `v-for 指令`、`key 属性`、`v-model 指令`。从这里我们可以看出来此时 vue 内置的指令还没被处理，在执行 `parse` 函数生成模版 <imp-text-success>AST 抽象语法树</imp-text-success> 阶段只是将其当做普通的属性处理后，再塞到 `props` 属性中。
 
 `p` 标签中的内容由两部分组成：`<p>标题是：{{ title }}</p>`。此时我们发现 `p` 标签的 `children` 也是有两个，分别是写死的文本和 `title` 变量。
 
@@ -76,15 +76,15 @@ function transform(root, options) {
 
 :::
 
-从上面的代码中可以看到 `transform` 函数内主要有两部分，从名字我想你应该就能猜出他们的作用。传入 <el-text size="large" type="success">模版 AST 抽象语法树</el-text> 和 `options`，调用 `createTransformContext` 函数生成 `context` 上下文对象。传入 <el-text size="large" type="success">模版 AST 抽象语法树</el-text> 和 `context` 上下文对象，调用 `traverseNode` 函数对树中的 node 节点进行转换。
+从上面的代码中可以看到 `transform` 函数内主要有两部分，从名字我想你应该就能猜出他们的作用。传入 <imp-text-success>模版 AST 抽象语法树</imp-text-success> 和 `options`，调用 `createTransformContext` 函数生成 `context` 上下文对象。传入 <imp-text-success>模版 AST 抽象语法树</imp-text-success> 和 `context` 上下文对象，调用 `traverseNode` 函数对树中的 node 节点进行转换。
 
 ## `createTransformContext` 函数
 
-在讲 `createTransformContext` 函数之前我们先来了解一下什么是 <el-text size="large" type="success">context（上下文）</el-text>。
+在讲 `createTransformContext` 函数之前我们先来了解一下什么是 <imp-text-success>context（上下文）</imp-text-success>。
 
 ### 什么是上下文
 
-上下文其实就是在某个范围内的 <el-text size="large" type="primary">“全局变量”</el-text>，在这个范围内的任意地方都可以拿到这个 <el-text size="large" type="primary">“全局变量”</el-text>。举两个例子：
+上下文其实就是在某个范围内的 <imp-text-primary>“全局变量”</imp-text-primary>，在这个范围内的任意地方都可以拿到这个 <imp-text-primary>“全局变量”</imp-text-primary>。举两个例子：
 
 在 vue 中可以通过 `provied` 向整颗组件树提供数据，然后在树的任意节点可以通过 `inject` 拿到提供的数据。比如：
 
@@ -135,7 +135,7 @@ const theme = useContext(ThemeContext);
 
 树中的节点一般可以通过 `children` 拿到子节点，但是父节点一般不容易通过子节点拿到。在转换的过程中我们有的时候需要拿到父节点进行一些操作，比如将当前节点替换为一个新的节点，又或者直接删掉当前节点。
 
-所以在这里会维护一个 <el-text size="large" type="success">context 上下文</el-text> 对象，对象中会维护一些状态和方法。比如当前正在转换的节点是哪个，当前转换的节点的父节点是哪个，当前节点在父节点中是第几个子节点，还有 `replaceNode`、`removeNode` 等方法。
+所以在这里会维护一个 <imp-text-success>context 上下文</imp-text-success> 对象，对象中会维护一些状态和方法。比如当前正在转换的节点是哪个，当前转换的节点的父节点是哪个，当前节点在父节点中是第几个子节点，还有 `replaceNode`、`removeNode` 等方法。
 
 ### 上下文中的一些属性和方法
 
@@ -183,11 +183,11 @@ function createTransformContext(
 
 :::
 
-从上面的代码中可以看到 `createTransformContext` 中的代码其实很简单，第一个参数为需要转换的 <el-text size="large" type="success">模版 AST 抽象语法树</el-text>，第二个参数对传入的 `options` 进行解构，拿到 `options.nodeTransforms` 数组和 `options.directiveTransforms` 对象。
+从上面的代码中可以看到 `createTransformContext` 中的代码其实很简单，第一个参数为需要转换的 <imp-text-success>模版 AST 抽象语法树</imp-text-success>，第二个参数对传入的 `options` 进行解构，拿到 `options.nodeTransforms` 数组和 `options.directiveTransforms` 对象。
 
-`nodeTransforms` 数组中存了一堆转换函数，在树的递归遍历过程中会将 `nodeTransforms` 数组中的转换函数全部执行一遍。 `directiveTransforms` 对象中也存了一堆转换函数，和 `nodeTransforms` 数组的区别是，只会执行 node 节点的指令在 `directiveTransforms` 对象中对应的转换函数。比如 `node` 节点中只有 `v-model` 指令，那就只会执行 `directiveTransforms` 对象中的 `transformModel` 转换函数。这里将拿到的 `nodeTransforms` 数组和 `directiveTransforms` 对象都存到了 <el-text size="large" type="success">context 上下文</el-text> 中。
+`nodeTransforms` 数组中存了一堆转换函数，在树的递归遍历过程中会将 `nodeTransforms` 数组中的转换函数全部执行一遍。 `directiveTransforms` 对象中也存了一堆转换函数，和 `nodeTransforms` 数组的区别是，只会执行 node 节点的指令在 `directiveTransforms` 对象中对应的转换函数。比如 `node` 节点中只有 `v-model` 指令，那就只会执行 `directiveTransforms` 对象中的 `transformModel` 转换函数。这里将拿到的 `nodeTransforms` 数组和 `directiveTransforms` 对象都存到了 <imp-text-success>context 上下文</imp-text-success> 中。
 
-在 <el-text size="large" type="success">context 上下文</el-text> 中存了一些状态属性：
+在 <imp-text-success>context 上下文</imp-text-success> 中存了一些状态属性：
 
 - `root`：需要转换的 `AST 抽象语法树`。
 
@@ -201,7 +201,7 @@ function createTransformContext(
 
 - `childIndex`：当前转换节点在父节点中的 index 位置。
 
-在 <el-text size="large" type="success">context 上下文</el-text> 中存了一些方法：
+在 <imp-text-success>context 上下文</imp-text-success> 中存了一些方法：
 
 - `replaceNode`：将当前节点替换为新节点。
 
@@ -246,7 +246,7 @@ function traverseNode(node, context) {
 
 :::
 
-从上面的代码中我们可以看到 `traverseNode` 函数接收两个参数，第一个参数为当前需要处理的 `node` 节点，第一次调用时传的就是树的根节点。第二个参数是 <el-text size="large" type="success">context 上下文</el-text> 对象。
+从上面的代码中我们可以看到 `traverseNode` 函数接收两个参数，第一个参数为当前需要处理的 `node` 节点，第一次调用时传的就是树的根节点。第二个参数是 <imp-text-success>context 上下文</imp-text-success> 对象。
 
 我们再来看 `traverseNode` 函数的内容，内容主要分为三部分。分别是：
 
@@ -314,7 +314,7 @@ function traverseNode(node, context) {
 
 :::
 
-首先会将 `context.currentNode` 更新为当前节点，然后从 <el-text size="large" type="success">context 上下文</el-text> 中拿到由转换函数组成的 `nodeTransforms` 数组。
+首先会将 `context.currentNode` 更新为当前节点，然后从 <imp-text-success>context 上下文</imp-text-success> 中拿到由转换函数组成的 `nodeTransforms` 数组。
 
 在 [vue3 如何将 template 编译成 render 函数的？](./how-does-vue3-compile-template-into-render-function.md) 文章中我们已经讲过了 `nodeTransforms` 数组中主要存了下面这些转换函数，代码如下：
 
@@ -362,13 +362,13 @@ const directiveTransforms = {
 
 而 `directiveTransforms` 是在递归遍历转换 `node` 节点时，只会执行 `node` 节点中存在的指令对应的转换函数。比如当前转换的 `node` 节点中有使用 `v-model` 指令，所以就会执行 `directiveTransforms` 对象中的 `transformModel` 转换函数。由于 `node` 节点中没有使用 `v-html` 指令，所以就不会执行 `directiveTransforms` 对象中的 `transformVHtml` 转换函数。
 
-我们前面讲过了 <el-text size="large" type="success">context 上下文</el-text> 中存了很多属性和方法。包括当前节点的父节点是谁，当前节点在父节点中的 `index` 位置，替换当前节点的方法，删除当前节点的方法。这样在转换函数中就可以通过 <el-text size="large" type="success">context 上下文</el-text> 对当前节点进行各种操作了。
+我们前面讲过了 <imp-text-success>context 上下文</imp-text-success> 中存了很多属性和方法。包括当前节点的父节点是谁，当前节点在父节点中的 `index` 位置，替换当前节点的方法，删除当前节点的方法。这样在转换函数中就可以通过 <imp-text-success>context 上下文</imp-text-success> 对当前节点进行各种操作了。
 
 将转换函数的返回值赋值给 `onExit` 变量，如果 `onExit` 不为空，说明转换函数的返回值是一个回调函数或者由回调函数组成的数组。将这些回调函数 `push` 进 `exitFns` 数组中，在退出时会将这些回调函数倒序全部执行一遍。
 
-执行完回调函数后会判断上下文中的 `currentNode` 是否为空，如果为空那么就 `return` 掉整个 `traverseNode` 函数，后面的 `traverseChildren` 等函数都不会执行了。如果 `context.currentNode` 不为空，那么就将本地的 `node` 变量更新成 <el-text size="large" type="success">context 上下文</el-text> 中的 `currentNode`。
+执行完回调函数后会判断上下文中的 `currentNode` 是否为空，如果为空那么就 `return` 掉整个 `traverseNode` 函数，后面的 `traverseChildren` 等函数都不会执行了。如果 `context.currentNode` 不为空，那么就将本地的 `node` 变量更新成 <imp-text-success>context 上下文</imp-text-success> 中的 `currentNode`。
 
-为什么需要判断 <el-text size="large" type="success">context 上下文</el-text> 中的 `currentNode` 呢？原因是经过转换函数的处理后当前节点可能会被删除了，也有可能会被替换成一个新的节点，所以在每次执行完转换函数后都会更新本地的 `node` 变量，保证在下一个的转换函数执行时传入的是最新的 `node` 节点。
+为什么需要判断 <imp-text-success>context 上下文</imp-text-success> 中的 `currentNode` 呢？原因是经过转换函数的处理后当前节点可能会被删除了，也有可能会被替换成一个新的节点，所以在每次执行完转换函数后都会更新本地的 `node` 变量，保证在下一个的转换函数执行时传入的是最新的 `node` 节点。
 
 ### 退出时执行的转换函数回调
 
@@ -389,13 +389,13 @@ function traverseNode(node, context) {
 
 :::
 
-由于这段代码是在执行完 `traverseChildren` 函数再执行的，前面已经讲过了在 `traverseChildren` 函数中会将当前节点的子节点全部都处理了，所以当代码执行到这里时所有的子节点都已经处理完了。<el-text size="large" type="success">所以在转换函数返回的回调函数中我们可以根据当前节点转换后的子节点情况来决定如何处理当前节点。</el-text>
+由于这段代码是在执行完 `traverseChildren` 函数再执行的，前面已经讲过了在 `traverseChildren` 函数中会将当前节点的子节点全部都处理了，所以当代码执行到这里时所有的子节点都已经处理完了。<imp-text-success>所以在转换函数返回的回调函数中我们可以根据当前节点转换后的子节点情况来决定如何处理当前节点。</imp-text-success>
 
 在处理子节点的时候我们会将 `context.currentNode` 更新为子节点，所以在处理完子节点后需要将 `context.currentNode` 更新为当前节点。这样在执行转换函数返回的回调函数时，`context.currentNode` 始终就是指向的是当前的 `node` 节点。
 
 请注意这里是倒序取出 `exitFns` 数组中存的回调函数，在进入时会按照顺序去执行 `nodeTransforms` 数组中的转换函数。在退出时会倒序去执行存下来的回调函数，比如在 `nodeTransforms` 数组中 `transformIf` 函数排在 `transformFor` 函数前面。`transformIf` 用于处理 `v-if` 指令，`transformFor` 用于处理 `v-for` 指令。在进入时 `transformIf` 函数会比 `transformFor` 函数先执行，所以在组件上面同时使用 `v-if` 和 `v-for` 指令，会是 `v-if` 指令先生效。在退出阶段时 `transformIf` 函数会比 `transformFor` 函数后执行，所以在 `transformIf` 回调函数中可以根据 `transformFor` 回调函数的执行结果来决定如何处理当前的 node 节点。
 
-`traverseNode` 函数其实就是典型的 <el-text size="large" type="success">洋葱模型</el-text>，依次从父组件到子组件挨着调用 `nodeTransforms` 数组中所有的转换函数，然后从子组件到父组件倒序执行 `nodeTransforms` 数组中所有的转换函数返回的回调函数。`traverseNode` 函数内的设计很高明，如果你还没反应过来，别着急我接下来会讲他高明在哪里。
+`traverseNode` 函数其实就是典型的 <imp-text-success>洋葱模型</imp-text-success>，依次从父组件到子组件挨着调用 `nodeTransforms` 数组中所有的转换函数，然后从子组件到父组件倒序执行 `nodeTransforms` 数组中所有的转换函数返回的回调函数。`traverseNode` 函数内的设计很高明，如果你还没反应过来，别着急我接下来会讲他高明在哪里。
 
 ## 洋葱模型 `traverseNode` 函数
 
@@ -405,19 +405,19 @@ function traverseNode(node, context) {
 
 洋葱模型就是：从外面一层层的进去，再一层层的从里面出来。
 
-第一次进入 `traverseNode` 函数的时候会进入洋葱模型的 <el-text size="large" type="warning">第 1 层</el-text>，先依次将 `nodeTransforms` 数组中所有的转换函数全部执行一遍，对当前的 `node` 节点进行第一次转换。如果转换函数的返回值是回调函数或者回调函数组成的数组，那就将这些回调函数依次 `push` 到 <el-text size="large" type="warning">第 1 层</el-text> 定义的 `exitFns` 数组中。
+第一次进入 `traverseNode` 函数的时候会进入洋葱模型的 <imp-text-warning>第 1 层</imp-text-warning>，先依次将 `nodeTransforms` 数组中所有的转换函数全部执行一遍，对当前的 `node` 节点进行第一次转换。如果转换函数的返回值是回调函数或者回调函数组成的数组，那就将这些回调函数依次 `push` 到 <imp-text-warning>第 1 层</imp-text-warning> 定义的 `exitFns` 数组中。
 
-然后再去处理当前节点的子节点，处理子节点的 `traverseChildren` 函数其实也是在调用 `traverseNode` 函数，此时已经进入了洋葱模型的 <el-text size="large" type="warning">第 2 层</el-text> 。同理在 <el-text size="large" type="warning">第 2 层</el-text> 也会将 `nodeTransforms` 数组中所有的转换函数全部执行一遍，对 <el-text size="large" type="warning">第 2 层</el-text> 的 `node` 节点进行第一次转换，并且将返回的回调函数依次 `push` 到 <el-text size="large" type="warning">第 2 层</el-text> 定义的 `exitFns` 数组中。
+然后再去处理当前节点的子节点，处理子节点的 `traverseChildren` 函数其实也是在调用 `traverseNode` 函数，此时已经进入了洋葱模型的 <imp-text-warning>第 2 层</imp-text-warning> 。同理在 <imp-text-warning>第 2 层</imp-text-warning> 也会将 `nodeTransforms` 数组中所有的转换函数全部执行一遍，对 <imp-text-warning>第 2 层</imp-text-warning> 的 `node` 节点进行第一次转换，并且将返回的回调函数依次 `push` 到 <imp-text-warning>第 2 层</imp-text-warning> 定义的 `exitFns` 数组中。
 
-同样的如果 <el-text size="large" type="warning">第 2 层</el-text> 节点也有子节点，那么就会进入洋葱模型的 <el-text size="large" type="warning">第 3 层</el-text> 。在 <el-text size="large" type="warning">第 3 层</el-text> 也会将 `nodeTransforms` 数组中所有的转换函数全部执行一遍，对 <el-text size="large" type="warning">第 3 层</el-text> 的 `node` 节点进行第一次转换，并且将返回的回调函数依次 `push` 到 <el-text size="large" type="warning">第 3 层</el-text> 定义的 `exitFns` 数组中。
+同样的如果 <imp-text-warning>第 2 层</imp-text-warning> 节点也有子节点，那么就会进入洋葱模型的 <imp-text-warning>第 3 层</imp-text-warning> 。在 <imp-text-warning>第 3 层</imp-text-warning> 也会将 `nodeTransforms` 数组中所有的转换函数全部执行一遍，对 <imp-text-warning>第 3 层</imp-text-warning> 的 `node` 节点进行第一次转换，并且将返回的回调函数依次 `push` 到 <imp-text-warning>第 3 层</imp-text-warning> 定义的 `exitFns` 数组中。
 
-请注意此时的 <el-text size="large" type="warning">第 3 层</el-text> 已经没有子节点了，那么现在就要从一层层的进去，变成一层层的出去。首先会将 <el-text size="large" type="warning">第 3 层</el-text> `exitFns` 数组中存的回调函数依次从末尾开始全部执行一遍，会对 <el-text size="large" type="warning">第 3 层</el-text> 的 `node` 节点进行第二次转换，此时 <el-text size="large" type="warning">第 3 层</el-text> 中的 `node` 节点已经被全部转换完了。
+请注意此时的 <imp-text-warning>第 3 层</imp-text-warning> 已经没有子节点了，那么现在就要从一层层的进去，变成一层层的出去。首先会将 <imp-text-warning>第 3 层</imp-text-warning> `exitFns` 数组中存的回调函数依次从末尾开始全部执行一遍，会对 <imp-text-warning>第 3 层</imp-text-warning> 的 `node` 节点进行第二次转换，此时 <imp-text-warning>第 3 层</imp-text-warning> 中的 `node` 节点已经被全部转换完了。
 
-由于 <el-text size="large" type="warning">第 3 层</el-text> 的 `node` 节点已经被全部转换完了，所以会出去到洋葱模型的 <el-text size="large" type="warning">第 2 层</el-text> 。同样将 <el-text size="large" type="warning">第 2 层</el-text> `exitFns` 数组中存的回调函数依次从末尾开始全部执行一遍，会对 <el-text size="large" type="warning">第 2 层</el-text> 的 `node` 节点进行第二次转换。值得一提的是由于 <el-text size="large" type="warning">第 3 层</el-text> 的 `node` 节点也就是 <el-text size="large" type="warning">第 2 层</el-text> 的 `children` 节点已经被完全转换了，所以在执行 <el-text size="large" type="warning">第 2 层</el-text> 转换函数返回的回调函数时就可以根据子节点的情况来处理父节点。
+由于 <imp-text-warning>第 3 层</imp-text-warning> 的 `node` 节点已经被全部转换完了，所以会出去到洋葱模型的 <imp-text-warning>第 2 层</imp-text-warning> 。同样将 <imp-text-warning>第 2 层</imp-text-warning> `exitFns` 数组中存的回调函数依次从末尾开始全部执行一遍，会对 <imp-text-warning>第 2 层</imp-text-warning> 的 `node` 节点进行第二次转换。值得一提的是由于 <imp-text-warning>第 3 层</imp-text-warning> 的 `node` 节点也就是 <imp-text-warning>第 2 层</imp-text-warning> 的 `children` 节点已经被完全转换了，所以在执行 <imp-text-warning>第 2 层</imp-text-warning> 转换函数返回的回调函数时就可以根据子节点的情况来处理父节点。
 
-同理将 <el-text size="large" type="warning">第 2 层</el-text> 的 `node` 节点全部转换完了后，会出去到洋葱模型的 <el-text size="large" type="warning">第 1 层</el-text> 。将 <el-text size="large" type="warning">第 1 层</el-text> `exitFns` 数组中存的回调函数依次从末尾开始全部执行一遍，会对 <el-text size="large" type="warning">第 1 层</el-text> 的 `node` 节点进行第二次转换。
+同理将 <imp-text-warning>第 2 层</imp-text-warning> 的 `node` 节点全部转换完了后，会出去到洋葱模型的 <imp-text-warning>第 1 层</imp-text-warning> 。将 <imp-text-warning>第 1 层</imp-text-warning> `exitFns` 数组中存的回调函数依次从末尾开始全部执行一遍，会对 <imp-text-warning>第 1 层</imp-text-warning> 的 `node` 节点进行第二次转换。
 
-当出去阶段的 <el-text size="large" type="warning">第 1 层</el-text> 全部处理完后了，`transform` 函数内处理内置的 `v-for` 等指令也就处理完了。执行完 `transform` 函数后，描述 `template` 解构的 <el-text size="large" type="success">模版 AST 抽象语法树</el-text> 也被处理成了描述 `render` 函数结构的 <el-text size="large" type="success">javascript AST 抽象语法树</el-text>。后续只需要执行 `generate` 函数，进行普通的字符串拼接就可以得到 `render` 函数。
+当出去阶段的 <imp-text-warning>第 1 层</imp-text-warning> 全部处理完后了，`transform` 函数内处理内置的 `v-for` 等指令也就处理完了。执行完 `transform` 函数后，描述 `template` 解构的 <imp-text-success>模版 AST 抽象语法树</imp-text-success> 也被处理成了描述 `render` 函数结构的 <imp-text-success>javascript AST 抽象语法树</imp-text-success>。后续只需要执行 `generate` 函数，进行普通的字符串拼接就可以得到 `render` 函数。
 
 ## 继续 debug
 
@@ -490,7 +490,7 @@ function traverseNode(node, context) {
 
 `transform` 函数的执行过程主要分为下面这几步：
 
-- 在 `transform` 函数中调用 `createTransformContext` 函数生成 <el-text size="large" type="success">context 上下文</el-text> 。在 <el-text size="large" type="success">context 上下文</el-text> 中存储了当前正在转换的 node 节点的信息，后面的 `traverseNode`、`traverseChildren`、`nodeTransforms` 数组中的转换函数、`directiveTransforms` 对象中的转换函数都会依赖这个 <el-text size="large" type="success">context 上下文</el-text> 。
+- 在 `transform` 函数中调用 `createTransformContext` 函数生成 <imp-text-success>context 上下文</imp-text-success> 。在 <imp-text-success>context 上下文</imp-text-success> 中存储了当前正在转换的 node 节点的信息，后面的 `traverseNode`、`traverseChildren`、`nodeTransforms` 数组中的转换函数、`directiveTransforms` 对象中的转换函数都会依赖这个 <imp-text-success>context 上下文</imp-text-success> 。
 
 - 然后执行 `traverseNode` 函数，`traverseNode` 函数是一个典型的洋葱模型。第一次执行 `traverseNode` 函数的时候会进入洋葱模型的第一层，先将 `nodeTransforms` 数组中的转换函数全部执行一遍，对第一层的 `node` 节点进行第一次转换，将转换函数返回的回调函数存到第一层的 `exitFns` 数组中。经过第一次转换后 `v-for` 等指令已经被初次处理了。
 

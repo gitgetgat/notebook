@@ -10,15 +10,15 @@
 
 ![/0e004814-83aa-5500-04d6-9cbda5194414.png](/0e004814-83aa-5500-04d6-9cbda5194414.png)
 
-<el-text size="large" type="danger">特点</el-text>
+<imp-text-danger>特点</imp-text-danger>
 
-- <el-text size="large" type="danger">轻量级</el-text>：`Driver.js` 的大小仅约为 4kb，使用简单，独立无依赖。
+- <imp-text-danger>轻量级</imp-text-danger>：`Driver.js` 的大小仅约为 4kb，使用简单，独立无依赖。
 
-- <el-text size="large" type="danger">可定制</el-text>：提供丰富的 `API`，可以根据需求自定义各种引导效果。
+- <imp-text-danger>可定制</imp-text-danger>：提供丰富的 `API`，可以根据需求自定义各种引导效果。
 
-- <el-text size="large" type="danger">交互性</el-text>：支持动画过渡，提供流畅的用户体验。
+- <imp-text-danger>交互性</imp-text-danger>：支持动画过渡，提供流畅的用户体验。
 
-- <el-text size="large" type="danger">显示任何内容</el-text>：通过 `Driver.js` 可以突出显示页面上的任何 `DOM` 元素；支持几乎所有浏览器，包含 `IE`。
+- <imp-text-danger>显示任何内容</imp-text-danger>：通过 `Driver.js` 可以突出显示页面上的任何 `DOM` 元素；支持几乎所有浏览器，包含 `IE`。
 
 ## 快速开始
 
@@ -84,7 +84,7 @@ onMounted(() => {
 
 ![alt text](/d2aab6cd-c6b0-9552-0a8f-74c2ff7c2e64.png)
 
-<el-text size="large" type="danger">全局配置</el-text>：可以通过传递配置对象到 `driver` 函数调用或使用 `setConfig` 方法来全局配置 `Driver.js`。
+<imp-text-danger>全局配置</imp-text-danger>：可以通过传递配置对象到 `driver` 函数调用或使用 `setConfig` 方法来全局配置 `Driver.js`。
 
 ::: code-group
 
@@ -102,7 +102,7 @@ const driver = new Driver({
 
 :::
 
-<el-text size="large" type="danger">配置选项</el-text>：
+<imp-text-danger>配置选项</imp-text-danger>：
 
 - `steps`: 步骤数组，用于设置产品导览。
 
@@ -140,8 +140,8 @@ const driver = new Driver({
 
 - 各种回调函数和钩子（`hooks`），用于在不同阶段执行自定义逻辑。
 
-<el-text size="large" type="danger">Popover 配置</el-text>：`Popover` 是 `Driver.js` 的主要 UI 元素，用于突出显示目标元素并显示步骤内容。可以全局或针对每个步骤配置 `Popover`。
+<imp-text-danger>Popover 配置</imp-text-danger>：`Popover` 是 `Driver.js` 的主要 UI 元素，用于突出显示目标元素并显示步骤内容。可以全局或针对每个步骤配置 `Popover`。
 
-<el-text size="large" type="danger">Drive Step 配置</el-text>：传递给 `highlight` 方法或 `drive` 方法的 `steps` 数组的配置对象。可以为每个步骤配置 `Popover` 和目标元素。
+<imp-text-danger>Drive Step 配置</imp-text-danger>：传递给 `highlight` 方法或 `drive` 方法的 `steps` 数组的配置对象。可以为每个步骤配置 `Popover` 和目标元素。
 
-<el-text size="large" type="danger">状态访问</el-text>：可以通过调用 `getState` 方法访问 `Driver.js` 的当前状态，状态对象也传递给钩子和回调。
+<imp-text-danger>状态访问</imp-text-danger>：可以通过调用 `getState` 方法访问 `Driver.js` 的当前状态，状态对象也传递给钩子和回调。

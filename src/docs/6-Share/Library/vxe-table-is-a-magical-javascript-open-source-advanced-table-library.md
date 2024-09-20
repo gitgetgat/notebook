@@ -14,23 +14,23 @@ vxe-table 是一款基于 Vue 的高级表格组件，它提供了丰富的功�
 
 ## 功能特性
 
-- <el-text size="large" type="danger">虚拟滚动</el-text>：提高大数据量表格渲染性能，只渲染可见区域内的数据，当用户滚动时，不在可视区域的数据不被渲染，减少 `DOM` 操作和渲染时间。
+- <imp-text-danger>虚拟滚动</imp-text-danger>：提高大数据量表格渲染性能，只渲染可见区域内的数据，当用户滚动时，不在可视区域的数据不被渲染，减少 `DOM` 操作和渲染时间。
 
-- <el-text size="large" type="danger">树形结构</el-text>：支持表格数据的树形展示，方便处理层级关系复杂的数据。
+- <imp-text-danger>树形结构</imp-text-danger>：支持表格数据的树形展示，方便处理层级关系复杂的数据。
 
-- <el-text size="large" type="danger">数据校验</el-text>：内置数据校验功能，可以自定义校验规则。
+- <imp-text-danger>数据校验</imp-text-danger>：内置数据校验功能，可以自定义校验规则。
 
-- <el-text size="large" type="danger">打印导出</el-text>：支持数据的打印和导出功能，可以将表格内容导出为 `Excel`、`CSV` 等格式。
+- <imp-text-danger>打印导出</imp-text-danger>：支持数据的打印和导出功能，可以将表格内容导出为 `Excel`、`CSV` 等格式。
 
-- <el-text size="large" type="danger">自定义模板</el-text>：提供灵活的模板系统，允许开发者完全自定义表格的外观和行为。
+- <imp-text-danger>自定义模板</imp-text-danger>：提供灵活的模板系统，允许开发者完全自定义表格的外观和行为。
 
-- <el-text size="large" type="danger">键盘导航</el-text>：支持全键盘操作，提升用户体验。
+- <imp-text-danger>键盘导航</imp-text-danger>：支持全键盘操作，提升用户体验。
 
-- <el-text size="large" type="danger">模态窗口</el-text>：内置模态对话框功能，简化表单操作流程。
+- <imp-text-danger>模态窗口</imp-text-danger>：内置模态对话框功能，简化表单操作流程。
 
 ## 快速开始
 
-<el-text size="large" type="danger">版本介绍</el-text>：`v3.0` 基于 `Vue2.6+` ，支持现代浏览器并保留兼容 `IE11`。`v4.0` 基于 `Vue3.2+`，只支持现代浏览器，不支持 IE。注意 `v4.7` 对组件进行重构拆分，分为 `vxe-table` 和 `vxe-ui` 将支持可视化组件。本文示例，采用 `v4.0` 基于 `Vue3.2+` 的版本演示，由于 `v4.7` 进行破坏性更新直接选择最新版的，其他版本的使用方法，请自行参考<link-tag :linkList="[{  linkText:'vxe-table 文档',linkUrl:'https://vxetable.cn/v3.8/#/table/start/install'}]" />。
+<imp-text-danger>版本介绍</imp-text-danger>：`v3.0` 基于 `Vue2.6+` ，支持现代浏览器并保留兼容 `IE11`。`v4.0` 基于 `Vue3.2+`，只支持现代浏览器，不支持 IE。注意 `v4.7` 对组件进行重构拆分，分为 `vxe-table` 和 `vxe-ui` 将支持可视化组件。本文示例，采用 `v4.0` 基于 `Vue3.2+` 的版本演示，由于 `v4.7` 进行破坏性更新直接选择最新版的，其他版本的使用方法，请自行参考<link-tag :linkList="[{  linkText:'vxe-table 文档',linkUrl:'https://vxetable.cn/v3.8/#/table/start/install'}]" />。
 
 ### 安装
 

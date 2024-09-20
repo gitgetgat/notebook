@@ -22,11 +22,11 @@
 
 那么问题来了，我们这个 h1 元素上面除了有默认字体大小、默认颜色等属性以外，究竟还有哪些属性呢？
 
-答案是 <el-text type="success" size="large">该元素上面会有 CSS 所有的属性</el-text>。你可以打开浏览器的开发者面板，选择【元素】，切换到【计算样式】，之后勾选【全部显示】，此时你就能看到在此 h1 上面所有 CSS 属性对应的值。
+答案是 <imp-text-success>该元素上面会有 CSS 所有的属性</imp-text-success>。你可以打开浏览器的开发者面板，选择【元素】，切换到【计算样式】，之后勾选【全部显示】，此时你就能看到在此 h1 上面所有 CSS 属性对应的值。
 
 ![https://xiejie-typora.oss-cn-chengdu.aliyuncs.com/2022-08-13-061516.png](https://xiejie-typora.oss-cn-chengdu.aliyuncs.com/2022-08-13-061516.png)
 
-换句话说，<el-text type="success" size="large">我们所书写的任何一个 HTML 元素，实际上都有完整的一整套 CSS 样式</el-text>。这一点往往是让初学者比较意外的，因为我们平时在书写 CSS 样式时，往往只会书写必要的部分，例如前面的：
+换句话说，<imp-text-success>我们所书写的任何一个 HTML 元素，实际上都有完整的一整套 CSS 样式</imp-text-success>。这一点往往是让初学者比较意外的，因为我们平时在书写 CSS 样式时，往往只会书写必要的部分，例如前面的：
 
 ::: code-group
 
@@ -38,13 +38,13 @@ p {
 
 :::
 
-这往往会给我们造成一种错觉，认为该 p 元素上面就只有 color 属性。而真实的情况确是，任何一个 HTML 元素，都有一套完整的 CSS 样式，只不过你没有书写的样式，<el-text type="success" size="large">大概率可能</el-text> 会使用其默认值。例如上图中 h1 一个样式都没有设置，全部都用的默认值。
+这往往会给我们造成一种错觉，认为该 p 元素上面就只有 color 属性。而真实的情况确是，任何一个 HTML 元素，都有一套完整的 CSS 样式，只不过你没有书写的样式，<imp-text-success>大概率可能</imp-text-success> 会使用其默认值。例如上图中 h1 一个样式都没有设置，全部都用的默认值。
 
 但是注意，我这里强调的是“大概率可能”，难道还有我们“没有设置值，但是不使用默认值”的情况么？
 
 嗯，确实有的，所以我才强调你要了解“CSS 属性的计算过程”。
 
-总的来讲，属性值的计算过程，分为如下这么  <el-text type="primary" size="large">_4_</el-text>  个步骤：
+总的来讲，属性值的计算过程，分为如下这么  <imp-text-primary>_4_</imp-text-primary>  个步骤：
 
 1. 确定声明值
 2. 层叠冲突
@@ -101,7 +101,7 @@ p {
 
 对应的重要性顺序依次为：页面作者样式 > 用户样式 > 用户代理样式
 
-更详细的来源重要性比较，可以参阅  <el-text type="primary" size="large">_MDN_</el-text>：<link-tag :linkList="[{  linkText:'MDN CSS 层叠',linkUrl:'https://developer.mozilla.org/zh-CN/docs/Web/CSS/Cascade'}]" />
+更详细的来源重要性比较，可以参阅  <imp-text-primary>_MDN_</imp-text-primary>：<link-tag :linkList="[{  linkText:'MDN CSS 层叠',linkUrl:'https://developer.mozilla.org/zh-CN/docs/Web/CSS/Cascade'}]" />
 
 我们来看一个示例。
 
@@ -152,11 +152,11 @@ h1 {
 
 在上面的代码中，同属于 `页面作者样式`，源的重要性是相同的，此时会以选择器的权重来比较重要性。
 
-很明显，上面的选择器的权重要大于下面的选择器，因此最终标题呈现为  <el-text type="primary" size="large">_50px_</el-text>。
+很明显，上面的选择器的权重要大于下面的选择器，因此最终标题呈现为  <imp-text-primary>_50px_</imp-text-primary>。
 
 ![https://xiejie-typora.oss-cn-chengdu.aliyuncs.com/2021-09-16-071546.png](https://xiejie-typora.oss-cn-chengdu.aliyuncs.com/2021-09-16-071546.png)
 
-可以看到，落败的作者样式在  <el-text type="primary" size="large">_Elements>Styles_</el-text>  中会被划掉。
+可以看到，落败的作者样式在  <imp-text-primary>_Elements>Styles_</imp-text-primary>  中会被划掉。
 
 有关选择器权重的计算方式，不清楚的同学，可以看下面一篇：
 
@@ -181,7 +181,7 @@ h1 {
 
 :::
 
-> <el-text type="success" size="large">上面只有三位的原因是省略了第一个</el-text> `是否内联样式位`
+> <imp-text-success>上面只有三位的原因是省略了第一个</imp-text-success> `是否内联样式位`
 
 ### 比较次序
 
@@ -205,7 +205,7 @@ h1 {
 
 :::
 
-在上面的代码中，同样都是 `页面作者样式`，`选择器的权重也相同`，此时位于下面的样式声明会层叠掉上面的那一条样式声明，最终会应用  <el-text type="primary" size="large">_20px_</el-text>  这一条属性值。
+在上面的代码中，同样都是 `页面作者样式`，`选择器的权重也相同`，此时位于下面的样式声明会层叠掉上面的那一条样式声明，最终会应用  <imp-text-primary>_20px_</imp-text-primary>  这一条属性值。
 
 ![https://xiejie-typora.oss-cn-chengdu.aliyuncs.com/2022-08-23-103928.png](https://xiejie-typora.oss-cn-chengdu.aliyuncs.com/2022-08-23-103928.png)
 
@@ -245,7 +245,7 @@ div {
 
 这里有两个点需要同学们注意一下。
 
-首先第一个是我强调了是 <el-text type="success" size="large">最近的</el-text> div 元素，看下面的例子：
+首先第一个是我强调了是 <imp-text-success>最近的</imp-text-success> div 元素，看下面的例子：
 
 ::: code-group
 
@@ -272,7 +272,7 @@ div {
 
 ![https://xiejie-typora.oss-cn-chengdu.aliyuncs.com/2022-08-13-065653.png](https://xiejie-typora.oss-cn-chengdu.aliyuncs.com/2022-08-13-065653.png)
 
-因为这里并不涉及到选中 p 元素声明 color 值，而是从父元素上面继承到 color 对应的值，因此这里是 <el-text type="success" size="large">谁近就听谁</el-text> 的，初学者往往会产生混淆，又去比较权重，但是这里根本不会涉及到权重比较，因为压根儿就没有选中到 p 元素。
+因为这里并不涉及到选中 p 元素声明 color 值，而是从父元素上面继承到 color 对应的值，因此这里是 <imp-text-success>谁近就听谁</imp-text-success> 的，初学者往往会产生混淆，又去比较权重，但是这里根本不会涉及到权重比较，因为压根儿就没有选中到 p 元素。
 
 第二个就是哪些属性能够继承？
 

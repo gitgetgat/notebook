@@ -6,7 +6,7 @@
 
 - 获取全局对象：
 
-  - <el-text type="warning" size="large">web</el-text>：`window`、`self`、`frames`、`this`
+  - <imp-text-warning>web</imp-text-warning>：`window`、`self`、`frames`、`this`
 
   ::: code-group
 
@@ -20,8 +20,8 @@
 
   :::
 
-  - <el-text type="warning" size="large">node</el-text>：global
-  - <el-text type="warning" size="large">worker</el-text>：self
+  - <imp-text-warning>node</imp-text-warning>：global
+  - <imp-text-warning>worker</imp-text-warning>：self
   - 通用：`globalThis`（除 IE 外都支持）
 
 ## 类（class）

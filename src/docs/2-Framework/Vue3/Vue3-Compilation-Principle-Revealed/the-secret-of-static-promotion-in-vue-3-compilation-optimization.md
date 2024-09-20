@@ -4,7 +4,7 @@
 
 ## 前言
 
-在上一篇 [vue3 针对动态节点的 "靶向更新"](./vue3-targeted-update-for-dynamic-nodes.md) 文章中讲了对于动态节点，vue 做的优化是将这些动态节点收集起来，然后当响应式变量修改后进行靶向更新。那么 vue 对静态节点有没有做什么优化呢？答案是：当然有，对于静态节点会进行 <el-text size="large" type="success">“静态提升”</el-text> 。这篇文章我们来看看 vue 是如何进行静态提升的。
+在上一篇 [vue3 针对动态节点的 "靶向更新"](./vue3-targeted-update-for-dynamic-nodes.md) 文章中讲了对于动态节点，vue 做的优化是将这些动态节点收集起来，然后当响应式变量修改后进行靶向更新。那么 vue 对静态节点有没有做什么优化呢？答案是：当然有，对于静态节点会进行 <imp-text-success>“静态提升”</imp-text-success> 。这篇文章我们来看看 vue 是如何进行静态提升的。
 
 ## 什么是静态提升？
 
@@ -36,9 +36,9 @@ function handleChange() {
 
 这个 demo 代码很简单，其中的 `h1` 标签就是我们说的静态节点，p 标签就是动态节点。点击 button 按钮会将响应式 `msg` 变量的值更新，然后会执行 `render` 函数将 `msg` 变量的最新值 `"world"` 渲染到 `p` 标签中。
 
-我们先来看看未开启 <el-text size="large" type="success">“静态提升”</el-text> 之前生成的 `render` 函数是什么样的：
+我们先来看看未开启 <imp-text-success>“静态提升”</imp-text-success> 之前生成的 `render` 函数是什么样的：
 
-由于在 `vite` 项目中启动的 vue 都是开启了 <el-text size="large" type="success">“静态提升”</el-text> ，所以我们需要在 <link-tag :linkList="[{  linkText:'Vue 3 Template Explorer',linkUrl:'https://template-explorer.vuejs.org/'}]" />网站中看看未开启 <el-text size="large" type="success">“静态提升”</el-text> 的 `render` 函数的样子，如下图将 `hoistStatic` 这个选项取消勾选即可：
+由于在 `vite` 项目中启动的 vue 都是开启了 <imp-text-success>“静态提升”</imp-text-success> ，所以我们需要在 <link-tag :linkList="[{  linkText:'Vue 3 Template Explorer',linkUrl:'https://template-explorer.vuejs.org/'}]" />网站中看看未开启 <imp-text-success>“静态提升”</imp-text-success> 的 `render` 函数的样子，如下图将 `hoistStatic` 这个选项取消勾选即可：
 
 ![/b4565abf-94e6-f6ed-37de-6c9489419120.png](/b4565abf-94e6-f6ed-37de-6c9489419120.png)
 
@@ -80,9 +80,9 @@ function handleChange() {
 
 这个 demo 代码很简单，其中的 `h1` 标签就是我们说的静态节点，p 标签就是动态节点。点击 button 按钮会将响应式 `msg` 变量的值更新，然后会执行 `render` 函数将 `msg` 变量的最新值 `"world"` 渲染到 `p` 标签中。
 
-我们先来看看未开启 <el-text size="large" type="success">“静态提升”</el-text> 之前生成的 `render` 函数是什么样的：
+我们先来看看未开启 <imp-text-success>“静态提升”</imp-text-success> 之前生成的 `render` 函数是什么样的：
 
-由于在 `vite` 项目中启动的 vue 都是开启了 <el-text size="large" type="success">“静态提升”</el-text> ，所以我们需要在 <link-tag :linkList="[{  linkText:'Vue 3 Template Explorer',linkUrl:'https://template-explorer.vuejs.org/'}]" />网站中看看未开启 <el-text size="large" type="success">“静态提升”</el-text> 的 `render` 函数的样子，如下图将 `hoistStatic` 这个选项取消勾选即可：
+由于在 `vite` 项目中启动的 vue 都是开启了 <imp-text-success>“静态提升”</imp-text-success> ，所以我们需要在 <link-tag :linkList="[{  linkText:'Vue 3 Template Explorer',linkUrl:'https://template-explorer.vuejs.org/'}]" />网站中看看未开启 <imp-text-success>“静态提升”</imp-text-success> 的 `render` 函数的样子，如下图将 `hoistStatic` 这个选项取消勾选即可：
 
 ![/b4565abf-94e6-f6ed-37de-6c9489419120.png](/b4565abf-94e6-f6ed-37de-6c9489419120.png)
 
@@ -127,7 +127,7 @@ export function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 每次响应式变量更新后都会执行 `render` 函数，每次执行 `render` 函数都会执行 `createElementVNode` 方法生成 `h1` 标签的 `虚拟 DOM`。但是我们这个 `h1` 标签明明就是一个静态节点，根本就不需要每次执行 `render` 函数都去生成一次 `h1` 标签的 `虚拟 DOM`。
 
-vue3 对此做出的优化就是将 “执行 `createElementVNode` 方法生成 `h1` 标签 `虚拟 DOM` 的代码” 提取到 `render` 函数外面去，这样就只有初始化的时候才会去生成一次 `h1` 标签的 `虚拟 DOM`，也就是我们这篇文章中要讲的 <el-text size="large" type="success">“静态提升”</el-text>。开启静态提升后生成的 `render` 函数如下：
+vue3 对此做出的优化就是将 “执行 `createElementVNode` 方法生成 `h1` 标签 `虚拟 DOM` 的代码” 提取到 `render` 函数外面去，这样就只有初始化的时候才会去生成一次 `h1` 标签的 `虚拟 DOM`，也就是我们这篇文章中要讲的 <imp-text-success>“静态提升”</imp-text-success>。开启静态提升后生成的 `render` 函数如下：
 
 ::: code-group
 
@@ -176,9 +176,9 @@ export function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 :::
 
-从上面可以看到生成 `h1` 标签 `虚拟 DOM` 的 `createElementVNode` 函数被提取到 `render` 函数外面去执行了，只有初始化时才会执行一次将生成的 `虚拟 DOM` 赋值给 `_hoisted_1` 变量。在 `render` 函数中直接使用 `_hoisted_1` 变量即可，无需每次执行 `render` 函数都去生成 `h1` 标签的 `虚拟 DOM`，这就是我们这篇文章中要讲的 <el-text size="large" type="success">“静态提升”</el-text>。
+从上面可以看到生成 `h1` 标签 `虚拟 DOM` 的 `createElementVNode` 函数被提取到 `render` 函数外面去执行了，只有初始化时才会执行一次将生成的 `虚拟 DOM` 赋值给 `_hoisted_1` 变量。在 `render` 函数中直接使用 `_hoisted_1` 变量即可，无需每次执行 `render` 函数都去生成 `h1` 标签的 `虚拟 DOM`，这就是我们这篇文章中要讲的 <imp-text-success>“静态提升”</imp-text-success>。
 
-我们接下来还是一样的套路通过 debug 的方式来带你搞清楚 vue 是如何实现 <el-text size="large" type="success">“静态提升”</el-text> 的，注：本文使用的 vue 版本为 <el-text size="large" type="success">3.4.19</el-text>
+我们接下来还是一样的套路通过 debug 的方式来带你搞清楚 vue 是如何实现 <imp-text-success>“静态提升”</imp-text-success> 的，注：本文使用的 vue 版本为 <imp-text-success>3.4.19</imp-text-success>
 
 ## 如何实现静态提升
 
@@ -394,7 +394,7 @@ const ConstantTypes = {
 
 :::
 
-`ConstantTypes` 枚举的作用就是用来标记静态节点的 `4` 种等级状态，<el-text size="large" type="success">高等级的状态拥有低等级状态的所有能力</el-text>。比如：`NOT_CONSTANT`：表示当前节点不是静态节点。比如下面这个 `p` 标签使用了 `msg` 响应式变量：
+`ConstantTypes` 枚举的作用就是用来标记静态节点的 `4` 种等级状态，<imp-text-success>高等级的状态拥有低等级状态的所有能力</imp-text-success>。比如：`NOT_CONSTANT`：表示当前节点不是静态节点。比如下面这个 `p` 标签使用了 `msg` 响应式变量：
 
 ::: code-group
 
@@ -478,7 +478,7 @@ if (
 
 在 debug 终端中来看看 `h1` 标签的 `constantType` 的值，如下：图片
 
-从上图中可以看到 `h1` 标签的 `constantType` 值为 `3`，也就是 `ConstantTypes.CAN_STRINGIFY`。表明 `h1` 标签是最高等级的<el-text size="large" type="success">预字符串</el-text>，当然也能 <el-text size="large" type="success">静态提升</el-text>。
+从上图中可以看到 `h1` 标签的 `constantType` 值为 `3`，也就是 `ConstantTypes.CAN_STRINGIFY`。表明 `h1` 标签是最高等级的<imp-text-success>预字符串</imp-text-success>，当然也能 <imp-text-success>静态提升</imp-text-success>。
 
 `h1` 标签的 `constantType` 当然就能满足下面这个 `if` 条件：
 
@@ -538,7 +538,7 @@ function hoist(exp) {
 
 从上图中可以看到此时的 `codegenNode` 属性对应的就是 `h1` 标签，`codegenNode.children` 对应的就是 `h1` 标签的 `title` 文本节点。`codegenNode` 属性的作用就是用于生成 `h1` 标签的 `render` 函数。
 
-在 `hoist` 函数中首先执行 `context.hoists.push(exp)` 将 `h1` 标签的 `codegenNode` 属性 `push` 到 `context.hoists` 数组中。`context.hoists` 是一个数组，数组中存的是 `AST 抽象语法树` 中所有需要被 <el-text size="large" type="success">静态提升</el-text> 的所有 `node` 节点的 `codegenNode` 属性。
+在 `hoist` 函数中首先执行 `context.hoists.push(exp)` 将 `h1` 标签的 `codegenNode` 属性 `push` 到 `context.hoists` 数组中。`context.hoists` 是一个数组，数组中存的是 `AST 抽象语法树` 中所有需要被 <imp-text-success>静态提升</imp-text-success> 的所有 `node` 节点的 `codegenNode` 属性。
 
 接着就是执行 `createSimpleExpression` 函数生成一个新的 `codegenNode` 属性，我们来看传入的第一个参数：
 
@@ -550,7 +550,7 @@ function hoist(exp) {
 
 :::
 
-由于这里处理的是第一个需要 <el-text size="large" type="success">静态提升</el-text> 的静态节点，所以第一个参数的值`_hoisted_1`。如果处理的是第二个需要 <el-text size="large" type="success">静态提升</el-text> 的静态节点，其值为`_hoisted_2`，依次类推。
+由于这里处理的是第一个需要 <imp-text-success>静态提升</imp-text-success> 的静态节点，所以第一个参数的值`_hoisted_1`。如果处理的是第二个需要 <imp-text-success>静态提升</imp-text-success> 的静态节点，其值为`_hoisted_2`，依次类推。
 
 接着将断点走进 `createSimpleExpression` 函数中，代码如下：
 
@@ -609,7 +609,7 @@ function createSimpleExpression(
 
 ## 生成 `render` 函数外面的 `_hoisted_1` 变量
 
-经过 `transform` 阶段的处理，`根节点` 的 `hoists` 属性数组中存了所有需要 <el-text size="large" type="success">静态提升</el-text> 的静态节点。我们先来看如何处理这些静态节点，生成 h1 标签对应的 `_hoisted_1` 变量的。代码如下：
+经过 `transform` 阶段的处理，`根节点` 的 `hoists` 属性数组中存了所有需要 <imp-text-success>静态提升</imp-text-success> 的静态节点。我们先来看如何处理这些静态节点，生成 h1 标签对应的 `_hoisted_1` 变量的。代码如下：
 
 ::: code-group
 

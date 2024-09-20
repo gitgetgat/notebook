@@ -14,7 +14,7 @@
 
 那么，这个包含块究竟说了什么内容呢？
 
-说起来也简单，<el-text type="success" size="large">就是元素的尺寸和位置，会受它的包含块所影响。对于一些属性，例如 width, height, padding, margin，绝对定位元素的偏移值（比如 position 被设置为 absolute 或 fixed），当我们对其赋予百分比值时，这些值的计算值，就是通过元素的包含块计算得来。</el-text>
+说起来也简单，<imp-text-success>就是元素的尺寸和位置，会受它的包含块所影响。对于一些属性，例如 width, height, padding, margin，绝对定位元素的偏移值（比如 position 被设置为 absolute 或 fixed），当我们对其赋予百分比值时，这些值的计算值，就是通过元素的包含块计算得来。</imp-text-success>
 
 ![https://xiejie-typora.oss-cn-chengdu.aliyuncs.com/2022-08-14-143153.png](https://xiejie-typora.oss-cn-chengdu.aliyuncs.com/2022-08-14-143153.png)
 
@@ -57,13 +57,13 @@
 
 这个答案确实是没有问题的，但是如果我追问你是怎么得到这个答案的，我猜不了解包含块的你大概率会说，因为它的父元素 `div.container` 的 width 为 500px，50% 就是 250px，height 为 300px，因此 50% 就是 150px。
 
-这个答案实际上是不准确的。正确的答案应该是，<el-text type="success" size="large">div.item 的宽高是根据它的包含块来计算的</el-text>，而这里包含块的大小，正是这个元素最近的祖先块元素的内容区。
+这个答案实际上是不准确的。正确的答案应该是，<imp-text-success>div.item 的宽高是根据它的包含块来计算的</imp-text-success>，而这里包含块的大小，正是这个元素最近的祖先块元素的内容区。
 
-因此正如我前面所说，<el-text type="success" size="large">很多时候你都感受不到包含块的存在。</el-text>
+因此正如我前面所说，<imp-text-success>很多时候你都感受不到包含块的存在。</imp-text-success>
 
 包含块分为两种：
 
-1. 一种是根元素（HTML 元素）所在的包含块，被称之为 <el-text type="success" size="large">初始包含块（initial containing block）</el-text>。对于浏览器而言，初始包含块的的大小等于视口 `viewport` 的大小，基点在画布的原点（视口左上角）。它是作为元素绝对定位和固定定位的参照物。
+1. 一种是根元素（HTML 元素）所在的包含块，被称之为 <imp-text-success>初始包含块（initial containing block）</imp-text-success>。对于浏览器而言，初始包含块的的大小等于视口 `viewport` 的大小，基点在画布的原点（视口左上角）。它是作为元素绝对定位和固定定位的参照物。
 2. 另外一种是对于非根元素，对于非根元素的包含块判定就有几种不同的情况了。大致可以分为如下几种：
    - 如果元素的 `positiion` 是 `relative` 或 `static` ，那么包含块由离它最近的块容器（block container）的内容区域（content area）的边缘建立。
    - 如果 `position` 属性是 `fixed`，那么包含块由视口建立。
@@ -226,9 +226,9 @@
 
 不过 `strong1` 比较例外，它的包含块确实 `p2`，而非 `em1`。为什么会这样？建议你再把非根元素的第一条规则读一下：
 
-- 如果元素的 `positiion` 是 `relative` 或 `static` ，那么包含块由离它最近的 <el-text type="success" size="large">块容器（block container）</el-text>的内容区域（content area）的边缘建立。
+- 如果元素的 `positiion` 是 `relative` 或 `static` ，那么包含块由离它最近的 <imp-text-success>块容器（block container）</imp-text-success>的内容区域（content area）的边缘建立。
 
-没错，因为 `em1` 不是块容器，而包含块是 <el-text type="success" size="large">离它最近的块容器</el-text> 的内容区域，所以是 `p2`。
+没错，因为 `em1` 不是块容器，而包含块是 <imp-text-success>离它最近的块容器</imp-text-success> 的内容区域，所以是 `p2`。
 
 接下来添加如下的 CSS：
 
@@ -260,7 +260,7 @@
 
 可以看到，这里 `div1` 的包含块就发生了变化，变为了初始包含块。这里你可以参考前文中的这两句话：
 
-- 初始包含块（<el-text type="success" size="large">initial containing block</el-text>）。对于浏览器而言，初始包含块的的大小等于视口 `viewport` 的大小，基点在画布的原点（视口左上角）。它是作为元素绝对定位和固定定位的参照物。
+- 初始包含块（<imp-text-success>initial containing block</imp-text-success>）。对于浏览器而言，初始包含块的的大小等于视口 `viewport` 的大小，基点在画布的原点（视口左上角）。它是作为元素绝对定位和固定定位的参照物。
 - 如果元素使用了 `absolute` 定位，则包含块由它的最近的 `position` 的值不是 `static` （也就是值为 `fixed`、`absolute`、`relative` 或 `sticky`）的祖先元素的内边距区的边缘组成。
 
 是不是一下子就理解了。没错，因为我们对 `div1` 进行了定位，因此它会应用非根元素包含块计算规则的第三条规则，寻找离它最近的 `position` 的值不是 `static` 的祖先元素，不过显然 `body` 的定位方式为 `static`，因此 `div1` 的包含块最终就变成了初始包含块。

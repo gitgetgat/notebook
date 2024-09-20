@@ -4,12 +4,12 @@
 
 ## JS：动态类型语言。 运行时编译。
 
-- `JIT`：在 <el-text size="large" type="success">运行阶段</el-text> 生成机器代码，而不是提前生成。这就是把代码运行和生成机器代码是结合在一起的。在运行阶段收集类型信息，然后根据这些信息编译生成机器代码后再运行这些代码。就直接使用生成好的机器代码。
-- `AOT`：在 <el-text size="large" type="success">运行前</el-text> 提前生成好机器代码，比如 C++(静态类型语言)这样的语言。
+- `JIT`：在 <imp-text-success>运行阶段</imp-text-success> 生成机器代码，而不是提前生成。这就是把代码运行和生成机器代码是结合在一起的。在运行阶段收集类型信息，然后根据这些信息编译生成机器代码后再运行这些代码。就直接使用生成好的机器代码。
+- `AOT`：在 <imp-text-success>运行前</imp-text-success> 提前生成好机器代码，比如 C++(静态类型语言)这样的语言。
 
 既然 js 是一门高级语言，它被计算机 CPU 执行前需要通过某种程序将 JS 转换成低级的计算机语言并执行。这种程序就被称为 js 引擎。和其他语言相比 js 有许多执行引擎。比如谷歌 Chrome 使用的 V8 引擎，webkit 使用的 javaScriptCore，Mozilla 的 SpiderMonkey，比较火的 QuickJS 和 Facebook 在 React Native 中使用到的 Hermes。虽然引擎众多，但这些引擎在编译 JS 大致的流程都是差不多的。
 
-首先将 JS 源码通过解析器，解析成 <link-tag :linkList="[{ linkType: 'zhihu', linkText:'传送门：抽象语法树 AST',linkUrl:'https://zhuanlan.zhihu.com/p/266697614'}]" /> ，接着再通过解释器将 <el-text size="large" type="success">AST 编译成字节码 bytecode</el-text> 。字节码是跨平台的一种中间表示不同于最终的机器代码，字节码与平台无关，能够再不同操作系统上运行，字节码最后通过编译器生成 <el-text size="large" type="success">机器代码</el-text> 。由于不同的处理平台使用的机器代码有差异，所以编译器会根据当前平台来编译出相应的机器代码。这里的机器码其实就是汇编代码。这是一个简化流程。在不同 js 引擎中表现会有一定的差异，比如在 V8 引擎 5.9 版本之前是直接把 AST 生成的机器代码，它不会额外生成 `bytecode` 字节码。但是在之后的版本，V8 使用了新的架构则会生产 `bytecode`。
+首先将 JS 源码通过解析器，解析成 <link-tag :linkList="[{ linkType: 'zhihu', linkText:'传送门：抽象语法树 AST',linkUrl:'https://zhuanlan.zhihu.com/p/266697614'}]" /> ，接着再通过解释器将 <imp-text-success>AST 编译成字节码 bytecode</imp-text-success> 。字节码是跨平台的一种中间表示不同于最终的机器代码，字节码与平台无关，能够再不同操作系统上运行，字节码最后通过编译器生成 <imp-text-success>机器代码</imp-text-success> 。由于不同的处理平台使用的机器代码有差异，所以编译器会根据当前平台来编译出相应的机器代码。这里的机器码其实就是汇编代码。这是一个简化流程。在不同 js 引擎中表现会有一定的差异，比如在 V8 引擎 5.9 版本之前是直接把 AST 生成的机器代码，它不会额外生成 `bytecode` 字节码。但是在之后的版本，V8 使用了新的架构则会生产 `bytecode`。
 
 ## V8 引擎
 
@@ -17,9 +17,9 @@ V8 是一个接收 JavaScript 代码，编译 JS 代码然后执行的 C++程序
 
 ### V8 是如何编译和执行 JS 代码的？
 
-- 解析器：将 JS 代码解析成 <el-text size="large" type="success">抽象语法树 AST</el-text> ；
-- 解释器：负责将 AST 解释成 <el-text size="large" type="success">字节码 bytecode</el-text>，同时解释器也有直接解释执行 bytecode 的能力；
-- 编译器：负责编译出运行更加高效的 <el-text size="large" type="success">机器代码</el-text>
+- 解析器：将 JS 代码解析成 <imp-text-success>抽象语法树 AST</imp-text-success> ；
+- 解释器：负责将 AST 解释成 <imp-text-success>字节码 bytecode</imp-text-success>，同时解释器也有直接解释执行 bytecode 的能力；
+- 编译器：负责编译出运行更加高效的 <imp-text-success>机器代码</imp-text-success>
 
 ### V8 的优点：
 
@@ -36,7 +36,7 @@ JSX：巧妙的将 UI 逻辑和渲染逻辑很好的组合在了一起
 
 调用栈是 JS 引擎 追踪函数执行流程的一种机制，当执行环境中调用了多个函数时，通过这种机制，我们能够追踪到哪个函数正在执行，执行的函数体又调用了哪个函数。它采用了先进后出的机制来管理函数的执行。
 
-<el-text size="large" type="success">调用栈是如何管理执行顺序的</el-text>：函数的声明是不会放入栈中的，调用栈，顾名思义一定是被调用的函数才会入栈。
+<imp-text-success>调用栈是如何管理执行顺序的</imp-text-success>：函数的声明是不会放入栈中的，调用栈，顾名思义一定是被调用的函数才会入栈。
 
 javaScript 的执行环境是一个单线程，这就意味着 JS 环境只有一个调用栈，想想如果调用栈中的某个函数执行需要消耗大量时间的话。因为只有一个调用栈就会导致调用栈被阻塞无法入栈和出栈。页面的布局绘制和 JS 执行都是在一个主线程里。如果 JS 执行迟迟不归还主线程的话，就会影响页面的渲染就可能会导致页面出现卡顿的现象。也就会严重影响用户的体验。优化这个问题的方案就是使用事件循环和异步回调。
 

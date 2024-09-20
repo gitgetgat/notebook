@@ -36,7 +36,7 @@
 - 适配思路
   - 根据 CSS 的新特性：css 变量、calc()函数、clamp()、@container 函数实现
 - 特点
-  - 解决了 rem、vw 布局的致命缺点：<el-text type="success" size="large">失去像素的完美性，而且一旦屏幕低于或高于某个阈值，通常就会出现布局的移动或文字内容的溢出</el-text>
+  - 解决了 rem、vw 布局的致命缺点：<imp-text-success>失去像素的完美性，而且一旦屏幕低于或高于某个阈值，通常就会出现布局的移动或文字内容的溢出</imp-text-success>
   - 大漠在 2021 年提出，最先进，但没看到大厂使用（clamp 函数浏览器支持率暂且不高），具体可以看看大漠的这篇：<link-tag :linkList="[{ linkType: 'zhihu', linkText:'传送门：如何构建一个完美缩放的UI界面',linkUrl:'https://link.zhihu.com/?target=https%3A//www.w3cplus.com/css/how-to-get-a-pixel-perfect-and-linearly-scaled-ui.html'}]" />
 - 缺点
   - 因为方案先进，暂没看到大厂使用
@@ -124,7 +124,7 @@ em 作为 font-size 单位时，其代表父元素的字体大小，em 作为其
 rem 作用于非根元素时，相对于根元素字体大小，rem 作用于根元素字体时，相对于其初始字体大小
 :::
 
-本质：<el-text type="success" size="large">等比缩放</el-text>，是通过 JavaScript 来模拟 vw 的特性
+本质：<imp-text-success>等比缩放</imp-text-success>，是通过 JavaScript 来模拟 vw 的特性
 
 假设将屏幕宽度平均分为 100 份，每一份的宽度用 x 表示，x = 屏幕宽度 / 100，如果将 x 作为单位，x 前面的数值就代表屏幕宽度的百分比
 
@@ -338,7 +338,7 @@ div {
 
 不用 `rem/vw`，用传统的响应式布局也能在移动端布局中使用，需要设计规范
 
-使用 <el-text class="mx-1" type="success" size="large">css 变量</el-text> 适配（篇幅原因暂不详细介绍，可直接看<link-tag :linkList="[{ linkType: 'git', linkText:'代码',linkUrl:'https://link.zhihu.com/?target=https%3A//github.com/johanazhu/demo/blob/master/%25E8%2587%25AA%25E9%2580%2582%25E5%25BA%2594%25E6%2596%25B9%25E6%25A1%2588/px/index.scss%23L3'}]" />）
+使用 <imp-text-success>css 变量</imp-text-success> 适配（篇幅原因暂不详细介绍，可直接看<link-tag :linkList="[{ linkType: 'git', linkText:'代码',linkUrl:'https://link.zhihu.com/?target=https%3A//github.com/johanazhu/demo/blob/master/%25E8%2587%25AA%25E9%2580%2582%25E5%25BA%2594%25E6%2596%25B9%25E6%25A1%2588/px/index.scss%23L3'}]" />）
 
 使用场景：新闻、内容型的网站，不太适用 `rem`，因为大屏用户想要看到更多的内容，如网易新闻、知乎、taptap
 

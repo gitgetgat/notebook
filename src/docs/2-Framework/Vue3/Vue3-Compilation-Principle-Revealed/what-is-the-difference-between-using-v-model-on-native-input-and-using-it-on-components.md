@@ -137,13 +137,13 @@ const vnode = withDirectives(h("div"), [[pin, 200, "top", { animate: true }]]);
 
 上面这个例子定义了一个 `pin` 的自定义指令，调用 `h 函数` 生成 `vnode` 传给 `withDirectives` 函数的第一个参数。第二个参数自定义指令数组，我们这里只传了一个 `pin` 自定义指令。来看看`[Directive, value, argument, modifiers]`。
 
-- 第一个 `Directive` 字段：<el-text size="large" type="success">“指令名称”</el-text> 对应的就是 `pin` 自定义指令。
+- 第一个 `Directive` 字段：<imp-text-success>“指令名称”</imp-text-success> 对应的就是 `pin` 自定义指令。
 
-- 第二个 `value` 字段：<el-text size="large" type="success">“指令值”</el-text> 对应的就是 200。
+- 第二个 `value` 字段：<imp-text-success>“指令值”</imp-text-success> 对应的就是 200。
 
-- 第三个字段 `argument` 字段：<el-text size="large" type="success">“参数”</el-text> 对应的就是 top 参数。
+- 第三个字段 `argument` 字段：<imp-text-success>“参数”</imp-text-success> 对应的就是 top 参数。
 
-- 第四个字段 `modifiers` 字段：<el-text size="large" type="success">“修饰符”</el-text> 对应的就是 animate 修饰符。
+- 第四个字段 `modifiers` 字段：<imp-text-success>“修饰符”</imp-text-success> 对应的就是 animate 修饰符。
 
 所以上面的 `withDirectives` 函数实际就是对应的 `<div v-pin:top.animate="200"></div>`
 

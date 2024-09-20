@@ -8,18 +8,18 @@
 所谓算法指的是：把一种数据结构转化为另外一种数据结构的方法。
 :::
 
-在 `runtime(运行时)` 阶段存在一个无论如何都绕不过去的核心功能，那就是 <el-text size="large" type="success">diff 算法</el-text>。
+在 `runtime(运行时)` 阶段存在一个无论如何都绕不过去的核心功能，那就是 <imp-text-success>diff 算法</imp-text-success>。
 
-本博客将基于最新（2023 年 1 月 20 日）的 [vue 3.2 版本](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2Fvuejs%2Fcore)，为大家详细讲解 `diff 算法逻辑`，博客 <el-text size="large" type="success">内容较长</el-text>（已经尽量精简）、并且 <el-text size="large" type="success">有点难</el-text>，所以请预留足够的时间来进行阅读。
+本博客将基于最新（2023 年 1 月 20 日）的 [vue 3.2 版本](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2Fvuejs%2Fcore)，为大家详细讲解 `diff 算法逻辑`，博客 <imp-text-success>内容较长</imp-text-success>（已经尽量精简）、并且 <imp-text-success>有点难</imp-text-success>，所以请预留足够的时间来进行阅读。
 
 本博客讲解 `diff 算法` 的方式，将按照如下顺序进行：
 
-1. diff 算法的 <el-text size="large" type="success">触发场景</el-text>
-2. <el-text size="large" type="success">v-for 循环时，key 属性的意义</el-text>
-3. diff 算法的 <el-text size="large" type="success">5 大步</el-text>
-4. diff 算法的 <el-text size="large" type="success">前四步详解</el-text>
-5. <el-text size="large" type="success">最长递增子序列</el-text>
-6. diff 算法的 <el-text size="large" type="success">第五步详解</el-text>
+1. diff 算法的 <imp-text-success>触发场景</imp-text-success>
+2. <imp-text-success>v-for 循环时，key 属性的意义</imp-text-success>
+3. diff 算法的 <imp-text-success>5 大步</imp-text-success>
+4. diff 算法的 <imp-text-success>前四步详解</imp-text-success>
+5. <imp-text-success>最长递增子序列</imp-text-success>
+6. diff 算法的 <imp-text-success>第五步详解</imp-text-success>
 
 明确好步骤之后，那么下面就让咱们进入到 `diff 算法` 的逻辑分析之中吧！
 
@@ -27,12 +27,12 @@
 
 想要搞明白 `diff 算法` 的处理逻辑，那么首先咱们需要先搞清楚 `diff 究竟在什么时候会被触发`。
 
-这里存在一个 <el-text size="large" type="success">误区</el-text>，因为有很多小伙伴会认为：<el-text size="large" type="success">只要触发了 dom 的更新，那么就会使用 diff</el-text>。这是 <el-text size="large" type="danger">不对的！</el-text>
+这里存在一个 <imp-text-success>误区</imp-text-success>，因为有很多小伙伴会认为：<imp-text-success>只要触发了 dom 的更新，那么就会使用 diff</imp-text-success>。这是 <imp-text-danger>不对的！</imp-text-danger>
 
-`diff 算法` 本质上是一个 <el-text size="large" type="success">对比的方法</el-text>。其核心就是在：<el-text size="large" type="success">“旧 DOM 组”更新为“新 DOM 组”时，如何更新才能效率更高。</el-text>
+`diff 算法` 本质上是一个 <imp-text-success>对比的方法</imp-text-success>。其核心就是在：<imp-text-success>“旧 DOM 组”更新为“新 DOM 组”时，如何更新才能效率更高。</imp-text-success>
 
 ::: warning ⚠️ 注意：
-这里我们说的是 <el-text size="large" type="success">“旧 DOM 组”</el-text> 和 <el-text size="large" type="success">“新 DOM 组”</el-text>。也就是说：想要触发 `diff`，那么一定是 <el-text size="large" type="success">一组 dom</el-text> 发生的变化。
+这里我们说的是 <imp-text-success>“旧 DOM 组”</imp-text-success> 和 <imp-text-success>“新 DOM 组”</imp-text-success>。也就是说：想要触发 `diff`，那么一定是 <imp-text-success>一组 dom</imp-text-success> 发生的变化。
 :::
 
 那么什么时候会触发一组 dom 的变化呢？
@@ -95,13 +95,13 @@ export default {
 2. 其次：通过 `v-for` 循环，对 `arr` 进行了渲染，并且以 `id` 为 `key`
 3. 最后：当点击按钮时，修改 `arr[2]` 的数据，把 `c` 变为 `d`
 
-当触发点击行为时，`arr` 数组发生变化，此时 <el-text size="large" type="success">旧的一组 li 会被变为新的一组 li</el-text>，那么此时就是 <el-text size="large" type="success">一组 dom</el-text> 发生的变化，也就会触发 <el-text size="large" type="success">diff</el-text>。
+当触发点击行为时，`arr` 数组发生变化，此时 <imp-text-success>旧的一组 li 会被变为新的一组 li</imp-text-success>，那么此时就是 <imp-text-success>一组 dom</imp-text-success> 发生的变化，也就会触发 <imp-text-success>diff</imp-text-success>。
 
 ### 阶段一总结
 
-那么下面咱们对 <el-text size="large" type="success">diff 算法的触发场景</el-text> 进行下总结。
+那么下面咱们对 <imp-text-success>diff 算法的触发场景</imp-text-success> 进行下总结。
 
-`diff 算法` 会在：<el-text size="large" type="success">一组 dom 更新时被触发</el-text>，比如：<el-text size="large" type="success">通过 v-for 循环的 li 标签</el-text>。
+`diff 算法` 会在：<imp-text-success>一组 dom 更新时被触发</imp-text-success>，比如：<imp-text-success>通过 v-for 循环的 li 标签</imp-text-success>。
 
 ::: tip
 大家可以通过这个仓库 下的测试实例通过 `debugger` 的形式进行验证 `diff` 被触发。
@@ -111,13 +111,13 @@ export default {
 
 咱们知道，当使用 `v-for` 进行 `dom` 循环渲染时需要指定 `key` 属性。这个 `key` 属性在 `diff` 时也起到了非常重要的作用，所以咱们单独把它拿出来说。
 
-如果大家仔细观察上面案例点击按钮时 `dom` 的更新情况，其实大家可以发现：<el-text size="large" type="success">上面的更新中，只有第三个 li 标签进行了重新渲染，其他的两个 li 标签是没有变化的。</el-text>
+如果大家仔细观察上面案例点击按钮时 `dom` 的更新情况，其实大家可以发现：<imp-text-success>上面的更新中，只有第三个 li 标签进行了重新渲染，其他的两个 li 标签是没有变化的。</imp-text-success>
 
 ![/b8de4ba7-b3e7-7be2-89c7-9a5819324a85.jpg](/b8de4ba7-b3e7-7be2-89c7-9a5819324a85.jpg)
 
 有些小伙伴看到这里可能会说：`这不很正常吗？因为只有第三个 dom 发生了变化啊。所以只需要让第三个 dom 重新渲染就可以了，前两个不需要变化。`
 
-但是大家要注意，上面的结论是咱们从开发者的角度看出来的。那么 <el-text size="large" type="success">程序是如何判断出前两个 dom 没有变化的呢？</el-text>
+但是大家要注意，上面的结论是咱们从开发者的角度看出来的。那么 <imp-text-success>程序是如何判断出前两个 dom 没有变化的呢？</imp-text-success>
 
 想要知道这个，那么咱们就需要来看下 [vue 源码的 isSameVNodeType 方法](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2Fvuejs%2Fcore%2Fblob%2Fmain%2Fpackages%2Fruntime-core%2Fsrc%2Fvnode.ts%23L354-L368)。
 
@@ -139,13 +139,13 @@ export function isSameVNodeType(n1: VNode, n2: VNode): boolean {
 根据上面简化之后的代码，咱们可以看出：
 
 1. `isSameVNodeType` 的作用是：判断两个 `vnode` 是否为相同的
-2. 判断的方式是：利用 `vnode` 的 `type` 和 `key` 进行对比，如果两个 `vnode` 的 `type、key` 相等，则 <el-text size="large" type="success">两个 vnode 为相同的 vnode</el-text>
+2. 判断的方式是：利用 `vnode` 的 `type` 和 `key` 进行对比，如果两个 `vnode` 的 `type、key` 相等，则 <imp-text-success>两个 vnode 为相同的 vnode</imp-text-success>
 
 那么这里的 `type` 和 `key`分别代表是什么意思呢？
 
 ### type
 
-首先咱们来说`type`。 这里的`type`表示：<el-text size="large" type="success">VNode 的节点类型</el-text>。 比如：
+首先咱们来说`type`。 这里的`type`表示：<imp-text-success>VNode 的节点类型</imp-text-success>。 比如：
 
 1. 一个 `div` 节点，`vnode` 就是`div`
 2. 一个 `li` 节点，`vnode` 就是`li`
@@ -153,15 +153,15 @@ export function isSameVNodeType(n1: VNode, n2: VNode): boolean {
 4. 一个 `组件节点` ，`vnode`就是`Component **对象实例**`
 5. ......
 
-如果我们以上面的 <el-text size="large" type="success">v-for 循环案例</el-text> 为例，则`li`标签的`type === 'li'`
+如果我们以上面的 <imp-text-success>v-for 循环案例</imp-text-success> 为例，则`li`标签的`type === 'li'`
 
 ### key
 
 这里`key`相信大家肯定已经有了自己的猜测吧。
 
-这个`key`就是 <el-text size="large" type="success">v-for 循环时，绑定的 `key` 值</el-text>。
+这个`key`就是 <imp-text-success>v-for 循环时，绑定的 `key` 值</imp-text-success>。
 
-根据上面的 <el-text size="large" type="success">v-for 循环案例</el-text>，咱们可以看到：<el-text size="large" type="success">当触发按钮事件时，arr[2]的 id 是发生了变化的</el-text>。所以它的 `key` 也必然发生了变化。
+根据上面的 <imp-text-success>v-for 循环案例</imp-text-success>，咱们可以看到：<imp-text-success>当触发按钮事件时，arr[2]的 id 是发生了变化的</imp-text-success>。所以它的 `key` 也必然发生了变化。
 
 我们可以通过以下两个`vnode`来表示这样的变化：
 
@@ -229,7 +229,7 @@ export function isSameVNodeType(n1: VNode, n2: VNode): boolean {
 
 1. `arr[0] vnode 对比`：true（两个 vnode 是相同的）
 2. `arr[1] vnode 对比`：true（两个 vnode 是相同的）
-3. `arr[2] vnode 对比`：<el-text size="large" type="success">false（两个 vnode 不同，需要更新）</el-text>
+3. `arr[2] vnode 对比`：<imp-text-success>false（两个 vnode 不同，需要更新）</imp-text-success>
 
 ### 阶段二总结
 
@@ -259,7 +259,7 @@ export function isSameVNodeType(n1: VNode, n2: VNode): boolean {
 4. `common sequence + unmount`：旧节点多于新节点，需要卸载
 5. `unknown sequence`：乱序
 
-这 `5` 步的对比决定了 <el-text size="large" type="success">一组 DOM 更新时的最优方案</el-text>。
+这 `5` 步的对比决定了 <imp-text-success>一组 DOM 更新时的最优方案</imp-text-success>。
 
 ## diff 算法的前四步详解
 
@@ -274,9 +274,9 @@ export function isSameVNodeType(n1: VNode, n2: VNode): boolean {
 
 > 谨记： diff 场景一定是两组 dom 的对比
 
-`diff` 的第一步主要是进行：<el-text size="large" type="success">两组 dom 的自前向后对比</el-text>。 其核心的目的是：<el-text size="large" type="success">把两组 dom 自前开始，相同的 dom 节点（vnode）完成对比处理</el-text>
+`diff` 的第一步主要是进行：<imp-text-success>两组 dom 的自前向后对比</imp-text-success>。 其核心的目的是：<imp-text-success>把两组 dom 自前开始，相同的 dom 节点（vnode）完成对比处理</imp-text-success>
 
-下面我们把 <el-text size="large" type="success">源码添加了详细备注（进行了适当简化）</el-text>：
+下面我们把 <imp-text-success>源码添加了详细备注（进行了适当简化）</imp-text-success>：
 
 ::: code-group
 
@@ -325,23 +325,23 @@ const patchKeyedChildren = (
 
 在上面的代码中，主要进行了两大步的处理逻辑：
 
-1. <el-text size="large" type="success">自前向后的 diff 比对</el-text> 中，会 <el-text size="large" type="success">依次获取相同下标的 `oldChild` 和 `newChild`</el-text> ：
+1. <imp-text-success>自前向后的 diff 比对</imp-text-success> 中，会 <imp-text-success>依次获取相同下标的 `oldChild` 和 `newChild`</imp-text-success> ：
 
-   1. 如果 `oldChild` 和 `newChild` 为 <el-text size="large" type="success">相同的 `VNode`</el-text>，则直接通过 `patch` 进行打补丁即可
+   1. 如果 `oldChild` 和 `newChild` 为 <imp-text-success>相同的 `VNode`</imp-text-success>，则直接通过 `patch` 进行打补丁即可
 
-   2. 如果 `oldChild` 和 `newChild` 为 <el-text size="large" type="success">不相同的 `VNode`</el-text>，则会跳出循环
+   2. 如果 `oldChild` 和 `newChild` 为 <imp-text-success>不相同的 `VNode`</imp-text-success>，则会跳出循环
 
-2. 每次处理成功，则会自增 `i` 标记，表示：<el-text size="large" type="success">自前向后已处理过的节点数量</el-text>
+2. 每次处理成功，则会自增 `i` 标记，表示：<imp-text-success>自前向后已处理过的节点数量</imp-text-success>
 
-通过第一步，我们可以处理：<el-text size="large" type="success">从前开始，相同的 vnode。 直到遇到不同的 vnode 为止。</el-text>
+通过第一步，我们可以处理：<imp-text-success>从前开始，相同的 vnode。 直到遇到不同的 vnode 为止。</imp-text-success>
 
 ### 第二步：`sync from end`：自后向前的对比
 
 如果大家可以理解第一步的逻辑处理，那么针对于第二步就很会很好理解了。
 
-第二步的逻辑与第一步 <el-text size="large" type="success">反过来</el-text> 。即：<el-text size="large" type="success">两组 dom 的自后向前对比</el-text>。 其核心的目的是：<el-text size="large" type="success">把两组 dom 自后开始，相同的 dom 节点（vnode）完成对比处理</el-text>
+第二步的逻辑与第一步 <imp-text-success>反过来</imp-text-success> 。即：<imp-text-success>两组 dom 的自后向前对比</imp-text-success>。 其核心的目的是：<imp-text-success>把两组 dom 自后开始，相同的 dom 节点（vnode）完成对比处理</imp-text-success>
 
-同样，咱们把 <el-text size="large" type="success">源码添加了详细备注（进行了适当简化）</el-text>：
+同样，咱们把 <imp-text-success>源码添加了详细备注（进行了适当简化）</imp-text-success>：
 
 ::: code-group
 
@@ -365,11 +365,11 @@ while (i <= oldChildrenEnd && i <= newChildrenEnd) {
 
 在上面的代码中，大家可以发现整体的代码逻辑与第一步其实是非常类似的。
 
-唯一不同的是：<el-text size="large" type="success">每次处理成功之后，会自减 `oldChildrenEnd` 和 `newChildrenEnd`</el-text>，表示：<el-text size="large" type="success">新、旧节点中已经处理完成节点（自后向前）</el-text>
+唯一不同的是：<imp-text-success>每次处理成功之后，会自减 `oldChildrenEnd` 和 `newChildrenEnd`</imp-text-success>，表示：<imp-text-success>新、旧节点中已经处理完成节点（自后向前）</imp-text-success>
 
 ### 第三步：`common sequence + mount`：新节点多于旧节点，需要挂载
 
-第一步和第二步的处理，都有一个前提条件，那就是：<el-text size="large" type="success">新节点数量和旧节点数量是完全一致的。</el-text>
+第一步和第二步的处理，都有一个前提条件，那就是：<imp-text-success>新节点数量和旧节点数量是完全一致的。</imp-text-success>
 
 但是在日常开发中，咱们经常也会遇到新旧节点数量不一致的情况。具体可以分为两种：
 
@@ -378,12 +378,12 @@ while (i <= oldChildrenEnd && i <= newChildrenEnd) {
 
 那么第三步和第四步就是用来处理这两种情况的。
 
-那么这里咱们先来看 <el-text size="large" type="success">新节点多于旧节点</el-text> 这种情况。
+那么这里咱们先来看 <imp-text-success>新节点多于旧节点</imp-text-success> 这种情况。
 
 咱们想要让 “新节点多于旧节点”，那么咱们其实有两种方式：
 
-1. 执行`arr.push()`：这样可以把新数据添加到 <el-text size="large" type="success">尾部</el-text>。即：<el-text size="large" type="success">多出的新节点位于 尾部</el-text>
-2. 执行`arr.unshift()`：这样可以把新数据添加到 <el-text size="large" type="success">头部</el-text>。即：<el-text size="large" type="success">多出的新节点位于 头部</el-text>
+1. 执行`arr.push()`：这样可以把新数据添加到 <imp-text-success>尾部</imp-text-success>。即：<imp-text-success>多出的新节点位于 尾部</imp-text-success>
+2. 执行`arr.unshift()`：这样可以把新数据添加到 <imp-text-success>头部</imp-text-success>。即：<imp-text-success>多出的新节点位于 头部</imp-text-success>
 
 那么明确好以上内容之后，下面咱们来看下第三步代码：
 
@@ -409,20 +409,20 @@ if (i > oldChildrenEnd) {
 
 由上面的代码可知：
 
-1. 对于 <el-text size="large" type="success">新节点多于旧节点</el-text> 的场景具体可以再细分为两种情况：
-   1. 多出的新节点位于 <el-text size="large" type="success">尾部</el-text>
-   2. 多出的新节点位于 <el-text size="large" type="success">头部</el-text>
-2. 这两种情况下的区别在于：<el-text size="large" type="success">插入的位置不同</el-text>
+1. 对于 <imp-text-success>新节点多于旧节点</imp-text-success> 的场景具体可以再细分为两种情况：
+   1. 多出的新节点位于 <imp-text-success>尾部</imp-text-success>
+   2. 多出的新节点位于 <imp-text-success>头部</imp-text-success>
+2. 这两种情况下的区别在于：<imp-text-success>插入的位置不同</imp-text-success>
 3. 明确好插入的位置之后，直接通过 `patch` 进行打补丁即可。
 
 ### 第四步：`common sequence + unmount`：旧节点多于新节点，需要卸载
 
-接下来我们来看第四步 <el-text size="large" type="success">旧节点多于新节点时</el-text>
+接下来我们来看第四步 <imp-text-success>旧节点多于新节点时</imp-text-success>
 
 根据第三步的经验，其实我们也可以明确，对于旧节点多于新节点时，对应的场景也可以细分为两种：
 
-1. 执行`arr.pop()`：这样可以从 <el-text size="large" type="success">尾部</el-text> 删除数据。即：<el-text size="large" type="success">多出的旧节点位于 尾部</el-text>
-2. 执行`arr.shift()`：这样可以从 <el-text size="large" type="success">头部</el-text> 删除数据。即：<el-text size="large" type="success">多出的旧节点位于 头部</el-text>
+1. 执行`arr.pop()`：这样可以从 <imp-text-success>尾部</imp-text-success> 删除数据。即：<imp-text-success>多出的旧节点位于 尾部</imp-text-success>
+2. 执行`arr.shift()`：这样可以从 <imp-text-success>头部</imp-text-success> 删除数据。即：<imp-text-success>多出的旧节点位于 头部</imp-text-success>
 
 同时第四步的代码会比第三步更加简单一些，咱们来看对应的代码：
 
@@ -443,7 +443,7 @@ else if (i > newChildrenEnd) {
 
 由以上代码可知：
 
-1. 旧节点多于新节点时，整体的处理比较简单，只需要 <el-text size="large" type="success">卸载旧节点即可</el-text>
+1. 旧节点多于新节点时，整体的处理比较简单，只需要 <imp-text-success>卸载旧节点即可</imp-text-success>
 
 ### 阶段四总结
 
@@ -454,13 +454,13 @@ else if (i > newChildrenEnd) {
 3. 新节点多于旧节点时的 diff 比对
 4. 旧节点多于新节点时的 diff 比对
 
-但是以上的四种场景都是比较特殊的场景，所以咱们还需要有最重要的<el-text size="large" type="success">第五步-乱序</el-text>。
+但是以上的四种场景都是比较特殊的场景，所以咱们还需要有最重要的<imp-text-success>第五步-乱序</imp-text-success>。
 
-针对于第五步，是整个`diff`中最复杂的一块逻辑，想要学习它，咱们还需要提前掌握一个东西，那就是 <el-text size="large" type="success">最长递增子序列</el-text>
+针对于第五步，是整个`diff`中最复杂的一块逻辑，想要学习它，咱们还需要提前掌握一个东西，那就是 <imp-text-success>最长递增子序列</imp-text-success>
 
 ## 最长递增子序列
 
-在第五步的 `diff` 中，`vue` 使用了 <el-text size="large" type="success">最长递增子序列</el-text> 这样的一个概念，所以想要更好地理解第五步，那么我们需要先搞明白两个问题：
+在第五步的 `diff` 中，`vue` 使用了 <imp-text-success>最长递增子序列</imp-text-success> 这样的一个概念，所以想要更好地理解第五步，那么我们需要先搞明白两个问题：
 
 1. 什么是最长递增子序列？
 2. 最长递增子序列在 `diff` 中的作用是什么？
@@ -484,7 +484,7 @@ else if (i > newChildrenEnd) {
 
 :::
 
-我们可以根据  <el-text size="large" type="success">新节点</el-text> 生成  <el-text size="large" type="success">递增子序列（非最长）（注意：并不是惟一的）</el-text>，其结果为：
+我们可以根据  <imp-text-success>新节点</imp-text-success> 生成  <imp-text-success>递增子序列（非最长）（注意：并不是惟一的）</imp-text-success>，其结果为：
 
 1. `1、3、6`
 2. `1、2、4、6`
@@ -492,28 +492,28 @@ else if (i > newChildrenEnd) {
 
 #### 最长递增子序列在 `diff` 中的作用是什么
 
-那么现在我们成功得到了 <el-text size="large" type="success">递增子序列</el-text>，那么下面我们来看，这两个递增子序列在我们接下来的 `diff` 中起到了什么作用。
+那么现在我们成功得到了 <imp-text-success>递增子序列</imp-text-success>，那么下面我们来看，这两个递增子序列在我们接下来的 `diff` 中起到了什么作用。
 
-根据我们之前的四种场景可知，所谓的 `diff`，其实说白了就是对 <el-text size="large" type="success">一组节点</el-text> 进行 <el-text size="large" type="success">添加、删除、打补丁</el-text> 的对应操作。那么除了以上三种操作之外，其实还有最后一种操作方式，那就是 <el-text size="large" type="success">移动</el-text>。
+根据我们之前的四种场景可知，所谓的 `diff`，其实说白了就是对 <imp-text-success>一组节点</imp-text-success> 进行 <imp-text-success>添加、删除、打补丁</imp-text-success> 的对应操作。那么除了以上三种操作之外，其实还有最后一种操作方式，那就是 <imp-text-success>移动</imp-text-success>。
 
-对于以上的节点对比而言，如果我们想要把 <el-text size="large" type="success">旧节点转化为新节点</el-text>，那么将要涉及到节点的 <el-text size="large" type="success">移动</el-text>，所以问题的重点是：<el-text size="large" type="success">如何进行移动</el-text>。
+对于以上的节点对比而言，如果我们想要把 <imp-text-success>旧节点转化为新节点</imp-text-success>，那么将要涉及到节点的 <imp-text-success>移动</imp-text-success>，所以问题的重点是：<imp-text-success>如何进行移动</imp-text-success>。
 
 那么接下来，我们来分析一下移动的策略，整个移动根据递增子序列的不同，将拥有两种移动策略：
 
 1. `1、3、6` 递增序列下：
-   1. 因为 `1、3、6` 的递增已确认，所以它们三个是不需要移动的，那么我们所需要移动的节点无非就是 <el-text size="large" type="success">三</el-text> 个 `2、4、5` 。
-   2. 所以我们需要经过 <el-text size="large" type="success">三次</el-text> 移动
+   1. 因为 `1、3、6` 的递增已确认，所以它们三个是不需要移动的，那么我们所需要移动的节点无非就是 <imp-text-success>三</imp-text-success> 个 `2、4、5` 。
+   2. 所以我们需要经过 <imp-text-success>三次</imp-text-success> 移动
 2. `1、2、4、6` 递增序列下：
-   1. 因为 `1、2、4、6` 的递增已确认，所以它们四个是不需要移动的，那么我们所需要移动的节点无非就是 <el-text size="large" type="success">两个</el-text> `3、5` 。
-   2. 所以我们需要经过 <el-text size="large" type="success">两次</el-text> 移动
+   1. 因为 `1、2、4、6` 的递增已确认，所以它们四个是不需要移动的，那么我们所需要移动的节点无非就是 <imp-text-success>两个</imp-text-success> `3、5` 。
+   2. 所以我们需要经过 <imp-text-success>两次</imp-text-success> 移动
 
-所以由以上分析，我们可知：<el-text size="large" type="success">最长递增子序列的确定，可以帮助我们减少移动的次数</el-text>
+所以由以上分析，我们可知：<imp-text-success>最长递增子序列的确定，可以帮助我们减少移动的次数</imp-text-success>
 
 所以，当我们需要进行节点移动时，移动需要事先构建出最长递增子序列，以保证我们的移动方案。
 
-[点击这里可以查看 vue 中**求解最长递增子序列**的代码](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2Fvuejs%2Fcore%2Fblob%2Fbef85e7975084b05af00b60ecd171c83f251c6d5%2Fpackages%2Fruntime-core%2Fsrc%2Frenderer.ts%23L2402-L2442)，通过源码可以发现：<el-text size="large" type="success">vue 通过 getSequence 函数处理的最长递增子序列</el-text>
+[点击这里可以查看 vue 中**求解最长递增子序列**的代码](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2Fvuejs%2Fcore%2Fblob%2Fbef85e7975084b05af00b60ecd171c83f251c6d5%2Fpackages%2Fruntime-core%2Fsrc%2Frenderer.ts%23L2402-L2442)，通过源码可以发现：<imp-text-success>vue 通过 getSequence 函数处理的最长递增子序列</imp-text-success>
 
-该函数算法来自于 [维基百科（贪心 + 二分查找）](https://link.juejin.cn/?target=https%3A%2F%2Fzh.m.wikipedia.org%2Fzh-hans%2F%25E6%259C%2580%25E9%2595%25BF%25E9%2580%2592%25E5%25A2%259E%25E5%25AD%2590%25E5%25BA%258F%25E5%2588%2597)，我们复制了 `vue 3` 中 `getSequence` 的所有代码，并为其加入了 <el-text size="large" type="success">详细的备注</el-text>，如下：
+该函数算法来自于 [维基百科（贪心 + 二分查找）](https://link.juejin.cn/?target=https%3A%2F%2Fzh.m.wikipedia.org%2Fzh-hans%2F%25E6%259C%2580%25E9%2595%25BF%25E9%2580%2592%25E5%25A2%259E%25E5%25AD%2590%25E5%25BA%258F%25E5%2588%2597)，我们复制了 `vue 3` 中 `getSequence` 的所有代码，并为其加入了 <imp-text-success>详细的备注</imp-text-success>，如下：
 
 ::: code-group
 
@@ -607,17 +607,17 @@ function getSequence(arr) {
 
 ### 阶段五总结
 
-在这里咱们主要了解了 <el-text size="large" type="success">最长递增子序列</el-text> 的概念，大家需要明确的是：<el-text size="large" type="success">最长递增子序列可以帮助咱们减少移动的次数，从而提升性能。</el-text>
+在这里咱们主要了解了 <imp-text-success>最长递增子序列</imp-text-success> 的概念，大家需要明确的是：<imp-text-success>最长递增子序列可以帮助咱们减少移动的次数，从而提升性能。</imp-text-success>
 
 ## diff 算法的第五步详解
 
 那么到目前为止，我们已经明确了：
 
-1. `diff` 指的就是：<el-text size="large" type="success">添加、删除、打补丁、移动</el-text> 这四个行为
-2. <el-text size="large" type="success">最长递增子序列</el-text> 是什么，如何计算的，以及在 `diff` 中的作用
-3. 场景五的乱序，是最复杂的场景，将会涉及到 <el-text size="large" type="success">添加、删除、打补丁、移动</el-text> 这些所有场景。
+1. `diff` 指的就是：<imp-text-success>添加、删除、打补丁、移动</imp-text-success> 这四个行为
+2. <imp-text-success>最长递增子序列</imp-text-success> 是什么，如何计算的，以及在 `diff` 中的作用
+3. 场景五的乱序，是最复杂的场景，将会涉及到 <imp-text-success>添加、删除、打补丁、移动</imp-text-success> 这些所有场景。
 
-那么明确好了以上内容之后，接下来咱们就来看第五步的详细逻辑，同样添加了 <el-text size="large" type="success">详细备注</el-text>：
+那么明确好了以上内容之后，接下来咱们就来看第五步的详细逻辑，同样添加了 <imp-text-success>详细备注</imp-text-success>：
 
 ::: code-group
 
@@ -788,7 +788,7 @@ else {
 
 由以上代码可知：
 
-1. 乱序下的 `diff` 是 <el-text size="large" type="success">最复杂</el-text> 的一块场景
+1. 乱序下的 `diff` 是 <imp-text-success>最复杂</imp-text-success> 的一块场景
 2. 它的主要逻辑分为三大步：
    1. 创建一个 `<key（新节点的 key）:index（新节点的位置）>` 的 `Map` 对象 `keyToNewIndexMap`。通过该对象可知：新的 `child`（根据 `key` 判断指定 `child`） 更新后的位置（根据对应的 `index` 判断）在哪里
    2. 循环 `oldChildren` ，并尝试进行 `patch`（打补丁）或 `unmount`（删除）旧节点
@@ -796,7 +796,7 @@ else {
 
 ## 总结
 
-这应该是我写过最长的一篇 <el-text size="large" type="success">纯技术干货的博客\*</el-text>啦，总共花了两天的时间。在已经进行了精简的情况下，总字数依然超过了`7000`字。
+这应该是我写过最长的一篇 <imp-text-success>纯技术干货的博客\*</imp-text-success>啦，总共花了两天的时间。在已经进行了精简的情况下，总字数依然超过了`7000`字。
 
 希望这篇博客，可以帮助大家了解，甚至掌握`diff`的算法逻辑，以帮助大家在以后的面试、工作中获得提升。
 

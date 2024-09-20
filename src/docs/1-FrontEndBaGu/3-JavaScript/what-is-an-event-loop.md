@@ -59,7 +59,7 @@ JS 是⼀⻔单线程的语⾔，这是因为它运⾏在浏览器的渲染主�
 
 ## 浏览器有哪些进程和线程？
 
-<el-text size="large" type="warning">浏览器是⼀个多进程多线程的应⽤程序</el-text>
+<imp-text-warning>浏览器是⼀个多进程多线程的应⽤程序</imp-text-warning>
 
 浏览器内部⼯作极其复杂。
 
@@ -81,11 +81,11 @@ JS 是⼀⻔单线程的语⾔，这是因为它运⾏在浏览器的渲染主�
 
    负责加载⽹络资源。⽹络进程内部会启动多个线程来处理不同的⽹络任务。
 
-3. <el-text size="large" type="warning">渲染进程</el-text>（本节重点讲解的进程）
+3. <imp-text-warning>渲染进程</imp-text-warning>（本节重点讲解的进程）
 
-   渲染进程启动后，会开启⼀个 <el-text size="large" type="danger">渲染主线程</el-text>，主线程负责执⾏ HTML、CSS、JS 代码。
+   渲染进程启动后，会开启⼀个 <imp-text-danger>渲染主线程</imp-text-danger>，主线程负责执⾏ HTML、CSS、JS 代码。
 
-   默认情况下，浏览器会为每个<el-text size="large" type="primary">标签⻚</el-text>开启⼀个新的渲染进程，以保证不同的标签⻚之间不相互影响。
+   默认情况下，浏览器会为每个<imp-text-primary>标签⻚</imp-text-primary>开启⼀个新的渲染进程，以保证不同的标签⻚之间不相互影响。
 
    ::: tip
 
@@ -127,7 +127,7 @@ JS 是⼀⻔单线程的语⾔，这是因为它运⾏在浏览器的渲染主�
 
 这样⼀来，就可以让每个任务有条不紊的、持续的进⾏下去了。
 
-<el-text size="large" type="warning">整个过程，被称之为事件循环 Event Loop（消息循环 Message Loop）</el-text>
+<imp-text-warning>整个过程，被称之为事件循环 Event Loop（消息循环 Message Loop）</imp-text-warning>
 
 ## 浏览器 JS 异步执行的原理
 
@@ -137,7 +137,7 @@ JS 是⼀⻔单线程的语⾔，这是因为它运⾏在浏览器的渲染主�
 - ⽹络通信完成后需要执⾏的任务 —— `XHR` 、 `Fetch`
 - ⽤户操作后需要执⾏的任务 ——`addEventListener`
 
-以 Chrome 为例，浏览器不仅有多个进程，还有多个线程，如`渲染进程`、`GPU 进程`和`插件进程`等。<el-text size="large" type="warning">而每个 tab 标签页都是一个独立的渲染进程</el-text>，所以一个 tab 异常崩溃后，其他 tab 基本不会被影响。<el-text size="large" type="warning">作为前端开发者，主要重点关注其渲染进程，渲染进程下包含了 JS 引擎线程、HTTP 请求线程和定时器线程等，这些线程为 JS 在浏览器中完成异步任务提供了基础。</el-text>
+以 Chrome 为例，浏览器不仅有多个进程，还有多个线程，如`渲染进程`、`GPU 进程`和`插件进程`等。<imp-text-warning>而每个 tab 标签页都是一个独立的渲染进程</imp-text-warning>，所以一个 tab 异常崩溃后，其他 tab 基本不会被影响。<imp-text-warning>作为前端开发者，主要重点关注其渲染进程，渲染进程下包含了 JS 引擎线程、HTTP 请求线程和定时器线程等，这些线程为 JS 在浏览器中完成异步任务提供了基础。</imp-text-warning>
 
 ![/b8bca05a-f1b3-93c2-9794-e447887bf064.png](/b8bca05a-f1b3-93c2-9794-e447887bf064.png)
 
@@ -145,13 +145,13 @@ JS 是⼀⻔单线程的语⾔，这是因为它运⾏在浏览器的渲染主�
 
 ![/c1a7c533-b9bf-643c-1180-7847d3170f97.png](/c1a7c533-b9bf-643c-1180-7847d3170f97.png)
 
-<el-text size="large" type="warning">渲染主线程承担着极其重要的⼯作，⽆论如何都不能阻塞！</el-text>
+<imp-text-warning>渲染主线程承担着极其重要的⼯作，⽆论如何都不能阻塞！</imp-text-warning>
 
-因此，浏览器选择<el-text size="large" type="success">异步</el-text>来解决这个问题
+因此，浏览器选择<imp-text-success>异步</imp-text-success>来解决这个问题
 
 ![/a1571e8b-f819-6c92-4c0b-f67adeef961e.png](/a1571e8b-f819-6c92-4c0b-f67adeef961e.png)
 
-使⽤异步的⽅式，<el-text size="large" type="warning">渲染主线程永不阻塞</el-text>
+使⽤异步的⽅式，<imp-text-warning>渲染主线程永不阻塞</imp-text-warning>
 
 ## JS 为何会阻碍渲染？
 
@@ -183,9 +183,9 @@ JS 是⼀⻔单线程的语⾔，这是因为它运⾏在浏览器的渲染主�
 
 ## 任务有优先级吗？
 
-任务没有优先级，在消息队列中 <el-text size="large" type="warning">先进先出</el-text>
+任务没有优先级，在消息队列中 <imp-text-warning>先进先出</imp-text-warning>
 
-但 <el-text size="large" type="warning">消息队列是有优先级的</el-text>
+但 <imp-text-warning>消息队列是有优先级的</imp-text-warning>
 
 根据 W3C 的最新解释:
 
@@ -220,15 +220,15 @@ JS 是⼀⻔单线程的语⾔，这是因为它运⾏在浏览器的渲染主�
 
 ## 事件驱动浅析
 
-浏览器异步任务的执行原理背后其实是一套事件驱动的机制。事件触发、任务选择和任务执行都是由事件驱动机制来完成的。`NodeJS` 和 `浏览器` 的设计都是基于事件驱动的，简而言之就是由特定的事件来触发特定的任务，这里的事件可以是用户的操作触发的，如 click 事件；也可以是程序自动触发的，比如浏览器中定时器线程在计时结束后会触发定时器事件。而本文的主题内容 <el-text size="large" type="warning">事件循环其实就是在事件驱动模式中来管理和执行事件的一套流程</el-text>。
+浏览器异步任务的执行原理背后其实是一套事件驱动的机制。事件触发、任务选择和任务执行都是由事件驱动机制来完成的。`NodeJS` 和 `浏览器` 的设计都是基于事件驱动的，简而言之就是由特定的事件来触发特定的任务，这里的事件可以是用户的操作触发的，如 click 事件；也可以是程序自动触发的，比如浏览器中定时器线程在计时结束后会触发定时器事件。而本文的主题内容 <imp-text-warning>事件循环其实就是在事件驱动模式中来管理和执行事件的一套流程</imp-text-warning>。
 
 以一个简单场景为例，假设游戏界面上有一个移动按钮和人物模型，每次点击右移后，人物模型的位置需要重新渲染，右移 1 像素。根据渲染时机的不同我们可以用不同的方式来实现。
 
 ![/e05673dc-0502-3754-47a4-cc3de5e78b05.png](/e05673dc-0502-3754-47a4-cc3de5e78b05.png)
 
-<el-text size="large" type="warning">实现方式一：事件驱动。</el-text>点击按钮后，修改坐标 positionX 时，立即触发界面渲染的事件，触发重新渲染。
+<imp-text-warning>实现方式一：事件驱动。</imp-text-warning>点击按钮后，修改坐标 positionX 时，立即触发界面渲染的事件，触发重新渲染。
 
-<el-text size="large" type="warning">实现方式二：状态驱动或数据驱动。</el-text>点击按钮后，只修改坐标 positionX，不触发界面渲染。在此之前会启动一个定时器 setInterval，或者利用 requestAnimationFrame 来不断地检测 positionX 是否有变化。如果有变化，则立即重新渲染。
+<imp-text-warning>实现方式二：状态驱动或数据驱动。</imp-text-warning>点击按钮后，只修改坐标 positionX，不触发界面渲染。在此之前会启动一个定时器 setInterval，或者利用 requestAnimationFrame 来不断地检测 positionX 是否有变化。如果有变化，则立即重新渲染。
 
 浏览器中的点击事件处理也是典型的基于事件驱动。在事件驱动中，当有事件触发后，被触发的事件会按顺序暂时存在一个队列中，待 JS 的同步任务执行完成后，会从这个队列中取出要处理的事件并进行处理。那么具体什么时候取任务、优先取哪些任务，这就由事件循环流程来控制了。
 
@@ -237,16 +237,16 @@ JS 是⼀⻔单线程的语⾔，这是因为它运⾏在浏览器的渲染主�
 ### 执行栈与任务队列
 
 JS 在解析一段代码时，会将同步代码按顺序排在某个地方，即`执行栈`，然后依次执行里面的函数。当遇到异步任务时就交给其他线程处理，待当前执行栈所有同步代码执行完成后，会从一个队列中去取出已完成的异步任务的回调加入执行栈继续执行，遇到异步任务时又交给其他线程，.....，如此循环往复。而其他异步任务完成后，将回调放入任务队列中待执行栈来取出执行。
-<el-text size="large" type="warning">JS 按顺序执行执行栈中的方法，每次执行一个方法时，会为这个方法生成独有的执行环境（上下文 context），待这个方法执行完成后，销毁当前的执行环境，并从栈中弹出此方法（即消费完成），然后继续下一个方法。</el-text>
+<imp-text-warning>JS 按顺序执行执行栈中的方法，每次执行一个方法时，会为这个方法生成独有的执行环境（上下文 context），待这个方法执行完成后，销毁当前的执行环境，并从栈中弹出此方法（即消费完成），然后继续下一个方法。</imp-text-warning>
 ![/3a14db80-597a-c5fb-eb70-b484f3b53858.png](/3a14db80-597a-c5fb-eb70-b484f3b53858.png)
 
-可见，在事件驱动的模式下，至少包含了一个执行循环来检测任务队列是否有新的任务。<el-text size="large" type="warning">通过不断循环去取出异步回调来执行，这个过程就是 `事件循环` ，而每一次循环就是一个事件周期或称为一次 tick。</el-text>
+可见，在事件驱动的模式下，至少包含了一个执行循环来检测任务队列是否有新的任务。<imp-text-warning>通过不断循环去取出异步回调来执行，这个过程就是 `事件循环` ，而每一次循环就是一个事件周期或称为一次 tick。</imp-text-warning>
 
-### <el-text size="large" type="danger">宏任务和微任务（旧版；由于现在浏览器复杂度提升，这种简单的分类已经不能适应了）</el-text>
+### <imp-text-danger>宏任务和微任务（旧版；由于现在浏览器复杂度提升，这种简单的分类已经不能适应了）</imp-text-danger>
 
 任务队列不只一个，根据任务的种类不同，可以分为`微任务（micro task）队列`和`宏任务（macro task）队列`。
 
-<el-text size="large" type="warning">事件循环的过程中，执行栈在同步代码执行完成后，优先检查微任务队列是否有任务需要执行，如果没有，再去宏任务队列检查是否有任务执行，如此往复。微任务一般在当前循环就会优先执行，而宏任务会等到下一次循环，因此，微任务一般比宏任务先执行，并且微任务队列只有一个，宏任务队列可能有多个。</el-text>另外我们常见的点击和键盘等事件也属于宏任务。
+<imp-text-warning>事件循环的过程中，执行栈在同步代码执行完成后，优先检查微任务队列是否有任务需要执行，如果没有，再去宏任务队列检查是否有任务执行，如此往复。微任务一般在当前循环就会优先执行，而宏任务会等到下一次循环，因此，微任务一般比宏任务先执行，并且微任务队列只有一个，宏任务队列可能有多个。</imp-text-warning>另外我们常见的点击和键盘等事件也属于宏任务。
 下面我们看一下常见宏任务和常见微任务。
 
 #### 常见宏任务
@@ -255,7 +255,7 @@ JS 在解析一段代码时，会将同步代码按顺序排在某个地方，�
 - `setInterval()`
 - `DOM 事件`
 - `AJAX 请求`
-- <el-text size="large" type="warning">DOM 渲染（比较特别，可能既不属于微任务也不属于红任务，执行顺序：微任务 > DOM 渲染 > 宏任务）</el-text>
+- <imp-text-warning>DOM 渲染（比较特别，可能既不属于微任务也不属于红任务，执行顺序：微任务 > DOM 渲染 > 宏任务）</imp-text-warning>
 - `setImmediate()`
 
 #### 常见微任务
@@ -317,10 +317,10 @@ setTimeout 有“定时等待”这个任务，需要定时器线程执行；aja
 
 简单小结一下微任务和宏任务的本质区别。
 
-- <el-text size="large" type="warning">宏任务特征</el-text>：有明确的异步任务需要执行和回调；需要其他异步线程支持。
-- <el-text size="large" type="warning">微任务特征</el-text>：没有明确的异步任务需要执行，只有回调；不需要其他异步线程支持。
+- <imp-text-warning>宏任务特征</imp-text-warning>：有明确的异步任务需要执行和回调；需要其他异步线程支持。
+- <imp-text-warning>微任务特征</imp-text-warning>：没有明确的异步任务需要执行，只有回调；不需要其他异步线程支持。
 
-- <el-text size="large" type="warning">定时器误差</el-text>
+- <imp-text-warning>定时器误差</imp-text-warning>
 
   事件循环中，总是先执行同步代码后，才会去任务队列中取出异步回调来执行。当执行 `setTimeout` 时，浏览器启动新的线程去计时，计时结束后触发定时器事件将回调存入宏任务队列，等待 JS 主线程来取出执行。如果这时主线程还在执行同步任务的过程中，那么此时的宏任务就只有先挂起，这就造成了计时器不准确的问题。同步代码耗时越长，计时器的误差就越大。不仅同步代码，由于微任务会优先执行，所以微任务也会影响计时，假设同步代码中有一个死循环或者微任务中递归不断在启动其他微任务，那么宏任务里面的代码可能永远得不到执行。所以主线程代码的执行效率提升是一件很重要的事情。
 
@@ -328,7 +328,7 @@ setTimeout 有“定时等待”这个任务，需要定时器线程执行；aja
 
   一个很简单的场景就是我们界面上有一个时钟精确到秒，每秒更新一次时间。你会发现有时候秒数会直接跳过 2 秒间隔，就是这个原因。
 
-- <el-text size="large" type="warning">视图更新渲染</el-text>
+- <imp-text-warning>视图更新渲染</imp-text-warning>
 
   微任务队列执行完成后，也就是一次事件循环结束后，浏览器会执行视图渲染，当然这里会有浏览器的优化，可能会合并多次循环的结果做一次视图重绘，因此视图更新是在事件循环之后，所以并不是每一次操作 Dom 都一定会立马刷新视图。视图重绘之前会先执行 requestAnimationFrame 回调，那么对于 requestAnimationFrame 是微任务还是宏任务是有争议的，在这里看来，它应该既不属于微任务，也不属于宏任务。
 
@@ -347,30 +347,30 @@ JS 引擎本身不实现事件循环机制，这是由它的宿主实现的，�
 
   想象一下，如果上面的形式和 setTimeout、promise 等同时存在，如何分析出代码的执行顺序呢？只要我们理解了 NodeJS 的事件循环机制，也就清楚了。
 
-#### <el-text size="large" type="warning">事件循环模型</el-text>
+#### <imp-text-warning>事件循环模型</imp-text-warning>
 
 `NodeJS` 的跨平台能力和事件循环机制都是基于 `Libuv 库` 实现的，你不用关心这个库的具体内容。我们只需要知道 `Libuv` 库是事件驱动的，并且封装和统一了不同平台的 API 实现。
 
-`NodeJS` 中 `V8` 引擎将 JS 代码解析后调用 `Node API`，然后 `Node API` 将任务交给 `Libuv` 去分配，最后再将执行结果返回给 `V8` 引擎。在 Libux 中实现了一套事件循环流程来管理这些任务的执行，<el-text size="large" type="warning">所以 `NodeJS` 的事件循环主要是在 `Libuv` 中完成的。</el-text>
+`NodeJS` 中 `V8` 引擎将 JS 代码解析后调用 `Node API`，然后 `Node API` 将任务交给 `Libuv` 去分配，最后再将执行结果返回给 `V8` 引擎。在 Libux 中实现了一套事件循环流程来管理这些任务的执行，<imp-text-warning>所以 `NodeJS` 的事件循环主要是在 `Libuv` 中完成的。</imp-text-warning>
 
 ![/a14b687b-b2ad-c5f7-0596-fb4a0d19ea55.png](/a14b687b-b2ad-c5f7-0596-fb4a0d19ea55.png)
 
 下面我们来看看 `Libuv` 中的循环是怎样的。
 
-#### <el-text size="large" type="warning">事件循环各阶段</el-text>
+#### <imp-text-warning>事件循环各阶段</imp-text-warning>
 
 在 `NodeJS` 中 `JS` 的执行，我们主要需要关心的过程分为以下几个阶段，下面每个阶段都有自己单独的任务队列，当执行到对应阶段时，就判断当前阶段的任务队列是否有需要处理的任务。
 
-- <el-text size="large" type="success">timers 阶段</el-text>：执行所有 setTimeout() 和 setInterval() 的回调。
-- <el-text size="large" type="success">pending callbacks 阶段</el-text>：某些系统操作的回调，如 TCP 链接错误。除了 timers、close、setImmediate 的其他大部分回调在此阶段执行。
-- <el-text size="large" type="success">poll 阶段</el-text>：轮询等待新的链接和请求等事件，执行 I/O 回调等。V8 引擎将 JS 代码解析并传入 Libuv 引擎后首先进入此阶段。如果此阶段任务队列已经执行完了，则进入 check 阶段执行 `setImmediate` 回调（如果有 `setImmediate`），或等待新的任务进来（如果没有 `setImmediate`）。在等待新的任务时，如果有 `timers` 计时到期，则会直接进入 `timers` 阶段。此阶段可能会阻塞等待。
+- <imp-text-success>timers 阶段</imp-text-success>：执行所有 setTimeout() 和 setInterval() 的回调。
+- <imp-text-success>pending callbacks 阶段</imp-text-success>：某些系统操作的回调，如 TCP 链接错误。除了 timers、close、setImmediate 的其他大部分回调在此阶段执行。
+- <imp-text-success>poll 阶段</imp-text-success>：轮询等待新的链接和请求等事件，执行 I/O 回调等。V8 引擎将 JS 代码解析并传入 Libuv 引擎后首先进入此阶段。如果此阶段任务队列已经执行完了，则进入 check 阶段执行 `setImmediate` 回调（如果有 `setImmediate`），或等待新的任务进来（如果没有 `setImmediate`）。在等待新的任务时，如果有 `timers` 计时到期，则会直接进入 `timers` 阶段。此阶段可能会阻塞等待。
 
-- <el-text size="large" type="success">check 阶段</el-text>：setImmediate 回调函数执行。
-- <el-text size="large" type="success">close callbacks 阶段</el-text>：关闭回调执行，如 socket.on('close', ...)。
+- <imp-text-success>check 阶段</imp-text-success>：setImmediate 回调函数执行。
+- <imp-text-success>close callbacks 阶段</imp-text-success>：关闭回调执行，如 socket.on('close', ...)。
 
   ![/440d3e8b-2e4e-aa67-8fe6-0efe6148d31a.png](/440d3e8b-2e4e-aa67-8fe6-0efe6148d31a.png)
 
-  <el-text size="large" type="warning">上面每个阶段都会去执行完当前阶段的任务队列，然后继续执行当前阶段的微任务队列，只有当前阶段所有微任务都执行完了，才会进入下个阶段。</el-text>这里也是与浏览器中逻辑差异较大的地方，不过浏览器不用区分这些阶段，也少了很多异步操作类型，所以不用刻意去区分两者区别。代码如下所示：
+  <imp-text-warning>上面每个阶段都会去执行完当前阶段的任务队列，然后继续执行当前阶段的微任务队列，只有当前阶段所有微任务都执行完了，才会进入下个阶段。</imp-text-warning>这里也是与浏览器中逻辑差异较大的地方，不过浏览器不用区分这些阶段，也少了很多异步操作类型，所以不用刻意去区分两者区别。代码如下所示：
 
 ::: code-group
 
@@ -429,15 +429,15 @@ setTimeout(() => {
 :::
 
 - 浏览器中运行每次宏任务完成后都会优先处理微任务，输出“timeout1”、“promise1”、“timeout2”、“promise2”。
-- NodeJS 中运行因为输出 timeout1 时，当前正处于 <el-text size="large" type="warning">timers 阶段</el-text>，所以会先将所有 timer 回调执行完之后再执行微任务队列，即输出“timeout1”、“timeout2”、“promise1”、“promise2”。
+- NodeJS 中运行因为输出 timeout1 时，当前正处于 <imp-text-warning>timers 阶段</imp-text-warning>，所以会先将所有 timer 回调执行完之后再执行微任务队列，即输出“timeout1”、“timeout2”、“promise1”、“promise2”。
   ::: warning
   _上面的差异可以用浏览器和 NodeJS 10 对比验证。是不是感觉有点反程序员？因此 NodeJS 在版本 11 之后，就修改了此处逻辑使其与浏览器尽量一致，也就是每个 timer 执行后都先去检查一下微任务队列，所以 NodeJS 11 之后的输出已经和浏览器一致了。_
   :::
 
-#### <el-text size="large" type="warning">nextTick、setImmediate 和 setTimeout</el-text>
+#### <imp-text-warning>nextTick、setImmediate 和 setTimeout</imp-text-warning>
 
 实际项目中我们常用 Promise 或者 setTimeout 来做一些需要延时的任务，比如一些耗时计算或者日志上传等，目的是不希望它的执行占用主线程的时间或者需要依赖整个同步代码执行完成后的结果。
-NodeJS 中的 process.nextTick() 和 setImmediate() 也有类似效果。<el-text size="large" type="warning">其中 setImmediate() 我们前面已经讲了是在 check 阶段执行的，而 process.nextTick() 的执行时机不太一样，它比 promise.then() 的执行还早，在同步任务之后，其他所有异步任务之前，会优先执行 nextTick。</el-text>可以想象是把 nextTick 的任务放到了当前循环的后面，与 promise.then() 类似，但比 promise.then() 更前面。意思就是在当前同步代码执行完成后，不管其他异步任务，先尽快执行 nextTick。如下面的代码，因此这里的 nextTick 其实应该更符合“setImmediate”这个命名才对。
+NodeJS 中的 process.nextTick() 和 setImmediate() 也有类似效果。<imp-text-warning>其中 setImmediate() 我们前面已经讲了是在 check 阶段执行的，而 process.nextTick() 的执行时机不太一样，它比 promise.then() 的执行还早，在同步任务之后，其他所有异步任务之前，会优先执行 nextTick。</imp-text-warning>可以想象是把 nextTick 的任务放到了当前循环的后面，与 promise.then() 类似，但比 promise.then() 更前面。意思就是在当前同步代码执行完成后，不管其他异步任务，先尽快执行 nextTick。如下面的代码，因此这里的 nextTick 其实应该更符合“setImmediate”这个命名才对。
 
 ::: code-group
 

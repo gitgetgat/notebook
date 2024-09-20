@@ -10,7 +10,7 @@
 - 计算属性不在 `data` 中，它是基于 `data` 或 `props` 中的数据通过计算得到的一个新值，这个新值根据已知值的变化而变化；
 - 在 `computed` 属性对象中定义计算属性的方法，和取 `data` 对象里的数据属性一样，以属性访问的形式调用；
 - 如果 `computed` 属性值是函数，那么默认会走 `get` 方法，必须要有一个返回值，函数的返回值就是属性的属性值；
-- `computed` 属性值默认会<el-text size="large" type="primary">缓存</el-text>计算结果，在重复的调用中，只要依赖数据不变，直接取缓存中的计算结果，只有<el-text size="large" type="primary">依赖型数据</el-text>发生<el-text size="large" type="primary">改变</el-text>，`computed` 才会重新计算；
+- `computed` 属性值默认会<imp-text-primary>缓存</imp-text-primary>计算结果，在重复的调用中，只要依赖数据不变，直接取缓存中的计算结果，只有<imp-text-primary>依赖型数据</imp-text-primary>发生<imp-text-primary>改变</imp-text-primary>，`computed` 才会重新计算；
 - 在 `computed` 中的，属性都有一个 `get` 和一个 `set` 方法，当数据变化时，调用 `set` 方法。
 
   ::: code-group

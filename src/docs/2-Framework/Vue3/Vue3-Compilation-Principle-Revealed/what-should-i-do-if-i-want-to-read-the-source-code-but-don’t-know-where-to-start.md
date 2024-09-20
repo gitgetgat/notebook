@@ -56,7 +56,7 @@
 
 这种情况你带着问题去 `debug` 查看源码，此时的源码对于你来说就不是一棵树了，而是围绕着这个问题的一条线。我们的目标也很单纯，只是将这条线上面的源码搞清楚就行了。当你把这个问题搞清楚了后，在你的脑子里面关于 vue 源码就有一条线了。
 
-还有一个进阶玩法，将 <el-text size="large" type="success">“通过 `debug` 源码把某个问题搞清楚的过程”</el-text>用自己的话说出来，这就形成了一篇优秀的源码文章
+还有一个进阶玩法，将 <imp-text-success>“通过 `debug` 源码把某个问题搞清楚的过程”</imp-text-success>用自己的话说出来，这就形成了一篇优秀的源码文章
 
 每个问题在我们脑子里都是一条关于 vue 源码的一条线，当我们搞清楚足够多问题时，这些线连到一起就形成了一棵 vue 源码树。
 
@@ -86,9 +86,9 @@
 
 - 第一个按钮 `Continue（继续）`：点击这个按钮后会让代码执行到下一个断点。
 
-- 第二个按钮 `Step Over（单步跳过）`：执行到下一条语句，如果下一条语句是函数，<el-text size="large" type="success">不会走进函数内部</el-text>。
+- 第二个按钮 `Step Over（单步跳过）`：执行到下一条语句，如果下一条语句是函数，<imp-text-success>不会走进函数内部</imp-text-success>。
 
-- 第三个按钮 `Step Into（单步调试）`：执行到下一条语句，如果下一条语句是函数，<el-text size="large" type="success">将会走进函数内部</el-text>。
+- 第三个按钮 `Step Into（单步调试）`：执行到下一条语句，如果下一条语句是函数，<imp-text-success>将会走进函数内部</imp-text-success>。
 
 - 第四个按钮 `Step Out（单步跳出）`：跳出当前函数内部，断点将会走到外部调用当前函数的地方。
 
@@ -98,9 +98,9 @@
 
 ![/94cd2999-065c-c25d-714f-ebcefb5f7fa5.png](/94cd2999-065c-c25d-714f-ebcefb5f7fa5.png)
 
-此时左侧的 <el-text size="large" type="warning">Call Stack</el-text> 调用栈就能派上用场了，他里面存了当前函数的所有调用栈。比如当前断点是停留在 `processDefineProps` 函数中，从 <el-text size="large" type="warning">Call Stack</el-text> 调用栈我们就能知道这个函数就是由 `compileScript` 调用的，而 `compileScript` 函数又是由 `resolveScript` 函数调用的。并且可以通过点击函数名就可以跳转到对应的函数中，并且恢复当时的上下文。
+此时左侧的 <imp-text-warning>Call Stack</imp-text-warning> 调用栈就能派上用场了，他里面存了当前函数的所有调用栈。比如当前断点是停留在 `processDefineProps` 函数中，从 <imp-text-warning>Call Stack</imp-text-warning> 调用栈我们就能知道这个函数就是由 `compileScript` 调用的，而 `compileScript` 函数又是由 `resolveScript` 函数调用的。并且可以通过点击函数名就可以跳转到对应的函数中，并且恢复当时的上下文。
 
-整个 <el-text size="large" type="warning">Call Stack</el-text> 调用栈是一条线，我们要找的问题的线头子就在这条线中。我们带着问题去 `debug` 源码的时候只需要将在 <el-text size="large" type="warning">Call Stack</el-text> 调用栈中，线头子后面的一系列函数逻辑搞清楚就行了。
+整个 <imp-text-warning>Call Stack</imp-text-warning> 调用栈是一条线，我们要找的问题的线头子就在这条线中。我们带着问题去 `debug` 源码的时候只需要将在 <imp-text-warning>Call Stack</imp-text-warning> 调用栈中，线头子后面的一系列函数逻辑搞清楚就行了。
 
 ## 运行时 `debug` 源码小技巧
 
@@ -108,9 +108,9 @@
 
 ![/baaca49d-ba83-9de1-63c6-33b5b616d46c.png](/baaca49d-ba83-9de1-63c6-33b5b616d46c.png)
 
-很简单在 <el-text size="large" type="warning">network</el-text> 面板中找到对应的请求，这里我想找的是 index.vue 文件。然后右键，在弹出的菜单中选择第一个 <el-text size="large" type="warning">Open In Sources Panel</el-text>。浏览器将会切换到 <el-text size="large" type="warning">source</el-text> 面板中，并且自动打开编译后的 index.vue 文件，然后我们就可以在这个文件中给对应的代码打断点。
+很简单在 <imp-text-warning>network</imp-text-warning> 面板中找到对应的请求，这里我想找的是 index.vue 文件。然后右键，在弹出的菜单中选择第一个 <imp-text-warning>Open In Sources Panel</imp-text-warning>。浏览器将会切换到 <imp-text-warning>source</imp-text-warning> 面板中，并且自动打开编译后的 index.vue 文件，然后我们就可以在这个文件中给对应的代码打断点。
 
-关于 `Continue`、`Step Over` 这几个按钮，还有 <el-text size="large" type="warning">Call Stack</el-text> 调用栈都是和编译时是一样的，在这里我们就不赘述了，欢迎补充其他小技巧。
+关于 `Continue`、`Step Over` 这几个按钮，还有 <imp-text-warning>Call Stack</imp-text-warning> 调用栈都是和编译时是一样的，在这里我们就不赘述了，欢迎补充其他小技巧。
 
 ## 总结
 

@@ -51,13 +51,13 @@
 
 ### CORS
 
-CORS 是一套机制，用于浏览器校验跨域请求。是 <el-text size="large" type="success">正统</el-text> 的跨域解决方案，因为同源策略的验证规则就是 <el-text size="large" type="success">CORS 规则</el-text>
+CORS 是一套机制，用于浏览器校验跨域请求。是 <imp-text-success>正统</imp-text-success> 的跨域解决方案，因为同源策略的验证规则就是 <imp-text-success>CORS 规则</imp-text-success>
 
 它的基本理念是：
 
-- 只要 <el-text size="large" type="success">服务器</el-text> 明确表示 <el-text size="large" type="success">允许</el-text>，则校验 <el-text size="large" type="success">通过</el-text>
+- 只要 <imp-text-success>服务器</imp-text-success> 明确表示 <imp-text-success>允许</imp-text-success>，则校验 <imp-text-success>通过</imp-text-success>
 
-- <el-text size="large" type="success">服务器</el-text> 明确 <el-text size="large" type="success">拒绝</el-text> 或 <el-text size="large" type="success">没有表示</el-text>，则校验 <el-text size="large" type="success">不通过</el-text>
+- <imp-text-success>服务器</imp-text-success> 明确 <imp-text-success>拒绝</imp-text-success> 或 <imp-text-success>没有表示</imp-text-success>，则校验 <imp-text-success>不通过</imp-text-success>
 
 使用 CORS 方案的前提：必须保证服务器是【自己人】
 
@@ -94,7 +94,7 @@ CORS 将请求分为两类：
 
   1. 发送预检请求
 
-     首先和服务器确认是否同源，预检请求的请求方法为 `OPTIONS` ，<el-text size="large" type="success">携带三个字段：</el-text>
+     首先和服务器确认是否同源，预检请求的请求方法为 `OPTIONS` ，<imp-text-success>携带三个字段：</imp-text-success>
 
      - `Origin：源`
      - `Access-Control-Request-Method：请求类型`

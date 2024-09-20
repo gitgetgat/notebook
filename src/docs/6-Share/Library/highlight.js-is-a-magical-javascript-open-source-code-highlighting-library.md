@@ -8,19 +8,19 @@
 
 `Highlight.js` 是一个开源的代码高亮插件，用于在 `HTML` 中高亮显示代码块。支持多种编程语言的代码高亮显示，具有自动语言检测功能，并且可以用于任何 `HTML` 标记。`Highlight.js` 具有零依赖、轻量级、快速执行等特点，同时提供了丰富的主题和语言支持，使得代码在网页上的展示更加美观和易于阅读。
 
-<el-text size="large" type="danger">特点</el-text>
+<imp-text-danger>特点</imp-text-danger>
 
-- <el-text size="large" type="danger">多语言支持</el-text>：支持超过 `200` 种编程和标记语言，包括但不限于 `HTML`, `CSS`, `JavaScript`, `Python`, `Ruby`, `Java`, `C++` 等。
+- <imp-text-danger>多语言支持</imp-text-danger>：支持超过 `200` 种编程和标记语言，包括但不限于 `HTML`, `CSS`, `JavaScript`, `Python`, `Ruby`, `Java`, `C++` 等。
 
-- <el-text size="large" type="danger">动态语言检测</el-text>：能够自动识别代码块的语言，无需手动指定。
+- <imp-text-danger>动态语言检测</imp-text-danger>：能够自动识别代码块的语言，无需手动指定。
 
-- <el-text size="large" type="danger">丰富的主题</el-text>：提供多种预设主题，包括明亮、暗色、复古、现代等风格，同时也支持自定义主题。
+- <imp-text-danger>丰富的主题</imp-text-danger>：提供多种预设主题，包括明亮、暗色、复古、现代等风格，同时也支持自定义主题。
 
-- <el-text size="large" type="danger">轻量级</el-text>：库文件体积小，加载快速，对网页性能影响小。
+- <imp-text-danger>轻量级</imp-text-danger>：库文件体积小，加载快速，对网页性能影响小。
 
-- <el-text size="large" type="danger">易于使用</el-text>：简单的 `API` 使得在网页中集成和使用非常便捷。
+- <imp-text-danger>易于使用</imp-text-danger>：简单的 `API` 使得在网页中集成和使用非常便捷。
 
-- <el-text size="large" type="danger">无依赖</el-text>：不需要其他库或框架支持，可以独立使用。
+- <imp-text-danger>无依赖</imp-text-danger>：不需要其他库或框架支持，可以独立使用。
 
 ## 快速开始
 
