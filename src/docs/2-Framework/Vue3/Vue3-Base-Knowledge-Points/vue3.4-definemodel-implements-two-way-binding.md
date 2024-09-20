@@ -117,7 +117,7 @@ watch(model, () => {
 
 看了上面的代码后你应该了解到了为什么可以在子组件内直接修改 `defineModel` 的返回值后父组件对应的变量也会同步更新了吧。我们修改的其实是 `defineModel` 返回的 `ref` 变量，而不是直接修改 `props` 中的 `modelValue`。实现方式还是和 `vue3.4` 以前实现双向绑定一样的，只是 `defineModel` 这个宏帮我们将以前的那些繁琐的代码给封装到内部实现了。
 
-其实 `defineModel` 的源码中是使用 `customRef` 和 `watchSyncEffect` 去实现的，我这里是为了让大家能够更容易的明白 `defineModel` 的实现原理才举的 `ref` 和 `watch` 的例子。如果大家对 `defineModel` 的源码感兴趣，可以看这篇 [defineModel 如何简化 props 和 emit 自定义事件的 ?](../Vue3-Source-Code-Debug/how-definemodel-simplifies-props-and-emits-custom-events.md) 文章。
+其实 `defineModel` 的源码中是使用 `customRef` 和 `watchSyncEffect` 去实现的，我这里是为了让大家能够更容易的明白 `defineModel` 的实现原理才举的 `ref` 和 `watch` 的例子。如果大家对 `defineModel` 的源码感兴趣，可以看这篇 [defineModel 如何简化 props 和 emit 自定义事件的 ?](../Vue3-Compilation-Principle-Revealed/how-definemodel-simplifies-props-and-emits-custom-events.md) 文章。
 
 ### `defineModel` 如何定义 `type`、`default` 等
 
