@@ -1772,6 +1772,86 @@ const LIBRARY_LABELS = [
       tags: ['Library']
     },
   },
+  {
+    zh: `date-fns 一款神奇的 JavaScript 开源模块化日期工具库`,
+    en: `date-fns-is-a-magical-javascript-open-source-modular-date-tool-library`,
+    parentDir: ['Library'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Library']
+    },
+  },
+  {
+    zh: `Fingerprintjs 告别隐身 浏览器指纹识别技术`,
+    en: `fingerprintjs-say-goodbye-to-invisibility-browser-fingerprint-recognition-technology`,
+    parentDir: ['Library'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Library']
+    },
+  },
+  {
+    zh: `granimjs 给网页背景 元素 文字添加交互式的渐变效果`,
+    en: `granimjs-adds-interactive-gradient-effects-to-web-page-backgrounds-elements-and-text`,
+    parentDir: ['Library'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Library']
+    },
+  },
+  {
+    zh: `Nivo 一款基于 D3 和 React 的神奇 JavaScript 开源数据可视化库`,
+    en: `nivo-is-a-magical-javascript-open-source-data-visualization-library-based-on-d3-and-react`,
+    parentDir: ['Library'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Library']
+    },
+  },
+  {
+    zh: `Vue Draggable Plus 效率与灵活性的双重提升`,
+    en: `vue-draggable-plus-doubles-the-efficiency-and-flexibility`,
+    parentDir: ['Library'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Library']
+    },
+  },
+  {
+    zh: `Swapy 轻量级页面拖拽小工具`,
+    en: `swapy-lightweight-page-drag-widget`,
+    parentDir: ['Library'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Library']
+    },
+  },
+  {
+    zh: `Plate 一款 React 高性能富文本编辑器`,
+    en: `plate-is-a-react-high-performance-rich-text-editor`,
+    parentDir: ['Library'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Library']
+    },
+  },
+  {
+    zh: ``,
+    en: ``,
+    parentDir: ['Library'],
+    meta: {
+      star: 5,
+      state: '已完成',
+      tags: ['Library']
+    },
+  },
 ]
 
 const VSCODE_PLUGINS_LABELS = [
@@ -2854,6 +2934,16 @@ const VUE3_COMPILATION_PRINCIPLE_REVEALED_LABELS = [
     parentDir: ['Vue3-Compilation-Principle-Revealed'],
     meta: {
       star: 4,
+      state: '已完成',
+      tags: ['Vue3', "源码"]
+    },
+  },
+  {
+    zh: `彻底搞清楚 vue3 的 defineExpose 宏是如何暴露方法给父组件使用`,
+    en: `thoroughly-understand-how-vue3-defineexpose-macro-exposes-methods-to-parent-components`,
+    parentDir: ['Vue3-Compilation-Principle-Revealed'],
+    meta: {
+      star: 5,
       state: '已完成',
       tags: ['Vue3', "源码"]
     },
