@@ -45,7 +45,7 @@ import {
   defineComponent as _defineComponent,
   openBlock as _openBlock,
   toDisplayString as _toDisplayString,
-  ref
+  ref,
 } from "/node_modules/.vite/deps/vue.js?v=23bfe016";
 import "/src/App.vue?vue&type=style&index=0&scoped=7a7a37b1&lang.css";
 
@@ -56,7 +56,7 @@ const _sfc_main = _defineComponent({
     const msg = ref("hello word");
     const __returned__ = { msg };
     return __returned__;
-  }
+  },
 });
 
 const _hoisted_1 = { class: "msg" };
@@ -91,7 +91,7 @@ export default _sfc_main;
 
 要在 `node` 端打断点，我们需要启动一个 `debug` 终端。这里以 `vscode` 举例，首先我们需要打开终端，然后点击终端中的 `+` 号旁边的下拉箭头，在下拉中点击 `Javascript Debug Terminal` 就可以启动一个 `debug` 终端。
 
-![/ec452644-3184-27e5-c7ce-3989ccf807b4.png](/ec452644-3184-27e5-c7ce-3989ccf807b4.png)
+![/how-to-open-javascript-debug-terminal-in-vscode.png](/how-to-open-javascript-debug-terminal-in-vscode.png)
 
 假如 `vue` 文件编译为 `js` 文件是一个毛线团，那么他的线头一定是 `vite.config.ts` 文件中使用 `@vitejs/plugin-vue` 的地方。通过这个线头开始 `debug` 我们就能够梳理清楚完整的工作流程。
 
@@ -106,7 +106,7 @@ export default _sfc_main;
 ```js
 function vuePlugin(rawOptions = {}) {
   const options = shallowRef({
-    compiler: null
+    compiler: null,
     // 省略...
   });
 
@@ -135,7 +135,7 @@ function vuePlugin(rawOptions = {}) {
     },
     transform(code, id, opt) {
       // ..
-    }
+    },
   };
 }
 ```
@@ -260,7 +260,7 @@ async function transformMain(code, filename, options) {
   let resolvedCode = output.join("\n");
 
   return {
-    code: resolvedCode
+    code: resolvedCode,
   };
 }
 ```
@@ -292,7 +292,7 @@ function createDescriptor(
   const { descriptor, errors } = compiler.parse(source, {
     filename,
     sourceMap,
-    templateParseOptions: template?.compilerOptions
+    templateParseOptions: template?.compilerOptions,
   });
   const normalizedPath = slash(path.normalize(path.relative(root, filename)));
   descriptor.id = getHash(normalizedPath + (isProduction ? source : ""));
@@ -395,7 +395,7 @@ async function genScriptCode(
   }
   return {
     code: scriptCode,
-    map
+    map,
   };
 }
 ```
@@ -419,7 +419,7 @@ function resolveScript(descriptor, options, ssr, customElement) {
     genDefaultAs: canInlineMain(descriptor, options)
       ? scriptIdentifier
       : void 0,
-    customElement
+    customElement,
   });
   return resolved;
 }
@@ -498,7 +498,7 @@ async function genScriptCode(
   }
   return {
     code: scriptCode,
-    map
+    map,
   };
 }
 ```
@@ -579,7 +579,7 @@ function transformTemplateInMain(
     code: result.code.replace(
       /\nexport (function|const) (render|ssrRender)/,
       "\n$1 _sfc_$2"
-    )
+    ),
   };
 }
 ```
@@ -594,7 +594,7 @@ function transformTemplateInMain(
 function compile(code, descriptor, options, pluginContext, ssr, customElement) {
   const result = options.compiler.compileTemplate({
     ...resolveTemplateCompilerOptions(descriptor, options, ssr),
-    source: code
+    source: code,
   });
   return result;
 }
@@ -750,15 +750,15 @@ async function transformStyle(
             map: {
               from: filename,
               inline: false,
-              annotation: false
-            }
-          }
+              annotation: false,
+            },
+          },
         }
-      : {})
+      : {}),
   });
   return {
     code: result.code,
-    map
+    map,
   };
 }
 ```
@@ -882,13 +882,13 @@ async function transformMain(
   return {
     code: resolvedCode,
     map: resolvedMap || {
-      mappings: ""
+      mappings: "",
     },
     meta: {
       vite: {
-        lang: descriptor.script?.lang || descriptor.scriptSetup?.lang || "js"
-      }
-    }
+        lang: descriptor.script?.lang || descriptor.scriptSetup?.lang || "js",
+      },
+    },
   };
 }
 ```

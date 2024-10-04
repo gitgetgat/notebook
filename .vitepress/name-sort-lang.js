@@ -1843,6 +1843,16 @@ const LIBRARY_LABELS = [
     },
   },
   {
+    zh: `mo.js 轻量级的 JavaScript 动画库`,
+    en: `mo.js-lightweight-javascript-animation-library`,
+    parentDir: ["Library"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["Library"],
+    },
+  },
+  {
     zh: ``,
     en: ``,
     parentDir: ["Library"],
@@ -2969,6 +2979,26 @@ const VUE3_COMPILATION_PRINCIPLE_REVEALED_LABELS = [
     },
   },
   {
+    zh: `原来 vue3 的 setup 语法糖中组件无需组册因为这个`,
+    en: `it-turns-out-that-the-components-in-the-setup-syntax-sugar-of-vue3-do-not-need-to-be-grouped-because-of-this`,
+    parentDir: ["Vue3-Compilation-Principle-Revealed"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["Vue3", "源码"],
+    },
+  },
+  {
+    zh: `Vue3 中的 v-bind 指令的工作原理`,
+    en: `how-the-v-bind-directive-works-in-vue3`,
+    parentDir: ["Vue3-Compilation-Principle-Revealed"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["Vue3", "源码"],
+    },
+  },
+  {
     zh: "vue3 的 scoped 如何将 style 处理为 data-v-x 格式",
     en: `how-does-vue3's-scoped-handle-style-in-data-v-x-format`,
     parentDir: ["Vue3-Compilation-Principle-Revealed"],
@@ -2994,7 +3024,7 @@ const VUE3_COMPILATION_PRINCIPLE_REVEALED_LABELS = [
     parentDir: ["Vue3-Compilation-Principle-Revealed"],
     meta: {
       star: 5,
-      state: "未完成",
+      state: "已完成",
       tags: ["Vue3", "源码"],
     },
   },

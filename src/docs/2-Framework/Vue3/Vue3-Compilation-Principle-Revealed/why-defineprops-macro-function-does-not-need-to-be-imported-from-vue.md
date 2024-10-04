@@ -21,7 +21,7 @@
 
 <script setup lang="ts">
 defineProps({
-  content: String
+  content: String,
 });
 </script>
 ```
@@ -45,7 +45,7 @@ const count = ref(10);
 
 if (count.value) {
   defineProps({
-    content: String
+    content: String,
   });
 }
 </script>
@@ -63,7 +63,7 @@ if (count.value) {
 
 一样的套路，首先我们在 `vscode` 的打开一个 `debug` 终端。
 
-![/28c13cf3-f629-14ba-6f6f-24806abd7f3c.png](/28c13cf3-f629-14ba-6f6f-24806abd7f3c.png)
+![/how-to-open-javascript-debug-terminal-in-vscode.png](/how-to-open-javascript-debug-terminal-in-vscode.png)
 
 然后在 `node_modules` 中找到 `vue/compiler-sfc` 包的 `compileScript` 函数打上断点， `compileScript` 函数位置在 `/node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js`。在 `debug` 终端上面执行 `yarn dev` 后在浏览器中打开对应的页面，比如：`http://localhost:5173/` 。此时断点就会走到 `compileScript` 函数中，我们在 `debug` 中先来看看 `compileScript` 函数的第一个入参 `sfc` 。`sfc.filename` 的值为当前编译的 `vue` 文件路径。由于每编译一个 `vue` 文件都要走到这个 `debug` 中，现在我们只想 `debug` 看看 `common-child.vue` 文件，所以为了方便我们在 `compileScript` 中加了下面这样一段代码，并且去掉了在 `compileScript` 函数中加的断点，这样就只有编译 `common-child.vue` 文件时会走进断点。
 
@@ -78,7 +78,7 @@ if (count.value) {
 ```vue
 <script setup lang="ts">
 defineProps({
-  content: String
+  content: String,
 });
 </script>
 ```
@@ -137,7 +137,7 @@ function compileScript(sfc, options) {
 
   return {
     //....
-    content: ctx.s.toString()
+    content: ctx.s.toString(),
   };
 }
 ```
@@ -305,7 +305,7 @@ function processDefineProps(ctx, node, declId) {
 
 ```js
 const props = defineProps({
-  foo: String
+  foo: String,
 });
 
 const props = defineProps(["foo", "bar"]);
@@ -468,7 +468,7 @@ ctx.s.appendRight(endOffset, `})`);
 
 return {
   //....
-  content: ctx.s.toString()
+  content: ctx.s.toString(),
 };
 ```
 
@@ -507,7 +507,7 @@ import { ref } from "vue";
 const count = ref(10);
 if (count.value) {
   defineProps({
-    content: String
+    content: String,
   });
 }
 </script>

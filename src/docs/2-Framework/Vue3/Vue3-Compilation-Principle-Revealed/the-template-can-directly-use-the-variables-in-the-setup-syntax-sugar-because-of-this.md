@@ -116,7 +116,7 @@ export default _sfc_main;
 
 首先我们需要启动一个 <imp-text-danger>debug 终端</imp-text-danger> 。这里以 vscode 举例，打开终端然后点击终端中的 `+` 号旁边的下拉箭头，在下拉中点击 <imp-text-danger>Javascript Debug Terminal</imp-text-danger> 就可以启动一个 <imp-text-danger>debug 终端</imp-text-danger> 。
 
-![/98df392f-afe9-10ad-cd80-09bbbddc2915.png](/98df392f-afe9-10ad-cd80-09bbbddc2915.png)
+![/how-to-open-javascript-debug-terminal-in-vscode.png](/how-to-open-javascript-debug-terminal-in-vscode.png)
 
 然后在 `node_modules` 中找到 `vue/compiler-sfc` 包的 `compileScript` 函数打上断点，`compileScript` 函数位置在 `/node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js`。接下来我们先看看简化后的 `compileScript` 函数源码。
 
@@ -807,7 +807,7 @@ ctx.s.appendRight(endOffset, `})`);
 
 从上图中可以看到此时的 `setup` 函数基本已经生成完了。
 
-### 插入 import vue 语句
+### 第七部分: 插入 import vue 语句
 
 上一步生成的 `code` 代码字符串其实还有一个问题，在代码中使用了 `_defineComponent` 函数，但是没有从任何地方去 `import` 导入。
 

@@ -64,7 +64,7 @@
 
 还是一样的套路启动一个 `debug` 终端。这里以 `vscode` 举例，打开终端然后点击终端中的 `+` 号旁边的下拉箭头，在下拉中点击 `Javascript Debug Terminal` 就可以启动一个 `debug` 终端。
 
-![/8ba86c4b-00e4-eaa3-261b-ecdfd5842083.png](/8ba86c4b-00e4-eaa3-261b-ecdfd5842083.png)
+![/how-to-open-javascript-debug-terminal-in-vscode.png](/how-to-open-javascript-debug-terminal-in-vscode.png)
 
 假如 `vue` 文件编译为 `js` 文件是一个毛线团，那么他的线头一定是 `vite.config.ts` 文件中使用 `@vitejs/plugin-vue` 的地方。通过这个线头开始 `debug` 我们就能够梳理清楚完整的工作流程。
 
@@ -83,7 +83,7 @@ function vuePlugin(rawOptions = {}) {
     // ...省略其他插件钩子函数
     transform(code, id, opt) {
       // ..
-    }
+    },
   };
 }
 ```
@@ -164,7 +164,7 @@ async function transformMain(code, filename, options) {
   const output = [scriptCode, templateCode, stylesCode];
   let resolvedCode = output.join("\n");
   return {
-    code: resolvedCode
+    code: resolvedCode,
   };
 }
 ```
@@ -188,7 +188,7 @@ function createDescriptor(
   const { descriptor, errors } = compiler.parse(source, {
     filename,
     sourceMap,
-    templateParseOptions: template?.compilerOptions
+    templateParseOptions: template?.compilerOptions,
   });
   const normalizedPath = slash(path.normalize(path.relative(root, filename)));
   descriptor.id = getHash(normalizedPath + (isProduction ? source : ""));
@@ -317,11 +317,11 @@ async function transformStyle(code, descriptor, index, options) {
     filename: descriptor.filename,
     id: `data-v-${descriptor.id}`,
     source: code,
-    scoped: block.scoped
+    scoped: block.scoped,
   });
 
   return {
-    code: result.code
+    code: result.code,
   };
 }
 ```
@@ -352,7 +352,7 @@ async function transformStyle(code, descriptor, index, options) {
 function compileStyleAsync(options) {
   return doCompileStyle({
     ...options,
-    isAsync: true
+    isAsync: true,
   });
 }
 ```
@@ -439,7 +439,7 @@ const scopedPlugin = (id = "") => {
     postcssPlugin: "vue-sfc-scoped",
     Rule(rule) {
       processRule(id, rule);
-    }
+    },
     // ...省略
   };
 };
@@ -514,7 +514,7 @@ function rewriteSelector(id, selector) {
       attribute: idToAdd,
       value: idToAdd,
       raws: {},
-      quoteMark: `"`
+      quoteMark: `"`,
     })
   );
 }

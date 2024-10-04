@@ -39,16 +39,16 @@ import { ref } from "vue";
 const msgList = ref([
   {
     id: 1,
-    value: ""
+    value: "",
   },
   {
     id: 2,
-    value: ""
+    value: "",
   },
   {
     id: 3,
-    value: ""
-  }
+    value: "",
+  },
 ]);
 </script>
 ```
@@ -57,7 +57,7 @@ const msgList = ref([
 
 [通过 debug 搞清楚.vue 文件怎么变成.js 文件](./use-debug-to-figure-out-how-a.vue-file-becomes-a.js-file.md) 文章中我们已经知道了在使用 `vite` 的情况下 `template` 编译为 `render` 函数是在 `node` 端完成的。所以我们需要启动一个 `debug` 终端，才可以在 `node` 端打断点。这里以 vscode 举例，首先我们需要打开终端，然后点击终端中的 `+` 号旁边的下拉箭头，在下拉中点击 `Javascript Debug Terminal` 就可以启动一个 debug 终端。
 
-![/56e7af90-da9a-3176-0341-7704bc0db59d.png](/56e7af90-da9a-3176-0341-7704bc0db59d.png)
+![/how-to-open-javascript-debug-terminal-in-vscode.png](/how-to-open-javascript-debug-terminal-in-vscode.png)
 
 `compileTemplate` 函数在 `node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js` 文件中，找到 `compileTemplate` 函数打上断点，然后在 `debug 终端` 中执行 `yarn dev`（这里是以 vite 举例）。在浏览器中访问 `http://localhost:5173/`，此时断点就会走到 `compileTemplate` 函数中了。在我们这个场景中 `compileTemplate` 函数简化后的代码非常简单，代码如下：
 
@@ -118,7 +118,7 @@ function compile(src, options = {}) {
         {},
         DOMDirectiveTransforms,
         options.directiveTransforms || {}
-      )
+      ),
     })
   );
 }
@@ -153,7 +153,7 @@ const DOMDirectiveTransforms = {
   text: transformVText,
   model: transformModel,
   on: transformOn,
-  show: transformShow
+  show: transformShow,
 };
 ```
 
@@ -183,13 +183,13 @@ function baseCompile(
     Object.assign({}, options, {
       nodeTransforms: [
         ...nodeTransforms,
-        ...(options.nodeTransforms || []) // user transforms
+        ...(options.nodeTransforms || []), // user transforms
       ],
       directiveTransforms: Object.assign(
         {},
         directiveTransforms,
         options.directiveTransforms || {} // user transforms
-      )
+      ),
     })
   );
 
@@ -315,13 +315,13 @@ transform(
   Object.assign({}, options, {
     nodeTransforms: [
       ...nodeTransforms,
-      ...(options.nodeTransforms || []) // user transforms
+      ...(options.nodeTransforms || []), // user transforms
     ],
     directiveTransforms: Object.assign(
       {},
       directiveTransforms,
       options.directiveTransforms || {} // user transforms
-    )
+    ),
   })
 );
 ```
@@ -349,16 +349,16 @@ import { ref } from "vue";
 const msgList = ref([
   {
     id: 1,
-    value: ""
+    value: "",
   },
   {
     id: 2,
-    value: ""
+    value: "",
   },
   {
     id: 3,
-    value: ""
-  }
+    value: "",
+  },
 ]);
 </script>
 ```
@@ -427,7 +427,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
             "input",
             {
               key: item.id,
-              "onUpdate:modelValue": ($event) => (item.value = $event)
+              "onUpdate:modelValue": ($event) => (item.value = $event),
             },
             null,
             8,

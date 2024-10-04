@@ -22,16 +22,16 @@ import { ref } from "vue";
 const msgList = ref([
   {
     id: 1,
-    value: ""
+    value: "",
   },
   {
     id: 2,
-    value: ""
+    value: "",
   },
   {
     id: 3,
-    value: ""
-  }
+    value: "",
+  },
 ]);
 const title = ref("hello word");
 </script>
@@ -51,7 +51,7 @@ const title = ref("hello word");
 
 从上一篇文章我们知道了 `transform` 函数是在 node 端执行的，所以我们需要启动一个 `debug` 终端，才可以在 node 端打断点。这里以 vscode 举例，首先我们需要打开终端，然后点击终端中的 `+` 号旁边的下拉箭头，在下拉中点击 `Javascript Debug Terminal` 就可以启动一个 `debug` 终端。
 
-![/2b2f7df7-7c70-4034-00db-11a0d01473c3.png](/2b2f7df7-7c70-4034-00db-11a0d01473c3.png)
+![/how-to-open-javascript-debug-terminal-in-vscode.png](/how-to-open-javascript-debug-terminal-in-vscode.png)
 
 接着在 `debug` 终端中执行 `yarn dev`（这里是以 vite 举例）。在浏览器中访问 `http://localhost:5173/`，此时断点就会走到 `transform` 函数中了。我们在 `debug` 终端中来看看调用 `transform` 函数时传入的 root 变量，如下图：
 
@@ -148,7 +148,7 @@ function createTransformContext(
   root,
   {
     nodeTransforms = [],
-    directiveTransforms = {}
+    directiveTransforms = {},
     // ...省略
   }
 ) {
@@ -174,7 +174,7 @@ function createTransformContext(
     },
     removeNode(node) {
       // 删除当前节点
-    }
+    },
     // ...省略
   };
   return context;
@@ -352,7 +352,7 @@ const directiveTransforms = {
   text: transformVText,
   model: transformModel,
   on: transformOn,
-  show: transformShow
+  show: transformShow,
 };
 ```
 

@@ -58,7 +58,7 @@
 
 首先我们需要启动一个 `debug` 终端。这里以 `vscode` 举例，打开终端然后点击终端中的+号旁边的下拉箭头，在下拉中点击 `Javascript Debug Terminal` 就可以启动一个 `debug` 终端。
 
-![/2ba9b51f-3088-a284-73c4-a66d0012afbd.png](/2ba9b51f-3088-a284-73c4-a66d0012afbd.png)
+![/how-to-open-javascript-debug-terminal-in-vscode.png](/how-to-open-javascript-debug-terminal-in-vscode.png)
 
 接着我们需要给 `transformMain` 函数打个断点， `transformMain` 函数的位置在 `node_modules/@vitejs/plugin-vue/dist/index.mjs`。
 
@@ -100,7 +100,7 @@ async function transformMain(code, filename, options) {
   let resolvedCode = output.join("\n");
 
   return {
-    code: resolvedCode
+    code: resolvedCode,
   };
 }
 ```
@@ -233,7 +233,7 @@ function createBaseVNode(type, props, children) {
     type,
     props,
     scopeId: currentScopeId,
-    children
+    children,
     // ...省略
   };
   return vnode;
@@ -508,7 +508,7 @@ function hostSetScopeId(el, id) {
 
 ## 总结
 
-这篇文章讲了当使用了 `scoped` 后，`vue` 是如何给 html 增加自定义属性 `data-v-x`。
+这篇文章讲了当使用了 `scoped` 后，`vue` 是如何给 `html` 增加自定义属性 `data-v-x`。
 
 首先在编译时会根据当前 `vue` 文件的路径进行加密算法生成一个 `id`，这个 `id` 就是自定义属性 `data-v-x` 中的 `x` 。
 

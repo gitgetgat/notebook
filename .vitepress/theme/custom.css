@@ -220,3 +220,7 @@
     min-width: 260px;
   }
 }
+
+.vp-doc p img{
+   margin: 0 auto;
+}

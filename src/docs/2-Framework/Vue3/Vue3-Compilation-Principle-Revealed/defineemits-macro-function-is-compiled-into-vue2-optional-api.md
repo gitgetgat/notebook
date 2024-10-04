@@ -26,8 +26,8 @@ export default {
   methods: {
     handleClick() {
       this.$emit("enlarge-text");
-    }
-  }
+    },
+  },
 };
 </script>
 ```
@@ -67,7 +67,7 @@ function handleClick() {
 
 所以我们将断点打在 `vue/compiler-sfc` 包的 `compileScript` 函数中，一样的套路，首先我们在 `vscode` 的打开一个 `debug` 终端。
 
-![/4143bd1e-431c-6327-2847-8b47ce8e6f62.png](/4143bd1e-431c-6327-2847-8b47ce8e6f62.png)
+![/how-to-open-javascript-debug-terminal-in-vscode.png](/how-to-open-javascript-debug-terminal-in-vscode.png)
 
 然后在 `node_modules` 中找到 `vue/compiler-sfc` 包的 `compileScript` 函数打上断点，`compileScript` 函数位置在 `/node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js`。在 `debug` 终端上面执行 `yarn dev` 后在浏览器中打开对应的页面，比如：`http://localhost:5173/` 。此时断点就会走到 `compileScript` 函数中，由于每编译一个 `vue` 文件都要走到这个 debug 中，现在我们只想 `debug` 看看 `composition-child.vue` 文件，也就是我们前面举的 `vue3` 的组合式语法的例子。所以为了方便我们在 `compileScript` 中加了下面这样一段代码，并且去掉了在 `compileScript` 函数中加的断点，这样就只有编译 `composition-child.vue` 文件时会走进断点。加的这段代码中的 `sfc.fileName` 就是文件路径的意思，后面我们会讲。
 
@@ -155,7 +155,7 @@ function compileScript(sfc, options) {
 
   return {
     //....
-    content: ctx.s.toString()
+    content: ctx.s.toString(),
   };
 }
 ```
@@ -179,7 +179,7 @@ function compileScript(sfc, options) {
   // ...省略
   return {
     //....
-    content: ctx.s.toString()
+    content: ctx.s.toString(),
   };
 }
 ```
@@ -299,7 +299,7 @@ function compileScript(sfc, options) {
 ```js
 // 表达式语句
 defineProps({
-  content: String
+  content: String,
 });
 
 // 变量声明语句
@@ -400,7 +400,7 @@ function processDefineEmits(ctx, node, declId) {
 
 ```js
 const props = defineEmits({
-  "enlarge-text": null
+  "enlarge-text": null,
 });
 
 const emits = defineEmits(["enlarge-text"]);
@@ -564,7 +564,7 @@ ctx.s.appendRight(endOffset, `})`);
 
 return {
   //....
-  content: ctx.s.toString()
+  content: ctx.s.toString(),
 };
 ```
 
@@ -630,7 +630,7 @@ function setupStatefulComponent(instance, isSSR) {
     setup.length > 1 ? createSetupContext(instance) : null);
   const setupResult = callWithErrorHandling(setup, instance, 0, [
     true ? shallowReadonly(instance.props) : instance.props,
-    setupContext
+    setupContext,
   ]);
 }
 ```
@@ -653,7 +653,7 @@ function createSetupContext(instance) {
     get emit() {
       return (event, ...args) => instance.emit(event, ...args);
     },
-    expose
+    expose,
   });
 }
 ```

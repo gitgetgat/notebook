@@ -66,7 +66,7 @@ p 标签绑定了响应式变量 `msg`，点击 button 按钮时会将 `msg` 变
 
 首先我们需要启动一个 `debug` 终端，才可以在 node 端打断点。这里以 vscode 举例，首先我们需要打开终端，然后点击终端中的 `+` 号旁边的下拉箭头，在下拉中点击 `Javascript Debug Terminal` 就可以启动一个 `debug` 终端。
 
-![/9aa857b8-ae5f-76be-2e03-da1e54a78cac.png](/9aa857b8-ae5f-76be-2e03-da1e54a78cac.png)
+![/how-to-open-javascript-debug-terminal-in-vscode.png](/how-to-open-javascript-debug-terminal-in-vscode.png)
 
 然后给 `transformElement` 函数打个断点，`transformElement` 函数在 <imp-text-success>node_modules/@vue/compiler-core/dist/compiler-core.cjs.js</imp-text-success> 文件中。
 
@@ -251,14 +251,14 @@ import {
   createElementVNode as _createElementVNode,
   defineComponent as _defineComponent,
   openBlock as _openBlock,
-  toDisplayString as _toDisplayString
+  toDisplayString as _toDisplayString,
 } from "/node_modules/.vite/deps/vue.js?v=23bfe016";
 
 const _sfc_main = _defineComponent({
   __name: "index",
   setup(__props, { expose: __expose }) {
     // ...省略
-  }
+  },
 });
 
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -277,7 +277,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
         "button",
         { onClick: $setup.handleChange },
         "change msg"
-      )
+      ),
     ])
   );
 }

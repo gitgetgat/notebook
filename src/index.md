@@ -73,16 +73,16 @@ export default {
   props: {
     type: {
       type: String,
-      default: "self"
+      default: "self",
     },
     eleId: {
       type: String,
-      default: "myPlayer"
+      default: "myPlayer",
     },
     src: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
   setup(props) {
     const { eleId, src } = toRefs(props);
@@ -90,7 +90,7 @@ export default {
     onMounted(() => {
       const player = new Plyr(`#${eleId.value}`);
     });
-  }
+  },
 };
 </script>
 
@@ -119,16 +119,16 @@ export default {
   props: {
     type: {
       type: String,
-      default: "self"
+      default: "self",
     },
     eleId: {
       type: String,
-      default: "myPlayer"
+      default: "myPlayer",
     },
     src: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
   setup(props) {
     let Plyr = null;
@@ -140,7 +140,7 @@ export default {
         const player = new Plyr(`#${eleId.value}`);
       });
     });
-  }
+  },
 };
 </script>
 
@@ -174,7 +174,7 @@ export default {
 ```js [.vitepress/config.js]
 import { defineConfig } from "vitepress";
 export default defineConfig({
-  base: "/notebook/" //指定资源基础路径 // [!code focus]
+  base: "/notebook/", //指定资源基础路径 // [!code focus]
 });
 ```
 
@@ -201,6 +201,51 @@ const pdfUrl = "/notebook/你不知道的JavaScript（上卷）.pdf";
 
 升级 node 版本到 22 以上
 
+### vitepress 打包构建时引用第三方包出问题
+
+![/f2e882b9-dfe7-761e-9150-7c9c3bfd53f1.png](/f2e882b9-dfe7-761e-9150-7c9c3bfd53f1.png)
+
+这个时候要通过 script 标签动态加载 CDN 文件：
+
+::: code-group
+
+```vue
+<script setup>
+import { onMounted, ref } from "vue";
+
+const scriptLoaded = ref(false);
+
+const loadScript = async (src, callback) => {
+  if (!scriptLoaded.value) {
+    const script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = src;
+    script.onload = () => {
+      console.log("Script loaded successfully.");
+      scriptLoaded.value = true;
+      callback();
+    };
+    script.onerror = () => {
+      console.error("Script loading error.");
+    };
+    document.head.appendChild(script);
+  } else {
+    console.log("Script already loaded.");
+  }
+};
+
+function fn() {
+  // 业务逻辑
+}
+
+onMounted(() => {
+  loadScript("https://cdn.jsdelivr.net/npm/@mojs/core", fn);
+});
+</script>
+```
+
+:::
+
 ### vitepress 打包构建时 pdf 等不在默认支持的静态文件需要一起打包
 
 要明确一点，VitePress 不能展示 PDF 的原因是在 build 打包时，除图像、媒体和字体文件外的静态资源要放在 public 下。这是因为 VitePress 默认将静态资源放在 public 目录下，而 PDF 文件并不在这个范围内，所以在构建时会出现问题。
@@ -221,8 +266,8 @@ export default {
   // ...
   optimizeDeps: {
     include: ["pdf"], // 将pdf文件添加到include数组中
-    exclude: [] // 排除其他不需要优化的文件类型
-  }
+    exclude: [], // 排除其他不需要优化的文件类型
+  },
   // ...
 };
 ```

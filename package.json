@@ -18,6 +18,7 @@
     "@ewizardjs/upath": "^3.0.0",
     "@fullcalendar/core": "^6.1.15",
     "@fullcalendar/vue3": "^6.1.15",
+    "@mojs/core": "^1.7.1",
     "element-plus": "^2.7.8",
     "fullcalendar": "^6.1.15",
     "gridstack": "^10.3.1",

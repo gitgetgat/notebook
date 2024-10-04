@@ -76,7 +76,7 @@
 
 想要在编译时 `debug` 源码，首先我们需要启动一个 `debug` 终端。这里以 vscode 举例，打开终端然后点击终端中的 `+` 号旁边的下拉箭头，在下拉中点击 `Javascript Debug Terminal` 就可以启动一个 `debug` 终端。
 
-![/12523372-7638-a9b7-f7ef-98998e78a0a2.png](/12523372-7638-a9b7-f7ef-98998e78a0a2.png)
+![/how-to-open-javascript-debug-terminal-in-vscode.png](/how-to-open-javascript-debug-terminal-in-vscode.png)
 
 在 `debug` 终端执行对应的启动命令，比如 `yarn dev`，断点将会停留在我们打断点的代码处。此时会有这样一排操作按钮，如下图：
 
