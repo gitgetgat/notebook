@@ -1,20 +1,15 @@
 <template>
-  <el-text
-    size="large"
-    type="danger"
-    :class="bold?'bold':''"
-  >
+  <el-text size="large" type="danger" :class="bold ? 'bold' : ''">
     <slot></slot>
   </el-text>
 </template>
-
 <script setup>
 const props = defineProps({
   bold: {
     type: Boolean,
-    default: true
-  }
-})
+    default: true,
+  },
+});
 </script>
 
 <style scoped>

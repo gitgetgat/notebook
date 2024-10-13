@@ -1853,6 +1853,26 @@ const LIBRARY_LABELS = [
     },
   },
   {
+    zh: `Vidstack Player 一款神奇的 JavaScript 开源视频播放器新起之秀`,
+    en: `vidstack-player-is-a-magical-javascript-open-source-video-player-rising-star`,
+    parentDir: ["Library"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["Library"],
+    },
+  },
+  {
+    zh: `noUiSlider 一款轻量级的 JavaScript 开源滑块库`,
+    en: `nouislider-is-a-lightweight-javascript-open-source-slider-library`,
+    parentDir: ["Library"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["Library"],
+    },
+  },
+  {
     zh: ``,
     en: ``,
     parentDir: ["Library"],
@@ -1992,6 +2012,16 @@ const VUE2_BASE_LABELS = [
     parentDir: ["Vue2-Base-Knowledge-Points"],
     meta: {
       star: 3,
+      state: "已完成",
+      tags: ["Vue2"],
+    },
+  },
+  {
+    zh: "ref 是什么？",
+    en: "what-is-ref",
+    parentDir: ["Vue2-Base-Knowledge-Points"],
+    meta: {
+      star: 5,
       state: "已完成",
       tags: ["Vue2"],
     },
@@ -2773,8 +2803,18 @@ const VUE3_BASE_LABELS = [
     },
   },
   {
-    zh: "",
-    en: "",
+    zh: `ref 和 reactive 的使用和区别`,
+    en: `the-use-and-difference-between-ref-and-reactive`,
+    parentDir: ["Vue3-Base-Knowledge-Points"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["Vue3"],
+    },
+  },
+  {
+    zh: ``,
+    en: ``,
     parentDir: ["Vue3-Base-Knowledge-Points"],
     meta: {
       star: 5,

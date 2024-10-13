@@ -24,6 +24,7 @@
     "gridstack": "^10.3.1",
     "intro.js": "^8.0.0-beta.1",
     "lodash": "^4.17.21",
+    "nouislider": "^15.8.1",
     "pagefind": "^1.1.0",
     "pdfjs-dist": "3.11.174",
     "plyr": "^3.7.8",
@@ -34,6 +35,7 @@
     "typed.js": "^2.1.0",
     "uuid": "^10.0.0",
     "v-viewer": "^3.0.11",
+    "vidstack": "^1.12.11",
     "viewerjs": "^1.11.6",
     "vitepress-plugin-pagefind": "^0.4.9",
     "vue-icons-plus": "^0.0.9"

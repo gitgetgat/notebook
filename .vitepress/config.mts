@@ -82,6 +82,15 @@ export default defineConfig({
       },
     },
   },
+  vue: {
+    // @vitejs/plugin-vue 选项
+    template: {
+      compilerOptions: {
+        // 将所有以"media-"开头的标签名都视为自定义元素
+        isCustomElement: (tag) => tag.startsWith("media-"),
+      },
+    },
+  },
   markdown: {
     lineNumbers: true,
   },
