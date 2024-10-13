@@ -50,6 +50,8 @@ const colorMap = ref({
   JavaScript: "soda-tag-color6",
   Vue2: "soda-tag-color7",
   Vue3: "soda-tag-color8",
+  Library: "soda-tag-color11",
+  Browser: "soda-tag-color2",
   "源码": "soda-tag-color4",
   "Vue-Router": "soda-tag-color9",
   Vuex: "soda-tag-color2",

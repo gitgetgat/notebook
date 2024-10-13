@@ -1429,7 +1429,7 @@ const LIBRARY_LABELS = [
     meta: {
       star: 5,
       state: "已完成",
-      tags: ["Library"],
+      tags: ["Library", "Browser"],
     },
   },
   {
@@ -1439,7 +1439,7 @@ const LIBRARY_LABELS = [
     meta: {
       star: 5,
       state: "未完成",
-      tags: ["Library"],
+      tags: ["Library", "Browser"],
     },
   },
   {
@@ -1449,7 +1449,7 @@ const LIBRARY_LABELS = [
     meta: {
       star: 5,
       state: "已完成",
-      tags: ["Library"],
+      tags: ["Library", "Browser"],
     },
   },
   {
@@ -1459,7 +1459,7 @@ const LIBRARY_LABELS = [
     meta: {
       star: 5,
       state: "已完成",
-      tags: ["Library"],
+      tags: ["Library", "Browser"],
     },
   },
   {
@@ -1469,7 +1469,7 @@ const LIBRARY_LABELS = [
     meta: {
       star: 5,
       state: "已完成",
-      tags: ["Library"],
+      tags: ["Library", "Browser"],
     },
   },
   {
@@ -1479,7 +1479,7 @@ const LIBRARY_LABELS = [
     meta: {
       star: 5,
       state: "已完成",
-      tags: ["Library"],
+      tags: ["Library", "Browser"],
     },
   },
   {
@@ -1489,7 +1489,7 @@ const LIBRARY_LABELS = [
     meta: {
       star: 5,
       state: "已完成",
-      tags: ["Library"],
+      tags: ["Library", "Browser"],
     },
   },
   {
@@ -1499,7 +1499,7 @@ const LIBRARY_LABELS = [
     meta: {
       star: 5,
       state: "已完成",
-      tags: ["Library"],
+      tags: ["Library", "Browser"],
     },
   },
   {
@@ -1509,7 +1509,7 @@ const LIBRARY_LABELS = [
     meta: {
       star: 5,
       state: "已完成",
-      tags: ["Library"],
+      tags: ["Library", "Browser"],
     },
   },
   {
@@ -1519,7 +1519,7 @@ const LIBRARY_LABELS = [
     meta: {
       star: 5,
       state: "已完成",
-      tags: ["Library"],
+      tags: ["Library", "Browser"],
     },
   },
   {
@@ -1529,7 +1529,7 @@ const LIBRARY_LABELS = [
     meta: {
       star: 5,
       state: "已完成",
-      tags: ["Library"],
+      tags: ["Library", "Browser"],
     },
   },
   {
@@ -1539,7 +1539,7 @@ const LIBRARY_LABELS = [
     meta: {
       star: 5,
       state: "已完成",
-      tags: ["Library"],
+      tags: ["Library", "Browser"],
     },
   },
   {
@@ -1549,7 +1549,7 @@ const LIBRARY_LABELS = [
     meta: {
       star: 5,
       state: "已完成",
-      tags: ["Library"],
+      tags: ["Library", "Browser"],
     },
   },
   {
@@ -1559,7 +1559,7 @@ const LIBRARY_LABELS = [
     meta: {
       star: 5,
       state: "已完成",
-      tags: ["Library"],
+      tags: ["Library", "Browser"],
     },
   },
   {
@@ -1569,7 +1569,7 @@ const LIBRARY_LABELS = [
     meta: {
       star: 5,
       state: "已完成",
-      tags: ["Library"],
+      tags: ["Library", "Browser"],
     },
   },
   {
@@ -1579,7 +1579,7 @@ const LIBRARY_LABELS = [
     meta: {
       star: 5,
       state: "已完成",
-      tags: ["Library"],
+      tags: ["Library", "Browser"],
     },
   },
   {
@@ -1589,7 +1589,7 @@ const LIBRARY_LABELS = [
     meta: {
       star: 5,
       state: "已完成",
-      tags: ["Library"],
+      tags: ["Library", "Browser"],
     },
   },
   {
@@ -1599,7 +1599,7 @@ const LIBRARY_LABELS = [
     meta: {
       star: 5,
       state: "已完成",
-      tags: ["Library"],
+      tags: ["Library", "Browser"],
     },
   },
   {
@@ -1609,7 +1609,7 @@ const LIBRARY_LABELS = [
     meta: {
       star: 5,
       state: "已完成",
-      tags: ["Library"],
+      tags: ["Library", "Browser"],
     },
   },
   {
@@ -1619,7 +1619,7 @@ const LIBRARY_LABELS = [
     meta: {
       star: 5,
       state: "已完成",
-      tags: ["Library"],
+      tags: ["Library", "Browser"],
     },
   },
   {
@@ -1629,7 +1629,7 @@ const LIBRARY_LABELS = [
     meta: {
       star: 5,
       state: "已完成",
-      tags: ["Library"],
+      tags: ["Library", "Browser"],
     },
   },
   {
@@ -1639,7 +1639,7 @@ const LIBRARY_LABELS = [
     meta: {
       star: 5,
       state: "已完成",
-      tags: ["Library"],
+      tags: ["Library", "Browser"],
     },
   },
   {
@@ -1649,7 +1649,7 @@ const LIBRARY_LABELS = [
     meta: {
       star: 5,
       state: "已完成",
-      tags: ["Library"],
+      tags: ["Library", "Browser"],
     },
   },
   {
@@ -1659,7 +1659,7 @@ const LIBRARY_LABELS = [
     meta: {
       star: 5,
       state: "已完成",
-      tags: ["Library"],
+      tags: ["Library", "Browser"],
     },
   },
   {
@@ -1669,7 +1669,7 @@ const LIBRARY_LABELS = [
     meta: {
       star: 5,
       state: "已完成",
-      tags: ["Library"],
+      tags: ["Library", "Browser"],
     },
   },
   {
@@ -1679,7 +1679,7 @@ const LIBRARY_LABELS = [
     meta: {
       star: 5,
       state: "已完成",
-      tags: ["Library"],
+      tags: ["Library", "Browser"],
     },
   },
   {
@@ -1689,7 +1689,7 @@ const LIBRARY_LABELS = [
     meta: {
       star: 5,
       state: "已完成",
-      tags: ["Library"],
+      tags: ["Library", "Browser"],
     },
   },
   {
@@ -1699,7 +1699,7 @@ const LIBRARY_LABELS = [
     meta: {
       star: 5,
       state: "已完成",
-      tags: ["Library"],
+      tags: ["Library", "Browser"],
     },
   },
   {
@@ -1709,7 +1709,7 @@ const LIBRARY_LABELS = [
     meta: {
       star: 5,
       state: "已完成",
-      tags: ["Library"],
+      tags: ["Library", "Browser"],
     },
   },
   {
@@ -1719,7 +1719,7 @@ const LIBRARY_LABELS = [
     meta: {
       star: 5,
       state: "已完成",
-      tags: ["Library"],
+      tags: ["Library", "Browser"],
     },
   },
   {
@@ -1729,7 +1729,7 @@ const LIBRARY_LABELS = [
     meta: {
       star: 5,
       state: "已完成",
-      tags: ["Library"],
+      tags: ["Library", "Browser"],
     },
   },
   {
@@ -1739,7 +1739,7 @@ const LIBRARY_LABELS = [
     meta: {
       star: 5,
       state: "已完成",
-      tags: ["Library"],
+      tags: ["Library", "Browser"],
     },
   },
   {
@@ -1749,7 +1749,7 @@ const LIBRARY_LABELS = [
     meta: {
       star: 5,
       state: "已完成",
-      tags: ["Library"],
+      tags: ["Library", "Browser"],
     },
   },
   {
@@ -1759,7 +1759,7 @@ const LIBRARY_LABELS = [
     meta: {
       star: 5,
       state: "已完成",
-      tags: ["Library"],
+      tags: ["Library", "Browser"],
     },
   },
   {
@@ -1769,7 +1769,7 @@ const LIBRARY_LABELS = [
     meta: {
       star: 5,
       state: "已完成",
-      tags: ["Library"],
+      tags: ["Library", "Browser"],
     },
   },
   {
@@ -1779,7 +1779,7 @@ const LIBRARY_LABELS = [
     meta: {
       star: 5,
       state: "已完成",
-      tags: ["Library"],
+      tags: ["Library", "Browser"],
     },
   },
   {
@@ -1789,7 +1789,7 @@ const LIBRARY_LABELS = [
     meta: {
       star: 5,
       state: "已完成",
-      tags: ["Library"],
+      tags: ["Library", "Browser"],
     },
   },
   {
@@ -1799,7 +1799,7 @@ const LIBRARY_LABELS = [
     meta: {
       star: 5,
       state: "已完成",
-      tags: ["Library"],
+      tags: ["Library", "Browser"],
     },
   },
   {
@@ -1809,7 +1809,7 @@ const LIBRARY_LABELS = [
     meta: {
       star: 5,
       state: "已完成",
-      tags: ["Library"],
+      tags: ["Library", "Browser"],
     },
   },
   {
@@ -1819,7 +1819,7 @@ const LIBRARY_LABELS = [
     meta: {
       star: 5,
       state: "已完成",
-      tags: ["Library"],
+      tags: ["Library", "Browser"],
     },
   },
   {
@@ -1829,7 +1829,7 @@ const LIBRARY_LABELS = [
     meta: {
       star: 5,
       state: "已完成",
-      tags: ["Library"],
+      tags: ["Library", "Browser"],
     },
   },
   {
@@ -1839,7 +1839,7 @@ const LIBRARY_LABELS = [
     meta: {
       star: 5,
       state: "已完成",
-      tags: ["Library"],
+      tags: ["Library", "Browser"],
     },
   },
   {
@@ -1849,7 +1849,27 @@ const LIBRARY_LABELS = [
     meta: {
       star: 5,
       state: "已完成",
-      tags: ["Library"],
+      tags: ["Library", "Browser"],
+    },
+  },
+  {
+    zh: `Glide.js 一款轻量级 JavaScript 开源轮播图工具库`,
+    en: `glide.js-is-a-lightweight-javascript-open-source-slideshow-tool-library`,
+    parentDir: ["Library"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["Library", "Browser"],
+    },
+  },
+  {
+    zh: `探索Chokidar：Node.js文件系统监视的“全能侦探”`,
+    en: `discover-chokidar-the-almighty-detective-for-node.js-file-system-monitoring`,
+    parentDir: ["Library"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["Library", "NodeJS"],
     },
   },
   {
@@ -1859,7 +1879,7 @@ const LIBRARY_LABELS = [
     meta: {
       star: 5,
       state: "已完成",
-      tags: ["Library"],
+      tags: ["Library", "Browser", "NodeJS"],
     },
   },
 ];
@@ -3946,7 +3966,7 @@ const DIR_LABELS = {
   "WebStorage-IndexedDB": "浏览器存储",
   FrontEndUseSkills: "前端技巧应用",
   DataStructureAndAlgorithms: "数据结构与算法",
-  Library: "Js-第3方库",
+  Library: "第3方库",
   "VsCode-Plugins": "VSCode 插件",
   "Uni-App": "Uni-App",
   Webpack: `${spaceStr}Webpack`,

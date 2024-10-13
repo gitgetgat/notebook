@@ -221,6 +221,10 @@
   }
 }
 
-.vp-doc p img{
-   margin: 0 auto;
+.vp-doc p img {
+  margin: 0 auto;
+}
+
+.vp-doc h5 {
+  margin: 20px 0 0;
 }
