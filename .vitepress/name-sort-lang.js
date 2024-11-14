@@ -1893,6 +1893,66 @@ const LIBRARY_LABELS = [
     },
   },
   {
+    zh: `Vue 虚拟列表组件 vue-virtual-scroller`,
+    en: `vue-virtual-list-component-vue-virtual-scroller`,
+    parentDir: ["Library"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["Library", "Browser", "NodeJS"],
+    },
+  },
+  {
+    zh: `Vue-Waterfall 一个轻量级的、专为实现灵活的瀑布流布局设计的 Vue.js 组件`,
+    en: `vue-waterfall-is-a-lightweight-vue.js-component-designed-for-flexible-waterfall-layout`,
+    parentDir: ["Library"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["Library", "Browser"],
+    },
+  },
+  {
+    zh: `自由选择图标 iconify 超 200,000 个开源矢量图标库`,
+    en: `Freely-choose-icons-iconify-over-200000-open-source-vector-icon-library`,
+    parentDir: ["Library"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["Library", "Browser"],
+    },
+  },
+  {
+    zh: `date-fns - 现代JavaScript日期实用工具库`,
+    en: `date-fns-a-modern-javascript-date-utility-library`,
+    parentDir: ["Library"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["Library", "Browser", "NodeJS"],
+    },
+  },
+  {
+    zh: `TOAST UI Calendar 日历组件`,
+    en: `toast-ui-calendar`,
+    parentDir: ["Library"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["Library", "Browser"],
+    },
+  },
+  {
+    zh: `Splide 轻量级、灵活且无依赖的组件库的 JavaScript 开源轮播组件库`,
+    en: `splide-is-a-lightweight-flexible-and-dependency-free-component-library-javascript-open-source-carousel-component-library`,
+    parentDir: ["Library"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["Library", "Browser"],
+    },
+  },
+  {
     zh: ``,
     en: ``,
     parentDir: ["Library"],

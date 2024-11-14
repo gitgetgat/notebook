@@ -49,6 +49,7 @@ npm install @glidejs/glide
 ::: code-group
 
 ```vue
+<!-- ../../../../components/example/exp-use-glide-js.vue -->
 <template>
   <div class="glide" id="use-gilde-box">
     <div class="glide__track" data-glide-el="track">
@@ -115,12 +116,6 @@ onMounted(() => {
 ```
 
 :::
-
-<script setup>
-import ExpUseGlide from '../../../../components/example/exp-use-glide-js.vue'
-</script>
-
-<exp-use-glide ref="expUseGlide"/>
 
 ## 高级应用
 
