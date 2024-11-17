@@ -1,6 +1,6 @@
 <template>
   <div class="flex padding-box tag-contanier ">
-    <div>
+    <div class="tag-box">
       Tags:
       <span
         v-for="tag in tags"
@@ -8,7 +8,7 @@
         :class="colorMap[tag] || 'soda-tag-color9'"
       >{{ tag }}</span>
     </div>
-    <div>
+    <div class="state-box">
       状态: <span
         class="tag"
         :class="colorMap[state]"
@@ -114,11 +114,16 @@ function aUrlSkip(url) {
 .tag-contanier {
   /* height: 28px; */
   line-height: 28px;
+  justify-content: space-between;
 }
 
 .tag-contanier > div {
-  flex: 1;
+  /* flex: 1; */
   padding: 5px 0;
+}
+.tag-contanier > div.state-box {
+  flex: 1;
+  text-align: center;
 }
 @media (max-width: 768px) {
   .tag-contanier {

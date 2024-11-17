@@ -180,5 +180,6 @@ function aUrlSkip(url) {
 }
 .link-tag-items {
   display: inline-flex;
+  flex-wrap: wrap;
 }
 </style>

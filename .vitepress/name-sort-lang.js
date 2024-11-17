@@ -1953,6 +1953,86 @@ const LIBRARY_LABELS = [
     },
   },
   {
+    zh: `前端模糊搜索的王者 —— 神库 Fuse.js`,
+    en: `the-king-of-front-end-fuzzy-search-fuse`,
+    parentDir: ["Library"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["Library", "Browser", "NodeJS"],
+    },
+  },
+  {
+    zh: `开源免费的 Markdown 编辑器：md-editor-rt，包含Vue3、React双版本`,
+    en: `open-source-free-markdown-editor-md-editor-rt-including-vue3-and-react-versions`,
+    parentDir: ["Library"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["Library", "Browser"],
+    },
+  },
+  {
+    zh: `探索 nanoid：Node.js ID 生成的“微型工匠”`,
+    en: `exploring-nanoid-a-micro-artisan-for-nodejs-id-generation`,
+    parentDir: ["Library"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["Library", "Browser", "NodeJS"],
+    },
+  },
+  {
+    zh: `探索 body-parser：Node.js 请求解析的“肠胃专家”`,
+    en: `exploring-body-parser-the-gastroenterologist-of-node-request-parsing`,
+    parentDir: ["Library"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["NodeJS"],
+    },
+  },
+  {
+    zh: `探索 Joi：Node.js 数据验证的“魔法指挥棒”`,
+    en: `explore-joi-the-magic-baton-of-node-data-validation`,
+    parentDir: ["Library"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["NodeJS"],
+    },
+  },
+  {
+    zh: `探索 node-schedule：Node.js 定时任务的“时间管理大师”`,
+    en: `explore-node-schedule-the-time-management-master-of-node-scheduled-tasks`,
+    parentDir: ["Library"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["NodeJS"],
+    },
+  },
+  {
+    zh: `探索 xlsx：Node.js 处理 Excel文 件的“表格魔术师”`,
+    en: `exploring-xlsx-node-table-magician-for-processing-excel-files`,
+    parentDir: ["Library"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["Library", "Browser", "NodeJS"],
+    },
+  },
+  {
+    zh: `探索 Node-Fetch：Node.js 请求库的“网络漫游者”`,
+    en: `exploring-node-fetch-the-network-wanderer-of-node-request-libraries`,
+    parentDir: ["Library"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["NodeJS"],
+    },
+  },
+  {
     zh: ``,
     en: ``,
     parentDir: ["Library"],
