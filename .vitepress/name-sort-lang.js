@@ -2093,6 +2093,36 @@ const LIBRARY_LABELS = [
     },
   },
   {
+    zh: `探索 PM2：Node.js 应用的“护航舰”`,
+    en: `exploring-pm2-the-escort-ship-for-node-applications`,
+    parentDir: ["Library"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["NodeJS"],
+    },
+  },
+  {
+    zh: `探索 GM：Node.js 图像处理的“魔法师”`,
+    en: `explore-gm-the-magician-of-node-image-processing`,
+    parentDir: ["Library"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["Library", "Browser", "NodeJS"],
+    },
+  },
+  {
+    zh: `Chalk.js 开源终端字符串输出颜色和样式库`,
+    en: `chalk-open-source-terminal-string-output-color-and-style-library`,
+    parentDir: ["Library"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["Library", "Browser", "NodeJS"],
+    },
+  },
+  {
     zh: ``,
     en: ``,
     parentDir: ["Library"],
@@ -4058,6 +4088,16 @@ const CODESNIPPET_LABELS = [
     meta: {
       star: 3,
       state: "未完成",
+      tags: ["实战"],
+    },
+  },
+  {
+    zh: "二次封装 axios",
+    en: "secondary-packaging-of-axios",
+    parentDir: ["CodeSnippet"],
+    meta: {
+      star: 5,
+      state: "已完成",
       tags: ["实战"],
     },
   },
