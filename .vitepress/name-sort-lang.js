@@ -2033,6 +2033,66 @@ const LIBRARY_LABELS = [
     },
   },
   {
+    zh: `探索 Del：Node.js 文件和目录删除的“终结者”`,
+    en: `exploring-del-the-terminator-for-node-file-and-directory-deletion`,
+    parentDir: ["Library"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["NodeJS"],
+    },
+  },
+  {
+    zh: `探索 Pino：Node.js 处理日志的“记录骑士”`,
+    en: `exploring-pino-the-logging-knight-for-node-logging`,
+    parentDir: ["Library"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["NodeJS"],
+    },
+  },
+  {
+    zh: `探索 Dotenv：Node.js 配置管理的“魔法师”`,
+    en: `exploring-dotenv-the-magician-of-node-configuration-management`,
+    parentDir: ["Library"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["NodeJS"],
+    },
+  },
+  {
+    zh: `探索 ws：让你的实时通信像“丝”般顺滑`,
+    en: `explore-ws-make-your-real-time-communication-as-smooth-as-silk`,
+    parentDir: ["Library"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["Library", "Browser", "NodeJS"],
+    },
+  },
+  {
+    zh: `探索 Globby：Node.js 文件操作的“全能搜寻器”`,
+    en: `discover-globby-a-universal-crawler-for-node-file-operations`,
+    parentDir: ["Library"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["NodeJS"],
+    },
+  },
+  {
+    zh: `探索 Rate Limiter：Node.js 中的流量“红绿灯”`,
+    en: `exploring-rate-limiter-traffic-traffic-light-in-node`,
+    parentDir: ["Library"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["NodeJS"],
+    },
+  },
+  {
     zh: ``,
     en: ``,
     parentDir: ["Library"],
