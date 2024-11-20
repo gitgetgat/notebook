@@ -2123,6 +2123,66 @@ const LIBRARY_LABELS = [
     },
   },
   {
+    zh: `探索 FormKit：Vue 表单库的瑞士军刀`,
+    en: `exploring-formkit-the-swiss-army-knife-of-vue-form-libraries`,
+    parentDir: ["Library"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["Library", "Browser"],
+    },
+  },
+  {
+    zh: `探索 VeeValidate：让你的 Vue 表单验证更简单`,
+    en: `explore-veevalidate-make-your-vue-form-validation-easier`,
+    parentDir: ["Library"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["Library", "Browser"],
+    },
+  },
+  {
+    zh: `探索 Greensock：Vue 动画的终极秘密武器`,
+    en: `discover-greensock-the-ultimate-secret-weapon-for-vue-animation`,
+    parentDir: ["Library"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["Library", "Browser"],
+    },
+  },
+  {
+    zh: `探索 Vue Tour：让你的用户旅程轻松上路`,
+    en: `explore-vue-tour-make-your-user-journey-easy`,
+    parentDir: ["Library"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["Library", "Browser"],
+    },
+  },
+  {
+    zh: `探索 vue3-marquee：跑马灯该有的样子！`,
+    en: `this-is-what-a-marquee-should-look-like-use-vue3-marquee-to-refresh-your-cognition`,
+    parentDir: ["Library"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["Library", "Browser"],
+    },
+  },
+  {
+    zh: `探索 Vuex-Persist：让你的状态管理穿越时光`,
+    en: `exploring-vuex-persist-let-your-state-management-travel-through-time`,
+    parentDir: ["Library"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["Library", "Browser", "NodeJS"],
+    },
+  },
+  {
     zh: ``,
     en: ``,
     parentDir: ["Library"],
