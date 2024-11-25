@@ -39,6 +39,7 @@
     "vidstack": "^1.12.11",
     "viewerjs": "^1.11.6",
     "vitepress-plugin-pagefind": "^0.4.9",
-    "vue-icons-plus": "^0.0.9"
+    "vue-icons-plus": "^0.0.9",
+    "vue-kinesis": "^2.0.5"
   }
 }

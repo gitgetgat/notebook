@@ -1342,9 +1342,34 @@ const QUESTIONS_LABELS = [
     },
   },
   {
-    zh: "",
-    en: "",
+    zh: "前端埋点与监控最佳实践：从基础到全流程实现",
+    en: "best-practices-for-front-end-tracking-and-monitoring-from-basics-to-full-process-implementation",
     parentDir: ["Questions"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["面试"],
+    },
+  },
+  {
+    zh: "MutationObserver 与 IntersectionObserver 傻傻分不清楚？",
+    en: "can-tell-the-difference-between-mutationobserver-and-intersectionobserver",
+    parentDir: ["Questions"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["面试"],
+    },
+  },
+  {
+    zh: "Vue3 的插件机制是怎样的？",
+    en: "what-is-the-plugin-mechanism-of-vue3",
+    parentDir: ["Questions"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["面试"],
+    },
   },
 ];
 
@@ -1983,36 +2008,6 @@ const LIBRARY_LABELS = [
     },
   },
   {
-    zh: `探索 body-parser：Node.js 请求解析的“肠胃专家”`,
-    en: `exploring-body-parser-the-gastroenterologist-of-node-request-parsing`,
-    parentDir: ["Library"],
-    meta: {
-      star: 5,
-      state: "已完成",
-      tags: ["NodeJS"],
-    },
-  },
-  {
-    zh: `探索 Joi：Node.js 数据验证的“魔法指挥棒”`,
-    en: `explore-joi-the-magic-baton-of-node-data-validation`,
-    parentDir: ["Library"],
-    meta: {
-      star: 5,
-      state: "已完成",
-      tags: ["NodeJS"],
-    },
-  },
-  {
-    zh: `探索 node-schedule：Node.js 定时任务的“时间管理大师”`,
-    en: `explore-node-schedule-the-time-management-master-of-node-scheduled-tasks`,
-    parentDir: ["Library"],
-    meta: {
-      star: 5,
-      state: "已完成",
-      tags: ["NodeJS"],
-    },
-  },
-  {
     zh: `探索 xlsx：Node.js 处理 Excel文 件的“表格魔术师”`,
     en: `exploring-xlsx-node-table-magician-for-processing-excel-files`,
     parentDir: ["Library"],
@@ -2023,46 +2018,6 @@ const LIBRARY_LABELS = [
     },
   },
   {
-    zh: `探索 Node-Fetch：Node.js 请求库的“网络漫游者”`,
-    en: `exploring-node-fetch-the-network-wanderer-of-node-request-libraries`,
-    parentDir: ["Library"],
-    meta: {
-      star: 5,
-      state: "已完成",
-      tags: ["NodeJS"],
-    },
-  },
-  {
-    zh: `探索 Del：Node.js 文件和目录删除的“终结者”`,
-    en: `exploring-del-the-terminator-for-node-file-and-directory-deletion`,
-    parentDir: ["Library"],
-    meta: {
-      star: 5,
-      state: "已完成",
-      tags: ["NodeJS"],
-    },
-  },
-  {
-    zh: `探索 Pino：Node.js 处理日志的“记录骑士”`,
-    en: `exploring-pino-the-logging-knight-for-node-logging`,
-    parentDir: ["Library"],
-    meta: {
-      star: 5,
-      state: "已完成",
-      tags: ["NodeJS"],
-    },
-  },
-  {
-    zh: `探索 Dotenv：Node.js 配置管理的“魔法师”`,
-    en: `exploring-dotenv-the-magician-of-node-configuration-management`,
-    parentDir: ["Library"],
-    meta: {
-      star: 5,
-      state: "已完成",
-      tags: ["NodeJS"],
-    },
-  },
-  {
     zh: `探索 ws：让你的实时通信像“丝”般顺滑`,
     en: `explore-ws-make-your-real-time-communication-as-smooth-as-silk`,
     parentDir: ["Library"],
@@ -2070,36 +2025,6 @@ const LIBRARY_LABELS = [
       star: 5,
       state: "已完成",
       tags: ["Library", "Browser", "NodeJS"],
-    },
-  },
-  {
-    zh: `探索 Globby：Node.js 文件操作的“全能搜寻器”`,
-    en: `discover-globby-a-universal-crawler-for-node-file-operations`,
-    parentDir: ["Library"],
-    meta: {
-      star: 5,
-      state: "已完成",
-      tags: ["NodeJS"],
-    },
-  },
-  {
-    zh: `探索 Rate Limiter：Node.js 中的流量“红绿灯”`,
-    en: `exploring-rate-limiter-traffic-traffic-light-in-node`,
-    parentDir: ["Library"],
-    meta: {
-      star: 5,
-      state: "已完成",
-      tags: ["NodeJS"],
-    },
-  },
-  {
-    zh: `探索 PM2：Node.js 应用的“护航舰”`,
-    en: `exploring-pm2-the-escort-ship-for-node-applications`,
-    parentDir: ["Library"],
-    meta: {
-      star: 5,
-      state: "已完成",
-      tags: ["NodeJS"],
     },
   },
   {
@@ -2183,6 +2108,16 @@ const LIBRARY_LABELS = [
     },
   },
   {
+    zh: `探索 Vue Kinesis：让你的 Vue 项目动感十足`,
+    en: `explore-vue-kinesis-make-your-vue-project-dynamic`,
+    parentDir: ["Library"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["Library", "Browser"],
+    },
+  },
+  {
     zh: ``,
     en: ``,
     parentDir: ["Library"],
@@ -2193,6 +2128,119 @@ const LIBRARY_LABELS = [
     },
   },
 ];
+
+const NODE_LIBRARY_LABELS = [
+  {
+    zh: `探索 body-parser：Node.js 请求解析的“肠胃专家”`,
+    en: `exploring-body-parser-the-gastroenterologist-of-node-request-parsing`,
+    parentDir: ["NodeLibrary"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["NodeJS"],
+    },
+  },
+  {
+    zh: `探索 Joi：Node.js 数据验证的“魔法指挥棒”`,
+    en: `explore-joi-the-magic-baton-of-node-data-validation`,
+    parentDir: ["NodeLibrary"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["NodeJS"],
+    },
+  },
+  {
+    zh: `探索 node-schedule：Node.js 定时任务的“时间管理大师”`,
+    en: `explore-node-schedule-the-time-management-master-of-node-scheduled-tasks`,
+    parentDir: ["NodeLibrary"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["NodeJS"],
+    },
+  },
+  {
+    zh: `探索 Node-Fetch：Node.js 请求库的“网络漫游者”`,
+    en: `exploring-node-fetch-the-network-wanderer-of-node-request-libraries`,
+    parentDir: ["NodeLibrary"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["NodeJS"],
+    },
+  },
+  {
+    zh: `探索 Del：Node.js 文件和目录删除的“终结者”`,
+    en: `exploring-del-the-terminator-for-node-file-and-directory-deletion`,
+    parentDir: ["NodeLibrary"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["NodeJS"],
+    },
+  },
+  {
+    zh: `探索 Pino：Node.js 处理日志的“记录骑士”`,
+    en: `exploring-pino-the-logging-knight-for-node-logging`,
+    parentDir: ["NodeLibrary"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["NodeJS"],
+    },
+  },
+  {
+    zh: `探索 Dotenv：Node.js 配置管理的“魔法师”`,
+    en: `exploring-dotenv-the-magician-of-node-configuration-management`,
+    parentDir: ["NodeLibrary"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["NodeJS"],
+    },
+  },
+  {
+    zh: `探索 Globby：Node.js 文件操作的“全能搜寻器”`,
+    en: `discover-globby-a-universal-crawler-for-node-file-operations`,
+    parentDir: ["NodeLibrary"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["NodeJS"],
+    },
+  },
+  {
+    zh: `探索 Rate Limiter：Node.js 中的流量“红绿灯”`,
+    en: `exploring-rate-limiter-traffic-traffic-light-in-node`,
+    parentDir: ["NodeLibrary"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["NodeJS"],
+    },
+  },
+  {
+    zh: `探索 PM2：Node.js 应用的“护航舰”`,
+    en: `exploring-pm2-the-escort-ship-for-node-applications`,
+    parentDir: ["NodeLibrary"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["NodeJS"],
+    },
+  },
+  {
+    zh: ``,
+    en: ``,
+    parentDir: ["NodeLibrary"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["NodeJS"],
+    },
+  },
+]
 
 const VSCODE_PLUGINS_LABELS = [
   {
@@ -3596,6 +3644,16 @@ const NODEJS_LABELS = [
 
 const WEBPACK_LABELS = [
   {
+    zh: "webpack 是干什么的？",
+    en: "what-does-webpack-do",
+    parentDir: ["Webpack"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["Webpack"],
+    },
+  },
+  {
     zh: "webpack 打包和不打包的区别？",
     en: "the-difference-between-webpack-packaging-and-non-packaging",
     parentDir: ["Webpack"],
@@ -3621,7 +3679,7 @@ const WEBPACK_LABELS = [
     parentDir: ["Webpack"],
     meta: {
       star: 5,
-      state: "已完成",
+      state: "未完成",
       tags: ["Webpack"],
     },
   },
@@ -3636,9 +3694,82 @@ const WEBPACK_LABELS = [
     },
   },
   {
+    zh: "gulp 和 webpack 的异同",
+    en: "differences-and-similarities-between-gulp-and-webpack",
+    parentDir: ["Webpack"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["Webpack"],
+    },
+  },
+  {
+    zh: "Loader 和 Plugin 的区别",
+    en: "the-difference-between-loader-and-plugin",
+    parentDir: ["Webpack"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["Webpack"],
+    },
+  },
+  {
+    zh: "Loader 是什么？常用的 loader 有哪些？",
+    en: "what-is-the-role-of-the-loader-mechanism-what-are-the-commonly-used-loaders",
+    parentDir: ["Webpack"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["Webpack"],
+    },
+  },
+  {
+    zh: "常用的 loader 有哪些？",
+    en: "what-are-the-commonly-used-loaders",
+    parentDir: ["Webpack"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["Webpack"],
+    },
+  },
+  {
+    zh: "Plugin 是什么？",
+    en: "what-is-the-role-of-the-plugin-mechanism-what-are-the-commonly-used-plugins",
+    parentDir: ["Webpack"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["Webpack"],
+    },
+  },
+  {
+    zh: "常用的 Plugin 有哪些？",
+    en: "what-are-the-commonly-used-plugins",
+    parentDir: ["Webpack"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["Webpack"],
+    },
+  },
+  {
     zh: "",
     en: "",
     parentDir: ["Webpack"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["Webpack"],
+    },
+  },
+];
+
+const VITE_LABELS = [
+  {
+    zh: "",
+    en: "",
+    parentDir: ["Vite"],
     meta: {
       star: 5,
       state: "已完成",
@@ -3764,6 +3895,16 @@ const CODESNIPPET_LABELS = [
   {
     zh: "JS 数组去重",
     en: "js-array-deduplication",
+    parentDir: ["CodeSnippet"],
+    meta: {
+      star: 4,
+      state: "已完成",
+      tags: ["实战", "JavaScript"],
+    },
+  },
+  {
+    zh: "JS 数组删除",
+    en: "js-array-deletion",
     parentDir: ["CodeSnippet"],
     meta: {
       star: 4,
@@ -4255,6 +4396,7 @@ const NAME_LABELS = [
   ...addSortKey(TALK_LABELS),
   ...addSortKey(VSCODE_PLUGINS_LABELS),
   ...addSortKey(LIBRARY_LABELS),
+  ...addSortKey(NODE_LIBRARY_LABELS),
   ...addSortKey(NODEJS_LABELS),
   ...addSortKey(CODESNIPPET_LABELS),
   ...addSortKey(UNIAPP_LABELS),
@@ -4262,6 +4404,7 @@ const NAME_LABELS = [
   ...addSortKey(VUE2_SOURCE_CODE_DEBUG_LABELS),
   ...addSortKey(VUE3_BASE_LABELS),
   ...addSortKey(WEBPACK_LABELS),
+  ...addSortKey(VITE_LABELS),
   ...addSortKey(VUEROUTER_LABELS),
   ...addSortKey(VUEX_LABELS),
   ...addSortKey(BROWSER_LABELS),
@@ -4306,10 +4449,12 @@ const DIR_LABELS = {
   "WebStorage-IndexedDB": "浏览器存储",
   FrontEndUseSkills: "前端技巧应用",
   DataStructureAndAlgorithms: "数据结构与算法",
-  Library: "第3方库",
+  Library: "Browser 库",
+  NodeLibrary: "Node 库",
   "VsCode-Plugins": "VSCode 插件",
   "Uni-App": "Uni-App",
   Webpack: `${spaceStr}Webpack`,
+  Vite: `${spaceStr}Vite`,
   Git: "Git",
   Interview: "面试",
   Questions: "面试题",
