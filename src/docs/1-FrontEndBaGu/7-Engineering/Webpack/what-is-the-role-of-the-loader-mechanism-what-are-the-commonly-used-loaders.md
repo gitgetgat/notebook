@@ -2,6 +2,8 @@
 
 <article-info/>
 
+<link-tag :linkList="[{ linkType: 'git', linkText:'loader Webpack 官方文档',linkUrl:'https://webpack.docschina.org/concepts/loaders/#inline'}]" />
+
 ## `loader` 概述
 
 在实际开发过程中，`webpack` 默认只能打包处理以 `.js` 后缀名结尾的模块。其他非 `.js` 后缀名结尾的模块，`webpack` 默认处理不了，需要调用 `loader` 加载器才可以正常打包，否则会报错！

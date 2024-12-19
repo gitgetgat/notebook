@@ -551,3 +551,246 @@ console.log(r);
 ```
 
 :::
+
+## `ModuleConcatenationPlugin`
+
+<link-tag :linkList="[{ linkText:'ModuleConcatenationPlugin Webpack 官方文档',linkUrl:'https://webpack.docschina.org/plugins/module-concatenation-plugin/#root'}]" />
+
+此插件会将所有模块的作用域“提升”或合并到一个闭包中，从而使得代码在浏览器中执行速度更快。此插件在 `生产模式` 下已启用，在其他情况下则禁用。可以通过配置覆盖默认优化。
+
+::: code-group
+
+```js
+new webpack.optimize.ModuleConcatenationPlugin();
+```
+
+:::
+
+## `speed-measure-webpack-plugin`
+
+<link-tag :linkList="[{ linkType: 'git', linkText:'speed-measure-webpack-plugin',linkUrl:'https://github.com/stephencookdev/speed-measure-webpack-plugin'}]" />
+
+可以看到每个 `Loader` 和 `Plugin` 执行耗时 (整个打包耗时、每个 `Plugin` 和 `Loader` 耗时)
+
+::: code-group
+
+```js
+const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
+
+const smp = new SpeedMeasurePlugin();
+
+const webpackConfig = smp.wrap({
+  plugins: [new MyPlugin(), new MyOtherPlugin()]
+});
+```
+
+:::
+
+## `webpack-bundle-analyzer`
+
+<link-tag :linkList="[{ linkType: 'git', linkText:'webpack-bundle-analyzer',linkUrl:'https://github.com/webpack-contrib/webpack-bundle-analyzer'}]" />
+
+可视化 Webpack 输出文件的体积 (业务组件、依赖第三方模块)
+
+![/93f72404-b338-11e6-92d4-9a365550a701.gif](/93f72404-b338-11e6-92d4-9a365550a701.gif)
+
+::: code-group
+
+```js
+const BundleAnalyzerPlugin =
+  require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
+
+module.exports = {
+  plugins: [new BundleAnalyzerPlugin()]
+};
+```
+
+:::
+
+## `purgecss-webpack-plugin`
+
+<link-tag :linkList="[{ linkType: 'git', linkText:'purgecss-webpack-plugin',linkUrl:'https://github.com/FullHuman/purgecss'},{ linkText:'purgecss-webpack-plugin 官网',linkUrl:'https://purgecss.com/'}]" />
+
+删除未使用的 CSS
+
+::: code-group
+
+```js
+const path = require("path");
+const glob = require("glob");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { PurgeCSSPlugin } = require("purgecss-webpack-plugin");
+
+const PATHS = {
+  src: path.join(__dirname, "src")
+};
+
+module.exports = {
+  entry: "./src/index.js",
+  output: {
+    filename: "bundle.js",
+    path: path.join(__dirname, "dist")
+  },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        styles: {
+          name: "styles",
+          test: /\.css$/,
+          chunks: "all",
+          enforce: true
+        }
+      }
+    }
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, "css-loader"]
+      }
+    ]
+  },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: "[name].css"
+    }),
+    new PurgeCSSPlugin({
+      paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true })
+    })
+  ]
+};
+```
+
+:::
+
+## `hard-source-webpack-plugin`
+
+<link-tag :linkList="[{ linkType: 'git', linkText:'hard-source-webpack-plugin',linkUrl:'https://github.com/mzgoddard/hard-source-webpack-plugin'}]" />
+
+`HardSourceWebpackPlugin` 是 `webpack` 的一个插件，用于为模块提供中间缓存步骤。为了看到结果，您需要使用此插件运行 `webpack` 两次：第一次构建将花费正常时间。第二次构建将明显更快。
+
+::: code-group
+
+```js
+// webpack.config.js
+var HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
+
+module.exports = {
+  context: // ...
+  entry: // ...
+  output: // ...
+  plugins: [
+    new HardSourceWebpackPlugin()
+  ]
+}
+```
+
+:::
+
+## `hashed-module-id-plugin`
+
+帮助创建稳定的模块 ID
+
+::: code-group
+
+```js
+const HashedModuleIdsPlugin = require("hashed-module-id-plugin ");
+
+module.exports = {
+  //...
+  plugins: [new HashedModuleIdsPlugin()]
+};
+```
+
+:::
+
+## `html-webpack-externals-plugin`
+
+<link-tag :linkList="[{ linkType: 'git', linkText:'html-webpack-externals-plugin',linkUrl:'https://github.com/mmiller42/html-webpack-externals-plugin'}]" />
+
+将基础包分离出来，通过 `CDN` 引入，不打入 `bundle` 中
+
+::: code-group
+
+```js
+const HtmlWebpackExternalsPlugin = require("html-webpack-externals-plugin");
+
+module.exports = {
+  plugins: [
+    new HtmlWebpackExternalsPlugin({
+      externals: [
+        {
+          module: "vue",
+          entry:
+            "https://cdn.finchina.com/app/app_dependent_file/vue/2.6.9/vue.min.js",
+          global: "Vue"
+        }
+      ]
+    })
+  ]
+};
+```
+
+:::
+
+最后看到在 `index.html` 中动态添加了如下代码：
+
+::: code-group
+
+```html
+<script
+  type="text/javascript"
+  src="https://cdn.finchina.com/app/app_dependent_file/vue/2.6.9/vue.min.js"
+></script>
+```
+
+:::
+
+::: tip 如果打包后资源依赖加载顺序有问题，可以在 `script` 标签内添加 `defer`
+
+```html
+<script
+  src="https://cdn.finchina.com/app/app_dependent_file/vant/2.10.6/vant.min.js"
+  defer
+></script>
+```
+
+:::
+
+## `SplitChunksPlugin`
+
+<link-tag :linkList="[{ linkType: 'git', linkText:'SplitChunksPlugin',linkUrl:'https://webpack.docschina.org/plugins/split-chunks-plugin#root'}]" />
+
+::: code-group
+
+```js
+module.exports = {
+  //...
+  optimization: {
+    splitChunks: {
+      chunks: "async",
+      minSize: 20000,
+      minRemainingSize: 0,
+      minChunks: 1,
+      maxAsyncRequests: 30,
+      maxInitialRequests: 30,
+      enforceSizeThreshold: 50000,
+      cacheGroups: {
+        defaultVendors: {
+          test: /[\\/]node_modules[\\/]/,
+          priority: -10,
+          reuseExistingChunk: true
+        },
+        default: {
+          minChunks: 2,
+          priority: -20,
+          reuseExistingChunk: true
+        }
+      }
+    }
+  }
+};
+```
+
+:::

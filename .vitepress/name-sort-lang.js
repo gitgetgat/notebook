@@ -1371,6 +1371,46 @@ const QUESTIONS_LABELS = [
       tags: ["面试"],
     },
   },
+  {
+    zh: "Webpack 是如何把不同的模块合并到一起，并且保证其正常工作的",
+    en: "how-does-webpack-combine-different-modules-and-ensure-that-they-work-properly",
+    parentDir: ["Questions"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["面试"],
+    },
+  },
+  {
+    zh: "webpack 提高效率的插件",
+    en: "webpack-plugin-to-improve-efficiency",
+    parentDir: ["Questions"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["面试"],
+    },
+  },
+  {
+    zh: `webpack-dev-server 和 http 服务器的区别`,
+    en: `the-difference-between-webpack-dev-server-and-http-server`,
+    parentDir: ["Questions"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["面试"],
+    },
+  },
+  {
+    zh: ``,
+    en: ``,
+    parentDir: ["Questions"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["面试"],
+    },
+  },
 ];
 
 const TALK_LABELS = [
@@ -2115,6 +2155,16 @@ const LIBRARY_LABELS = [
       star: 5,
       state: "已完成",
       tags: ["Library", "Browser"],
+    },
+  },
+  {
+    zh: `watermark-js-plus：高级的水印插件`,
+    en: `watermark-js-plus-advanced-watermark-plugin`,
+    parentDir: ["Library"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["Library", "Browser", "NodeJS"],
     },
   },
   {
@@ -2936,7 +2986,7 @@ const VUE3_BASE_LABELS = [
     parentDir: ["Vue3-Base-Knowledge-Points"],
     meta: {
       star: 8,
-      state: "未完成",
+      state: "已完成",
       tags: ["Vue3"],
     },
   },
@@ -3006,7 +3056,7 @@ const VUE3_BASE_LABELS = [
     parentDir: ["Vue3-Base-Knowledge-Points"],
     meta: {
       star: 5,
-      state: "未完成",
+      state: "已完成",
       tags: ["Vue3"],
     },
   },
@@ -3644,7 +3694,17 @@ const NODEJS_LABELS = [
 
 const WEBPACK_LABELS = [
   {
-    zh: "webpack 是干什么的？",
+    zh: "前端为什么要进行打包和构建 ？",
+    en: "why-should-the-front-end-be-packaged-and-built",
+    parentDir: ["Webpack"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["Webpack"],
+    },
+  },
+  {
+    zh: "webpack 是干什么的（打包原理）？",
     en: "what-does-webpack-do",
     parentDir: ["Webpack"],
     meta: {
@@ -3714,7 +3774,7 @@ const WEBPACK_LABELS = [
     },
   },
   {
-    zh: "Loader 是什么？常用的 loader 有哪些？",
+    zh: "Loader 是什么？",
     en: "what-is-the-role-of-the-loader-mechanism-what-are-the-commonly-used-loaders",
     parentDir: ["Webpack"],
     meta: {
@@ -3726,6 +3786,16 @@ const WEBPACK_LABELS = [
   {
     zh: "常用的 loader 有哪些？",
     en: "what-are-the-commonly-used-loaders",
+    parentDir: ["Webpack"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["Webpack"],
+    },
+  },
+  {
+    zh: "如何实现一个简单的 loader？",
+    en: "how-to-implement-a-simple-loader",
     parentDir: ["Webpack"],
     meta: {
       star: 5,
@@ -3754,8 +3824,8 @@ const WEBPACK_LABELS = [
     },
   },
   {
-    zh: "",
-    en: "",
+    zh: "如何实现一个简单的 Plugin？",
+    en: "how-to-implement-a-simple-Plugin",
     parentDir: ["Webpack"],
     meta: {
       star: 5,
@@ -3763,9 +3833,89 @@ const WEBPACK_LABELS = [
       tags: ["Webpack"],
     },
   },
+  {
+    zh: "Webpack 构建流程",
+    en: "webpack-build-process",
+    parentDir: ["Webpack"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["Webpack"],
+    },
+  },
+  {
+    zh: "优化 Webpack 的构建速度",
+    en: "optimizing-webpack-build-speed",
+    parentDir: ["Webpack"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["Webpack"],
+    },
+  },
+  {
+    zh: `什么是bundle，什么是chunk，什么是module？他们之间的关系？`,
+    en: `what-is-a-bundle-chunk-module-what-is-the-relationship`,
+    parentDir: ["Webpack"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["Webpack"],
+    },
+  },
+  {
+    zh: `source map 是什么？`,
+    en: `what-is-a-source-map`,
+    parentDir: ["Webpack"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["Webpack"],
+    },
+  },
+  {
+    zh: `文件指纹是什么？怎么用？`,
+    en: `what-is-a-file-fingerprint`,
+    parentDir: ["Webpack"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["Webpack"],
+    },
+  },
+  {
+    zh: `tree shaking 原理是什么？`,
+    en: `what-is-tree-shaking`,
+    parentDir: ["Webpack"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["Webpack"],
+    },
+  },
+  {
+    zh: `文件监听 与 热更新`,
+    en: `file-monitoring-and-hot-update`,
+    parentDir: ["Webpack"],
+    meta: {
+      star: 5,
+      state: "未完成",
+      tags: ["Webpack"],
+    },
+  },
 ];
 
 const VITE_LABELS = [
+  {
+    zh: "如何在 Vite 中设置 PostCSS 嵌套?",
+    en: "how-to-set-up-postcss-nesting-in-vite",
+    parentDir: ["Vite"],
+    meta: {
+      star: 5,
+      state: "已完成",
+      tags: ["Vite"],
+    },
+  },
   {
     zh: "",
     en: "",
@@ -3773,7 +3923,7 @@ const VITE_LABELS = [
     meta: {
       star: 5,
       state: "已完成",
-      tags: ["Webpack"],
+      tags: ["Vite"],
     },
   },
 ];

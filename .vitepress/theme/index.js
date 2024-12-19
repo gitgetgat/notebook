@@ -11,6 +11,7 @@ import ImpTextDanger from "../../components/imp-text-danger.vue";
 import ImpTextSuccess from "../../components/imp-text-success.vue";
 import ImpTextPrimary from "../../components/imp-text-primary.vue";
 import ImpTextWarning from "../../components/imp-text-warning.vue";
+import Ast from "../../components/AST.vue";
 import "element-plus/dist/index.css";
 import "plyr/dist/plyr.css"; //播放器主题
 import "element-plus/theme-chalk/dark/css-vars.css"; //暗黑模式
@@ -39,6 +40,7 @@ export default {
     app.component("ImpTextSuccess", ImpTextSuccess);
     app.component("ImpTextPrimary", ImpTextPrimary);
     app.component("ImpTextWarning", ImpTextWarning);
+    app.component("Ast", Ast);
     for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
       app.component(key, component);
     }

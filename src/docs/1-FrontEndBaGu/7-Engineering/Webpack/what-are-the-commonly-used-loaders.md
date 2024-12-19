@@ -10,6 +10,7 @@
 - <imp-text-danger>source-map-loader</imp-text-danger>：加载额外的 `Source Map` 文件，以方便断点调试
 - <imp-text-danger>svg-inline-loader</imp-text-danger>：将压缩后的 `SVG` 内容注入代码中
 - <imp-text-danger>image-loader</imp-text-danger>：加载并且压缩图片文件
+- <imp-text-danger>image-webpack-loader</imp-text-danger>：加载并且压缩图片文件
 - <imp-text-danger>json-loader</imp-text-danger>：加载 `JSON` 文件（默认包含）
 - <imp-text-danger>handlebars-loader</imp-text-danger>: 将 `Handlebars` 模版编译成函数并返回
 - <imp-text-danger>babel-loader</imp-text-danger>：把 `ES6` 转换成 `ES5`

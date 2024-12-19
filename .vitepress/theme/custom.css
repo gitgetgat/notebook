@@ -10,6 +10,8 @@
   --soda-bg-rgba-1: rgba(52, 81, 178, .2);
   --soda-pdf-thumbnail-box-width: 360px;
   --view-contanier-header: 60px;
+  --vp-layout-max-width: 1600px;
+  --vp-sidebar-width: 320px;
 }
 
 .dark {
@@ -227,4 +229,12 @@
 
 .vp-doc h5 {
   margin: 20px 0 0;
+}
+
+.ast-table table {
+  margin: 0 !important;
+}
+
+.ast-table {
+  border: none !important;
 }
