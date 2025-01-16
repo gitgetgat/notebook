@@ -1197,6 +1197,28 @@ const JAVASCRIPT_LABELS = [
   },
 ];
 
+const TYPESCRIPT_LABELS = [
+  {
+    zh: "Typescript 中 interface 与 type 的区别",
+    en: "the-difference-between-interface-and-type",
+    parentDir: ["4-TypeScript"],
+    meta: {
+      star: 3,
+      state: "已完成",
+      tags: ["TypeScript"],
+    },
+  },
+  {
+    zh: "unknown 的用处",
+    en: "usefulness-of-unknown",
+    parentDir: ["4-TypeScript"],
+    meta: {
+      star: 2,
+      state: "已完成",
+      tags: ["TypeScript"],
+    },
+  },
+]
 const HTML_LABELS = [
   {
     zh: "H5、C3 有哪些新特性？",
@@ -3492,7 +3514,7 @@ const VUEX_LABELS = [
   {
     zh: "pinia 和 vuex 的区别",
     en: "the-difference-between-pinia-and-vuex",
-    parentDir: ["5-Vuex"],
+    parentDir: ["6-Vuex"],
     meta: {
       star: 4,
       state: "未完成",
@@ -3502,7 +3524,7 @@ const VUEX_LABELS = [
   {
     zh: "vuex 的响应式处理",
     en: "responsive-processing-of-vuex",
-    parentDir: ["5-Vuex"],
+    parentDir: ["6-Vuex"],
     meta: {
       star: 5,
       state: "未完成",
@@ -3512,7 +3534,7 @@ const VUEX_LABELS = [
   {
     zh: "vuex 在什么场景会去使用？ 属性有哪些？",
     en: "in-what-scenarios-will-vuex-be-used-what-are-its-properties",
-    parentDir: ["5-Vuex"],
+    parentDir: ["6-Vuex"],
     meta: {
       star: 5,
       state: "未完成",
@@ -3522,7 +3544,7 @@ const VUEX_LABELS = [
   {
     zh: "Vuex 中为什么要区分 actions 与 mutations？mutations 和 actions 区别是什么？",
     en: "why-do-we-need-to-distinguish-between-actions-and-mutations-in-vuex",
-    parentDir: ["5-Vuex"],
+    parentDir: ["6-Vuex"],
     meta: {
       star: 5,
       state: "未完成",
@@ -3532,7 +3554,7 @@ const VUEX_LABELS = [
   {
     zh: "Vuex 是单向数据流还是双向数据流？",
     en: "is-vuex-a-one-way-data-flow-or-a-two-way-data-flow",
-    parentDir: ["5-Vuex"],
+    parentDir: ["6-Vuex"],
     meta: {
       star: 5,
       state: "未完成",
@@ -3542,7 +3564,7 @@ const VUEX_LABELS = [
   {
     zh: "Vuex 刷新数据会丢失吗？",
     en: "will-vuex-refresh-data-be-lost",
-    parentDir: ["5-Vuex"],
+    parentDir: ["6-Vuex"],
     meta: {
       star: 3,
       state: "已完成",
@@ -3552,7 +3574,7 @@ const VUEX_LABELS = [
   {
     zh: "",
     en: "",
-    parentDir: ["5-Vuex"],
+    parentDir: ["6-Vuex"],
     meta: {
       star: 5,
       state: "已完成",
@@ -3565,7 +3587,7 @@ const VUEROUTER_LABELS = [
   {
     zh: "vue-router 4.x 的 History 和 Hash 模式有何区别？",
     en: "what-is-the-difference-between-history-and-hash-modes-in-vue-router-4.x",
-    parentDir: ["4-Vue-Router"],
+    parentDir: ["5-Vue-Router"],
     meta: {
       star: 5,
       state: "已完成",
@@ -3575,7 +3597,7 @@ const VUEROUTER_LABELS = [
   {
     zh: "vue-router 如何控制路由访问权限？",
     en: "how-does-vue-router-control-route-access-permissions",
-    parentDir: ["4-Vue-Router"],
+    parentDir: ["5-Vue-Router"],
     meta: {
       star: 3,
       state: "已完成",
@@ -3585,7 +3607,7 @@ const VUEROUTER_LABELS = [
   {
     zh: "什么是路由懒加载？",
     en: "what-is-lazy-loading-of-routes",
-    parentDir: ["4-Vue-Router"],
+    parentDir: ["5-Vue-Router"],
     meta: {
       star: 5,
       state: "已完成",
@@ -3595,7 +3617,7 @@ const VUEROUTER_LABELS = [
   {
     zh: "如何 vue 路由二次封装？",
     en: "how-to-encapsulate-vue-routing-twice",
-    parentDir: ["4-Vue-Router"],
+    parentDir: ["5-Vue-Router"],
     meta: {
       star: 5,
       state: "已完成",
@@ -3605,7 +3627,7 @@ const VUEROUTER_LABELS = [
   {
     zh: "vue-router 路由导航守卫有哪些？",
     en: "what-are-the-vue-router-routing-navigation-guards",
-    parentDir: ["4-Vue-Router"],
+    parentDir: ["5-Vue-Router"],
     meta: {
       star: 5,
       state: "已完成",
@@ -3615,7 +3637,7 @@ const VUEROUTER_LABELS = [
   {
     zh: "",
     en: "",
-    parentDir: ["4-Vue-Router"],
+    parentDir: ["5-Vue-Router"],
     meta: {
       star: 5,
       state: "已完成",
@@ -3932,7 +3954,7 @@ const BROWSER_LABELS = [
   {
     zh: "同源策略，为什么会有同源策略？怎样解决跨域？",
     en: "what-is-the-same-origin-policy",
-    parentDir: ["6-Browser"],
+    parentDir: ["7-Browser"],
     meta: {
       star: 5,
       state: "已完成",
@@ -3942,7 +3964,7 @@ const BROWSER_LABELS = [
   {
     zh: "精灵图 和 base64 的区别是什么？",
     en: "what-is-the-difference-between-sprite-and-base64",
-    parentDir: ["6-Browser"],
+    parentDir: ["7-Browser"],
     meta: {
       star: 5,
       state: "未完成",
@@ -3952,7 +3974,7 @@ const BROWSER_LABELS = [
   {
     zh: "DOM树 和 渲染树 有什么区别？",
     en: "what-is-the-difference-between-the-dom-tree-and-the-render-tree",
-    parentDir: ["6-Browser"],
+    parentDir: ["7-Browser"],
     meta: {
       star: 5,
       state: "已完成",
@@ -3962,7 +3984,7 @@ const BROWSER_LABELS = [
   {
     zh: "浏览器的存储方式有哪些？",
     en: "what-are-the-storage-methods-of-browsers",
-    parentDir: ["6-Browser"],
+    parentDir: ["7-Browser"],
     meta: {
       star: 5,
       state: "已完成",
@@ -3972,7 +3994,7 @@ const BROWSER_LABELS = [
   {
     zh: "前端内存泄漏怎么理解？",
     en: "how-to-understand-front-end-memory-leak",
-    parentDir: ["6-Browser"],
+    parentDir: ["7-Browser"],
     meta: {
       star: 5,
       state: "未完成",
@@ -3982,7 +4004,7 @@ const BROWSER_LABELS = [
   {
     zh: "localStorage、sessionStorage、cookie 的区别",
     en: "the-difference-between-localstorage-sessionstorage-and-cookies",
-    parentDir: ["6-Browser"],
+    parentDir: ["7-Browser"],
     meta: {
       star: 5,
       state: "未完成",
@@ -3992,7 +4014,7 @@ const BROWSER_LABELS = [
   {
     zh: "重排 reflow（回流） 和 重绘 repaint？",
     en: "reflow-and-repaint",
-    parentDir: ["6-Browser"],
+    parentDir: ["7-Browser"],
     meta: {
       star: 6,
       state: "已完成",
@@ -4002,7 +4024,7 @@ const BROWSER_LABELS = [
   {
     zh: "浏览器渲染页面的过程是怎样的？",
     en: "how-does-a-browser-render-a-page",
-    parentDir: ["6-Browser"],
+    parentDir: ["7-Browser"],
     meta: {
       star: 7,
       state: "已完成",
@@ -4012,7 +4034,7 @@ const BROWSER_LABELS = [
   {
     zh: "",
     en: "",
-    parentDir: ["6-Browser"],
+    parentDir: ["7-Browser"],
     meta: {
       star: 5,
       state: "已完成",
@@ -4541,6 +4563,7 @@ const NAME_LABELS = [
   ...addSortKey(GIT_LABELS),
   ...addSortKey(CSS_LABELS),
   ...addSortKey(JAVASCRIPT_LABELS),
+  ...addSortKey(TYPESCRIPT_LABELS),
   ...addSortKey(HTML_LABELS),
   ...addSortKey(QUESTIONS_LABELS),
   ...addSortKey(TALK_LABELS),
@@ -4569,10 +4592,11 @@ const DIR_LABELS = {
   "1-HTML": "HTML",
   "2-CSS": "CSS",
   "3-JavaScript": "JavaScript",
-  "4-Vue-Router": "Vue-Router",
-  "5-Vuex": "Vuex",
-  "6-Browser": "浏览器",
-  "7-Engineering": "前端工程化",
+  "4-TypeScript": "TypeScript",
+  "5-Vue-Router": "Vue-Router",
+  "6-Vuex": "Vuex",
+  "7-Browser": "浏览器",
+  "8-Engineering": "前端工程化",
   "2-Framework": "框架",
   Vue2: "Vue2",
   Vue3: "Vue3",
