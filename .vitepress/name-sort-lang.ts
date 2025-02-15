@@ -20,9 +20,11 @@ import { NODEJS_LABELS } from "../module-router/nodejs_labels";
 import { WEBPACK_LABELS } from "../module-router/webpack_labels";
 import { VITE_LABELS } from "../module-router/vite_labels";
 import { BROWSER_LABELS } from "../module-router/browser_labels";
+import { CURSOR_LABELS } from "../module-router/cursor_labels";
 import { CODESNIPPET_LABELS } from "../module-router/codesnippet_labels";
 import { DESIGNPATTERNS_LABELS } from "../module-router/designpatterns_labels";
 import { NETWORK_LABELS } from "../module-router/network_labels";
+import { PROJECT_PRACTICE_LABELS } from "../module-router/project_practice_labels";
 
 function addSortKey(labels) {
   return labels.map((e, idx) => {
@@ -53,13 +55,17 @@ const NAME_LABELS = [
   ...addSortKey(VUEROUTER_LABELS),
   ...addSortKey(VUEX_LABELS),
   ...addSortKey(BROWSER_LABELS),
+  ...addSortKey(CURSOR_LABELS),
   ...addSortKey(DESIGNPATTERNS_LABELS),
   ...addSortKey(NETWORK_LABELS),
   ...addSortKey(VUE3_SOURCE_CODE_DEBUG_LABELS),
   ...addSortKey(VUE3_COMPILATION_PRINCIPLE_REVEALED_LABELS),
+  ...addSortKey(PROJECT_PRACTICE_LABELS),
 ];
 const spaceStr = "　";
 const DIR_LABELS = {
+  "0-AI": "AI",
+  "Cursor": "Cursor",
   "1-FrontEndBaGu": "前端",
   "1-HTML": "HTML",
   "2-CSS": "CSS",
@@ -88,6 +94,7 @@ const DIR_LABELS = {
   UniApp: "Uni-App",
   CodeSnippet: "代码片段",
   Project: "项目实战",
+  'Blog-Front': "Vue3 中后台",
   MongoDB: "MongoDB",
   MySql: "MySql",
   Redis: "Redis",

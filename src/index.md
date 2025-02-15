@@ -73,16 +73,16 @@ export default {
   props: {
     type: {
       type: String,
-      default: "self",
+      default: "self"
     },
     eleId: {
       type: String,
-      default: "myPlayer",
+      default: "myPlayer"
     },
     src: {
       type: String,
-      required: true,
-    },
+      required: true
+    }
   },
   setup(props) {
     const { eleId, src } = toRefs(props);
@@ -90,7 +90,7 @@ export default {
     onMounted(() => {
       const player = new Plyr(`#${eleId.value}`);
     });
-  },
+  }
 };
 </script>
 
@@ -119,16 +119,16 @@ export default {
   props: {
     type: {
       type: String,
-      default: "self",
+      default: "self"
     },
     eleId: {
       type: String,
-      default: "myPlayer",
+      default: "myPlayer"
     },
     src: {
       type: String,
-      required: true,
-    },
+      required: true
+    }
   },
   setup(props) {
     let Plyr = null;
@@ -140,7 +140,7 @@ export default {
         const player = new Plyr(`#${eleId.value}`);
       });
     });
-  },
+  }
 };
 </script>
 
@@ -174,7 +174,7 @@ export default {
 ```js [.vitepress/config.js]
 import { defineConfig } from "vitepress";
 export default defineConfig({
-  base: "/notebook/", //指定资源基础路径 // [!code focus]
+  base: "/notebook/" //指定资源基础路径 // [!code focus]
 });
 ```
 
@@ -203,7 +203,7 @@ const pdfUrl = "/notebook/你不知道的JavaScript（上卷）.pdf";
 
 ### vitepress 打包构建时引用第三方包出问题
 
-![/f2e882b9-dfe7-761e-9150-7c9c3bfd53f1.png](/f2e882b9-dfe7-761e-9150-7c9c3bfd53f1.png)
+![/f2e882b9-dfe7-761e-9150-7c9c3bfd53f1.](/f2e882b9-dfe7-761e-9150-7c9c3bfd53f1.png)
 
 这个时候要通过 script 标签动态加载 CDN 文件：
 
@@ -266,8 +266,8 @@ export default {
   // ...
   optimizeDeps: {
     include: ["pdf"], // 将pdf文件添加到include数组中
-    exclude: [], // 排除其他不需要优化的文件类型
-  },
+    exclude: [] // 排除其他不需要优化的文件类型
+  }
   // ...
 };
 ```
