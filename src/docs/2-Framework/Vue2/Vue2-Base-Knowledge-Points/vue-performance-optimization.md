@@ -25,7 +25,7 @@
   - webpack 插件：`compression-webpack-plugin`
   - true（生产环境启用）
   - 启用 gZip 压缩功能，打包体积更小
-  - [使用方式请看 ➡️](../../../1-FrontEndBaGu/7-Engineering/Webpack/vue-configures-compression-webpack-plugin-to-implement-gzip-compression.md)
+  - [使用方式请看 ➡️](../../../1-FrontEndBaGu/8-Engineering/Webpack/vue-configures-compression-webpack-plugin-to-implement-gzip-compression.md)
 - keep-alive：
   - 缓存组件：例如一些列表的展示，一些不活跃的组件可以缓存
 - 插件 CDN
