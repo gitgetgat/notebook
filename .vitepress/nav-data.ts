@@ -80,35 +80,34 @@ function getNavItems(ele) {
     sidebarItems[
       upath.join(ele.link.replace(upath.normalize(srcDir), "")) + "/"
     ] = [
-      {
-        text: ele.text,
-        items: [
-          ...files
-            .filter((file) => upath.trimExt(file.name) !== "index")
-            .map((file) => {
-              const findItem = nameLabels.find(
-                (i) => i.en === upath.trimExt(file.name)
-              );
-              return {
-                rawText: `${findItem.zh}`,
-                text: `${siderBarIcon} ${findItem.zh}${
-                  "" + (stateTags[(findItem.meta || {}).state] || "")
-                }`,
-                link: upath.trimExt(
-                  upath.join(
-                    ele.link.replace(upath.normalize(srcDir), ""),
-                    file.name
-                  )
-                ),
-                meta: {
-                  ...(findItem.meta || {}),
-                  fileName: file.name,
-                },
-              };
-            }),
-        ],
-      },
-    ];
+        {
+          text: ele.text,
+          items: [
+            ...files
+              .filter((file) => upath.trimExt(file.name) !== "index")
+              .map((file) => {
+                const findItem = nameLabels.find(
+                  (i) => i.en === upath.trimExt(file.name)
+                );
+                return {
+                  rawText: `${findItem.zh}`,
+                  text: `${siderBarIcon} ${findItem.zh}${"" + (stateTags[(findItem.meta || {}).state] || "")
+                    }`,
+                  link: upath.trimExt(
+                    upath.join(
+                      ele.link.replace(upath.normalize(srcDir), ""),
+                      file.name
+                    )
+                  ),
+                  meta: {
+                    ...(findItem.meta || {}),
+                    fileName: file.name,
+                  },
+                };
+              }),
+          ],
+        },
+      ];
     delete node.items;
   }
   return node;

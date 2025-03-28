@@ -85,3 +85,15 @@ Cursor AI 的一个非常有用的功能是能够添加文档参考。这对于�
 Cursor 允许我们使用特定规则来引导人工智能。这些可以在常规设置菜单下访问，这些规则可以作为默认提示，而不需要反复提示。
 
 ![/13652b06-94ba-789c-bab1-7b8051e67c01.png](/13652b06-94ba-789c-bab1-7b8051e67c01.png)
+
+## 11. 账号过期后如何处理
+
+再官网登录以后，在用户界面 https://www.cursor.com/cn/settings 中，删除用户，后重新注册
+
+![26c6db95-56ef-63cc-6386-239380cf554d.jpg](/26c6db95-56ef-63cc-6386-239380cf554d.jpg)
+
+### 无法通过删除账户获取试用如何处理
+
+::: warning 解决 Cursor 在免费订阅期间出现以下提示的问题:
+You've reached your trial request limit. / Too many free trial accounts used on this machine. Please upgrade to pro. We have this limit in place to prevent abuse. Please let us know if you believe this is a mistake.<link-tag :linkList="[{ linkType: 'git', linkText:'go-cursor-help',linkUrl:'https://github.com/yuaotian/go-cursor-help'}]" />
+:::
